@@ -14,9 +14,9 @@ class NewDevTableViewCellTwoContent: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var setTimeLabel: UILabel!
     @IBOutlet weak var setAgitationLabel: UILabel!
-    @IBOutlet weak var timeButton: UIButton!
-    @IBOutlet weak var agitationButton: UIButton!
-    @IBOutlet weak var customButton: UIButton!
+    @IBOutlet weak var timeButton: TTInputButton!
+    @IBOutlet weak var agitationButton: TTInputButton!
+    @IBOutlet weak var customButton: TTInputButton!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

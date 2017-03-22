@@ -17,11 +17,44 @@ class NewDevViewController: UIViewController {
                      DevProcess(devTitle: "Fix Bath", devDescript: "Time\nSet the fix time"),
                      DevProcess(devTitle: "Wash Bath", devDescript: "Time\nSet the wash time"),
                      DevProcess(devTitle: "Buffer Time", devDescript: "Time\nSet the time between two processes.")]
+    let minutes = Array(0...120)
+    let seconds = Array(0...59)
+    var toolBar: UIToolbar? {
+        let toolBar = UIToolbar()
+        toolBar.barStyle = .default
+        toolBar.isTranslucent = true
+        toolBar.sizeToFit()
+
+        let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.plain, target: self, action: #selector(donePicker))
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
+        let titleLabel = UIBarButtonItem(customView: UILabel())
+        let cancelButton = UIBarButtonItem(title: "Cancel", style: UIBarButtonItemStyle.plain, target: self, action: #selector(donePicker))
+
+        toolBar.setItems([cancelButton, spaceButton, titleLabel, spaceButton, doneButton], animated: false)
+        toolBar.isUserInteractionEnabled = true
+
+        return toolBar
+    }
 
     @IBOutlet weak var tableView: UITableView!
+
+    var filmNameInputView = UIPickerView()
+    var filmTypeInputView = UIPickerView()
+    var preWashTimeInputView = UIPickerView()
+    var devTimeInputView = UIPickerView()
+    var developerInputView = UIPickerView()
+    var tempTimeInputView = UIPickerView()
+    var devAgitationInputView = UIPickerView()
+    var stopTimeInputView = UIPickerView()
+    var fixTimeInputView = UIPickerView()
+    var fixAgitationInputView = UIPickerView()
+    var washTimeInputView = UIPickerView()
+    var bufferTimeInputView = UIPickerView()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setUpTableView()
+        self.setUpPickerView()
 
     }
 
@@ -42,6 +75,60 @@ class NewDevViewController: UIViewController {
         self.tableView.separatorStyle = .none
     }
 
+    func setUpPickerView() {
+        filmNameInputView.dataSource = self
+        filmNameInputView.delegate = self
+        filmTypeInputView.dataSource = self
+        filmTypeInputView.delegate = self
+        preWashTimeInputView.dataSource = self
+        preWashTimeInputView.delegate = self
+        devTimeInputView.dataSource = self
+        devTimeInputView.delegate = self
+        developerInputView.dataSource = self
+        developerInputView.delegate = self
+        tempTimeInputView.dataSource = self
+        tempTimeInputView.delegate = self
+        devAgitationInputView.dataSource = self
+        devAgitationInputView.delegate = self
+        stopTimeInputView.dataSource = self
+        stopTimeInputView.delegate = self
+        fixTimeInputView.dataSource = self
+        fixTimeInputView.delegate = self
+        fixAgitationInputView.dataSource = self
+        fixAgitationInputView.delegate = self
+        washTimeInputView.dataSource = self
+        washTimeInputView.delegate = self
+        bufferTimeInputView.dataSource = self
+        bufferTimeInputView.delegate = self
+    }
+
+    func showTimePicker(_ sender: TTInputButton) {
+        sender.inputView = self.devTimeInputView
+        let toolBar = UIToolbar()
+        toolBar.barStyle = .default
+        toolBar.isTranslucent = true
+        toolBar.sizeToFit()
+
+        let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.plain, target: self, action: #selector(donePicker))
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
+        let titleLable = UILabel()
+        titleLable.text = "Select a time"
+        let titleButton = UIBarButtonItem(customView: titleLable)
+        let cancelButton = UIBarButtonItem(title: "Cancel", style: UIBarButtonItemStyle.plain, target: self, action: #selector(donePicker))
+
+        toolBar.setItems([cancelButton, spaceButton, titleButton, spaceButton, doneButton], animated: false)
+        toolBar.isUserInteractionEnabled = true
+
+        sender.inputAccessoryView = toolBar
+        sender.becomeFirstResponder()
+    }
+
+    func donePicker(_ sender: UIBarButtonItem) {
+
+        self.view.endEditing(true)
+
+    }
+
 }
 
 extension NewDevViewController: UITableViewDataSource {
@@ -60,9 +147,13 @@ extension NewDevViewController: UITableViewDataSource {
         } else if indexPath.row == 2 {
             guard let cell = self.tableView.dequeueReusableCell(withIdentifier: "NewDevTableViewCell", for: indexPath) as? NewDevTableViewCell else { return UITableViewCell() }
 
-            self.tableView.rowHeight = 180
+            self.tableView.rowHeight = 215
             cell.titleLabel.text = processes[indexPath.row].devTitle
             cell.setTimeLabel.text = processes[indexPath.row].devDescript
+            cell.developerButton.addTarget(self, action: #selector(showTimePicker), for: .touchUpInside)
+//            cell.developerButton.addTarget(self, action: #selector(becomeFirstResponder), for: .touchUpInside)
+//            cell.developerButton.inputView = self.devTimeInputView
+//            cell.developerButton.inputAccessoryView = self.toolBar
 
             return cell
 
@@ -88,5 +179,27 @@ extension NewDevViewController: UITableViewDataSource {
 }
 
 extension NewDevViewController: UITableViewDelegate {
+
+}
+
+extension NewDevViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 2
+    }
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        if component == 0 {
+            return self.minutes.count
+        } else {
+            return self.seconds.count
+        }
+    }
+
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        if component == 0 {
+            return "\(minutes[row])'"
+        } else {
+            return "\(seconds[row])\""
+        }
+    }
 
 }

@@ -13,7 +13,7 @@ class NewDevTableViewCellOneContent: UITableViewCell {
     @IBOutlet weak var grayBackgroundView: UIView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var setTimeLabel: UILabel!
-    @IBOutlet weak var timeButton: UIButton!
+    @IBOutlet weak var timeButton: TTInputButton!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

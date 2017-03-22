@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -30,7 +31,7 @@
                             <constraint firstAttribute="height" constant="24" id="wTG-At-M6W"/>
                         </constraints>
                     </imageView>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ssz-Mv-DCc">
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ssz-Mv-DCc" customClass="TTInputButton" customModule="LetsDev" customModuleProvider="target">
                         <rect key="frame" x="305" y="34" width="70" height="30"/>
                         <state key="normal" title="Developer"/>
                     </button>
@@ -54,47 +55,54 @@
                         </constraints>
                     </view>
                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stopwatch-tool-to-control-test-time" translatesAutoresizingMaskIntoConstraints="NO" id="Nwb-e1-RQj">
-                        <rect key="frame" x="24" y="73" width="24" height="24"/>
+                        <rect key="frame" x="24" y="109" width="24" height="24"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="24" id="MTJ-Rg-ks8"/>
                             <constraint firstAttribute="height" constant="24" id="lu4-Os-ujT"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time                     Set the developer time" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JTL-1P-LR4">
-                        <rect key="frame" x="60" y="71" width="129" height="29"/>
+                        <rect key="frame" x="60" y="107" width="129" height="29"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w3Z-ke-2dw">
-                        <rect key="frame" x="335" y="70" width="40" height="30"/>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w3Z-ke-2dw" customClass="TTInputButton" customModule="LetsDev" customModuleProvider="target">
+                        <rect key="frame" x="335" y="106" width="40" height="30"/>
                         <state key="normal" title="00'00"/>
                     </button>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="thermometer" translatesAutoresizingMaskIntoConstraints="NO" id="EcZ-rD-ULK">
-                        <rect key="frame" x="24" y="109" width="24" height="24"/>
+                        <rect key="frame" x="24" y="145" width="24" height="24"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="24" id="boL-aE-Iso"/>
                             <constraint firstAttribute="width" constant="24" id="iUX-eK-Wth"/>
                         </constraints>
                     </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pour" translatesAutoresizingMaskIntoConstraints="NO" id="fOk-GH-gFF">
+                        <rect key="frame" x="24" y="73" width="24" height="24"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="24" id="Lqv-eV-7cr"/>
+                            <constraint firstAttribute="height" constant="24" id="Zvs-YP-ZbG"/>
+                        </constraints>
+                    </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Temperature (ºC)" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tec-ZU-biO">
-                        <rect key="frame" x="60" y="114" width="99" height="15"/>
+                        <rect key="frame" x="60" y="150" width="99" height="15"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y0W-cr-BUK">
-                        <rect key="frame" x="345" y="106" width="30" height="30"/>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y0W-cr-BUK" customClass="TTInputButton" customModule="LetsDev" customModuleProvider="target">
+                        <rect key="frame" x="345" y="142" width="30" height="30"/>
                         <state key="normal" title="20"/>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Agitation" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y3X-uM-AGx">
-                        <rect key="frame" x="60" y="150" width="51" height="15"/>
+                        <rect key="frame" x="60" y="186" width="51" height="15"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Of-jq-YQz">
-                        <rect key="frame" x="285" y="145" width="24" height="24"/>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Of-jq-YQz" customClass="TTInputButton" customModule="LetsDev" customModuleProvider="target">
+                        <rect key="frame" x="285" y="181" width="24" height="24"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="24" id="TQj-rp-FVh"/>
                             <constraint firstAttribute="height" constant="24" id="g7n-Sd-4HK"/>
@@ -105,14 +113,14 @@
                         </state>
                     </button>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="test-tube" translatesAutoresizingMaskIntoConstraints="NO" id="rVr-Fv-32q">
-                        <rect key="frame" x="24" y="145" width="24" height="24"/>
+                        <rect key="frame" x="24" y="181" width="24" height="24"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="24" id="mUX-z1-lOh"/>
                             <constraint firstAttribute="width" constant="24" id="u3Q-RX-qfN"/>
                         </constraints>
                     </imageView>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DG5-gI-bAG">
-                        <rect key="frame" x="321" y="142" width="54" height="30"/>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DG5-gI-bAG" customClass="TTInputButton" customModule="LetsDev" customModuleProvider="target">
+                        <rect key="frame" x="321" y="178" width="54" height="30"/>
                         <state key="normal" title="Custom"/>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Developer Select your developer" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ozI-An-cAs">
@@ -121,20 +129,41 @@
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dilution" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XWQ-R5-5WH">
+                        <rect key="frame" x="60" y="78" width="44" height="15"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="eg: stock, 1+1, 1+3" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TRa-mr-xDl">
+                        <rect key="frame" x="275" y="70" width="100" height="30"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="100" id="U0s-Wl-fRU"/>
+                        </constraints>
+                        <nil key="textColor"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits"/>
+                    </textField>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                 <constraints>
+                    <constraint firstItem="XWQ-R5-5WH" firstAttribute="centerY" secondItem="fOk-GH-gFF" secondAttribute="centerY" id="4Do-LD-R6B"/>
                     <constraint firstItem="EcZ-rD-ULK" firstAttribute="leading" secondItem="BSX-lC-NJT" secondAttribute="leading" constant="24" id="4ee-vu-orU"/>
                     <constraint firstItem="Tec-ZU-biO" firstAttribute="leading" secondItem="EcZ-rD-ULK" secondAttribute="trailing" constant="12" id="4gR-Xl-EJq"/>
                     <constraint firstAttribute="trailing" secondItem="y5K-5b-rlZ" secondAttribute="trailing" constant="12" id="5dS-2W-2Wg"/>
+                    <constraint firstItem="TRa-mr-xDl" firstAttribute="centerY" secondItem="fOk-GH-gFF" secondAttribute="centerY" id="5kZ-lr-eyL"/>
                     <constraint firstAttribute="bottom" secondItem="y5K-5b-rlZ" secondAttribute="bottom" constant="4" id="5sm-Pw-dY4"/>
+                    <constraint firstItem="fOk-GH-gFF" firstAttribute="leading" secondItem="BSX-lC-NJT" secondAttribute="leading" constant="24" id="8Dr-ZP-zJe"/>
                     <constraint firstItem="y5K-5b-rlZ" firstAttribute="top" secondItem="BSX-lC-NJT" secondAttribute="top" constant="8" id="8IF-kS-gXR"/>
+                    <constraint firstItem="Nwb-e1-RQj" firstAttribute="top" secondItem="fOk-GH-gFF" secondAttribute="bottom" constant="12" id="9BL-6V-uqz"/>
                     <constraint firstItem="JTL-1P-LR4" firstAttribute="centerY" secondItem="Nwb-e1-RQj" secondAttribute="centerY" id="A2f-vY-srl"/>
                     <constraint firstItem="JTL-1P-LR4" firstAttribute="leading" secondItem="Nwb-e1-RQj" secondAttribute="trailing" constant="12" id="Cid-wq-2RX"/>
                     <constraint firstItem="ozI-An-cAs" firstAttribute="leading" secondItem="J4F-ua-HvB" secondAttribute="trailing" constant="12" id="DLt-Hz-Soi"/>
                     <constraint firstItem="y5K-5b-rlZ" firstAttribute="leading" secondItem="BSX-lC-NJT" secondAttribute="leading" constant="12" id="EtH-QO-QU4"/>
                     <constraint firstItem="Y3X-uM-AGx" firstAttribute="centerY" secondItem="rVr-Fv-32q" secondAttribute="centerY" id="G8c-K9-lGo"/>
                     <constraint firstItem="rVr-Fv-32q" firstAttribute="leading" secondItem="BSX-lC-NJT" secondAttribute="leading" constant="24" id="HSl-re-nWY"/>
+                    <constraint firstItem="fOk-GH-gFF" firstAttribute="top" secondItem="J4F-ua-HvB" secondAttribute="bottom" constant="12" id="ISf-2n-FXx"/>
                     <constraint firstItem="Tec-ZU-biO" firstAttribute="centerY" secondItem="EcZ-rD-ULK" secondAttribute="centerY" id="MRZ-dc-nm4"/>
                     <constraint firstItem="DG5-gI-bAG" firstAttribute="centerY" secondItem="rVr-Fv-32q" secondAttribute="centerY" id="MUc-vO-OVc"/>
                     <constraint firstItem="Ssz-Mv-DCc" firstAttribute="centerY" secondItem="J4F-ua-HvB" secondAttribute="centerY" id="Pvg-fa-LtE"/>
@@ -144,7 +173,7 @@
                     <constraint firstItem="7sS-UV-SAq" firstAttribute="width" secondItem="BSX-lC-NJT" secondAttribute="width" multiplier="1:3" id="Y13-Uh-Ted"/>
                     <constraint firstItem="J4F-ua-HvB" firstAttribute="leading" secondItem="BSX-lC-NJT" secondAttribute="leading" constant="24" id="a4G-Rt-pEt"/>
                     <constraint firstItem="Nwb-e1-RQj" firstAttribute="leading" secondItem="BSX-lC-NJT" secondAttribute="leading" constant="24" id="amN-f0-vT7"/>
-                    <constraint firstItem="Nwb-e1-RQj" firstAttribute="top" secondItem="J4F-ua-HvB" secondAttribute="bottom" constant="12" id="coz-kU-qjs"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="TRa-mr-xDl" secondAttribute="trailing" constant="16" id="bQh-LK-x8v"/>
                     <constraint firstAttribute="trailing" secondItem="Ssz-Mv-DCc" secondAttribute="trailing" constant="24" id="dKm-VL-cfl"/>
                     <constraint firstAttribute="trailing" secondItem="DG5-gI-bAG" secondAttribute="trailing" constant="24" id="e4l-0J-m8r"/>
                     <constraint firstItem="Y0W-cr-BUK" firstAttribute="centerY" secondItem="EcZ-rD-ULK" secondAttribute="centerY" id="fii-Pf-wfV"/>
@@ -156,6 +185,7 @@
                     <constraint firstItem="EcZ-rD-ULK" firstAttribute="top" secondItem="Nwb-e1-RQj" secondAttribute="bottom" constant="12" id="q5W-ye-Zul"/>
                     <constraint firstItem="J4F-ua-HvB" firstAttribute="top" secondItem="7sS-UV-SAq" secondAttribute="bottom" constant="12" id="uAH-bT-TW3"/>
                     <constraint firstItem="7sS-UV-SAq" firstAttribute="top" secondItem="BSX-lC-NJT" secondAttribute="top" constant="8" id="vfM-iF-r3M"/>
+                    <constraint firstItem="XWQ-R5-5WH" firstAttribute="leading" secondItem="fOk-GH-gFF" secondAttribute="trailing" constant="12" id="woO-dq-uAF"/>
                     <constraint firstItem="DG5-gI-bAG" firstAttribute="leading" secondItem="2Of-jq-YQz" secondAttribute="trailing" constant="12" id="ymU-Yz-wKL"/>
                 </constraints>
             </tableViewCellContentView>
@@ -166,6 +196,7 @@
                 <outlet property="customButton" destination="2Of-jq-YQz" id="q87-Bp-HN1"/>
                 <outlet property="developerButton" destination="Ssz-Mv-DCc" id="nas-iZ-GrW"/>
                 <outlet property="developerLabel" destination="ozI-An-cAs" id="Twc-Bn-F0e"/>
+                <outlet property="dilutionTextField" destination="TRa-mr-xDl" id="uwx-f0-bjy"/>
                 <outlet property="greyBackgroundView" destination="y5K-5b-rlZ" id="nc4-EZ-PI1"/>
                 <outlet property="setAgitationLabel" destination="Y3X-uM-AGx" id="x9k-EB-FTA"/>
                 <outlet property="setTempLabel" destination="Tec-ZU-biO" id="u8Y-Wz-qYt"/>
@@ -182,6 +213,7 @@
     <resources>
         <image name="beaker" width="512" height="512"/>
         <image name="info-2" width="512" height="512"/>
+        <image name="pour" width="512" height="512"/>
         <image name="stopwatch-tool-to-control-test-time" width="512" height="512"/>
         <image name="test-tube" width="512" height="512"/>
         <image name="thermometer" width="512" height="512"/>

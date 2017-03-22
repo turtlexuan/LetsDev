@@ -19,12 +19,13 @@ class NewDevTableViewCell: UITableViewCell {
     @IBOutlet weak var setTempLabel: UILabel!
     @IBOutlet weak var agitationImageView: UIImageView!
     @IBOutlet weak var setAgitationLabel: UILabel!
-    @IBOutlet weak var timeButton: UIButton!
-    @IBOutlet weak var tempButton: UIButton!
-    @IBOutlet weak var agitationButton: UIButton!
-    @IBOutlet weak var customButton: UIButton!
+    @IBOutlet weak var timeButton: TTInputButton!
+    @IBOutlet weak var tempButton: TTInputButton!
+    @IBOutlet weak var agitationButton: TTInputButton!
+    @IBOutlet weak var customButton: TTInputButton!
     @IBOutlet weak var developerLabel: UILabel!
-    @IBOutlet weak var developerButton: UIButton!
+    @IBOutlet weak var developerButton: TTInputButton!
+    @IBOutlet weak var dilutionTextField: UITextField!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

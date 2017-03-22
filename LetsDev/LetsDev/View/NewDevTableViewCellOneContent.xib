@@ -16,11 +16,11 @@
             <rect key="frame" x="0.0" y="0.0" width="399" height="76"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZKn-2R-bBQ" id="iRE-qs-V2e">
-                <rect key="frame" x="0.0" y="0.0" width="399" height="75.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="399" height="76"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ODO-Vh-RCA">
-                        <rect key="frame" x="12" y="8" width="375" height="63.5"/>
+                        <rect key="frame" x="12" y="8" width="375" height="64"/>
                         <color key="backgroundColor" red="0.2470588235" green="0.2470588235" blue="0.2470588235" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LYG-JU-xzV">
@@ -55,7 +55,7 @@
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NAx-HL-7F9">
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NAx-HL-7F9" customClass="TTInputButton" customModule="LetsDev" customModuleProvider="target">
                         <rect key="frame" x="335" y="34" width="40" height="30"/>
                         <state key="normal" title="00'00"/>
                     </button>

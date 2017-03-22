@@ -10,8 +10,8 @@ import UIKit
 
 class NewDevTableViewCellFilm: UITableViewCell {
 
-    @IBOutlet weak var filmButton: UIButton!
-    @IBOutlet weak var typeButton: UIButton!
+    @IBOutlet weak var filmButton: TTInputButton!
+    @IBOutlet weak var typeButton: TTInputButton!
     @IBOutlet weak var greyBackgroundView: UIView!
     override func awakeFromNib() {
         super.awakeFromNib()

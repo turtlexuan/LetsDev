@@ -8,22 +8,42 @@
 
 /* Begin PBXBuildFile section */
 		201978B61E80BAE20013FACE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201978B51E80BAE20013FACE /* AppDelegate.swift */; };
-		201978B81E80BAE20013FACE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201978B71E80BAE20013FACE /* ViewController.swift */; };
 		201978BB1E80BAE20013FACE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 201978B91E80BAE20013FACE /* Main.storyboard */; };
 		201978BE1E80BAE20013FACE /* LetsDev.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 201978BC1E80BAE20013FACE /* LetsDev.xcdatamodeld */; };
 		201978C01E80BAE20013FACE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 201978BF1E80BAE20013FACE /* Assets.xcassets */; };
 		201978C31E80BAE20013FACE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 201978C11E80BAE20013FACE /* LaunchScreen.storyboard */; };
+		201978D61E80CFBE0013FACE /* NewDevViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201978D51E80CFBE0013FACE /* NewDevViewController.swift */; };
+		201978D81E80CFD90013FACE /* NewDevTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 201978D71E80CFD90013FACE /* NewDevTableViewCell.xib */; };
+		201978DA1E8102F60013FACE /* NewDevTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201978D91E8102F60013FACE /* NewDevTableViewCell.swift */; };
+		20892FBB1E81270200369946 /* NewDevTableViewCellTwoContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20892FB91E81270200369946 /* NewDevTableViewCellTwoContent.swift */; };
+		20892FBC1E81270200369946 /* NewDevTableViewCellTwoContent.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20892FBA1E81270200369946 /* NewDevTableViewCellTwoContent.xib */; };
+		20892FBF1E812A5C00369946 /* NewDevTableViewCellOneContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20892FBD1E812A5C00369946 /* NewDevTableViewCellOneContent.swift */; };
+		20892FC01E812A5C00369946 /* NewDevTableViewCellOneContent.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20892FBE1E812A5C00369946 /* NewDevTableViewCellOneContent.xib */; };
+		20892FC21E812D9B00369946 /* DevProcess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20892FC11E812D9B00369946 /* DevProcess.swift */; };
+		20892FC51E819B6200369946 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20892FC41E819B6200369946 /* Color.swift */; };
+		E4F1FE23674C8589E00ACF52 /* Pods_LetsDev.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD5025F6EEDEA83A6E3AA888 /* Pods_LetsDev.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		01A593E4A91523410B938F6A /* Pods-LetsDev.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LetsDev.release.xcconfig"; path = "Pods/Target Support Files/Pods-LetsDev/Pods-LetsDev.release.xcconfig"; sourceTree = "<group>"; };
 		201978B21E80BAE20013FACE /* LetsDev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LetsDev.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		201978B51E80BAE20013FACE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		201978B71E80BAE20013FACE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		201978BA1E80BAE20013FACE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		201978BD1E80BAE20013FACE /* LetsDev.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LetsDev.xcdatamodel; sourceTree = "<group>"; };
 		201978BF1E80BAE20013FACE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		201978C21E80BAE20013FACE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		201978C41E80BAE20013FACE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		201978D51E80CFBE0013FACE /* NewDevViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewDevViewController.swift; sourceTree = "<group>"; };
+		201978D71E80CFD90013FACE /* NewDevTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewDevTableViewCell.xib; sourceTree = "<group>"; };
+		201978D91E8102F60013FACE /* NewDevTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewDevTableViewCell.swift; sourceTree = "<group>"; };
+		20892FB91E81270200369946 /* NewDevTableViewCellTwoContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewDevTableViewCellTwoContent.swift; sourceTree = "<group>"; };
+		20892FBA1E81270200369946 /* NewDevTableViewCellTwoContent.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewDevTableViewCellTwoContent.xib; sourceTree = "<group>"; };
+		20892FBD1E812A5C00369946 /* NewDevTableViewCellOneContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewDevTableViewCellOneContent.swift; sourceTree = "<group>"; };
+		20892FBE1E812A5C00369946 /* NewDevTableViewCellOneContent.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewDevTableViewCellOneContent.xib; sourceTree = "<group>"; };
+		20892FC11E812D9B00369946 /* DevProcess.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DevProcess.swift; sourceTree = "<group>"; };
+		20892FC41E819B6200369946 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		B4C9D9118AFE53887E4B623F /* Pods-LetsDev.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LetsDev.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LetsDev/Pods-LetsDev.debug.xcconfig"; sourceTree = "<group>"; };
+		DD5025F6EEDEA83A6E3AA888 /* Pods_LetsDev.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LetsDev.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4F1FE23674C8589E00ACF52 /* Pods_LetsDev.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +63,8 @@
 			children = (
 				201978B41E80BAE20013FACE /* LetsDev */,
 				201978B31E80BAE20013FACE /* Products */,
+				C35FCE0862AF92CDAA79363A /* Pods */,
+				A322150B5658DCF6C41AF1BA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -57,14 +80,71 @@
 			isa = PBXGroup;
 			children = (
 				201978B51E80BAE20013FACE /* AppDelegate.swift */,
-				201978B71E80BAE20013FACE /* ViewController.swift */,
 				201978B91E80BAE20013FACE /* Main.storyboard */,
 				201978BF1E80BAE20013FACE /* Assets.xcassets */,
 				201978C11E80BAE20013FACE /* LaunchScreen.storyboard */,
 				201978C41E80BAE20013FACE /* Info.plist */,
 				201978BC1E80BAE20013FACE /* LetsDev.xcdatamodeld */,
+				201978D21E80CFAD0013FACE /* Modal */,
+				201978D31E80CFAD0013FACE /* View */,
+				201978D41E80CFAD0013FACE /* ViewController */,
+				20892FC31E819B5200369946 /* Constants */,
 			);
 			path = LetsDev;
+			sourceTree = "<group>";
+		};
+		201978D21E80CFAD0013FACE /* Modal */ = {
+			isa = PBXGroup;
+			children = (
+				20892FC11E812D9B00369946 /* DevProcess.swift */,
+			);
+			path = Modal;
+			sourceTree = "<group>";
+		};
+		201978D31E80CFAD0013FACE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				201978D71E80CFD90013FACE /* NewDevTableViewCell.xib */,
+				201978D91E8102F60013FACE /* NewDevTableViewCell.swift */,
+				20892FB91E81270200369946 /* NewDevTableViewCellTwoContent.swift */,
+				20892FBA1E81270200369946 /* NewDevTableViewCellTwoContent.xib */,
+				20892FBD1E812A5C00369946 /* NewDevTableViewCellOneContent.swift */,
+				20892FBE1E812A5C00369946 /* NewDevTableViewCellOneContent.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		201978D41E80CFAD0013FACE /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				201978D51E80CFBE0013FACE /* NewDevViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		20892FC31E819B5200369946 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				20892FC41E819B6200369946 /* Color.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		A322150B5658DCF6C41AF1BA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DD5025F6EEDEA83A6E3AA888 /* Pods_LetsDev.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C35FCE0862AF92CDAA79363A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B4C9D9118AFE53887E4B623F /* Pods-LetsDev.debug.xcconfig */,
+				01A593E4A91523410B938F6A /* Pods-LetsDev.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +154,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 201978C71E80BAE20013FACE /* Build configuration list for PBXNativeTarget "LetsDev" */;
 			buildPhases = (
+				54372547FCCA18FB5425FE31 /* [CP] Check Pods Manifest.lock */,
 				201978AE1E80BAE20013FACE /* Sources */,
 				201978AF1E80BAE20013FACE /* Frameworks */,
 				201978B01E80BAE20013FACE /* Resources */,
+				201978CA1E80CA7B0013FACE /* Run Swiftlint */,
+				F55A50C42BB17EF30594F745 /* [CP] Embed Pods Frameworks */,
+				1A5E8916BC080072DA44C1E3 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -128,20 +212,90 @@
 			buildActionMask = 2147483647;
 			files = (
 				201978C31E80BAE20013FACE /* LaunchScreen.storyboard in Resources */,
+				201978D81E80CFD90013FACE /* NewDevTableViewCell.xib in Resources */,
 				201978C01E80BAE20013FACE /* Assets.xcassets in Resources */,
+				20892FC01E812A5C00369946 /* NewDevTableViewCellOneContent.xib in Resources */,
 				201978BB1E80BAE20013FACE /* Main.storyboard in Resources */,
+				20892FBC1E81270200369946 /* NewDevTableViewCellTwoContent.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1A5E8916BC080072DA44C1E3 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LetsDev/Pods-LetsDev-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		201978CA1E80CA7B0013FACE /* Run Swiftlint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Run Swiftlint";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+		};
+		54372547FCCA18FB5425FE31 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F55A50C42BB17EF30594F745 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LetsDev/Pods-LetsDev-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		201978AE1E80BAE20013FACE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				201978B81E80BAE20013FACE /* ViewController.swift in Sources */,
+				201978DA1E8102F60013FACE /* NewDevTableViewCell.swift in Sources */,
 				201978BE1E80BAE20013FACE /* LetsDev.xcdatamodeld in Sources */,
+				20892FC21E812D9B00369946 /* DevProcess.swift in Sources */,
+				201978D61E80CFBE0013FACE /* NewDevViewController.swift in Sources */,
+				20892FBF1E812A5C00369946 /* NewDevTableViewCellOneContent.swift in Sources */,
+				20892FC51E819B6200369946 /* Color.swift in Sources */,
+				20892FBB1E81270200369946 /* NewDevTableViewCellTwoContent.swift in Sources */,
 				201978B61E80BAE20013FACE /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -263,6 +417,7 @@
 		};
 		201978C81E80BAE20013FACE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B4C9D9118AFE53887E4B623F /* Pods-LetsDev.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = U9WVFKNWBQ;
@@ -276,6 +431,7 @@
 		};
 		201978C91E80BAE20013FACE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 01A593E4A91523410B938F6A /* Pods-LetsDev.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = U9WVFKNWBQ;
@@ -306,6 +462,7 @@
 				201978C91E80BAE20013FACE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

@@ -12,17 +12,28 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NewDevTableViewCell" rowHeight="150" id="Yc2-pE-EbK" customClass="NewDevTableViewCell" customModule="LetsDev" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="399" height="151"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NewDevTableViewCell" rowHeight="270" id="Yc2-pE-EbK" customClass="NewDevTableViewCell" customModule="LetsDev" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="399" height="271"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Yc2-pE-EbK" id="BSX-lC-NJT">
-                <rect key="frame" x="0.0" y="0.0" width="399" height="150"/>
+                <rect key="frame" x="0.0" y="0.0" width="399" height="271"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y5K-5b-rlZ">
-                        <rect key="frame" x="12" y="8" width="375" height="138.5"/>
+                        <rect key="frame" x="12" y="8" width="375" height="258"/>
                         <color key="backgroundColor" red="0.2470588235" green="0.2470588235" blue="0.2470588235" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="beaker" translatesAutoresizingMaskIntoConstraints="NO" id="J4F-ua-HvB">
+                        <rect key="frame" x="24" y="37" width="24" height="24"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="24" id="KHD-hs-nwp"/>
+                            <constraint firstAttribute="height" constant="24" id="wTG-At-M6W"/>
+                        </constraints>
+                    </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ssz-Mv-DCc">
+                        <rect key="frame" x="305" y="34" width="70" height="30"/>
+                        <state key="normal" title="Developer"/>
+                    </button>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7sS-UV-SAq">
                         <rect key="frame" x="24" y="8" width="133" height="17"/>
                         <subviews>
@@ -43,47 +54,47 @@
                         </constraints>
                     </view>
                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stopwatch-tool-to-control-test-time" translatesAutoresizingMaskIntoConstraints="NO" id="Nwb-e1-RQj">
-                        <rect key="frame" x="24" y="37" width="24" height="24"/>
+                        <rect key="frame" x="24" y="73" width="24" height="24"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="24" id="MTJ-Rg-ks8"/>
                             <constraint firstAttribute="height" constant="24" id="lu4-Os-ujT"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time                     Set the developer time" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JTL-1P-LR4">
-                        <rect key="frame" x="60" y="34.5" width="128.5" height="29"/>
+                        <rect key="frame" x="60" y="71" width="129" height="29"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w3Z-ke-2dw">
-                        <rect key="frame" x="335" y="34" width="40" height="30"/>
+                        <rect key="frame" x="335" y="70" width="40" height="30"/>
                         <state key="normal" title="00'00"/>
                     </button>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="thermometer" translatesAutoresizingMaskIntoConstraints="NO" id="EcZ-rD-ULK">
-                        <rect key="frame" x="24" y="73" width="24" height="24"/>
+                        <rect key="frame" x="24" y="109" width="24" height="24"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="24" id="boL-aE-Iso"/>
                             <constraint firstAttribute="width" constant="24" id="iUX-eK-Wth"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Temperature (ºC)" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tec-ZU-biO">
-                        <rect key="frame" x="60" y="78" width="98.5" height="14.5"/>
+                        <rect key="frame" x="60" y="114" width="99" height="15"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y0W-cr-BUK">
-                        <rect key="frame" x="345" y="70" width="30" height="30"/>
+                        <rect key="frame" x="345" y="106" width="30" height="30"/>
                         <state key="normal" title="20"/>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Agitation" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y3X-uM-AGx">
-                        <rect key="frame" x="60" y="114" width="50.5" height="14.5"/>
+                        <rect key="frame" x="60" y="150" width="51" height="15"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Of-jq-YQz">
-                        <rect key="frame" x="285" y="109" width="24" height="24"/>
+                        <rect key="frame" x="285" y="145" width="24" height="24"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="24" id="TQj-rp-FVh"/>
                             <constraint firstAttribute="height" constant="24" id="g7n-Sd-4HK"/>
@@ -94,16 +105,22 @@
                         </state>
                     </button>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="test-tube" translatesAutoresizingMaskIntoConstraints="NO" id="rVr-Fv-32q">
-                        <rect key="frame" x="24" y="109" width="24" height="24"/>
+                        <rect key="frame" x="24" y="145" width="24" height="24"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="24" id="mUX-z1-lOh"/>
                             <constraint firstAttribute="width" constant="24" id="u3Q-RX-qfN"/>
                         </constraints>
                     </imageView>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DG5-gI-bAG">
-                        <rect key="frame" x="321" y="106" width="54" height="30"/>
+                        <rect key="frame" x="321" y="142" width="54" height="30"/>
                         <state key="normal" title="Custom"/>
                     </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Developer Select your developer" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ozI-An-cAs">
+                        <rect key="frame" x="60" y="35" width="124" height="29"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                 <constraints>
@@ -114,24 +131,30 @@
                     <constraint firstItem="y5K-5b-rlZ" firstAttribute="top" secondItem="BSX-lC-NJT" secondAttribute="top" constant="8" id="8IF-kS-gXR"/>
                     <constraint firstItem="JTL-1P-LR4" firstAttribute="centerY" secondItem="Nwb-e1-RQj" secondAttribute="centerY" id="A2f-vY-srl"/>
                     <constraint firstItem="JTL-1P-LR4" firstAttribute="leading" secondItem="Nwb-e1-RQj" secondAttribute="trailing" constant="12" id="Cid-wq-2RX"/>
+                    <constraint firstItem="ozI-An-cAs" firstAttribute="leading" secondItem="J4F-ua-HvB" secondAttribute="trailing" constant="12" id="DLt-Hz-Soi"/>
                     <constraint firstItem="y5K-5b-rlZ" firstAttribute="leading" secondItem="BSX-lC-NJT" secondAttribute="leading" constant="12" id="EtH-QO-QU4"/>
-                    <constraint firstItem="Nwb-e1-RQj" firstAttribute="top" secondItem="7sS-UV-SAq" secondAttribute="bottom" constant="12" id="ExC-9O-Xj1"/>
                     <constraint firstItem="Y3X-uM-AGx" firstAttribute="centerY" secondItem="rVr-Fv-32q" secondAttribute="centerY" id="G8c-K9-lGo"/>
                     <constraint firstItem="rVr-Fv-32q" firstAttribute="leading" secondItem="BSX-lC-NJT" secondAttribute="leading" constant="24" id="HSl-re-nWY"/>
                     <constraint firstItem="Tec-ZU-biO" firstAttribute="centerY" secondItem="EcZ-rD-ULK" secondAttribute="centerY" id="MRZ-dc-nm4"/>
                     <constraint firstItem="DG5-gI-bAG" firstAttribute="centerY" secondItem="rVr-Fv-32q" secondAttribute="centerY" id="MUc-vO-OVc"/>
+                    <constraint firstItem="Ssz-Mv-DCc" firstAttribute="centerY" secondItem="J4F-ua-HvB" secondAttribute="centerY" id="Pvg-fa-LtE"/>
                     <constraint firstItem="7sS-UV-SAq" firstAttribute="leading" secondItem="BSX-lC-NJT" secondAttribute="leading" constant="24" id="V7E-29-HlK"/>
                     <constraint firstItem="rVr-Fv-32q" firstAttribute="top" secondItem="EcZ-rD-ULK" secondAttribute="bottom" constant="12" id="VWC-Sk-lJg"/>
                     <constraint firstItem="2Of-jq-YQz" firstAttribute="centerY" secondItem="rVr-Fv-32q" secondAttribute="centerY" id="WvX-S3-5fN"/>
                     <constraint firstItem="7sS-UV-SAq" firstAttribute="width" secondItem="BSX-lC-NJT" secondAttribute="width" multiplier="1:3" id="Y13-Uh-Ted"/>
+                    <constraint firstItem="J4F-ua-HvB" firstAttribute="leading" secondItem="BSX-lC-NJT" secondAttribute="leading" constant="24" id="a4G-Rt-pEt"/>
                     <constraint firstItem="Nwb-e1-RQj" firstAttribute="leading" secondItem="BSX-lC-NJT" secondAttribute="leading" constant="24" id="amN-f0-vT7"/>
+                    <constraint firstItem="Nwb-e1-RQj" firstAttribute="top" secondItem="J4F-ua-HvB" secondAttribute="bottom" constant="12" id="coz-kU-qjs"/>
+                    <constraint firstAttribute="trailing" secondItem="Ssz-Mv-DCc" secondAttribute="trailing" constant="24" id="dKm-VL-cfl"/>
                     <constraint firstAttribute="trailing" secondItem="DG5-gI-bAG" secondAttribute="trailing" constant="24" id="e4l-0J-m8r"/>
                     <constraint firstItem="Y0W-cr-BUK" firstAttribute="centerY" secondItem="EcZ-rD-ULK" secondAttribute="centerY" id="fii-Pf-wfV"/>
                     <constraint firstItem="w3Z-ke-2dw" firstAttribute="centerY" secondItem="Nwb-e1-RQj" secondAttribute="centerY" id="ieo-QK-TGA"/>
                     <constraint firstAttribute="trailing" secondItem="Y0W-cr-BUK" secondAttribute="trailing" constant="24" id="l3k-Fr-Wc7"/>
                     <constraint firstAttribute="trailing" secondItem="w3Z-ke-2dw" secondAttribute="trailing" constant="24" id="ltL-uP-75c"/>
                     <constraint firstItem="Y3X-uM-AGx" firstAttribute="leading" secondItem="rVr-Fv-32q" secondAttribute="trailing" constant="12" id="mIS-Mj-LSn"/>
+                    <constraint firstItem="ozI-An-cAs" firstAttribute="centerY" secondItem="J4F-ua-HvB" secondAttribute="centerY" id="pY6-nR-bqm"/>
                     <constraint firstItem="EcZ-rD-ULK" firstAttribute="top" secondItem="Nwb-e1-RQj" secondAttribute="bottom" constant="12" id="q5W-ye-Zul"/>
+                    <constraint firstItem="J4F-ua-HvB" firstAttribute="top" secondItem="7sS-UV-SAq" secondAttribute="bottom" constant="12" id="uAH-bT-TW3"/>
                     <constraint firstItem="7sS-UV-SAq" firstAttribute="top" secondItem="BSX-lC-NJT" secondAttribute="top" constant="8" id="vfM-iF-r3M"/>
                     <constraint firstItem="DG5-gI-bAG" firstAttribute="leading" secondItem="2Of-jq-YQz" secondAttribute="trailing" constant="12" id="ymU-Yz-wKL"/>
                 </constraints>
@@ -141,6 +164,8 @@
                 <outlet property="agitationImageView" destination="rVr-Fv-32q" id="lDc-yR-9LC"/>
                 <outlet property="clockImageView" destination="Nwb-e1-RQj" id="MuR-dd-4tR"/>
                 <outlet property="customButton" destination="2Of-jq-YQz" id="q87-Bp-HN1"/>
+                <outlet property="developerButton" destination="Ssz-Mv-DCc" id="nas-iZ-GrW"/>
+                <outlet property="developerLabel" destination="ozI-An-cAs" id="Twc-Bn-F0e"/>
                 <outlet property="greyBackgroundView" destination="y5K-5b-rlZ" id="nc4-EZ-PI1"/>
                 <outlet property="setAgitationLabel" destination="Y3X-uM-AGx" id="x9k-EB-FTA"/>
                 <outlet property="setTempLabel" destination="Tec-ZU-biO" id="u8Y-Wz-qYt"/>
@@ -151,10 +176,11 @@
                 <outlet property="titleLabel" destination="bIU-lo-8fP" id="mlj-ZA-lxA"/>
                 <outlet property="titleView" destination="7sS-UV-SAq" id="aXN-k6-B2a"/>
             </connections>
-            <point key="canvasLocation" x="-22.5" y="-150.5"/>
+            <point key="canvasLocation" x="-22.5" y="-90.5"/>
         </tableViewCell>
     </objects>
     <resources>
+        <image name="beaker" width="512" height="512"/>
         <image name="info-2" width="512" height="512"/>
         <image name="stopwatch-tool-to-control-test-time" width="512" height="512"/>
         <image name="test-tube" width="512" height="512"/>

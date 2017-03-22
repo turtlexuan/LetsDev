@@ -23,6 +23,8 @@ class NewDevTableViewCell: UITableViewCell {
     @IBOutlet weak var tempButton: UIButton!
     @IBOutlet weak var agitationButton: UIButton!
     @IBOutlet weak var customButton: UIButton!
+    @IBOutlet weak var developerLabel: UILabel!
+    @IBOutlet weak var developerButton: UIButton!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -30,6 +32,7 @@ class NewDevTableViewCell: UITableViewCell {
         self.customButton.tintColor = Color.buttonColor
         self.tempButton.tintColor = Color.buttonColor
         self.agitationButton.tintColor = Color.buttonColor
+        self.developerButton.tintColor = Color.buttonColor
         self.greyBackgroundView.layer.cornerRadius = 10
         self.greyBackgroundView.layer.masksToBounds = true
     }

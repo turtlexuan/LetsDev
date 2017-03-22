@@ -21,6 +21,9 @@
 		20892FC01E812A5C00369946 /* NewDevTableViewCellOneContent.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20892FBE1E812A5C00369946 /* NewDevTableViewCellOneContent.xib */; };
 		20892FC21E812D9B00369946 /* DevProcess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20892FC11E812D9B00369946 /* DevProcess.swift */; };
 		20892FC51E819B6200369946 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20892FC41E819B6200369946 /* Color.swift */; };
+		20892FC71E821A0700369946 /* Combination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20892FC61E821A0700369946 /* Combination.swift */; };
+		20892FCA1E821E4F00369946 /* NewDevTableViewCellFilm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20892FC81E821E4F00369946 /* NewDevTableViewCellFilm.swift */; };
+		20892FCB1E821E4F00369946 /* NewDevTableViewCellFilm.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20892FC91E821E4F00369946 /* NewDevTableViewCellFilm.xib */; };
 		E4F1FE23674C8589E00ACF52 /* Pods_LetsDev.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD5025F6EEDEA83A6E3AA888 /* Pods_LetsDev.framework */; };
 /* End PBXBuildFile section */
 
@@ -42,6 +45,9 @@
 		20892FBE1E812A5C00369946 /* NewDevTableViewCellOneContent.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewDevTableViewCellOneContent.xib; sourceTree = "<group>"; };
 		20892FC11E812D9B00369946 /* DevProcess.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DevProcess.swift; sourceTree = "<group>"; };
 		20892FC41E819B6200369946 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		20892FC61E821A0700369946 /* Combination.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Combination.swift; sourceTree = "<group>"; };
+		20892FC81E821E4F00369946 /* NewDevTableViewCellFilm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewDevTableViewCellFilm.swift; sourceTree = "<group>"; };
+		20892FC91E821E4F00369946 /* NewDevTableViewCellFilm.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewDevTableViewCellFilm.xib; sourceTree = "<group>"; };
 		B4C9D9118AFE53887E4B623F /* Pods-LetsDev.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LetsDev.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LetsDev/Pods-LetsDev.debug.xcconfig"; sourceTree = "<group>"; };
 		DD5025F6EEDEA83A6E3AA888 /* Pods_LetsDev.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LetsDev.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -97,6 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				20892FC11E812D9B00369946 /* DevProcess.swift */,
+				20892FC61E821A0700369946 /* Combination.swift */,
 			);
 			path = Modal;
 			sourceTree = "<group>";
@@ -110,6 +117,8 @@
 				20892FBA1E81270200369946 /* NewDevTableViewCellTwoContent.xib */,
 				20892FBD1E812A5C00369946 /* NewDevTableViewCellOneContent.swift */,
 				20892FBE1E812A5C00369946 /* NewDevTableViewCellOneContent.xib */,
+				20892FC81E821E4F00369946 /* NewDevTableViewCellFilm.swift */,
+				20892FC91E821E4F00369946 /* NewDevTableViewCellFilm.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -217,6 +226,7 @@
 				20892FC01E812A5C00369946 /* NewDevTableViewCellOneContent.xib in Resources */,
 				201978BB1E80BAE20013FACE /* Main.storyboard in Resources */,
 				20892FBC1E81270200369946 /* NewDevTableViewCellTwoContent.xib in Resources */,
+				20892FCB1E821E4F00369946 /* NewDevTableViewCellFilm.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,6 +299,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20892FCA1E821E4F00369946 /* NewDevTableViewCellFilm.swift in Sources */,
+				20892FC71E821A0700369946 /* Combination.swift in Sources */,
 				201978DA1E8102F60013FACE /* NewDevTableViewCell.swift in Sources */,
 				201978BE1E80BAE20013FACE /* LetsDev.xcdatamodeld in Sources */,
 				20892FC21E812D9B00369946 /* DevProcess.swift in Sources */,

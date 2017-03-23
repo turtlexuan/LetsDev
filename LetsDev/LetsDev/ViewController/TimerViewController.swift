@@ -27,19 +27,26 @@ class TimerViewController: UIViewController {
     var stopTime = 00
     var fixTime = 00
     var washTime = 00
+    var processTimes: [Int] = []
+    var nextStepTime: [Int] = []
+    let processTitle = ["Get Ready", "Pre-Wash", "Get Ready", "Development", "Get Ready", "Stop", "Get Ready", "Fix", "Get Ready", "Wash"]
+    let nextStepTitle = ["Pre-Wash", "Development", "Development", "Stop", "Stop", "Fix", "Fix", "Wash", "Wash", ""]
 
-    var nowStep = 1
+    var nowStep = 0
 
     var timer = Timer()
+    var timer2 = Timer()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setUpView()
         self.setUpNavigationBar()
         self.setUpTimes()
-        self.countDownLabel.text = timeString(time: TimeInterval(self.bufferTime))
+        self.processingLabel.text = self.processTitle[self.nowStep]
+        self.nextProcessLabel.text = self.processTitle[self.nowStep + 1]
+        self.countDownLabel.text = timeString(time: TimeInterval(self.processTimes[self.nowStep]))
+        self.nextProcessTimeLabel.text = timeString(time: TimeInterval(self.processTimes[self.nowStep + 1]))
         self.startTimer()
-        print(combination)
     }
 
     func setUpView() {
@@ -61,11 +68,13 @@ class TimerViewController: UIViewController {
 
     func setUpTimes() {
         self.bufferTime = self.timeExchanger(minute: combination.bufferMinute, second: combination.bufferSecond)
-        self.preWashTime = self.timeExchanger(minute: combination.preWashMinute, second: combination.bufferSecond)
+        self.preWashTime = self.timeExchanger(minute: combination.preWashMinute, second: combination.preWashSecond)
         self.devTime = self.timeExchanger(minute: combination.devMinute, second: combination.devSecond)
         self.stopTime = self.timeExchanger(minute: combination.stopMinute, second: combination.stopSecond)
         self.fixTime = self.timeExchanger(minute: combination.fixMinute, second: combination.fixSecond)
         self.washTime = self.timeExchanger(minute: combination.washMinute, second: combination.washSecond)
+        self.processTimes = [self.bufferTime, self.preWashTime, self.bufferTime, self.devTime, self.bufferTime, self.stopTime, self.bufferTime, self.fixTime, self.bufferTime, self.washTime]
+        self.nextStepTime = [self.preWashTime, self.devTime, self.devTime, self.stopTime, self.stopTime, self.fixTime, self.fixTime, self.washTime, self.washTime, 00]
     }
 
     func cancelAction() {
@@ -73,21 +82,35 @@ class TimerViewController: UIViewController {
     }
 
     func startTimer() {
-        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
+        self.timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
     }
 
     func updateTimer() {
-        switch self.nowStep {
-        case 1, 3, 5, 7, 9:
-            if self.bufferTime < 1 {
-                timer.invalidate()
-                self.bufferTime = self.timeExchanger(minute: combination.bufferMinute, second: combination.bufferSecond)
-                self.nowStep += 1
+
+        if self.nowStep == 9 {
+            if self.processTimes[self.nowStep] < 1 {
+                self.timer.invalidate()
             } else {
-                self.bufferTime -= 1
-                countDownLabel.text = timeString(time: TimeInterval(self.bufferTime))
+                self.processTimes[self.nowStep] -= 1
+                self.countDownLabel.text = timeString(time: TimeInterval(self.processTimes[self.nowStep]))
             }
-        default: break
+        } else {
+            if self.processTimes[self.nowStep] < 1 {
+                self.timer.invalidate()
+                self.nowStep += 1
+                self.processingLabel.text = self.processTitle[self.nowStep]
+                self.countDownLabel.text = timeString(time: TimeInterval(self.processTimes[self.nowStep]))
+                self.nextProcessLabel.text = self.processTitle[self.nowStep + 1]
+                if self.nowStep == 9 {
+                    self.nextProcessTimeLabel.text = ""
+                } else {
+                    self.nextProcessTimeLabel.text = timeString(time: TimeInterval(self.processTimes[self.nowStep + 1]))
+                }
+                self.startTimer()
+            } else {
+                self.processTimes[self.nowStep] -= 1
+                self.countDownLabel.text = timeString(time: TimeInterval(self.processTimes[self.nowStep]))
+            }
         }
     }
 }

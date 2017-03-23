@@ -28,6 +28,7 @@ class NewDevViewController: UIViewController {
     var selectedFilm = "Film"
     var selectedType = "Type"
     var selectedDev = "Developer"
+    var dilution = ""
     var selectedTemp = 20
     var selectedAgitation = Agigtations.Every60Sec
     var selectedFixAgitation = Agigtations.Every60Sec
@@ -51,6 +52,17 @@ class NewDevViewController: UIViewController {
     }
 
     @IBAction func startAction(_ sender: Any) {
+        let combination = Combination(film: self.selectedFilm, type: self.selectedType, preWashMinute: self.preWashMinute, preWashSecond: self.preWashSecond,
+                                      dev: self.selectedDev, dilution: self.dilution, devMinute: self.devMinute, devSecond: self.devSecond, temp: self.selectedTemp,
+                                      devAgitation: self.selectedAgitation, stopMinute: self.stopMinute, stopSecond: self.stopSecond,
+                                      fixMinute: self.fixMinute, fixSecond: self.fixSecond, fixAgitation: self.selectedFixAgitation,
+                                      washMinute: self.washMinute, washSecond: self.washSecond, bufferMinute: self.bufferMinute, bufferSecond: self.bufferSecond)
+
+        // swiftlint:disable force_cast
+        let timerVC = self.storyboard?.instantiateViewController(withIdentifier: "TimerViewController") as! TimerViewController
+        timerVC.combination = combination
+        self.navigationController?.pushViewController(timerVC, animated: true)
+        // swiftlint:enable force_cast
     }
 
     @IBAction func cancelAction(_ sender: Any) {
@@ -208,6 +220,7 @@ extension NewDevViewController: UITableViewDataSource {
             cell.timeButton.tag = 1
             cell.tempButton.tag = 2
             cell.agitationButton.tag = 3
+            cell.dilutionTextField.delegate = self
             cell.developerButton.setTitle(self.selectedDev, for: .normal)
             cell.timeButton.setTitle("\(self.devMinute)'\(self.devSecond)\"", for: .normal)
             cell.tempButton.setTitle(String(self.selectedTemp), for: .normal)
@@ -351,5 +364,19 @@ extension NewDevViewController: UIPickerViewDelegate, UIPickerViewDataSource {
         default:
             break
         }
+    }
+}
+
+extension NewDevViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
+    }
+
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if textField.text != nil {
+            self.dilution = textField.text!
+        }
+        textField.resignFirstResponder()
     }
 }

@@ -15,6 +15,7 @@
 		201978D61E80CFBE0013FACE /* NewDevViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201978D51E80CFBE0013FACE /* NewDevViewController.swift */; };
 		201978D81E80CFD90013FACE /* NewDevTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 201978D71E80CFD90013FACE /* NewDevTableViewCell.xib */; };
 		201978DA1E8102F60013FACE /* NewDevTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201978D91E8102F60013FACE /* NewDevTableViewCell.swift */; };
+		2030D5FB1E839262004E2C63 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2030D5FA1E839262004E2C63 /* TimerViewController.swift */; };
 		20892FBB1E81270200369946 /* NewDevTableViewCellTwoContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20892FB91E81270200369946 /* NewDevTableViewCellTwoContent.swift */; };
 		20892FBC1E81270200369946 /* NewDevTableViewCellTwoContent.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20892FBA1E81270200369946 /* NewDevTableViewCellTwoContent.xib */; };
 		20892FBF1E812A5C00369946 /* NewDevTableViewCellOneContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20892FBD1E812A5C00369946 /* NewDevTableViewCellOneContent.swift */; };
@@ -41,6 +42,7 @@
 		201978D51E80CFBE0013FACE /* NewDevViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewDevViewController.swift; sourceTree = "<group>"; };
 		201978D71E80CFD90013FACE /* NewDevTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewDevTableViewCell.xib; sourceTree = "<group>"; };
 		201978D91E8102F60013FACE /* NewDevTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewDevTableViewCell.swift; sourceTree = "<group>"; };
+		2030D5FA1E839262004E2C63 /* TimerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
 		20892FB91E81270200369946 /* NewDevTableViewCellTwoContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewDevTableViewCellTwoContent.swift; sourceTree = "<group>"; };
 		20892FBA1E81270200369946 /* NewDevTableViewCellTwoContent.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewDevTableViewCellTwoContent.xib; sourceTree = "<group>"; };
 		20892FBD1E812A5C00369946 /* NewDevTableViewCellOneContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewDevTableViewCellOneContent.swift; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				201978D51E80CFBE0013FACE /* NewDevViewController.swift */,
+				2030D5FA1E839262004E2C63 /* TimerViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -315,6 +318,7 @@
 				20892FCD1E8223FB00369946 /* Film.swift in Sources */,
 				20892FBF1E812A5C00369946 /* NewDevTableViewCellOneContent.swift in Sources */,
 				20892FC51E819B6200369946 /* Color.swift in Sources */,
+				2030D5FB1E839262004E2C63 /* TimerViewController.swift in Sources */,
 				20892FBB1E81270200369946 /* NewDevTableViewCellTwoContent.swift in Sources */,
 				201978B61E80BAE20013FACE /* AppDelegate.swift in Sources */,
 			);

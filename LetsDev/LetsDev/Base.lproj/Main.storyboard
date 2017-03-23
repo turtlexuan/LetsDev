@@ -98,6 +98,9 @@
                                         <state key="normal" title="Restart">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="restartAction:" destination="EQA-j4-Riy" eventType="touchUpInside" id="xj7-zT-saN"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MbX-1Y-xPm">
                                         <rect key="frame" x="150" y="0.0" width="120" height="64"/>
@@ -106,9 +109,12 @@
                                             <constraint firstAttribute="width" constant="120" id="R92-6g-Cw5"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
-                                        <state key="normal" title="Stop">
+                                        <state key="normal" title="Pause">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="stopAction:" destination="EQA-j4-Riy" eventType="touchUpInside" id="Rlj-Me-P3r"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>

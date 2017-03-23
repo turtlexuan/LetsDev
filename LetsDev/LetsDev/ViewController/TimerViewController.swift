@@ -37,6 +37,8 @@ class TimerViewController: UIViewController {
     var timer = Timer()
     var timer2 = Timer()
 
+    var resumeTapped = false
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setUpView()
@@ -77,6 +79,22 @@ class TimerViewController: UIViewController {
         self.nextStepTime = [self.preWashTime, self.devTime, self.devTime, self.stopTime, self.stopTime, self.fixTime, self.fixTime, self.washTime, self.washTime, 00]
     }
 
+    @IBAction func stopAction(_ sender: Any) {
+        if self.resumeTapped == false {
+            self.timer.invalidate()
+            self.resumeTapped = true
+            self.stopButton.setTitle("Resume", for: .normal)
+        } else {
+            self.startTimer()
+            self.resumeTapped = false
+            self.stopButton.setTitle("Pause", for: .normal)
+        }
+    }
+
+    @IBAction func restartAction(_ sender: Any) {
+        self.showRestartAlert()
+    }
+
     func cancelAction() {
         print("cancel")
     }
@@ -100,11 +118,11 @@ class TimerViewController: UIViewController {
                 self.nowStep += 1
                 self.processingLabel.text = self.processTitle[self.nowStep]
                 self.countDownLabel.text = timeString(time: TimeInterval(self.processTimes[self.nowStep]))
-                self.nextProcessLabel.text = self.processTitle[self.nowStep + 1]
+                self.nextProcessLabel.text = self.processTitle[self.nowStep]
                 if self.nowStep == 9 {
                     self.nextProcessTimeLabel.text = ""
                 } else {
-                    self.nextProcessTimeLabel.text = timeString(time: TimeInterval(self.processTimes[self.nowStep + 1]))
+                    self.nextProcessTimeLabel.text = timeString(time: TimeInterval(self.processTimes[self.nowStep]))
                 }
                 self.startTimer()
             } else {
@@ -112,6 +130,28 @@ class TimerViewController: UIViewController {
                 self.countDownLabel.text = timeString(time: TimeInterval(self.processTimes[self.nowStep]))
             }
         }
+    }
+
+    func showRestartAlert() {
+        let alertController = UIAlertController(title: "Reset Timer?", message: "Do you want to stop the timer and restart?", preferredStyle: .alert)
+        let doneAction = UIAlertAction(title: "Yes", style: .default) { (_) in
+            self.timer.invalidate()
+            self.setUpTimes()
+            self.nowStep = 0
+            self.processingLabel.text = self.processTitle[self.nowStep]
+            self.countDownLabel.text = self.timeString(time: TimeInterval(self.processTimes[self.nowStep]))
+            self.nextProcessLabel.text = self.processTitle[self.nowStep]
+            self.nextProcessTimeLabel.text = self.timeString(time: TimeInterval(self.processTimes[self.nowStep]))
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0, execute: {
+                self.startTimer()
+            })
+        }
+        let cancelAction = UIAlertAction(title: "No", style: .cancel, handler: nil)
+
+        alertController.addAction(doneAction)
+        alertController.addAction(cancelAction)
+
+        self.present(alertController, animated: true, completion: nil)
     }
 }
 

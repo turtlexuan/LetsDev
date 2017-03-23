@@ -9,6 +9,7 @@
 import UIKit
 import CoreData
 import Hex
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -21,6 +22,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         navigationBarAppearance.barTintColor = Color.navigationBarColor
         navigationBarAppearance.tintColor = Color.buttonColor
         navigationBarAppearance.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
+        
+        FIRApp.configure()
         return true
     }
 

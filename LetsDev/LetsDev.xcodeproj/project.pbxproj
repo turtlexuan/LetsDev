@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2002AECF1E83D54300E21EA5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2002AECE1E83D54300E21EA5 /* GoogleService-Info.plist */; };
 		201978B61E80BAE20013FACE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201978B51E80BAE20013FACE /* AppDelegate.swift */; };
 		201978BB1E80BAE20013FACE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 201978B91E80BAE20013FACE /* Main.storyboard */; };
 		201978BE1E80BAE20013FACE /* LetsDev.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 201978BC1E80BAE20013FACE /* LetsDev.xcdatamodeld */; };
@@ -32,6 +33,7 @@
 
 /* Begin PBXFileReference section */
 		01A593E4A91523410B938F6A /* Pods-LetsDev.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LetsDev.release.xcconfig"; path = "Pods/Target Support Files/Pods-LetsDev/Pods-LetsDev.release.xcconfig"; sourceTree = "<group>"; };
+		2002AECE1E83D54300E21EA5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		201978B21E80BAE20013FACE /* LetsDev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LetsDev.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		201978B51E80BAE20013FACE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		201978BA1E80BAE20013FACE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 				201978BF1E80BAE20013FACE /* Assets.xcassets */,
 				201978C11E80BAE20013FACE /* LaunchScreen.storyboard */,
 				201978C41E80BAE20013FACE /* Info.plist */,
+				2002AECE1E83D54300E21EA5 /* GoogleService-Info.plist */,
 				201978BC1E80BAE20013FACE /* LetsDev.xcdatamodeld */,
 				201978D21E80CFAD0013FACE /* Modal */,
 				201978D31E80CFAD0013FACE /* View */,
@@ -230,6 +233,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				201978C31E80BAE20013FACE /* LaunchScreen.storyboard in Resources */,
+				2002AECF1E83D54300E21EA5 /* GoogleService-Info.plist in Resources */,
 				201978D81E80CFD90013FACE /* NewDevTableViewCell.xib in Resources */,
 				201978C01E80BAE20013FACE /* Assets.xcassets in Resources */,
 				20892FC01E812A5C00369946 /* NewDevTableViewCellOneContent.xib in Resources */,

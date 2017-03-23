@@ -111,6 +111,7 @@ class TimerViewController: UIViewController {
         if self.nowStep == 9 {
             if self.processTimes[self.nowStep] < 1 {
                 self.timer.invalidate()
+                self.showFinishAlert()
             } else {
                 self.processTimes[self.nowStep] -= 1
                 self.countDownLabel.text = timeString(time: TimeInterval(self.processTimes[self.nowStep]))
@@ -167,6 +168,17 @@ class TimerViewController: UIViewController {
         
         alertController.addAction(doneAction)
         alertController.addAction(cancelAction)
+        
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
+    func showFinishAlert() {
+        let alertController = UIAlertController(title: "Congratulations!", message: "Your development have just finished!\nLet’s go to record page and add some notes.", preferredStyle: .alert)
+        let doneAction = UIAlertAction(title: "OK", style: .default) { (_) in
+            // New Record Page
+        }
+        
+        alertController.addAction(doneAction)
         
         self.present(alertController, animated: true, completion: nil)
     }

@@ -35,12 +35,12 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="New Development" id="yUB-2J-Hmn">
-                        <barButtonItem key="leftBarButtonItem" style="plain" systemItem="cancel" id="VsX-ty-ard">
+                        <barButtonItem key="leftBarButtonItem" style="done" systemItem="cancel" id="VsX-ty-ard">
                             <connections>
                                 <action selector="cancelAction:" destination="tfS-It-5l9" id="YTp-Gi-iMl"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Start" style="plain" id="hiJ-lU-Cp6" userLabel="Start">
+                        <barButtonItem key="rightBarButtonItem" title="Start" style="done" id="hiJ-lU-Cp6" userLabel="Start">
                             <connections>
                                 <action selector="startAction:" destination="tfS-It-5l9" id="mP5-5G-aJe"/>
                             </connections>
@@ -59,7 +59,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="A1L-Td-7bG" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="O8H-zw-Ary">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="O8H-zw-Ary">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

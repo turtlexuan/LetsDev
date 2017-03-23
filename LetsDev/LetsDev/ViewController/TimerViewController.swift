@@ -64,8 +64,10 @@ class TimerViewController: UIViewController {
     }
 
     func setUpNavigationBar() {
-//        self.navigationItem.setHidesBackButton(true, animated:true)
+        self.navigationItem.setHidesBackButton(true, animated:true)
         self.navigationItem.title = combination.film
+        let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancelAction))
+        self.navigationItem.leftBarButtonItem = cancelButton
     }
 
     func setUpTimes() {
@@ -97,6 +99,7 @@ class TimerViewController: UIViewController {
 
     func cancelAction() {
         print("cancel")
+        self.showCancelAlert()
     }
 
     func startTimer() {
@@ -151,6 +154,20 @@ class TimerViewController: UIViewController {
         alertController.addAction(doneAction)
         alertController.addAction(cancelAction)
 
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
+    func showCancelAlert() {
+        let alertController = UIAlertController(title: "Cancel Process?", message: "Do you want to cancel the timer?", preferredStyle: .alert)
+        let doneAction = UIAlertAction(title: "Yes", style: .default) { (_) in
+            self.timer.invalidate()
+            _ = self.navigationController?.popToRootViewController(animated: true)
+        }
+        let cancelAction = UIAlertAction(title: "No", style: .cancel, handler: nil)
+        
+        alertController.addAction(doneAction)
+        alertController.addAction(cancelAction)
+        
         self.present(alertController, animated: true, completion: nil)
     }
 }

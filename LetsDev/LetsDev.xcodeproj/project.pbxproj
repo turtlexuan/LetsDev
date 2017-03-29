@@ -27,6 +27,9 @@
 		201978D81E80CFD90013FACE /* NewDevTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 201978D71E80CFD90013FACE /* NewDevTableViewCell.xib */; };
 		201978DA1E8102F60013FACE /* NewDevTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201978D91E8102F60013FACE /* NewDevTableViewCell.swift */; };
 		2030D5FB1E839262004E2C63 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2030D5FA1E839262004E2C63 /* TimerViewController.swift */; };
+		206E3CB01E8B980B00DB33DD /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206E3CAF1E8B980B00DB33DD /* SignUpViewController.swift */; };
+		206E3CB21E8BA32E00DB33DD /* LoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206E3CB11E8BA32E00DB33DD /* LoginManager.swift */; };
+		206E3CB41E8BA36300DB33DD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206E3CB31E8BA36300DB33DD /* User.swift */; };
 		20892FBB1E81270200369946 /* NewDevTableViewCellTwoContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20892FB91E81270200369946 /* NewDevTableViewCellTwoContent.swift */; };
 		20892FBC1E81270200369946 /* NewDevTableViewCellTwoContent.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20892FBA1E81270200369946 /* NewDevTableViewCellTwoContent.xib */; };
 		20892FBF1E812A5C00369946 /* NewDevTableViewCellOneContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20892FBD1E812A5C00369946 /* NewDevTableViewCellOneContent.swift */; };
@@ -65,6 +68,9 @@
 		201978D71E80CFD90013FACE /* NewDevTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewDevTableViewCell.xib; sourceTree = "<group>"; };
 		201978D91E8102F60013FACE /* NewDevTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewDevTableViewCell.swift; sourceTree = "<group>"; };
 		2030D5FA1E839262004E2C63 /* TimerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
+		206E3CAF1E8B980B00DB33DD /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		206E3CB11E8BA32E00DB33DD /* LoginManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginManager.swift; sourceTree = "<group>"; };
+		206E3CB31E8BA36300DB33DD /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		20892FB91E81270200369946 /* NewDevTableViewCellTwoContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewDevTableViewCellTwoContent.swift; sourceTree = "<group>"; };
 		20892FBA1E81270200369946 /* NewDevTableViewCellTwoContent.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewDevTableViewCellTwoContent.xib; sourceTree = "<group>"; };
 		20892FBD1E812A5C00369946 /* NewDevTableViewCellOneContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewDevTableViewCellOneContent.swift; sourceTree = "<group>"; };
@@ -131,8 +137,10 @@
 		201978D21E80CFAD0013FACE /* Modal */ = {
 			isa = PBXGroup;
 			children = (
+				206E3CB11E8BA32E00DB33DD /* LoginManager.swift */,
 				20892FC11E812D9B00369946 /* DevProcess.swift */,
 				20892FC61E821A0700369946 /* Combination.swift */,
+				206E3CB31E8BA36300DB33DD /* User.swift */,
 			);
 			path = Modal;
 			sourceTree = "<group>";
@@ -167,6 +175,7 @@
 				201978D51E80CFBE0013FACE /* NewDevViewController.swift */,
 				2030D5FA1E839262004E2C63 /* TimerViewController.swift */,
 				2002AED01E84B8A800E21EA5 /* RecordTableViewController.swift */,
+				206E3CAF1E8B980B00DB33DD /* SignUpViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -348,6 +357,7 @@
 			files = (
 				20892FCA1E821E4F00369946 /* NewDevTableViewCellFilm.swift in Sources */,
 				2002AED41E8A306C00E21EA5 /* CombinationTableViewCell.swift in Sources */,
+				206E3CB21E8BA32E00DB33DD /* LoginManager.swift in Sources */,
 				20892FC71E821A0700369946 /* Combination.swift in Sources */,
 				20892FCF1E827C0C00369946 /* TTInputButton.swift in Sources */,
 				201978DA1E8102F60013FACE /* NewDevTableViewCell.swift in Sources */,
@@ -355,11 +365,13 @@
 				201978BE1E80BAE20013FACE /* LetsDev.xcdatamodeld in Sources */,
 				20892FC21E812D9B00369946 /* DevProcess.swift in Sources */,
 				201978D61E80CFBE0013FACE /* NewDevViewController.swift in Sources */,
+				206E3CB41E8BA36300DB33DD /* User.swift in Sources */,
 				20892FCD1E8223FB00369946 /* Film.swift in Sources */,
 				20892FBF1E812A5C00369946 /* NewDevTableViewCellOneContent.swift in Sources */,
 				2002AEDC1E8A460700E21EA5 /* PhotoTableViewCell.swift in Sources */,
 				2002AEE31E8A6CF300E21EA5 /* CollectionHeight.swift in Sources */,
 				20892FC51E819B6200369946 /* Color.swift in Sources */,
+				206E3CB01E8B980B00DB33DD /* SignUpViewController.swift in Sources */,
 				2002AED81E8A3B7600E21EA5 /* NoteTableViewCell.swift in Sources */,
 				2002AED11E84B8A800E21EA5 /* RecordTableViewController.swift in Sources */,
 				2030D5FB1E839262004E2C63 /* TimerViewController.swift in Sources */,

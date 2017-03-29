@@ -9,7 +9,7 @@
 import UIKit
 
 class CollectionHeight {
-    
+
     static let totalItem: CGFloat = 20
 
     static let column: CGFloat = 3
@@ -25,13 +25,13 @@ class CollectionHeight {
 
         return totalWidth / column
     }
-    
+
     static func getCollectionHeight(itemHeight: CGFloat, totalItem: Int) -> CGFloat {
         let totalRow = ceil(CGFloat(totalItem) / column)
         let totalTopBottomOffset = offset * 2
         let totalSpacing = CGFloat(totalRow - 1) * minLineSpacing
         let totalHeight = (itemHeight * CGFloat(totalRow)) + totalTopBottomOffset + totalSpacing
-        
+
         return totalHeight
     }
 }

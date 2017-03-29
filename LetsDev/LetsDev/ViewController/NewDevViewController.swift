@@ -10,6 +10,12 @@ import UIKit
 
 class NewDevViewController: UIViewController {
 
+    enum Component {
+        case Film, PreWash, Develope, Stop, Fix, Wash, Buffer
+    }
+
+    var components: [Component] = [.Film, .PreWash, .Develope, .Stop, .Fix, .Wash, .Buffer]
+
     @IBOutlet weak var tableView: UITableView!
 
     var filmNameInputView = UIPickerView()
@@ -188,15 +194,16 @@ class NewDevViewController: UIViewController {
 
 extension NewDevViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 7
+        return self.components.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
-        if indexPath.row == 0 {
+        switch self.components[indexPath.row] {
+        case .Film:
+
             guard let cell = self.tableView.dequeueReusableCell(withIdentifier: "NewDevTableViewCellFilm", for: indexPath) as? NewDevTableViewCellFilm else { return UITableViewCell() }
 
-            self.tableView.rowHeight = 110
             cell.filmButton.tag = 0
             cell.typeButton.tag = 1
             cell.filmButton.setTitle(self.selectedFilm, for: .normal)
@@ -205,10 +212,11 @@ extension NewDevViewController: UITableViewDataSource {
             cell.typeButton.addTarget(self, action: #selector(showPicker(_:)), for: .touchUpInside)
 
             return cell
-        } else if indexPath.row == 2 {
+
+        case .Develope:
+
             guard let cell = self.tableView.dequeueReusableCell(withIdentifier: "NewDevTableViewCell", for: indexPath) as? NewDevTableViewCell else { return UITableViewCell() }
 
-            self.tableView.rowHeight = 215
             if self.selectedAgitation != .Custom {
                 cell.customButton.isHidden = true
             } else {
@@ -232,12 +240,14 @@ extension NewDevViewController: UITableViewDataSource {
 
             return cell
 
-        } else if indexPath.row == 4 {
+        case .Fix:
+
             guard let cell = self.tableView.dequeueReusableCell(withIdentifier: "NewDevTableViewCellTwoContent", for: indexPath) as? NewDevTableViewCellTwoContent else { return UITableViewCell() }
 
-            self.tableView.rowHeight = 110
             if self.selectedFixAgitation != .Custom {
                 cell.customButton.isHidden = true
+            } else {
+                cell.customButton.isHidden = false
             }
             cell.titleLabel.text = Film.processes[indexPath.row].devTitle
             cell.setTimeLabel.text = Film.processes[indexPath.row].devDescript
@@ -249,9 +259,10 @@ extension NewDevViewController: UITableViewDataSource {
             cell.agitationButton.addTarget(self, action: #selector(showPicker(_:)), for: .touchUpInside)
 
             return cell
-        } else {
+
+        case .Buffer, .PreWash, .Stop, .Wash:
+
             guard let cell = self.tableView.dequeueReusableCell(withIdentifier: "NewDevTableViewCellOneContent", for: indexPath) as? NewDevTableViewCellOneContent else { return UITableViewCell() }
-            self.tableView.rowHeight = 75
             cell.titleLabel.text = Film.processes[indexPath.row].devTitle
             cell.setTimeLabel.text = Film.processes[indexPath.row].devDescript
             cell.timeButton.addTarget(self, action: #selector(showPicker(_:)), for: .touchUpInside)
@@ -269,20 +280,26 @@ extension NewDevViewController: UITableViewDataSource {
 
             return cell
         }
-
     }
 }
 
 extension NewDevViewController: UITableViewDelegate {
-
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        switch self.components[indexPath.row] {
+        case .Develope : return 220
+        case .Fix, .Film : return 110
+        case .Buffer, .PreWash, .Stop, .Wash : return 75
+        }
+    }
 }
 
 extension NewDevViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        if pickerView == self.filmNameInputView || pickerView == self.filmTypeInputView || pickerView == self.developerInputView || pickerView == self.tempInputView || pickerView == self.devAgitationInputView || pickerView == self.fixAgitationInputView {
+        switch pickerView {
+        case self.filmNameInputView, self.filmTypeInputView, self.developerInputView, self.tempInputView,
+             self.devAgitationInputView, self.fixAgitationInputView:
             return 1
-        } else {
-            return 2
+        default: return 2
         }
     }
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {

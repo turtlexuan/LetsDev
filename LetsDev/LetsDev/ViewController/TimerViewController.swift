@@ -19,7 +19,7 @@ class TimerViewController: UIViewController {
     @IBOutlet weak var nextProcessTimeLabel: UILabel!
     @IBOutlet weak var nextAreaView: UIView!
 
-    var combination = Combination(film: "", type: "", preWashMinute: 0, preWashSecond: 0, dev: "", dilution: "", devMinute: 0, devSecond: 0, temp: 0, devAgitation: .Every60Sec, stopMinute: 0, stopSecond: 0, fixMinute: 0, fixSecond: 0, fixAgitation: .Every60Sec, washMinute: 0, washSecond: 0, bufferMinute: 0, bufferSecond: 0)
+    var combination = Combination()
 
     var bufferTime = 00
     var preWashTime = 00
@@ -122,11 +122,11 @@ class TimerViewController: UIViewController {
                 self.nowStep += 1
                 self.processingLabel.text = self.processTitle[self.nowStep]
                 self.countDownLabel.text = timeString(time: TimeInterval(self.processTimes[self.nowStep]))
-                self.nextProcessLabel.text = self.processTitle[self.nowStep]
+                self.nextProcessLabel.text = self.nextStepTitle[self.nowStep]
                 if self.nowStep == 9 {
                     self.nextProcessTimeLabel.text = ""
                 } else {
-                    self.nextProcessTimeLabel.text = timeString(time: TimeInterval(self.processTimes[self.nowStep]))
+                    self.nextProcessTimeLabel.text = timeString(time: TimeInterval(self.nextStepTime[self.nowStep]))
                 }
                 self.startTimer()
             } else {
@@ -144,8 +144,8 @@ class TimerViewController: UIViewController {
             self.nowStep = 0
             self.processingLabel.text = self.processTitle[self.nowStep]
             self.countDownLabel.text = self.timeString(time: TimeInterval(self.processTimes[self.nowStep]))
-            self.nextProcessLabel.text = self.processTitle[self.nowStep]
-            self.nextProcessTimeLabel.text = self.timeString(time: TimeInterval(self.processTimes[self.nowStep]))
+            self.nextProcessLabel.text = self.nextStepTitle[self.nowStep]
+            self.nextProcessTimeLabel.text = self.timeString(time: TimeInterval(self.nextStepTime[self.nowStep]))
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.0, execute: {
                 self.startTimer()
             })
@@ -157,7 +157,7 @@ class TimerViewController: UIViewController {
 
         self.present(alertController, animated: true, completion: nil)
     }
-    
+
     func showCancelAlert() {
         let alertController = UIAlertController(title: "Cancel Process?", message: "Do you want to cancel the timer?", preferredStyle: .alert)
         let doneAction = UIAlertAction(title: "Yes", style: .default) { (_) in
@@ -165,21 +165,24 @@ class TimerViewController: UIViewController {
             _ = self.navigationController?.popToRootViewController(animated: true)
         }
         let cancelAction = UIAlertAction(title: "No", style: .cancel, handler: nil)
-        
+
         alertController.addAction(doneAction)
         alertController.addAction(cancelAction)
-        
+
         self.present(alertController, animated: true, completion: nil)
     }
-    
+
     func showFinishAlert() {
         let alertController = UIAlertController(title: "Congratulations!", message: "Your development have just finished!\nLet’s go to record page and add some notes.", preferredStyle: .alert)
         let doneAction = UIAlertAction(title: "OK", style: .default) { (_) in
-            // New Record Page
+            if let recordTableVC = self.storyboard?.instantiateViewController(withIdentifier: "RecordTableViewController") as? RecordTableViewController {
+                recordTableVC.combination = self.combination
+                self.navigationController?.pushViewController(recordTableVC, animated: true)
+            }
         }
-        
+
         alertController.addAction(doneAction)
-        
+
         self.present(alertController, animated: true, completion: nil)
     }
 }

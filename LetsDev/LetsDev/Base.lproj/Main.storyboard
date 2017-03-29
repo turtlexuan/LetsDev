@@ -24,7 +24,7 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Nxd-BI-8ts">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -53,7 +53,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EYZ-Rr-FCX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="812" y="185.75712143928038"/>
+            <point key="canvasLocation" x="663" y="186"/>
         </scene>
         <!--Timer View Controller-->
         <scene sceneID="tkN-Oa-gvN">
@@ -181,7 +181,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2rf-2y-Rzb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1527" y="186"/>
+            <point key="canvasLocation" x="1450" y="186"/>
+        </scene>
+        <!--Record Table View Controller-->
+        <scene sceneID="oZn-ej-8dR">
+            <objects>
+                <tableViewController storyboardIdentifier="RecordTableViewController" id="jcX-PU-CaC" customClass="RecordTableViewController" customModule="LetsDev" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="ulc-pE-iXb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <connections>
+                            <outlet property="dataSource" destination="jcX-PU-CaC" id="AUK-4Z-Jjw"/>
+                            <outlet property="delegate" destination="jcX-PU-CaC" id="UPP-lm-DcL"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Sg1-Yt-ZY0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2172" y="186"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="qLM-Qn-0hx">

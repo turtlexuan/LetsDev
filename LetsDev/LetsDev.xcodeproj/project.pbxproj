@@ -8,6 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		2002AECF1E83D54300E21EA5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2002AECE1E83D54300E21EA5 /* GoogleService-Info.plist */; };
+		2002AED11E84B8A800E21EA5 /* RecordTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2002AED01E84B8A800E21EA5 /* RecordTableViewController.swift */; };
+		2002AED41E8A306C00E21EA5 /* CombinationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2002AED21E8A306C00E21EA5 /* CombinationTableViewCell.swift */; };
+		2002AED51E8A306C00E21EA5 /* CombinationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2002AED31E8A306C00E21EA5 /* CombinationTableViewCell.xib */; };
+		2002AED81E8A3B7600E21EA5 /* NoteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2002AED61E8A3B7600E21EA5 /* NoteTableViewCell.swift */; };
+		2002AED91E8A3B7600E21EA5 /* NoteTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2002AED71E8A3B7600E21EA5 /* NoteTableViewCell.xib */; };
+		2002AEDC1E8A460700E21EA5 /* PhotoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2002AEDA1E8A460700E21EA5 /* PhotoTableViewCell.swift */; };
+		2002AEDD1E8A460700E21EA5 /* PhotoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2002AEDB1E8A460700E21EA5 /* PhotoTableViewCell.xib */; };
+		2002AEE01E8A509900E21EA5 /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2002AEDE1E8A509900E21EA5 /* PhotoCollectionViewCell.swift */; };
+		2002AEE11E8A509900E21EA5 /* PhotoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2002AEDF1E8A509900E21EA5 /* PhotoCollectionViewCell.xib */; };
+		2002AEE31E8A6CF300E21EA5 /* CollectionHeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2002AEE21E8A6CF300E21EA5 /* CollectionHeight.swift */; };
 		201978B61E80BAE20013FACE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201978B51E80BAE20013FACE /* AppDelegate.swift */; };
 		201978BB1E80BAE20013FACE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 201978B91E80BAE20013FACE /* Main.storyboard */; };
 		201978BE1E80BAE20013FACE /* LetsDev.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 201978BC1E80BAE20013FACE /* LetsDev.xcdatamodeld */; };
@@ -34,6 +44,16 @@
 /* Begin PBXFileReference section */
 		01A593E4A91523410B938F6A /* Pods-LetsDev.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LetsDev.release.xcconfig"; path = "Pods/Target Support Files/Pods-LetsDev/Pods-LetsDev.release.xcconfig"; sourceTree = "<group>"; };
 		2002AECE1E83D54300E21EA5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		2002AED01E84B8A800E21EA5 /* RecordTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordTableViewController.swift; sourceTree = "<group>"; };
+		2002AED21E8A306C00E21EA5 /* CombinationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CombinationTableViewCell.swift; sourceTree = "<group>"; };
+		2002AED31E8A306C00E21EA5 /* CombinationTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CombinationTableViewCell.xib; sourceTree = "<group>"; };
+		2002AED61E8A3B7600E21EA5 /* NoteTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteTableViewCell.swift; sourceTree = "<group>"; };
+		2002AED71E8A3B7600E21EA5 /* NoteTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NoteTableViewCell.xib; sourceTree = "<group>"; };
+		2002AEDA1E8A460700E21EA5 /* PhotoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoTableViewCell.swift; sourceTree = "<group>"; };
+		2002AEDB1E8A460700E21EA5 /* PhotoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PhotoTableViewCell.xib; sourceTree = "<group>"; };
+		2002AEDE1E8A509900E21EA5 /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
+		2002AEDF1E8A509900E21EA5 /* PhotoCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PhotoCollectionViewCell.xib; sourceTree = "<group>"; };
+		2002AEE21E8A6CF300E21EA5 /* CollectionHeight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionHeight.swift; sourceTree = "<group>"; };
 		201978B21E80BAE20013FACE /* LetsDev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LetsDev.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		201978B51E80BAE20013FACE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		201978BA1E80BAE20013FACE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -129,6 +149,14 @@
 				20892FC81E821E4F00369946 /* NewDevTableViewCellFilm.swift */,
 				20892FC91E821E4F00369946 /* NewDevTableViewCellFilm.xib */,
 				20892FCE1E827C0C00369946 /* TTInputButton.swift */,
+				2002AED21E8A306C00E21EA5 /* CombinationTableViewCell.swift */,
+				2002AED31E8A306C00E21EA5 /* CombinationTableViewCell.xib */,
+				2002AED61E8A3B7600E21EA5 /* NoteTableViewCell.swift */,
+				2002AED71E8A3B7600E21EA5 /* NoteTableViewCell.xib */,
+				2002AEDA1E8A460700E21EA5 /* PhotoTableViewCell.swift */,
+				2002AEDB1E8A460700E21EA5 /* PhotoTableViewCell.xib */,
+				2002AEDE1E8A509900E21EA5 /* PhotoCollectionViewCell.swift */,
+				2002AEDF1E8A509900E21EA5 /* PhotoCollectionViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -138,6 +166,7 @@
 			children = (
 				201978D51E80CFBE0013FACE /* NewDevViewController.swift */,
 				2030D5FA1E839262004E2C63 /* TimerViewController.swift */,
+				2002AED01E84B8A800E21EA5 /* RecordTableViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -147,6 +176,7 @@
 			children = (
 				20892FC41E819B6200369946 /* Color.swift */,
 				20892FCC1E8223FB00369946 /* Film.swift */,
+				2002AEE21E8A6CF300E21EA5 /* CollectionHeight.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -235,10 +265,14 @@
 				201978C31E80BAE20013FACE /* LaunchScreen.storyboard in Resources */,
 				2002AECF1E83D54300E21EA5 /* GoogleService-Info.plist in Resources */,
 				201978D81E80CFD90013FACE /* NewDevTableViewCell.xib in Resources */,
+				2002AED91E8A3B7600E21EA5 /* NoteTableViewCell.xib in Resources */,
 				201978C01E80BAE20013FACE /* Assets.xcassets in Resources */,
 				20892FC01E812A5C00369946 /* NewDevTableViewCellOneContent.xib in Resources */,
 				201978BB1E80BAE20013FACE /* Main.storyboard in Resources */,
 				20892FBC1E81270200369946 /* NewDevTableViewCellTwoContent.xib in Resources */,
+				2002AED51E8A306C00E21EA5 /* CombinationTableViewCell.xib in Resources */,
+				2002AEE11E8A509900E21EA5 /* PhotoCollectionViewCell.xib in Resources */,
+				2002AEDD1E8A460700E21EA5 /* PhotoTableViewCell.xib in Resources */,
 				20892FCB1E821E4F00369946 /* NewDevTableViewCellFilm.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -313,15 +347,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				20892FCA1E821E4F00369946 /* NewDevTableViewCellFilm.swift in Sources */,
+				2002AED41E8A306C00E21EA5 /* CombinationTableViewCell.swift in Sources */,
 				20892FC71E821A0700369946 /* Combination.swift in Sources */,
 				20892FCF1E827C0C00369946 /* TTInputButton.swift in Sources */,
 				201978DA1E8102F60013FACE /* NewDevTableViewCell.swift in Sources */,
+				2002AEE01E8A509900E21EA5 /* PhotoCollectionViewCell.swift in Sources */,
 				201978BE1E80BAE20013FACE /* LetsDev.xcdatamodeld in Sources */,
 				20892FC21E812D9B00369946 /* DevProcess.swift in Sources */,
 				201978D61E80CFBE0013FACE /* NewDevViewController.swift in Sources */,
 				20892FCD1E8223FB00369946 /* Film.swift in Sources */,
 				20892FBF1E812A5C00369946 /* NewDevTableViewCellOneContent.swift in Sources */,
+				2002AEDC1E8A460700E21EA5 /* PhotoTableViewCell.swift in Sources */,
+				2002AEE31E8A6CF300E21EA5 /* CollectionHeight.swift in Sources */,
 				20892FC51E819B6200369946 /* Color.swift in Sources */,
+				2002AED81E8A3B7600E21EA5 /* NoteTableViewCell.swift in Sources */,
+				2002AED11E84B8A800E21EA5 /* RecordTableViewController.swift in Sources */,
 				2030D5FB1E839262004E2C63 /* TimerViewController.swift in Sources */,
 				20892FBB1E81270200369946 /* NewDevTableViewCellTwoContent.swift in Sources */,
 				201978B61E80BAE20013FACE /* AppDelegate.swift in Sources */,

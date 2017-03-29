@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         navigationBarAppearance.barTintColor = Color.navigationBarColor
         navigationBarAppearance.tintColor = Color.buttonColor
         navigationBarAppearance.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
-        
+
         FIRApp.configure()
         return true
     }

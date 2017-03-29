@@ -30,7 +30,7 @@ class Combination {
     let bufferSecond: Int!
     let dilution: String!
 
-    init(film: String, type: String, preWashMinute: Int, preWashSecond: Int, dev: String, dilution: String, devMinute: Int, devSecond: Int, temp: Int, devAgitation: Agigtations, stopMinute: Int, stopSecond: Int, fixMinute: Int, fixSecond: Int, fixAgitation: Agigtations, washMinute: Int, washSecond: Int, bufferMinute: Int, bufferSecond: Int) {
+    init(film: String = "Film", type: String = "135 mm", preWashMinute: Int = 0, preWashSecond: Int = 0, dev: String  = "Developer", dilution: String = "", devMinute: Int = 0, devSecond: Int = 0, temp: Int = 20, devAgitation: Agigtations = Agigtations.Every60Sec, stopMinute: Int = 0, stopSecond: Int = 0, fixMinute: Int = 0, fixSecond: Int = 0, fixAgitation: Agigtations = Agigtations.Every60Sec, washMinute: Int = 0, washSecond: Int = 0, bufferMinute: Int = 0, bufferSecond: Int = 0) {
         self.film = film
         self.type = type
         self.preWashMinute = preWashMinute

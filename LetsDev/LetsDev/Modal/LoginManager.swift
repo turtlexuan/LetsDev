@@ -13,8 +13,8 @@ import Firebase
 class LoginManager: NSObject {
 
     static let shared = LoginManager()
-    let auth = FIRAuth.auth()
-    let databaseRef = FIRDatabase.database().reference()
+    private let auth = FIRAuth.auth()
+    private let databaseRef = FIRDatabase.database().reference()
 
     typealias CreateSuccess = (User) -> Void
     typealias CreateError = (Error) -> Void

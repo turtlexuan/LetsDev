@@ -19,6 +19,8 @@ class CombinationTableViewCell: UITableViewCell {
     @IBOutlet weak var stopTimeLabel: UILabel!
     @IBOutlet weak var fixTimeLabel: UILabel!
     @IBOutlet weak var washTimeLabel: UILabel!
+    @IBOutlet weak var devAgitationLabel: UILabel!
+    @IBOutlet weak var fixAgitationLabel: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()

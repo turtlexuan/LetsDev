@@ -18,6 +18,7 @@ class RecordTableViewController: UITableViewController {
 
     // MARK: Property
     var combination = Combination()
+    var recordKey = ""
     var components: [Component] = [ .combination, .note, .photo ]
     var note = ""
     var image: [UIImage] = [#imageLiteral(resourceName: "heart"), #imageLiteral(resourceName: "oval"), #imageLiteral(resourceName: "bell"), #imageLiteral(resourceName: "bell"), #imageLiteral(resourceName: "film-roll"), #imageLiteral(resourceName: "film-reel")]
@@ -35,23 +36,14 @@ class RecordTableViewController: UITableViewController {
         self.image.append(image)
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return self.components.count
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        switch self.components[section] {
-        case .combination, .note: return 1
-        case .photo: return 1
-        }
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -64,6 +56,26 @@ class RecordTableViewController: UITableViewController {
             // swiftlint:disable force_cast
             let cell = tableView.dequeueReusableCell(withIdentifier: "CombinationTableViewCell", for: indexPath) as! CombinationTableViewCell
 
+            let preWashTime = self.timeExchanger(time: self.combination.preWashTime)
+            let devTime = self.timeExchanger(time: self.combination.devTime)
+            let fixTime = self.timeExchanger(time: self.combination.fixTime)
+            let stopTime = self.timeExchanger(time: self.combination.stopTime)
+            let washTime = self.timeExchanger(time: self.combination.washTime)
+            
+            cell.filmNameLabel.text = self.combination.film
+            cell.developerLabel.text = self.combination.dev
+            cell.preWashLabel.text = "Pre-Wash : \(preWashTime.minute)' \(preWashTime.second)\""
+            cell.devTimeLabel.text = "Develope : \(devTime.minute)' \(devTime.second)\""
+            cell.fixTimeLabel.text = "Fix Time : \(fixTime.minute)' \(fixTime.second)\""
+            cell.stopTimeLabel.text = "Stop Time : \(stopTime.minute)' \(stopTime.second)\""
+            cell.washTimeLabel.text = "Wash Time : \(washTime.minute)' \(washTime.second)\""
+            cell.devAgitationLabel.text = "Dev Agitation : \(self.combination.devAgitation.rawValue)"
+            cell.fixAgitationLabel.text = "Fix Agitation : \(self.combination.fixAgitation.rawValue)"
+            
+            if let temp = self.combination.temp {
+                cell.temperatureLabel.text = "Temperature : \(temp) ºC"
+            }
+            
             return cell
 
         case .note:
@@ -98,7 +110,7 @@ class RecordTableViewController: UITableViewController {
 
         switch component {
         case .combination:
-            return 170
+            return 230
         case .note:
             return UITableViewAutomaticDimension
         case .photo:
@@ -137,3 +149,19 @@ extension RecordTableViewController: UICollectionViewDataSource, UICollectionVie
         //
     }
 }
+
+extension RecordTableViewController {
+    func timeExchanger(time: Int) -> (minute: Int, second: Int) {
+        let minute = time / 60 % 60
+        let second = time % 60
+        
+        return (minute, second)
+    }
+    
+    func timeString(time: TimeInterval) -> String {
+        let minutes = Int(time) / 60 % 60
+        let seconds = Int(time) % 60
+        return String(format:"%02i:%02i", minutes, seconds)
+    }
+}
+

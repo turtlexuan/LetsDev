@@ -71,12 +71,12 @@ class TimerViewController: UIViewController {
     }
 
     func setUpTimes() {
-        self.bufferTime = self.timeExchanger(minute: combination.bufferMinute, second: combination.bufferSecond)
-        self.preWashTime = self.timeExchanger(minute: combination.preWashMinute, second: combination.preWashSecond)
-        self.devTime = self.timeExchanger(minute: combination.devMinute, second: combination.devSecond)
-        self.stopTime = self.timeExchanger(minute: combination.stopMinute, second: combination.stopSecond)
-        self.fixTime = self.timeExchanger(minute: combination.fixMinute, second: combination.fixSecond)
-        self.washTime = self.timeExchanger(minute: combination.washMinute, second: combination.washSecond)
+        self.bufferTime = self.combination.bufferTime
+        self.preWashTime = self.combination.preWashTime
+        self.devTime = self.combination.devTime
+        self.stopTime = self.combination.stopTime
+        self.fixTime = self.combination.fixTime
+        self.washTime = self.combination.washTime
         self.processTimes = [self.bufferTime, self.preWashTime, self.bufferTime, self.devTime, self.bufferTime, self.stopTime, self.bufferTime, self.fixTime, self.bufferTime, self.washTime]
         self.nextStepTime = [self.preWashTime, self.devTime, self.devTime, self.stopTime, self.stopTime, self.fixTime, self.fixTime, self.washTime, self.washTime, 00]
     }
@@ -177,7 +177,13 @@ class TimerViewController: UIViewController {
         let doneAction = UIAlertAction(title: "OK", style: .default) { (_) in
             if let recordTableVC = self.storyboard?.instantiateViewController(withIdentifier: "RecordTableViewController") as? RecordTableViewController {
                 recordTableVC.combination = self.combination
-                self.navigationController?.pushViewController(recordTableVC, animated: true)
+                RecordManager.shared.uploadRecord(with: self.combination, success: { (databaseRef) in
+                    print(databaseRef.parent?.key)
+                    self.navigationController?.pushViewController(recordTableVC, animated: true)
+                }, fail: { (error) in
+                    print(error)
+                })
+
             }
         }
 

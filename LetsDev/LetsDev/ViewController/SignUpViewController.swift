@@ -53,13 +53,13 @@ class SignUpViewController: UIViewController {
     }
 
     @IBAction func createAccount(_ sender: Any) {
-        
+
         guard let email = self.createEmailTextFiled.text, let password = self.createPasswordTextField.text, let username = self.usernameTextField.text else { return }
-        
+
         LoginManager.shared.create(withEmail: email, password: password, username: username, success: { (user) in
             //
             print(user)
-            
+
             self.nextVC()
         }) { (error) in
             //
@@ -68,9 +68,9 @@ class SignUpViewController: UIViewController {
     }
 
     @IBAction func logInAction(_ sender: Any) {
-        
+
         guard let email = self.emailTextField.text, let password = self.passwordTextField.text else { return }
-        
+
         LoginManager.shared.login(withEmail: email, password: password, success: { (email, uid) in
             print("\(email), \(uid)")
             self.nextVC()

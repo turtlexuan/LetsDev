@@ -51,6 +51,13 @@ class NewDevViewController: UIViewController {
     var bufferMinute = 00
     var bufferSecond = 00
 
+    var bufferTime = 00
+    var preWashTime = 00
+    var devTime = 00
+    var stopTime = 00
+    var fixTime = 00
+    var washTime = 00
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setUpTableView()
@@ -58,11 +65,7 @@ class NewDevViewController: UIViewController {
     }
 
     @IBAction func startAction(_ sender: Any) {
-        let combination = Combination(film: self.selectedFilm, type: self.selectedType, preWashMinute: self.preWashMinute, preWashSecond: self.preWashSecond,
-                                      dev: self.selectedDev, dilution: self.dilution, devMinute: self.devMinute, devSecond: self.devSecond, temp: self.selectedTemp,
-                                      devAgitation: self.selectedAgitation, stopMinute: self.stopMinute, stopSecond: self.stopSecond,
-                                      fixMinute: self.fixMinute, fixSecond: self.fixSecond, fixAgitation: self.selectedFixAgitation,
-                                      washMinute: self.washMinute, washSecond: self.washSecond, bufferMinute: self.bufferMinute, bufferSecond: self.bufferSecond)
+        let combination = Combination(film: self.selectedFilm, type: self.selectedType, preWashTime: self.preWashTime, dev: self.selectedDev, dilution: self.dilution, devTime: self.devTime, temp: self.selectedTemp, devAgitation: self.selectedAgitation, stopTime: self.stopTime, fixTime: self.fixTime, fixAgitation: self.selectedFixAgitation, washTime: self.washTime, bufferTime: self.bufferTime)
 
         // swiftlint:disable force_cast
         let timerVC = self.storyboard?.instantiateViewController(withIdentifier: "TimerViewController") as! TimerViewController
@@ -112,8 +115,20 @@ class NewDevViewController: UIViewController {
         self.bufferTimeInputView.delegate = self
     }
 
+    func setUpTimes() {
+        self.bufferTime = self.timeExchanger(minute: self.bufferMinute, second: self.bufferSecond)
+        self.preWashTime = self.timeExchanger(minute: self.preWashMinute, second: self.preWashSecond)
+        self.devTime = self.timeExchanger(minute: self.devMinute, second: self.devSecond)
+        self.stopTime = self.timeExchanger(minute: self.stopMinute, second: self.stopSecond)
+        self.fixTime = self.timeExchanger(minute: self.fixMinute, second: self.fixSecond)
+        self.washTime = self.timeExchanger(minute: self.washMinute, second: self.washSecond)
+    }
+
     func showPicker(_ sender: TTInputButton) {
-        let titleButton = UIBarButtonItem(title: "Select a time", style: .plain, target: self, action: nil)
+        let titleButton = UIBarButtonItem(title: "Select a time",
+                                          style: .plain,
+                                          target: self,
+                                          action: nil)
         titleButton.isEnabled = false
         titleButton.tintColor = .black
 
@@ -395,5 +410,17 @@ extension NewDevViewController: UITextFieldDelegate {
             self.dilution = textField.text!
         }
         textField.resignFirstResponder()
+    }
+}
+
+extension NewDevViewController {
+    func timeExchanger(minute: Int, second: Int) -> Int {
+        return minute * 60 + second
+    }
+
+    func timeString(time: TimeInterval) -> String {
+        let minutes = Int(time) / 60 % 60
+        let seconds = Int(time) % 60
+        return String(format:"%02i:%02i", minutes, seconds)
     }
 }

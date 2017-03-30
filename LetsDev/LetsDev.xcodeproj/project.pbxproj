@@ -30,6 +30,7 @@
 		206E3CB01E8B980B00DB33DD /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206E3CAF1E8B980B00DB33DD /* SignUpViewController.swift */; };
 		206E3CB21E8BA32E00DB33DD /* LoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206E3CB11E8BA32E00DB33DD /* LoginManager.swift */; };
 		206E3CB41E8BA36300DB33DD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206E3CB31E8BA36300DB33DD /* User.swift */; };
+		206E3CB61E8BB36800DB33DD /* RecordManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206E3CB51E8BB36800DB33DD /* RecordManager.swift */; };
 		20892FBB1E81270200369946 /* NewDevTableViewCellTwoContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20892FB91E81270200369946 /* NewDevTableViewCellTwoContent.swift */; };
 		20892FBC1E81270200369946 /* NewDevTableViewCellTwoContent.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20892FBA1E81270200369946 /* NewDevTableViewCellTwoContent.xib */; };
 		20892FBF1E812A5C00369946 /* NewDevTableViewCellOneContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20892FBD1E812A5C00369946 /* NewDevTableViewCellOneContent.swift */; };
@@ -71,6 +72,7 @@
 		206E3CAF1E8B980B00DB33DD /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		206E3CB11E8BA32E00DB33DD /* LoginManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginManager.swift; sourceTree = "<group>"; };
 		206E3CB31E8BA36300DB33DD /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		206E3CB51E8BB36800DB33DD /* RecordManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordManager.swift; sourceTree = "<group>"; };
 		20892FB91E81270200369946 /* NewDevTableViewCellTwoContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewDevTableViewCellTwoContent.swift; sourceTree = "<group>"; };
 		20892FBA1E81270200369946 /* NewDevTableViewCellTwoContent.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewDevTableViewCellTwoContent.xib; sourceTree = "<group>"; };
 		20892FBD1E812A5C00369946 /* NewDevTableViewCellOneContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewDevTableViewCellOneContent.swift; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 				20892FC11E812D9B00369946 /* DevProcess.swift */,
 				20892FC61E821A0700369946 /* Combination.swift */,
 				206E3CB31E8BA36300DB33DD /* User.swift */,
+				206E3CB51E8BB36800DB33DD /* RecordManager.swift */,
 			);
 			path = Modal;
 			sourceTree = "<group>";
@@ -364,6 +367,7 @@
 				2002AEE01E8A509900E21EA5 /* PhotoCollectionViewCell.swift in Sources */,
 				201978BE1E80BAE20013FACE /* LetsDev.xcdatamodeld in Sources */,
 				20892FC21E812D9B00369946 /* DevProcess.swift in Sources */,
+				206E3CB61E8BB36800DB33DD /* RecordManager.swift in Sources */,
 				201978D61E80CFBE0013FACE /* NewDevViewController.swift in Sources */,
 				206E3CB41E8BA36300DB33DD /* User.swift in Sources */,
 				20892FCD1E8223FB00369946 /* Film.swift in Sources */,

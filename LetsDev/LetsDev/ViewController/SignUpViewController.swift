@@ -34,6 +34,10 @@ class SignUpViewController: UIViewController {
         self.logInStackView.isHidden = true
         self.createButton.isHidden = true
         self.logInButton.isHidden = true
+        self.emailTextField.keyboardType = .emailAddress
+        self.createEmailTextFiled.keyboardType = .emailAddress
+        self.createPasswordTextField.isSecureTextEntry = true
+        self.passwordTextField.isSecureTextEntry = true
     }
 
     @IBAction func showCreateView(_ sender: Any) {

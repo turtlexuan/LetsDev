@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import DKImagePickerController
 
 class RecordTableViewController: UITableViewController {
 
@@ -21,6 +22,7 @@ class RecordTableViewController: UITableViewController {
     var recordKey = ""
     var components: [Component] = [ .combination, .note, .photo ]
     var note = ""
+    var assets: [DKAsset] = []
     var image: [UIImage] = []
 
     override func viewDidLoad() {
@@ -33,6 +35,7 @@ class RecordTableViewController: UITableViewController {
         self.tableView.register(UINib(nibName: "NewDevTableViewCell", bundle: nil), forCellReuseIdentifier: "NewDevTableViewCell")
 
         self.tableView.separatorStyle = .none
+        self.tableView.allowsSelection = false
     }
 
     // MARK: - Table view data source
@@ -93,13 +96,12 @@ class RecordTableViewController: UITableViewController {
             self.tableView.beginUpdates()
             cell.setCollectionViewDataSourceDelegate(self)
             cell.collectionView.collectionViewLayout = self.configLayout()
-            if self.image.count == 0 {
-                cell.collectionView.isHidden = true
-            }
             self.tableView.rowHeight = cell.collectionView.bounds.height
             self.tableView.setNeedsLayout()
             self.tableView.layoutIfNeeded()
             self.tableView.endUpdates()
+
+            cell.addPhotoButton.addTarget(self, action: #selector(showImagePickerAlertSheet(_:)), for: .touchUpInside)
 
             return cell
         }
@@ -115,7 +117,7 @@ class RecordTableViewController: UITableViewController {
 
         switch component {
         case .combination:
-            return 230
+            return 265
         case .note:
             return UITableViewAutomaticDimension
         case .photo:
@@ -140,11 +142,49 @@ class RecordTableViewController: UITableViewController {
         noteVC.note = self.note
         self.navigationController?.present(noteVC, animated: true, completion: nil)
     }
+
+    func showImagePickerAlertSheet(_ sender: UIButton) {
+        let alertController = UIAlertController(title: "Choose Image From?", message: nil, preferredStyle: .actionSheet)
+
+        let libraryAction = UIAlertAction(title: "Choose from photo library", style: .default) { (_) in
+            let pickerController = DKImagePickerController()
+            pickerController.assetType = .allPhotos
+
+            pickerController.didSelectAssets = { [unowned self] (assets: [DKAsset]) in
+                print("didSelectAssets")
+
+                self.assets = assets
+
+                for asset in assets {
+                    asset.fetchOriginalImage(true, completeBlock: { (imageData, _) in
+                        guard let image = imageData else { return }
+                        self.image.append(image)
+                    })
+
+                }
+
+                RecordManager.shared.updatePhoto(with: self.image, key: self.recordKey)
+
+                self.tableView.reloadData()
+            }
+
+            self.present(pickerController, animated: true, completion: nil)
+        }
+        let cameraAction = UIAlertAction(title: "Take a photo", style: .default) { (_) in
+            //
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+
+        alertController.addAction(libraryAction)
+        alertController.addAction(cameraAction)
+        alertController.addAction(cancelAction)
+
+        self.present(alertController, animated: true, completion: nil)
+    }
 }
 
 extension RecordTableViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        //
         return self.image.count
     }
 
@@ -171,12 +211,6 @@ extension RecordTableViewController {
         let second = time % 60
 
         return (minute, second)
-    }
-
-    func timeString(time: TimeInterval) -> String {
-        let minutes = Int(time) / 60 % 60
-        let seconds = Int(time) % 60
-        return String(format:"%02i:%02i", minutes, seconds)
     }
 }
 

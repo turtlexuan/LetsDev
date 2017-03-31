@@ -11,6 +11,7 @@ import UIKit
 class PhotoTableViewCell: UITableViewCell {
 
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var addPhotoButton: UIButton!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

@@ -86,6 +86,7 @@ class NewDevViewController: UIViewController {
         self.tableView.dataSource = self
         self.tableView.backgroundColor = .black
         self.tableView.separatorStyle = .none
+        self.tableView.allowsSelection = false
     }
 
     func setUpPickerView() {
@@ -378,21 +379,27 @@ extension NewDevViewController: UIPickerViewDelegate, UIPickerViewDataSource {
         case self.preWashTimeInputView:
             self.preWashMinute = pickerView.selectedRow(inComponent: 0)
             self.preWashSecond = pickerView.selectedRow(inComponent: 1)
+            self.preWashTime = self.timeExchanger(minute: pickerView.selectedRow(inComponent: 0), second: pickerView.selectedRow(inComponent: 1))
         case self.devTimeInputView:
             self.devMinute = pickerView.selectedRow(inComponent: 0)
             self.devSecond = pickerView.selectedRow(inComponent: 1)
+            self.devTime = self.timeExchanger(minute: pickerView.selectedRow(inComponent: 0), second: pickerView.selectedRow(inComponent: 1))
         case self.stopTimeInputView:
             self.stopMinute = pickerView.selectedRow(inComponent: 0)
             self.stopSecond = pickerView.selectedRow(inComponent: 1)
+            self.stopTime = self.timeExchanger(minute: pickerView.selectedRow(inComponent: 0), second: pickerView.selectedRow(inComponent: 1))
         case self.fixTimeInputView:
             self.fixMinute = pickerView.selectedRow(inComponent: 0)
             self.fixSecond = pickerView.selectedRow(inComponent: 1)
+            self.fixTime = self.timeExchanger(minute: pickerView.selectedRow(inComponent: 0), second: pickerView.selectedRow(inComponent: 1))
         case self.washTimeInputView:
             self.washMinute = pickerView.selectedRow(inComponent: 0)
             self.washSecond = pickerView.selectedRow(inComponent: 1)
+            self.washTime = self.timeExchanger(minute: pickerView.selectedRow(inComponent: 0), second: pickerView.selectedRow(inComponent: 1))
         case self.bufferTimeInputView:
             self.bufferMinute = pickerView.selectedRow(inComponent: 0)
             self.bufferSecond = pickerView.selectedRow(inComponent: 1)
+            self.bufferTime = self.timeExchanger(minute: pickerView.selectedRow(inComponent: 0), second: pickerView.selectedRow(inComponent: 1))
         default:
             break
         }

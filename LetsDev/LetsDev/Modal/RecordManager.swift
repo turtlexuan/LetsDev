@@ -8,11 +8,13 @@
 
 import Foundation
 import Firebase
+import FirebaseStorage
 
 class RecordManager {
 
     static let shared = RecordManager()
     private let databaseRef = FIRDatabase.database().reference()
+    private let storageRef = FIRStorage.storage().reference()
     private let auth = FIRAuth.auth()
 
     typealias UploadSuccess = (_ databaseRef: FIRDatabaseReference) -> Void
@@ -56,6 +58,30 @@ class RecordManager {
         let value = ["Note": note]
 
         self.databaseRef.child("Records").child(key).updateChildValues(value)
+    }
+
+    func updatePhoto(with images: [UIImage], key: String) {
+
+        guard let uid = self.auth?.currentUser?.uid else { return }
+
+        var imageUrls: [String] = []
+
+        for image in images {
+            if let uploadData = UIImagePNGRepresentation(image) {
+                let storagePath = storageRef.child(uid).child("\(UUID().uuidString).png")
+                storagePath.put(uploadData, metadata: nil, completion: { (metaData, error) in
+
+                    if error != nil {
+                        print("Upload Error: \(String(describing: error?.localizedDescription))")
+                        return
+                    }
+
+                    guard let photoUrl = metaData?.downloadURL()?.absoluteString else { return }
+                    imageUrls.append(photoUrl)
+                    self.databaseRef.child("Records").child(key).updateChildValues(["Photo": imageUrls])
+                })
+            }
+        }
     }
 
 }

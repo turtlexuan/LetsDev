@@ -8,6 +8,7 @@
 
 import UIKit
 import DKImagePickerController
+import SKPhotoBrowser
 
 class RecordTableViewController: UITableViewController {
 
@@ -23,7 +24,7 @@ class RecordTableViewController: UITableViewController {
     var components: [Component] = [ .combination, .note, .photo ]
     var note = ""
     var assets: [DKAsset] = []
-    var image: [UIImage] = []
+    var skImage: [SKPhoto] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -121,7 +122,7 @@ class RecordTableViewController: UITableViewController {
         case .note:
             return UITableViewAutomaticDimension
         case .photo:
-            return CollectionHeight.getCollectionHeight(itemHeight: (self.view.frame.width - 68) / 3, totalItem: self.image.count) + 50
+            return CollectionHeight.getCollectionHeight(itemHeight: (self.view.frame.width - 68) / 3, totalItem: self.skImage.count) + 50
         }
     }
 
@@ -158,12 +159,12 @@ class RecordTableViewController: UITableViewController {
                 for asset in assets {
                     asset.fetchOriginalImage(true, completeBlock: { (imageData, _) in
                         guard let image = imageData else { return }
-                        self.image.append(image)
+                        self.skImage.append(SKPhoto.photoWithImage(image))
                     })
 
                 }
 
-                RecordManager.shared.updatePhoto(with: self.image, key: self.recordKey)
+                RecordManager.shared.updatePhoto(with: self.skImage, key: self.recordKey)
 
                 self.tableView.reloadData()
             }
@@ -185,16 +186,15 @@ class RecordTableViewController: UITableViewController {
 
 extension RecordTableViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.image.count
+        return self.skImage.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoCollectionViewCell", for: indexPath) as! PhotoCollectionViewCell
-        // swiftlint:enable force_case
 
-        if self.image != [] {
-            cell.imageView.image = self.image[indexPath.row]
+        if self.skImage != [] {
+            cell.imageView.image = self.skImage[indexPath.row].underlyingImage
         }
 
         return cell
@@ -202,6 +202,14 @@ extension RecordTableViewController: UICollectionViewDataSource, UICollectionVie
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         //
+        let cell = collectionView.cellForItem(at: indexPath) as! PhotoCollectionViewCell
+        // swiftlint:enable force_case
+        let originImage = cell.imageView.image
+
+        let browser = SKPhotoBrowser(originImage: originImage ?? UIImage(), photos: self.skImage, animatedFromView: cell)
+        browser.initializePageIndex(indexPath.row)
+
+        self.present(browser, animated: true, completion: nil)
     }
 }
 

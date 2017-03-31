@@ -66,6 +66,7 @@ PODS:
   - Hex (5.0.1)
   - IQKeyboardManagerSwift (4.0.8)
   - Protobuf (3.2.0)
+  - SKPhotoBrowser (4.0.1)
   - UITextView+Placeholder (1.2.0)
 
 DEPENDENCIES:
@@ -79,6 +80,7 @@ DEPENDENCIES:
   - Firebase/Storage
   - Hex
   - IQKeyboardManagerSwift
+  - SKPhotoBrowser
   - UITextView+Placeholder (~> 1.2)
 
 SPEC CHECKSUMS:
@@ -97,8 +99,9 @@ SPEC CHECKSUMS:
   Hex: 2c757d81a2b4b6afc842458ce485c8c097ea1c79
   IQKeyboardManagerSwift: c04bc9f68473823f825eb44d958fce98d921bead
   Protobuf: 745f59e122e5de98d4d7ef291e264a0eef80f58e
+  SKPhotoBrowser: 3a7c6fc02aa1620ab17253a47a49fafda46536e8
   UITextView+Placeholder: 77680995fcdd07c3f52ec92fe1150874a2ac89ff
 
-PODFILE CHECKSUM: 6c645e385c2533f0f257e3b72398dab022795e21
+PODFILE CHECKSUM: 194e8612aa457b046c67f9c6e7469c819687ed69
 
 COCOAPODS: 1.2.0

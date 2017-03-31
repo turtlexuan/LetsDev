@@ -9,6 +9,7 @@
 import Foundation
 import Firebase
 import FirebaseStorage
+import SKPhotoBrowser
 
 class RecordManager {
 
@@ -60,14 +61,14 @@ class RecordManager {
         self.databaseRef.child("Records").child(key).updateChildValues(value)
     }
 
-    func updatePhoto(with images: [UIImage], key: String) {
+    func updatePhoto(with images: [SKPhoto], key: String) {
 
         guard let uid = self.auth?.currentUser?.uid else { return }
 
         var imageUrls: [String] = []
 
         for image in images {
-            if let uploadData = UIImagePNGRepresentation(image) {
+            if let uploadData = UIImagePNGRepresentation(image.underlyingImage) {
                 let storagePath = storageRef.child(uid).child("\(UUID().uuidString).png")
                 storagePath.put(uploadData, metadata: nil, completion: { (metaData, error) in
 

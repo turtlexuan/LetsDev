@@ -16,6 +16,7 @@ pod 'Hex'
 pod 'DKImagePickerController'
 pod 'UITextView+Placeholder', '~> 1.2'
 pod 'IQKeyboardManagerSwift'
+pod 'SKPhotoBrowser'
 
   # Pods for LetsDev
 

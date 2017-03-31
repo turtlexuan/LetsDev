@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -29,7 +30,7 @@
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A4p-7k-e0b">
                         <rect key="frame" x="12" y="51" width="838" height="612"/>
-                        <mutableString key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque dictum, nunc eget sagittis convallis, dolor sapien pharetra quam, non semper orci enim sed nisl. In nisl ligula, fringilla quis metus vitae, porttitor vehicula sapien. Praesent ipsum eros, mattis quis massa sit amet, luctus commodo lacus. Sed nisl urna, accumsan sit amet ex in, pretium elementum tellus. Donec sollicitudin porta condimentum. Fusce viverra in risus non ullamcorper. Etiam venenatis urna purus, in imperdiet sapien lobortis sit amet. Curabitur ullamcorper venenatis nisl sit amet rutrum. Etiam elementum velit quis hendrerit ultricies. Proin nec tellus a odio tincidunt auctor pharetra sed orci. Curabitur non elit eu odio elementum pulvinar.
+                        <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque dictum, nunc eget sagittis convallis, dolor sapien pharetra quam, non semper orci enim sed nisl. In nisl ligula, fringilla quis metus vitae, porttitor vehicula sapien. Praesent ipsum eros, mattis quis massa sit amet, luctus commodo lacus. Sed nisl urna, accumsan sit amet ex in, pretium elementum tellus. Donec sollicitudin porta condimentum. Fusce viverra in risus non ullamcorper. Etiam venenatis urna purus, in imperdiet sapien lobortis sit amet. Curabitur ullamcorper venenatis nisl sit amet rutrum. Etiam elementum velit quis hendrerit ultricies. Proin nec tellus a odio tincidunt auctor pharetra sed orci. Curabitur non elit eu odio elementum pulvinar.
 
 Nullam aliquam vel orci et finibus. Sed viverra et sapien pellentesque suscipit. In malesuada lectus vitae nulla gravida tincidunt. Curabitur tristique, elit ac pulvinar dignissim, ante nibh interdum ligula, eu tincidunt tortor velit a nulla. Ut convallis urna odio, iaculis tempus sapien feugiat vitae. Vivamus dapibus a diam ac ullamcorper. Nulla vulputate, est vestibulum congue faucibus, sapien sapien accumsan quam, ac venenatis lacus dui quis erat. Cras consequat lorem eu molestie lobortis. Sed bibendum, metus eget bibendum tempor, magna leo dictum magna, ac ultrices dui nunc et est. Quisque lectus ex, molestie quis mattis nec, ullamcorper at ligula. Nullam pharetra lacus sit amet libero aliquam sagittis. Aliquam vehicula lacus ac mattis hendrerit. Suspendisse vitae sem quis elit eleifend laoreet ut sit amet erat. Sed enim erat, semper quis ipsum in, fringilla condimentum diam. Vestibulum rhoncus urna et bibendum iaculis. Mauris id porttitor mi.
 
@@ -37,24 +38,37 @@ Praesent eu lectus sit amet ante ultrices consectetur. Duis interdum vestibulum 
 
 Aliquam erat volutpat. Vestibulum nec volutpat sapien. Nulla scelerisque facilisis risus nec elementum. Fusce eget dui vel mauris fermentum interdum. Donec a enim eros. Sed quis malesuada metus, nec consequat sapien. Fusce eu orci mollis dolor tempor tincidunt quis in massa. Vivamus a luctus diam. Donec in urna in augue semper egestas quis et velit.
 
-Vivamus at sem massa. Donec egestas, ligula vitae condimentum dignissim, arcu enim bibendum tortor, sit amet tristique enim quam ut metus. Pellentesque sit amet tincidunt quam. Etiam eu erat lobortis, bibendum leo non, varius mi. Etiam lacinia, enim ut ultrices suscipit, ipsum nulla consectetur risus, vel posuere est ante id nisl. Donec sem dui, maximus id suscipit eget, lacinia vel lectus. Nunc pellentesque finibus justo.</mutableString>
+Vivamus at sem massa. Donec egestas, ligula vitae condimentum dignissim, arcu enim bibendum tortor, sit amet tristique enim quam ut metus. Pellentesque sit amet tincidunt quam. Etiam eu erat lobortis, bibendum leo non, varius mi. Etiam lacinia, enim ut ultrices suscipit, ipsum nulla consectetur risus, vel posuere est ante id nisl. Donec sem dui, maximus id suscipit eget, lacinia vel lectus. Nunc pellentesque finibus justo.</string>
                         <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SEq-lN-XDf">
-                        <rect key="frame" x="820" y="9" width="30" height="33"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <state key="normal" title="Edit"/>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SEq-lN-XDf">
+                        <rect key="frame" x="823" y="12.5" width="27" height="27"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="SEq-lN-XDf" secondAttribute="height" multiplier="1:1" id="I4p-25-mnJ"/>
+                        </constraints>
+                        <state key="normal" title="Edit" image="edit"/>
                     </button>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qkh-SO-NA4">
+                        <rect key="frame" x="0.0" y="673.5" width="862" height="1"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="Gg4-0N-abu"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                 <constraints>
                     <constraint firstItem="SEq-lN-XDf" firstAttribute="centerY" secondItem="gbP-xz-aAX" secondAttribute="centerY" id="Ic0-Pr-ldN"/>
+                    <constraint firstAttribute="trailing" secondItem="Qkh-SO-NA4" secondAttribute="trailing" id="Ihk-iL-iOf"/>
+                    <constraint firstItem="Qkh-SO-NA4" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="QA9-9a-N8A"/>
+                    <constraint firstItem="SEq-lN-XDf" firstAttribute="height" secondItem="gbP-xz-aAX" secondAttribute="height" id="Sar-uz-yhE"/>
                     <constraint firstItem="gbP-xz-aAX" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="YlH-jF-5Xl"/>
                     <constraint firstItem="A4p-7k-e0b" firstAttribute="top" secondItem="gbP-xz-aAX" secondAttribute="bottom" constant="12" id="Zfi-HM-rUL"/>
                     <constraint firstItem="gbP-xz-aAX" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="fAk-js-1GQ"/>
                     <constraint firstAttribute="bottom" secondItem="A4p-7k-e0b" secondAttribute="bottom" constant="12" id="fKv-7g-1x0"/>
+                    <constraint firstAttribute="bottom" secondItem="Qkh-SO-NA4" secondAttribute="bottom" id="ii2-3Z-aH7"/>
                     <constraint firstAttribute="trailing" secondItem="A4p-7k-e0b" secondAttribute="trailing" constant="12" id="kpG-uq-2dE"/>
                     <constraint firstAttribute="trailing" secondItem="SEq-lN-XDf" secondAttribute="trailing" constant="12" id="pBU-pB-zSf"/>
                     <constraint firstItem="A4p-7k-e0b" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="uie-hB-xhb"/>
@@ -67,4 +81,7 @@ Vivamus at sem massa. Donec egestas, ligula vitae condimentum dignissim, arcu en
             <point key="canvasLocation" x="305" y="354.5"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="edit" width="512" height="512"/>
+    </resources>
 </document>

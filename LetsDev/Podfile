@@ -11,8 +11,10 @@ pod 'Firebase/Messaging'
 pod 'Firebase/RemoteConfig'
 pod 'Firebase/Database'
 pod 'Firebase/Auth'
-pod 'Hex', '5.0.1'
-
+pod 'Hex'
+pod 'DKImagePickerController'
+pod 'UITextView+Placeholder', '~> 1.2'
+pod 'IQKeyboardManagerSwift'
 
   # Pods for LetsDev
 

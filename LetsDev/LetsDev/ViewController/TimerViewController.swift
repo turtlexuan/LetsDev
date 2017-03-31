@@ -178,7 +178,7 @@ class TimerViewController: UIViewController {
             if let recordTableVC = self.storyboard?.instantiateViewController(withIdentifier: "RecordTableViewController") as? RecordTableViewController {
                 recordTableVC.combination = self.combination
                 RecordManager.shared.uploadRecord(with: self.combination, success: { (databaseRef) in
-                    print("\(databaseRef.parent?.key)")
+                    print("\(String(describing: databaseRef.parent?.key))")
                     guard let recordKey = databaseRef.parent?.key else { return }
                     recordTableVC.recordKey = recordKey
                     self.navigationController?.pushViewController(recordTableVC, animated: true)

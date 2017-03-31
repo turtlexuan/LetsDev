@@ -51,4 +51,11 @@ class RecordManager {
         }
     }
 
+    func updateNote(with note: String, key: String) {
+
+        let value = ["Note": note]
+
+        self.databaseRef.child("Records").child(key).updateChildValues(value)
+    }
+
 }

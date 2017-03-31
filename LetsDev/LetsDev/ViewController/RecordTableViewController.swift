@@ -21,7 +21,7 @@ class RecordTableViewController: UITableViewController {
     var recordKey = ""
     var components: [Component] = [ .combination, .note, .photo ]
     var note = ""
-    var image: [UIImage] = [#imageLiteral(resourceName: "heart"), #imageLiteral(resourceName: "oval"), #imageLiteral(resourceName: "bell"), #imageLiteral(resourceName: "bell"), #imageLiteral(resourceName: "film-roll"), #imageLiteral(resourceName: "film-reel")]
+    var image: [UIImage] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,8 +32,7 @@ class RecordTableViewController: UITableViewController {
         self.tableView.register(UINib(nibName: "PhotoTableViewCell", bundle: nil), forCellReuseIdentifier: "PhotoTableViewCell")
         self.tableView.register(UINib(nibName: "NewDevTableViewCell", bundle: nil), forCellReuseIdentifier: "NewDevTableViewCell")
 
-        let image = #imageLiteral(resourceName: "heart")
-        self.image.append(image)
+        self.tableView.separatorStyle = .none
     }
 
     // MARK: - Table view data source
@@ -61,7 +60,7 @@ class RecordTableViewController: UITableViewController {
             let fixTime = self.timeExchanger(time: self.combination.fixTime)
             let stopTime = self.timeExchanger(time: self.combination.stopTime)
             let washTime = self.timeExchanger(time: self.combination.washTime)
-            
+
             cell.filmNameLabel.text = self.combination.film
             cell.developerLabel.text = self.combination.dev
             cell.preWashLabel.text = "Pre-Wash : \(preWashTime.minute)' \(preWashTime.second)\""
@@ -71,16 +70,19 @@ class RecordTableViewController: UITableViewController {
             cell.washTimeLabel.text = "Wash Time : \(washTime.minute)' \(washTime.second)\""
             cell.devAgitationLabel.text = "Dev Agitation : \(self.combination.devAgitation.rawValue)"
             cell.fixAgitationLabel.text = "Fix Agitation : \(self.combination.fixAgitation.rawValue)"
-            
+
             if let temp = self.combination.temp {
                 cell.temperatureLabel.text = "Temperature : \(temp) ºC"
             }
-            
+
             return cell
 
         case .note:
 
             let cell = tableView.dequeueReusableCell(withIdentifier: "NoteTableViewCell", for: indexPath) as! NoteTableViewCell
+
+            cell.noteLabel.text = self.note
+            cell.editButton.addTarget(self, action: #selector(self.showEditView(_:)), for: .touchUpInside)
 
             return cell
 
@@ -91,6 +93,9 @@ class RecordTableViewController: UITableViewController {
             self.tableView.beginUpdates()
             cell.setCollectionViewDataSourceDelegate(self)
             cell.collectionView.collectionViewLayout = self.configLayout()
+            if self.image.count == 0 {
+                cell.collectionView.isHidden = true
+            }
             self.tableView.rowHeight = cell.collectionView.bounds.height
             self.tableView.setNeedsLayout()
             self.tableView.layoutIfNeeded()
@@ -114,7 +119,7 @@ class RecordTableViewController: UITableViewController {
         case .note:
             return UITableViewAutomaticDimension
         case .photo:
-            return CollectionHeight.getCollectionHeight(itemHeight: (self.view.frame.width - 68) / 3, totalItem: self.image.count)
+            return CollectionHeight.getCollectionHeight(itemHeight: (self.view.frame.width - 68) / 3, totalItem: self.image.count) + 50
         }
     }
 
@@ -126,6 +131,14 @@ class RecordTableViewController: UITableViewController {
         layout.itemSize = CGSize(width: (self.view.frame.width - 68) / 3, height: (self.view.frame.width - 68) / 3)
 
         return layout
+    }
+
+    func showEditView(_ sender: UIButton) {
+        // swiftlint:disable force_cast
+        let noteVC = self.storyboard?.instantiateViewController(withIdentifier: "NoteViewController") as! NoteViewController
+        noteVC.delegate = self
+        noteVC.note = self.note
+        self.navigationController?.present(noteVC, animated: true, completion: nil)
     }
 }
 
@@ -140,7 +153,9 @@ extension RecordTableViewController: UICollectionViewDataSource, UICollectionVie
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoCollectionViewCell", for: indexPath) as! PhotoCollectionViewCell
         // swiftlint:enable force_case
 
-        cell.imageView.image = self.image[indexPath.row]
+        if self.image != [] {
+            cell.imageView.image = self.image[indexPath.row]
+        }
 
         return cell
     }
@@ -154,10 +169,10 @@ extension RecordTableViewController {
     func timeExchanger(time: Int) -> (minute: Int, second: Int) {
         let minute = time / 60 % 60
         let second = time % 60
-        
+
         return (minute, second)
     }
-    
+
     func timeString(time: TimeInterval) -> String {
         let minutes = Int(time) / 60 % 60
         let seconds = Int(time) % 60
@@ -165,3 +180,10 @@ extension RecordTableViewController {
     }
 }
 
+extension RecordTableViewController: NoteViewControllerDelegate {
+    func didReceiveNote(note: String) {
+        self.note = note
+        RecordManager.shared.updateNote(with: note, key: recordKey)
+        self.tableView.reloadData()
+    }
+}

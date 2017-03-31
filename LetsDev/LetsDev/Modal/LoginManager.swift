@@ -24,11 +24,11 @@ class LoginManager: NSObject {
         self.auth?.createUser(withEmail: email, password: password, completion: { (user, error) in
 
             if error?.localizedDescription == "The email address is already in use by another account." {
-                print("Create user error: \(error?.localizedDescription)")
+                print("Create user error: \(String(describing: error?.localizedDescription))")
                 fail?(error!)
                 return
             } else if error != nil {
-                print("Create user error: \(error?.localizedDescription)")
+                print("Create user error: \(String(describing: error?.localizedDescription))")
                 fail?(error!)
                 return
             }
@@ -53,7 +53,7 @@ class LoginManager: NSObject {
         self.auth?.signIn(withEmail: email, password: password, completion: { (user, error) in
 
             if error != nil {
-                print("Sign in error: \(error)")
+                print("Sign in error: \(String(describing: error))")
                 fail?(error!)
                 return
             }
@@ -61,7 +61,7 @@ class LoginManager: NSObject {
             guard let userEmail = user?.email, let uid = user?.uid else { return }
 
             success?(userEmail, uid)
-            print("Success login with user: \(user?.email), uid: \(user?.uid)")
+            print("Success login with user: \(String(describing: user?.email)), uid: \(String(describing: user?.uid))")
 
         })
         return

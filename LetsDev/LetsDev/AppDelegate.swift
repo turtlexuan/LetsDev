@@ -10,6 +10,7 @@ import UIKit
 import CoreData
 import Hex
 import Firebase
+import IQKeyboardManagerSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -24,6 +25,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         navigationBarAppearance.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
 
         FIRApp.configure()
+
+        IQKeyboardManager.sharedManager().enable = true
         return true
     }
 

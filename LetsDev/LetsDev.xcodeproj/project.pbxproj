@@ -43,6 +43,12 @@
 		20892FCD1E8223FB00369946 /* Film.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20892FCC1E8223FB00369946 /* Film.swift */; };
 		20892FCF1E827C0C00369946 /* TTInputButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20892FCE1E827C0C00369946 /* TTInputButton.swift */; };
 		20F322DF1E8E1B59008605FE /* NoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F322DE1E8E1B59008605FE /* NoteViewController.swift */; };
+		20F322E11E8FA82A008605FE /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F322E01E8FA82A008605FE /* TabBarController.swift */; };
+		20F322E31E8FA89A008605FE /* PersonalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F322E21E8FA89A008605FE /* PersonalViewController.swift */; };
+		20F322E51E8FA8C4008605FE /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F322E41E8FA8C4008605FE /* FavoriteViewController.swift */; };
+		20F322E71E8FAFF1008605FE /* PersonalNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F322E61E8FAFF1008605FE /* PersonalNavigationController.swift */; };
+		20F322E91E8FB003008605FE /* FavoriteNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F322E81E8FB003008605FE /* FavoriteNavigationController.swift */; };
+		20F322EB1E8FB080008605FE /* NewDevNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F322EA1E8FB080008605FE /* NewDevNavigationController.swift */; };
 		E4F1FE23674C8589E00ACF52 /* Pods_LetsDev.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD5025F6EEDEA83A6E3AA888 /* Pods_LetsDev.framework */; };
 /* End PBXBuildFile section */
 
@@ -86,6 +92,12 @@
 		20892FCC1E8223FB00369946 /* Film.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Film.swift; sourceTree = "<group>"; };
 		20892FCE1E827C0C00369946 /* TTInputButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTInputButton.swift; sourceTree = "<group>"; };
 		20F322DE1E8E1B59008605FE /* NoteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteViewController.swift; sourceTree = "<group>"; };
+		20F322E01E8FA82A008605FE /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		20F322E21E8FA89A008605FE /* PersonalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonalViewController.swift; sourceTree = "<group>"; };
+		20F322E41E8FA8C4008605FE /* FavoriteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
+		20F322E61E8FAFF1008605FE /* PersonalNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonalNavigationController.swift; sourceTree = "<group>"; };
+		20F322E81E8FB003008605FE /* FavoriteNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteNavigationController.swift; sourceTree = "<group>"; };
+		20F322EA1E8FB080008605FE /* NewDevNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewDevNavigationController.swift; sourceTree = "<group>"; };
 		B4C9D9118AFE53887E4B623F /* Pods-LetsDev.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LetsDev.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LetsDev/Pods-LetsDev.debug.xcconfig"; sourceTree = "<group>"; };
 		DD5025F6EEDEA83A6E3AA888 /* Pods_LetsDev.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LetsDev.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -177,11 +189,15 @@
 		201978D41E80CFAD0013FACE /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				20F322EC1E8FBD83008605FE /* Navigation */,
 				206E3CAF1E8B980B00DB33DD /* SignUpViewController.swift */,
 				201978D51E80CFBE0013FACE /* NewDevViewController.swift */,
 				2030D5FA1E839262004E2C63 /* TimerViewController.swift */,
 				2002AED01E84B8A800E21EA5 /* RecordTableViewController.swift */,
 				20F322DE1E8E1B59008605FE /* NoteViewController.swift */,
+				20F322E01E8FA82A008605FE /* TabBarController.swift */,
+				20F322E21E8FA89A008605FE /* PersonalViewController.swift */,
+				20F322E41E8FA8C4008605FE /* FavoriteViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -194,6 +210,16 @@
 				2002AEE21E8A6CF300E21EA5 /* CollectionHeight.swift */,
 			);
 			path = Constants;
+			sourceTree = "<group>";
+		};
+		20F322EC1E8FBD83008605FE /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				20F322E61E8FAFF1008605FE /* PersonalNavigationController.swift */,
+				20F322E81E8FB003008605FE /* FavoriteNavigationController.swift */,
+				20F322EA1E8FB080008605FE /* NewDevNavigationController.swift */,
+			);
+			name = Navigation;
 			sourceTree = "<group>";
 		};
 		A322150B5658DCF6C41AF1BA /* Frameworks */ = {
@@ -377,12 +403,18 @@
 				20892FBF1E812A5C00369946 /* NewDevTableViewCellOneContent.swift in Sources */,
 				2002AEDC1E8A460700E21EA5 /* PhotoTableViewCell.swift in Sources */,
 				2002AEE31E8A6CF300E21EA5 /* CollectionHeight.swift in Sources */,
+				20F322E91E8FB003008605FE /* FavoriteNavigationController.swift in Sources */,
 				20F322DF1E8E1B59008605FE /* NoteViewController.swift in Sources */,
+				20F322EB1E8FB080008605FE /* NewDevNavigationController.swift in Sources */,
 				20892FC51E819B6200369946 /* Color.swift in Sources */,
+				20F322E11E8FA82A008605FE /* TabBarController.swift in Sources */,
 				206E3CB01E8B980B00DB33DD /* SignUpViewController.swift in Sources */,
 				2002AED81E8A3B7600E21EA5 /* NoteTableViewCell.swift in Sources */,
 				2002AED11E84B8A800E21EA5 /* RecordTableViewController.swift in Sources */,
+				20F322E51E8FA8C4008605FE /* FavoriteViewController.swift in Sources */,
+				20F322E31E8FA89A008605FE /* PersonalViewController.swift in Sources */,
 				2030D5FB1E839262004E2C63 /* TimerViewController.swift in Sources */,
+				20F322E71E8FAFF1008605FE /* PersonalNavigationController.swift in Sources */,
 				20892FBB1E81270200369946 /* NewDevTableViewCellTwoContent.swift in Sources */,
 				201978B61E80BAE20013FACE /* AppDelegate.swift in Sources */,
 			);

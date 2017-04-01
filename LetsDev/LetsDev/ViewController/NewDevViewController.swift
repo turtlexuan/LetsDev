@@ -75,6 +75,7 @@ class NewDevViewController: UIViewController {
     }
 
     @IBAction func cancelAction(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
     }
 
     func setUpTableView() {

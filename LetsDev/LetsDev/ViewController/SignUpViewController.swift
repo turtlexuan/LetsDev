@@ -84,7 +84,8 @@ class SignUpViewController: UIViewController {
     }
 
     func nextVC() {
-        let navigationController = self.storyboard?.instantiateViewController(withIdentifier: "NavigationController")
+        // swiftlint:disable force_cast
+        let navigationController = self.storyboard?.instantiateViewController(withIdentifier: "TabBarController") as! TabBarController
         UIApplication.shared.keyWindow?.rootViewController = navigationController
 
     }

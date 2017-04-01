@@ -23,6 +23,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         navigationBarAppearance.barTintColor = Color.navigationBarColor
         navigationBarAppearance.tintColor = Color.buttonColor
         navigationBarAppearance.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
+//        
+//        let tabBarAppearance = UITabBar.appearance()
+//        tabBarAppearance.selectionIndicatorImage?.imageRendererFormat =
 
         FIRApp.configure()
 

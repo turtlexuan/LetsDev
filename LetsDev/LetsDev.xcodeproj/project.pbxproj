@@ -37,6 +37,10 @@
 		205DC78A1E8FF99600A3E46E /* PersonalTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 205DC7881E8FF99600A3E46E /* PersonalTableViewCell.xib */; };
 		205DC78D1E8FFD4300A3E46E /* RecordListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205DC78B1E8FFD4300A3E46E /* RecordListTableViewCell.swift */; };
 		205DC78E1E8FFD4300A3E46E /* RecordListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 205DC78C1E8FFD4300A3E46E /* RecordListTableViewCell.xib */; };
+		205DC7901E902AC100A3E46E /* AlertNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205DC78F1E902AC100A3E46E /* AlertNavigationController.swift */; };
+		205DC7921E902AE800A3E46E /* HomeNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205DC7911E902AE800A3E46E /* HomeNavigationController.swift */; };
+		205DC7941E902B2600A3E46E /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205DC7931E902B2600A3E46E /* AlertViewController.swift */; };
+		205DC7961E902B3600A3E46E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205DC7951E902B3600A3E46E /* HomeViewController.swift */; };
 		206E3CB01E8B980B00DB33DD /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206E3CAF1E8B980B00DB33DD /* SignUpViewController.swift */; };
 		206E3CB21E8BA32E00DB33DD /* LoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206E3CB11E8BA32E00DB33DD /* LoginManager.swift */; };
 		206E3CB41E8BA36300DB33DD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206E3CB31E8BA36300DB33DD /* User.swift */; };
@@ -90,6 +94,10 @@
 		205DC7881E8FF99600A3E46E /* PersonalTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PersonalTableViewCell.xib; sourceTree = "<group>"; };
 		205DC78B1E8FFD4300A3E46E /* RecordListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordListTableViewCell.swift; sourceTree = "<group>"; };
 		205DC78C1E8FFD4300A3E46E /* RecordListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecordListTableViewCell.xib; sourceTree = "<group>"; };
+		205DC78F1E902AC100A3E46E /* AlertNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertNavigationController.swift; sourceTree = "<group>"; };
+		205DC7911E902AE800A3E46E /* HomeNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeNavigationController.swift; sourceTree = "<group>"; };
+		205DC7931E902B2600A3E46E /* AlertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
+		205DC7951E902B3600A3E46E /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		206E3CAF1E8B980B00DB33DD /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		206E3CB11E8BA32E00DB33DD /* LoginManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginManager.swift; sourceTree = "<group>"; };
 		206E3CB31E8BA36300DB33DD /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -185,14 +193,16 @@
 			isa = PBXGroup;
 			children = (
 				20F322EC1E8FBD83008605FE /* Navigation */,
+				20F322E01E8FA82A008605FE /* TabBarController.swift */,
 				206E3CAF1E8B980B00DB33DD /* SignUpViewController.swift */,
 				201978D51E80CFBE0013FACE /* NewDevViewController.swift */,
 				2030D5FA1E839262004E2C63 /* TimerViewController.swift */,
 				2002AED01E84B8A800E21EA5 /* RecordTableViewController.swift */,
 				20F322DE1E8E1B59008605FE /* NoteViewController.swift */,
-				20F322E01E8FA82A008605FE /* TabBarController.swift */,
 				20F322E21E8FA89A008605FE /* PersonalViewController.swift */,
 				20F322E41E8FA8C4008605FE /* FavoriteViewController.swift */,
+				205DC7931E902B2600A3E46E /* AlertViewController.swift */,
+				205DC7951E902B3600A3E46E /* HomeViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -254,6 +264,8 @@
 				20F322E61E8FAFF1008605FE /* PersonalNavigationController.swift */,
 				20F322E81E8FB003008605FE /* FavoriteNavigationController.swift */,
 				20F322EA1E8FB080008605FE /* NewDevNavigationController.swift */,
+				205DC78F1E902AC100A3E46E /* AlertNavigationController.swift */,
+				205DC7911E902AE800A3E46E /* HomeNavigationController.swift */,
 			);
 			name = Navigation;
 			sourceTree = "<group>";
@@ -433,6 +445,8 @@
 				20892FC21E812D9B00369946 /* DevProcess.swift in Sources */,
 				205DC77A1E8FF63B00A3E46E /* NewDevTableViewCellOneContent.swift in Sources */,
 				206E3CB61E8BB36800DB33DD /* RecordManager.swift in Sources */,
+				205DC7941E902B2600A3E46E /* AlertViewController.swift in Sources */,
+				205DC7921E902AE800A3E46E /* HomeNavigationController.swift in Sources */,
 				205DC77C1E8FF63B00A3E46E /* NewDevTableViewCellTwoContent.swift in Sources */,
 				201978D61E80CFBE0013FACE /* NewDevViewController.swift in Sources */,
 				206E3CB41E8BA36300DB33DD /* User.swift in Sources */,
@@ -446,10 +460,12 @@
 				20F322E11E8FA82A008605FE /* TabBarController.swift in Sources */,
 				205DC7821E8FF63B00A3E46E /* PhotoCollectionViewCell.swift in Sources */,
 				206E3CB01E8B980B00DB33DD /* SignUpViewController.swift in Sources */,
+				205DC7961E902B3600A3E46E /* HomeViewController.swift in Sources */,
 				205DC7841E8FF63B00A3E46E /* PhotoTableViewCell.swift in Sources */,
 				205DC78D1E8FFD4300A3E46E /* RecordListTableViewCell.swift in Sources */,
 				205DC7801E8FF63B00A3E46E /* NoteTableViewCell.swift in Sources */,
 				2002AED11E84B8A800E21EA5 /* RecordTableViewController.swift in Sources */,
+				205DC7901E902AC100A3E46E /* AlertNavigationController.swift in Sources */,
 				20F322E51E8FA8C4008605FE /* FavoriteViewController.swift in Sources */,
 				20F322E31E8FA89A008605FE /* PersonalViewController.swift in Sources */,
 				2030D5FB1E839262004E2C63 /* TimerViewController.swift in Sources */,

@@ -1,14 +1,14 @@
 //
-//  FavoriteNavigationController.swift
+//  AlertNavigationController.swift
 //  LetsDev
 //
-//  Created by 劉仲軒 on 2017/4/1.
+//  Created by 劉仲軒 on 2017/4/2.
 //  Copyright © 2017年 劉仲軒. All rights reserved.
 //
 
 import UIKit
 
-class FavoriteNavigationController: UINavigationController {
+class AlertNavigationController: UINavigationController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -1,14 +1,14 @@
 //
-//  FavoriteNavigationController.swift
+//  HomeNavigationController.swift
 //  LetsDev
 //
-//  Created by 劉仲軒 on 2017/4/1.
+//  Created by 劉仲軒 on 2017/4/2.
 //  Copyright © 2017年 劉仲軒. All rights reserved.
 //
 
 import UIKit
 
-class FavoriteNavigationController: UINavigationController {
+class HomeNavigationController: UINavigationController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -1,14 +1,14 @@
 //
-//  FavoriteNavigationController.swift
+//  AlertViewController.swift
 //  LetsDev
 //
-//  Created by 劉仲軒 on 2017/4/1.
+//  Created by 劉仲軒 on 2017/4/2.
 //  Copyright © 2017年 劉仲軒. All rights reserved.
 //
 
 import UIKit
 
-class FavoriteNavigationController: UINavigationController {
+class AlertViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,11 +21,6 @@ class FavoriteNavigationController: UINavigationController {
         // Dispose of any resources that can be recreated.
     }
     
-    func initTabBarItem() {
-        
-        self.tabBarItem = UITabBarItem(title: nil, image: self.tabBarItem.image?.withRenderingMode(.alwaysOriginal), selectedImage: self.tabBarItem.selectedImage?.withRenderingMode(.alwaysOriginal))
-        self.tabBarItem.imageInsets = UIEdgeInsets(top: 6, left: 0, bottom: -6, right: 0)
-    }
 
     /*
     // MARK: - Navigation

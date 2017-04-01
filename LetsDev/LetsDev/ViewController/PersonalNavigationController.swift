@@ -22,7 +22,7 @@ class PersonalNavigationController: UINavigationController {
     }
 
     func initTabBarItem() {
-        
+
 //        self.tabBarItem = UITabBarItem(title: nil, image: self.tabBarItem.image?.withRenderingMode(.alwaysOriginal), tag: self.tabBarItem.tag)
         self.tabBarItem = UITabBarItem(title: nil, image: self.tabBarItem.image?.withRenderingMode(.alwaysOriginal), selectedImage: self.tabBarItem.selectedImage?.withRenderingMode(.alwaysOriginal))
 //        self.tabBarItem.selectedImage = self.tabBarItem.selectedImage?.withRenderingMode(.alwaysOriginal)

@@ -27,19 +27,19 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
         let bgView = UIView(frame: CGRect(x: CGFloat(itemIndex) * itemWidth, y: 0, width: itemWidth, height: tabBar.frame.height))
         bgView.backgroundColor = bgColor
         tabBar.insertSubview(bgView, at: 1)
-        
+
         let personalVC = self.viewControllers?[0] as! PersonalNavigationController
         personalVC.initTabBarItem()
 
         let newDevVc = self.viewControllers?[2] as! NewDevNavigationController
         newDevVc.initTabBarItem()
-        
+
         let favoriteVC = self.viewControllers?[1] as! FavoriteNavigationController
         favoriteVC.initTabBarItem()
-        
+
         let alertVC = self.viewControllers?[3] as! AlertNavigationController
         alertVC.initTabBarItem()
-        
+
         let homeVC = self.viewControllers?[4] as! HomeNavigationController
         homeVC.initTabBarItem()
     }

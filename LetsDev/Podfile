@@ -14,7 +14,6 @@ pod 'Firebase/Auth'
 pod 'Firebase/Storage'
 pod 'Hex'
 pod 'DKImagePickerController'
-pod 'UITextView+Placeholder', '~> 1.2'
 pod 'IQKeyboardManagerSwift'
 pod 'SKPhotoBrowser'
 

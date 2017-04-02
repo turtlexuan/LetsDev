@@ -56,7 +56,7 @@
             </objects>
             <point key="canvasLocation" x="1600.8" y="185.75712143928038"/>
         </scene>
-        <!--Personal View Controller-->
+        <!--Person-->
         <scene sceneID="izX-0V-SvF">
             <objects>
                 <viewController id="JGe-2r-AFf" customClass="PersonalViewController" customModule="LetsDev" customModuleProvider="target" sceneMemberID="viewController">
@@ -69,11 +69,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="0.63410512750000003" blue="0.5808108434" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" id="RUJ-7S-19R"/>
+                    <navigationItem key="navigationItem" title="Person" id="RUJ-7S-19R"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hye-f9-jOf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2540" y="936.88155922038993"/>
+            <point key="canvasLocation" x="1601" y="-1273"/>
         </scene>
         <!--Timer View Controller-->
         <scene sceneID="tkN-Oa-gvN">
@@ -297,7 +297,7 @@
             </objects>
             <point key="canvasLocation" x="3895.1999999999998" y="185.75712143928038"/>
         </scene>
-        <!--Alert View Controller-->
+        <!--Alert-->
         <scene sceneID="Ke9-2M-SdH">
             <objects>
                 <viewController id="MyH-gA-hkl" customClass="AlertViewController" customModule="LetsDev" customModuleProvider="target" sceneMemberID="viewController">
@@ -310,11 +310,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="LDQ-X7-Paq"/>
+                    <navigationItem key="navigationItem" title="Alert" id="LDQ-X7-Paq"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XOg-gV-VJC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-313" y="-583"/>
+            <point key="canvasLocation" x="1601" y="939"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="iUN-UP-Q1o">
@@ -538,9 +538,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eiQ-h1-Mf7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="800.79999999999995" y="-1191.4542728635683"/>
+            <point key="canvasLocation" x="-1258" y="186"/>
         </scene>
-        <!--Favorite View Controller-->
+        <!--Favorite-->
         <scene sceneID="5Wh-8c-gTw">
             <objects>
                 <viewController id="URW-Ks-JGz" customClass="FavoriteViewController" customModule="LetsDev" customModuleProvider="target" sceneMemberID="viewController">
@@ -553,11 +553,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" id="ehk-XQ-iQW"/>
+                    <navigationItem key="navigationItem" title="Favorite" id="ehk-XQ-iQW"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iIb-pa-CSh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2540" y="-514.09295352323841"/>
+            <point key="canvasLocation" x="1601" y="-514"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="pfI-in-NuZ">
@@ -586,7 +586,7 @@
         <scene sceneID="qLM-Qn-0hx">
             <objects>
                 <navigationController storyboardIdentifier="NewDevNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="A1L-Td-7bG" customClass="NewDevNavigationController" customModule="LetsDev" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" tag="1" image="plusButton" selectedImage="plusButton" id="n5G-b8-41b">
+                    <tabBarItem key="tabBarItem" tag="2" image="plusButton" selectedImage="plusButton" id="n5G-b8-41b">
                         <inset key="imageInsets" minX="0.0" minY="7" maxX="0.0" maxY="-7"/>
                     </tabBarItem>
                     <toolbarItems/>
@@ -603,7 +603,7 @@
             </objects>
             <point key="canvasLocation" x="812" y="185.75712143928038"/>
         </scene>
-        <!--Home View Controller-->
+        <!--Home-->
         <scene sceneID="OJz-0u-P3i">
             <objects>
                 <viewController id="2Hg-9C-5Gm" customClass="HomeViewController" customModule="LetsDev" customModuleProvider="target" sceneMemberID="viewController">
@@ -616,17 +616,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="BZE-RC-2LH"/>
+                    <navigationItem key="navigationItem" title="Home" id="BZE-RC-2LH"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="opN-Zh-5b2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="639.20000000000005" y="936.88155922038993"/>
+            <point key="canvasLocation" x="1601" y="1724"/>
         </scene>
         <!--Personal Navigation Controller-->
         <scene sceneID="v1c-ni-cbn">
             <objects>
                 <navigationController storyboardIdentifier="PersonalNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="0dR-Mz-D0y" customClass="PersonalNavigationController" customModule="LetsDev" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" tag="2" image="Personal-Origin" selectedImage="Personal" id="iuY-fI-8VW"/>
+                    <tabBarItem key="tabBarItem" image="Personal-Origin" selectedImage="Personal" id="iuY-fI-8VW"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="hqZ-PQ-GD0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -639,13 +639,13 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eC9-eM-2XT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1751.2" y="936.88155922038993"/>
+            <point key="canvasLocation" x="801" y="-1273"/>
         </scene>
         <!--Favorite Navigation Controller-->
         <scene sceneID="VzV-WX-EUc">
             <objects>
                 <navigationController storyboardIdentifier="FavoriteNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="OTC-cj-xk7" customClass="FavoriteNavigationController" customModule="LetsDev" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="Favorite-Origin" selectedImage="Favorite" id="ZOT-dT-dKt"/>
+                    <tabBarItem key="tabBarItem" tag="1" title="" image="Favorite-Origin" selectedImage="Favorite" id="ZOT-dT-dKt"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="X5m-AK-6Ef">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -658,7 +658,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="icN-zA-A5H" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1751.2" y="-514.09295352323841"/>
+            <point key="canvasLocation" x="801" y="-514"/>
         </scene>
         <!--Alert Navigation Controller-->
         <scene sceneID="Zeu-ox-geE">
@@ -677,7 +677,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rte-Bq-hOK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1407" y="-583"/>
+            <point key="canvasLocation" x="801" y="939"/>
         </scene>
         <!--Home Navigation Controller-->
         <scene sceneID="3AC-VM-gN0">
@@ -696,7 +696,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GGd-HA-MYo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-300" y="936.88155922038993"/>
+            <point key="canvasLocation" x="801" y="1724"/>
         </scene>
     </scenes>
     <resources>

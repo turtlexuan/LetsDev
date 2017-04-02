@@ -35,7 +35,7 @@ class RecordTableViewController: UITableViewController {
         self.tableView.register(UINib(nibName: "CombinationTableViewCell", bundle: nil), forCellReuseIdentifier: "CombinationTableViewCell")
         self.tableView.register(UINib(nibName: "NoteTableViewCell", bundle: nil), forCellReuseIdentifier: "NoteTableViewCell")
         self.tableView.register(UINib(nibName: "PhotoTableViewCell", bundle: nil), forCellReuseIdentifier: "PhotoTableViewCell")
-        self.tableView.register(UINib(nibName: "NewDevTableViewCell", bundle: nil), forCellReuseIdentifier: "NewDevTableViewCell")
+//        self.tableView.register(UINib(nibName: "NewDevTableViewCell", bundle: nil), forCellReuseIdentifier: "NewDevTableViewCell")
 
         self.tableView.separatorStyle = .none
         self.tableView.allowsSelection = false
@@ -175,6 +175,27 @@ class RecordTableViewController: UITableViewController {
         }
         let cameraAction = UIAlertAction(title: "Take a photo", style: .default) { (_) in
             //
+            let pickerController = DKImagePickerController()
+            pickerController.sourceType = .camera
+            
+            pickerController.didSelectAssets = { [unowned self] (assets: [DKAsset]) in
+                print("didSelectAssets")
+                
+                self.assets = assets
+                
+                for asset in assets {
+                    asset.fetchOriginalImage(true, completeBlock: { (imageData, _) in
+                        guard let image = imageData else { return }
+                        self.skImage.append(SKPhoto.photoWithImage(image))
+                    })
+                    
+                }
+                
+                RecordManager.shared.updatePhoto(with: self.skImage, key: self.recordKey)
+                
+                self.tableView.reloadData()
+            }
+            self.present(pickerController, animated: true, completion: nil)
         }
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
 
@@ -186,7 +207,9 @@ class RecordTableViewController: UITableViewController {
     }
 
     func doneAction(_ sender: UIBarButtonItem) {
-        self.dismiss(animated: true, completion: nil)
+        self.dismiss(animated: true) { 
+            self.tabBarController?.selectedIndex = 4
+        }
     }
 }
 

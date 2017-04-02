@@ -26,7 +26,7 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
         let itemWidth = tabBar.frame.width / CGFloat(tabBar.items!.count)
         let bgView = UIView(frame: CGRect(x: CGFloat(itemIndex) * itemWidth, y: 0, width: itemWidth, height: tabBar.frame.height))
         bgView.backgroundColor = bgColor
-        tabBar.insertSubview(bgView, at: 1)
+        tabBar.insertSubview(bgView, at: 2)
 
         let personalVC = self.viewControllers?[0] as! PersonalNavigationController
         personalVC.initTabBarItem()

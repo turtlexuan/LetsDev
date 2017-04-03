@@ -23,6 +23,7 @@ class RecordTableViewController: UITableViewController {
     var recordKey = ""
     var components: [Component] = [ .combination, .note, .photo ]
     var note = ""
+    var photos: [String] = []
     var assets: [DKAsset] = []
     var skImage: [SKPhoto] = []
 
@@ -35,10 +36,11 @@ class RecordTableViewController: UITableViewController {
         self.tableView.register(UINib(nibName: "CombinationTableViewCell", bundle: nil), forCellReuseIdentifier: "CombinationTableViewCell")
         self.tableView.register(UINib(nibName: "NoteTableViewCell", bundle: nil), forCellReuseIdentifier: "NoteTableViewCell")
         self.tableView.register(UINib(nibName: "PhotoTableViewCell", bundle: nil), forCellReuseIdentifier: "PhotoTableViewCell")
-//        self.tableView.register(UINib(nibName: "NewDevTableViewCell", bundle: nil), forCellReuseIdentifier: "NewDevTableViewCell")
 
         self.tableView.separatorStyle = .none
         self.tableView.allowsSelection = false
+
+        self.fetchPhotos()
     }
 
     // MARK: - Table view data source
@@ -99,7 +101,6 @@ class RecordTableViewController: UITableViewController {
             self.tableView.beginUpdates()
             cell.setCollectionViewDataSourceDelegate(self)
             cell.collectionView.collectionViewLayout = self.configLayout()
-            self.tableView.rowHeight = cell.collectionView.bounds.height
             self.tableView.setNeedsLayout()
             self.tableView.layoutIfNeeded()
             self.tableView.endUpdates()
@@ -161,12 +162,17 @@ class RecordTableViewController: UITableViewController {
                 for asset in assets {
                     asset.fetchOriginalImage(true, completeBlock: { (imageData, _) in
                         guard let image = imageData else { return }
+                        let skPhoto = SKPhoto.photoWithImage(image)
                         self.skImage.append(SKPhoto.photoWithImage(image))
+
+                        RecordManager.shared.updatePhoto(with: skPhoto, success: { (urlString) in
+                            self.photos.append(urlString)
+                            RecordManager.shared.updatePhotoUrl(with: self.photos, key: self.recordKey)
+                        })
+
                     })
 
                 }
-
-                RecordManager.shared.updatePhoto(with: self.skImage, key: self.recordKey)
 
                 self.tableView.reloadData()
             }
@@ -177,22 +183,27 @@ class RecordTableViewController: UITableViewController {
             //
             let pickerController = DKImagePickerController()
             pickerController.sourceType = .camera
-            
+
             pickerController.didSelectAssets = { [unowned self] (assets: [DKAsset]) in
                 print("didSelectAssets")
-                
+
                 self.assets = assets
-                
+
                 for asset in assets {
                     asset.fetchOriginalImage(true, completeBlock: { (imageData, _) in
                         guard let image = imageData else { return }
+
+                        let skPhoto = SKPhoto.photoWithImage(image)
                         self.skImage.append(SKPhoto.photoWithImage(image))
+
+                        RecordManager.shared.updatePhoto(with: skPhoto, success: { (urlString) in
+                            self.photos.append(urlString)
+                            RecordManager.shared.updatePhotoUrl(with: self.photos, key: self.recordKey)
+                        })
                     })
-                    
+
                 }
-                
-                RecordManager.shared.updatePhoto(with: self.skImage, key: self.recordKey)
-                
+
                 self.tableView.reloadData()
             }
             self.present(pickerController, animated: true, completion: nil)
@@ -207,7 +218,7 @@ class RecordTableViewController: UITableViewController {
     }
 
     func doneAction(_ sender: UIBarButtonItem) {
-        self.dismiss(animated: true) { 
+        self.dismiss(animated: true) {
             self.tabBarController?.selectedIndex = 4
         }
     }
@@ -248,6 +259,37 @@ extension RecordTableViewController {
         let second = time % 60
 
         return (minute, second)
+    }
+
+    func fetchPhotos() {
+        if self.photos.count == 0 { return }
+
+        for string in self.photos {
+//            let photo = SKPhoto.photoWithImageURL(string)
+//            photo.shouldCachePhotoURLImage = false
+//            self.skImage.append(photo)
+
+            DispatchQueue.global().async {
+
+                guard let url = URL(string: string) else { return }
+
+                do {
+                    let imageData = try Data(contentsOf: url)
+                    if let image = UIImage(data: imageData) {
+                        let skPhoto = SKPhoto.photoWithImage(image)
+                        DispatchQueue.main.async {
+                            self.skImage.append(skPhoto)
+                            self.tableView.reloadData()
+                        }
+
+                    }
+                } catch {
+                    print(error)
+                }
+            }
+        }
+
+        self.tableView.reloadData()
     }
 }
 

@@ -19,12 +19,12 @@ class CollectionHeight {
 
     static let offset: CGFloat = 14
 
-    static func getItemWidth(boundWidth: CGFloat) -> CGFloat {
-
-        let totalWidth = boundWidth - (offset + offset) - ((column - 1) * minItemSpacing)
-
-        return totalWidth / column
-    }
+//    static func getItemWidth(boundWidth: CGFloat) -> CGFloat {
+//
+//        let totalWidth = boundWidth - (offset + offset) - ((column - 1) * minItemSpacing)
+//
+//        return totalWidth / column
+//    }
 
     static func getCollectionHeight(itemHeight: CGFloat, totalItem: Int) -> CGFloat {
         let totalRow = ceil(CGFloat(totalItem) / column)

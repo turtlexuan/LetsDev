@@ -33,18 +33,26 @@ class RecordManager {
             let devTime     = combination.devTime,
             let stopTime    = combination.stopTime,
             let fixTime     = combination.fixTime,
-            let washTime    = combination.washTime else { return }
+            let washTime    = combination.washTime,
+            let dilution = combination.dilution,
+            let temp = combination.temp else { return }
 
         let devAgitation = combination.devAgitation.rawValue
         let fixAgitation = combination.fixAgitation.rawValue
 
-        let value = ["Film": film, "Type": type, "Developer": developer, "BufferTime": bufferTime, "PreWashTime": preWashTime, "DevTime": devTime, "StopTime": stopTime, "FixTime": fixTime, "WashTime": washTime, "DevAgitation": devAgitation, "FixAgitation": fixAgitation] as [String : Any]
+        let value = ["Film": film, "Type": type, "Developer": developer, "BufferTime": bufferTime, "PreWashTime": preWashTime, "DevTime": devTime, "StopTime": stopTime, "FixTime": fixTime, "WashTime": washTime, "DevAgitation": devAgitation, "FixAgitation": fixAgitation, "Dilution": dilution, "Temp": temp] as [String : Any]
 
-        self.databaseRef.child("Records").childByAutoId().setValue(["Uid": uid]) { (error, databaseRef) in
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy.MM.dd"
+
+        let date = dateFormatter.string(from: Date())
+
+        self.databaseRef.child("Records").child(uid).childByAutoId().setValue(["Date": date]) { (error, databaseRef) in
             if error != nil {
                 fail?(error!)
             }
-            self.databaseRef.child("Records").child(databaseRef.key).child("Combination").setValue(value) { (error, databaseRef) in
+
+            self.databaseRef.child("Records").child(uid).child(databaseRef.key).child("Combination").setValue(value) { (error, databaseRef) in
                 if error != nil {
                     fail?(error!)
                 }
@@ -52,37 +60,122 @@ class RecordManager {
                 success?(databaseRef)
             }
         }
+
     }
 
     func updateNote(with note: String, key: String) {
 
+        guard let uid = self.auth?.currentUser?.uid else { return }
+
         let value = ["Note": note]
 
-        self.databaseRef.child("Records").child(key).updateChildValues(value)
+        self.databaseRef.child("Records").child(uid).child(key).updateChildValues(value)
     }
 
-    func updatePhoto(with images: [SKPhoto], key: String) {
+    func updatePhoto(with image: SKPhoto, success: @escaping (_ photoUrl: String) -> Void) {
 
         guard let uid = self.auth?.currentUser?.uid else { return }
 
-        var imageUrls: [String] = []
+//        var imageUrls: [String] = []
 
-        for image in images {
-            if let uploadData = UIImagePNGRepresentation(image.underlyingImage) {
-                let storagePath = storageRef.child(uid).child("\(UUID().uuidString).png")
-                storagePath.put(uploadData, metadata: nil, completion: { (metaData, error) in
+        if let uploadData = UIImagePNGRepresentation(image.underlyingImage) {
+            let storagePath = storageRef.child(uid).child("\(UUID().uuidString).png")
+            storagePath.put(uploadData, metadata: nil, completion: { (metaData, error) in
 
-                    if error != nil {
-                        print("Upload Error: \(String(describing: error?.localizedDescription))")
-                        return
-                    }
+                if error != nil {
+                    print("Upload Error: \(String(describing: error?.localizedDescription))")
+                    return
+                }
 
-                    guard let photoUrl = metaData?.downloadURL()?.absoluteString else { return }
-                    imageUrls.append(photoUrl)
-                    self.databaseRef.child("Records").child(key).updateChildValues(["Photo": imageUrls])
-                })
-            }
+                guard let photoUrl = metaData?.downloadURL()?.absoluteString else { return }
+                success(photoUrl)
+            })
         }
+//
+//        for image in images {
+//            if let uploadData = UIImagePNGRepresentation(image.underlyingImage) {
+//                let storagePath = storageRef.child(uid).child("\(UUID().uuidString).png")
+//                storagePath.put(uploadData, metadata: nil, completion: { (metaData, error) in
+//
+//                    if error != nil {
+//                        print("Upload Error: \(String(describing: error?.localizedDescription))")
+//                        return
+//                    }
+//
+//                    guard let photoUrl = metaData?.downloadURL()?.absoluteString else { return }
+//                    imageUrls.append(photoUrl)
+//                    self.databaseRef.child("Records").child(uid).child(key).updateChildValues(["Photo": imageUrls])
+//                })
+//            }
+//        }
+    }
+
+    func updatePhotoUrl(with urls: [String], key: String) {
+
+        guard let uid = self.auth?.currentUser?.uid else { return }
+
+        self.databaseRef.child("Records").child(uid).child(key).updateChildValues(["Photo": urls])
+
+    }
+
+    typealias FetchSuccess = (_ value: [Record]?) -> Void
+
+    func fetchRecords(_ completion: @escaping FetchSuccess) {
+
+        guard let uid = self.auth?.currentUser?.uid else { return }
+
+        var records: [Record] = []
+
+        self.databaseRef.child("Records").child(uid).observeSingleEvent(of: .value, with: { (snapshot) in
+
+            records = []
+
+            for child in snapshot.children {
+
+                guard let task = child as? FIRDataSnapshot else { continue }
+                guard let value = task.value as? [String: Any] else { continue }
+                guard
+                    let combination = value["Combination"] as? [String: Any],
+                    let date = value["Date"] as? String else { continue }
+                var note = ""
+                var photo: [String] = []
+
+                if let notes = value["Note"] as? String {
+                    note = notes
+                }
+
+                if let photos = value["Photo"] as? [String] {
+                    photo = photos
+                }
+
+                guard
+                    let film = combination["Film"] as? String,
+                    let type = combination["Type"] as? String,
+                    let developer = combination["Developer"] as? String,
+                    let preWashTime = combination["PreWashTime"] as? Int,
+                    let devTime = combination["DevTime"] as? Int,
+                    let devAgitationString = combination["DevAgitation"] as? String,
+                    let devAgitation = Agigtations(rawValue: devAgitationString),
+                    let stopTime = combination["StopTime"] as? Int,
+                    let fixTime = combination["FixTime"] as? Int,
+                    let fixAgitationString = combination["FixAgitation"] as? String,
+                    let fixAgitation = Agigtations(rawValue: fixAgitationString),
+                    let washTime = combination["WashTime"] as? Int,
+                    let bufferTime = combination["BufferTime"] as? Int,
+                    let dilution = combination["Dilution"] as? String,
+                    let temp = combination["Temp"] as? Int else { continue }
+
+                let combinations = Combination(film: film, type: type, preWashTime: preWashTime, dev: developer, dilution: dilution, devTime: devTime, temp: temp, devAgitation: devAgitation, stopTime: stopTime, fixTime: fixTime, fixAgitation: fixAgitation, washTime: washTime, bufferTime: bufferTime)
+
+                let record = Record(combination: combinations, note: note, photo: photo, date: date, key: task.key)
+
+                records.append(record)
+            }
+            self.databaseRef.child("Records").child(uid).removeAllObservers()
+            completion(records)
+        })
+
+//        self.databaseRef.child("Records").child(uid).removeAllObservers()
     }
 
 }

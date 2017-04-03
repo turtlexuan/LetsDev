@@ -11,11 +11,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="213" id="KGk-i7-Jjw" customClass="PersonalTableViewCell" customModule="LetsDev" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="490" height="213"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PersonalTableViewCell" rowHeight="131" id="KGk-i7-Jjw" customClass="PersonalTableViewCell" customModule="LetsDev" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="490" height="131"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="490" height="213"/>
+                <rect key="frame" x="0.0" y="0.0" width="490" height="131"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="anonymous-logo" translatesAutoresizingMaskIntoConstraints="NO" id="gJu-J0-duY">
@@ -44,7 +44,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v20-3e-uvU">
-                        <rect key="frame" x="0.0" y="211.5" width="490" height="1"/>
+                        <rect key="frame" x="0.0" y="129.5" width="490" height="1"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="1" id="3bO-oH-usS"/>
@@ -71,7 +71,7 @@
                 <outlet property="userImageView" destination="gJu-J0-duY" id="eM1-9s-WTr"/>
                 <outlet property="userNameLabel" destination="ZUX-N0-fDA" id="BTO-ga-wCo"/>
             </connections>
-            <point key="canvasLocation" x="119" y="138.5"/>
+            <point key="canvasLocation" x="119" y="97.5"/>
         </tableViewCell>
     </objects>
     <resources>

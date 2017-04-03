@@ -21,6 +21,9 @@ class RecordListTableViewCell: UITableViewCell {
         // Initialization code
         self.grayBackgroundView.layer.cornerRadius = 10
         self.grayBackgroundView.layer.masksToBounds = true
+
+        self.collectionView.register(UINib(nibName: "PhotoCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "PhotoCollectionViewCell")
+        self.collectionView.isScrollEnabled = false
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -29,4 +32,10 @@ class RecordListTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+    func setCollectionViewDataSourceDelegate<D: UICollectionViewDataSource & UICollectionViewDelegate>(_ dataSourceDelegate: D) {
+
+        collectionView.delegate = dataSourceDelegate
+        collectionView.dataSource = dataSourceDelegate
+        collectionView.reloadData()
+    }
 }

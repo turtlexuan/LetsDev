@@ -56,25 +56,6 @@
             </objects>
             <point key="canvasLocation" x="1600.8" y="185.75712143928038"/>
         </scene>
-        <!--Person-->
-        <scene sceneID="izX-0V-SvF">
-            <objects>
-                <viewController id="JGe-2r-AFf" customClass="PersonalViewController" customModule="LetsDev" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="7uK-jF-sXs"/>
-                        <viewControllerLayoutGuide type="bottom" id="4ht-sc-M5N"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="v5t-6V-XlR">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="0.63410512750000003" blue="0.5808108434" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Person" id="RUJ-7S-19R"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Hye-f9-jOf" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1601" y="-1273"/>
-        </scene>
         <!--Timer View Controller-->
         <scene sceneID="tkN-Oa-gvN">
             <objects>
@@ -634,12 +615,31 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="JGe-2r-AFf" kind="relationship" relationship="rootViewController" id="YFO-lw-k8R"/>
+                        <segue destination="9tC-8T-gIN" kind="relationship" relationship="rootViewController" id="mVO-sS-667"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eC9-eM-2XT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="801" y="-1273"/>
+        </scene>
+        <!--Personal-->
+        <scene sceneID="yZO-zq-lmC">
+            <objects>
+                <tableViewController id="9tC-8T-gIN" customClass="PersonalTableViewController" customModule="LetsDev" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="EEk-Lw-oyu">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <connections>
+                            <outlet property="dataSource" destination="9tC-8T-gIN" id="MWm-Ol-cp1"/>
+                            <outlet property="delegate" destination="9tC-8T-gIN" id="dST-kV-iPZ"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Personal" id="1gb-l2-8gW"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="L3v-DZ-78I" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1601" y="-1273"/>
         </scene>
         <!--Favorite Navigation Controller-->
         <scene sceneID="VzV-WX-EUc">

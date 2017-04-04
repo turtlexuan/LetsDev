@@ -76,10 +76,9 @@ class RecordManager {
 
         guard let uid = self.auth?.currentUser?.uid else { return }
 
-//        var imageUrls: [String] = []
+        if let uploadData = UIImageJPEGRepresentation(image.underlyingImage, 0.5) {
 
-        if let uploadData = UIImagePNGRepresentation(image.underlyingImage) {
-            let storagePath = storageRef.child(uid).child("\(UUID().uuidString).png")
+            let storagePath = storageRef.child(uid).child("\(UUID().uuidString).jpg")
             storagePath.put(uploadData, metadata: nil, completion: { (metaData, error) in
 
                 if error != nil {
@@ -91,23 +90,6 @@ class RecordManager {
                 success(photoUrl)
             })
         }
-//
-//        for image in images {
-//            if let uploadData = UIImagePNGRepresentation(image.underlyingImage) {
-//                let storagePath = storageRef.child(uid).child("\(UUID().uuidString).png")
-//                storagePath.put(uploadData, metadata: nil, completion: { (metaData, error) in
-//
-//                    if error != nil {
-//                        print("Upload Error: \(String(describing: error?.localizedDescription))")
-//                        return
-//                    }
-//
-//                    guard let photoUrl = metaData?.downloadURL()?.absoluteString else { return }
-//                    imageUrls.append(photoUrl)
-//                    self.databaseRef.child("Records").child(uid).child(key).updateChildValues(["Photo": imageUrls])
-//                })
-//            }
-//        }
     }
 
     func updatePhotoUrl(with urls: [String], key: String) {

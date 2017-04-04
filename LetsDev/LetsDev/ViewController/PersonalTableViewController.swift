@@ -29,14 +29,6 @@ class PersonalTableViewController: UITableViewController {
         UserManager.shared.getUser { (user) in
             self.currentUser = user
         }
-
-//        RecordManager.shared.fetchRecords { (records) in
-//            if let record = records {
-//                self.records = record
-//                self.tableView.reloadData()
-//            }
-//        }
-
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -93,15 +85,24 @@ class PersonalTableViewController: UITableViewController {
             cell.devTimeLabel.text = "Dev Time : \(self.timeExchanger(time: index.combination.devTime).minute)' \(self.timeExchanger(time: index.combination.devTime).second)\""
             cell.filmLabel.text = index.combination.film
             cell.timeLabel.text = index.date
+            cell.noteLabel.text = index.note
 
-            cell.setCollectionViewDataSourceDelegate(self)
-            cell.collectionView.collectionViewLayout = self.configLayout()
-            cell.collectionView.tag = indexPath.row
-//            self.tableView.setNeedsLayout()
-//            self.tableView.layoutIfNeeded()
+            DispatchQueue.global().async {
 
+                if let imageUrlString = index.photo.first as? String, let imageUrl = URL(string: imageUrlString) {
+                    do {
+                        let imageData = try Data(contentsOf: imageUrl)
+                        if let image = UIImage(data: imageData) {
+                            DispatchQueue.main.async {
+                                cell.imagePreView.image = image
+                            }
+                        }
+                    } catch {
+                        print(error)
+                    }
+                }
+            }
             return cell
-
         }
 
     }
@@ -114,7 +115,7 @@ class PersonalTableViewController: UITableViewController {
         case .profile:
             return 130
         case .record:
-            return 210
+            return 170
         }
     }
 
@@ -130,63 +131,6 @@ class PersonalTableViewController: UITableViewController {
             recordVC.recordKey = key
         }
         self.navigationController?.pushViewController(recordVC, animated: true)
-    }
-
-    func configLayout() -> UICollectionViewFlowLayout {
-        let layout = UICollectionViewFlowLayout()
-        layout.sectionInset = UIEdgeInsets(top: 14, left: 14, bottom: 14, right: 14)
-        layout.minimumLineSpacing = 14
-        layout.minimumInteritemSpacing = 5
-        layout.itemSize = CGSize(width: (self.view.frame.width - 76) / 5, height: (self.view.frame.width - 76) / 5)
-
-        return layout
-    }
-
-}
-
-extension PersonalTableViewController: UICollectionViewDataSource, UICollectionViewDelegate {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-
-        if self.records[collectionView.tag].photo.count < 5 {
-            return self.records[collectionView.tag].photo.count
-        } else {
-            return 5
-        }
-    }
-
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoCollectionViewCell", for: indexPath) as! PhotoCollectionViewCell
-
-        var imageUrls: [URL] = []
-        var images: [UIImage] = []
-
-        for string in self.records[collectionView.tag].photo {
-            guard let imageUrlString = string, let imageUrl = URL(string: imageUrlString) else { return PhotoCollectionViewCell() }
-            imageUrls.append(imageUrl)
-        }
-
-        DispatchQueue.global().async {
-            for url in imageUrls {
-                do {
-                    let imageData = try Data(contentsOf: url)
-                    if let image = UIImage(data: imageData) {
-                        images.append(image)
-                    }
-                } catch {
-                    print(error)
-                }
-            }
-
-            DispatchQueue.main.async {
-                cell.imageView.image = images[indexPath.row]
-            }
-        }
-        return cell
-    }
-
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        //
     }
 }
 

@@ -10,11 +10,19 @@ import UIKit
 
 class TabBarController: UITabBarController, UITabBarControllerDelegate {
 
+    static var favoriteKeys: [String] = []
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // swiftlint:disable force_cast
         // Do any additional setup after loading the view.
         self.delegate = self
+
+        FavoriteManager.shared.getFavorite { (favoriteKeys) in
+            TabBarController.favoriteKeys = favoriteKeys
+            print(favoriteKeys)
+            print(TabBarController.favoriteKeys)
+        }
     }
 
     override func viewWillAppear(_ animated: Bool) {

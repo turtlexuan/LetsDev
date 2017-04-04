@@ -177,10 +177,12 @@ class TimerViewController: UIViewController {
         let doneAction = UIAlertAction(title: "OK", style: .default) { (_) in
             if let recordTableVC = self.storyboard?.instantiateViewController(withIdentifier: "RecordTableViewController") as? RecordTableViewController {
                 recordTableVC.combination = self.combination
+                recordTableVC.isFromNewProcess = true
                 RecordManager.shared.uploadRecord(with: self.combination, success: { (databaseRef) in
                     print("\(String(describing: databaseRef.parent?.key))")
                     guard let recordKey = databaseRef.parent?.key else { return }
                     recordTableVC.recordKey = recordKey
+
                     self.navigationController?.pushViewController(recordTableVC, animated: true)
                 }, fail: { (error) in
                     print(error)

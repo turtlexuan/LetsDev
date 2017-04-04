@@ -26,12 +26,19 @@ class RecordTableViewController: UITableViewController {
     var photos: [String] = []
     var assets: [DKAsset] = []
     var skImage: [SKPhoto] = []
+    var isFromNewProcess = false
+    var isFavorite = false
+
+    var rightBarButton = UIBarButtonItem(image: #imageLiteral(resourceName: "Favorite-Origin-Button"), style: .done, target: self, action: #selector(favoriteAction(_:)))
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.title = combination.film
-        self.navigationItem.setHidesBackButton(true, animated: true)
-        self.navigationItem.setRightBarButton(UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(doneAction(_:))), animated: true)
+
+        if TabBarController.favoriteKeys.contains(self.recordKey) {
+            self.isFavorite = true
+        }
+
+        self.setUpNavigation()
 
         self.tableView.register(UINib(nibName: "CombinationTableViewCell", bundle: nil), forCellReuseIdentifier: "CombinationTableViewCell")
         self.tableView.register(UINib(nibName: "NoteTableViewCell", bundle: nil), forCellReuseIdentifier: "NoteTableViewCell")
@@ -41,6 +48,23 @@ class RecordTableViewController: UITableViewController {
         self.tableView.allowsSelection = false
 
         self.fetchPhotos()
+    }
+
+    func setUpNavigation() {
+
+        if self.isFavorite == false {
+            self.rightBarButton = UIBarButtonItem(image: #imageLiteral(resourceName: "Favorite-Origin-Button"), style: .done, target: self, action: #selector(favoriteAction(_:)))
+        } else if self.isFavorite == true {
+            self.rightBarButton = UIBarButtonItem(image: #imageLiteral(resourceName: "Favorite-Button"), style: .done, target: self, action: #selector(favoriteAction(_:)))
+        }
+
+        self.navigationItem.setRightBarButton(self.rightBarButton, animated: true)
+
+        if self.isFromNewProcess == true {
+            self.navigationItem.title = combination.film
+            self.navigationItem.setHidesBackButton(true, animated: true)
+            self.navigationItem.setLeftBarButton(UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(doneAction(_:))), animated: true)
+        }
     }
 
     // MARK: - Table view data source
@@ -219,8 +243,26 @@ class RecordTableViewController: UITableViewController {
 
     func doneAction(_ sender: UIBarButtonItem) {
         self.dismiss(animated: true) {
-            self.tabBarController?.selectedIndex = 4
         }
+    }
+
+    func favoriteAction(_ sender: UIBarButtonItem) {
+
+        if self.isFavorite == false {
+            self.rightBarButton = UIBarButtonItem(image: #imageLiteral(resourceName: "Favorite-Button"), style: .done, target: self, action: #selector(favoriteAction(_:)))
+            TabBarController.favoriteKeys.append(self.recordKey)
+            FavoriteManager.shared.updateFavorite(with: TabBarController.favoriteKeys)
+            self.isFavorite = true
+        } else if self.isFavorite == true {
+            self.rightBarButton = UIBarButtonItem(image: #imageLiteral(resourceName: "Favorite-Origin-Button"), style: .done, target: self, action: #selector(favoriteAction(_:)))
+            let indexOfRecord = TabBarController.favoriteKeys.index(of: self.recordKey)
+            TabBarController.favoriteKeys.remove(at: indexOfRecord!)
+            FavoriteManager.shared.updateFavorite(with: TabBarController.favoriteKeys)
+            self.isFavorite = false
+        }
+
+        self.navigationItem.setRightBarButton(self.rightBarButton, animated: true)
+
     }
 }
 

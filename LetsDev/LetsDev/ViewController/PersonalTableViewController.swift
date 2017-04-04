@@ -37,6 +37,7 @@ class PersonalTableViewController: UITableViewController {
         RecordManager.shared.fetchRecords { (records) in
             if let record = records {
                 self.records = record
+                self.records.sort(by: { $0.date > $1.date })
                 self.tableView.reloadData()
             }
         }
@@ -79,12 +80,19 @@ class PersonalTableViewController: UITableViewController {
             let cell = self.tableView.dequeueReusableCell(withIdentifier: "RecordListTableViewCell", for: indexPath) as! RecordListTableViewCell
 
             let index = self.records[indexPath.row]
+            
+            
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy.MM.dd"
+            
+            let date = Date(timeIntervalSince1970: index.date / 1000)
+            let dateString = dateFormatter.string(from: date)
 
             cell.selectionStyle = .none
             cell.devloperLabel.text = index.combination.dev
             cell.devTimeLabel.text = "Dev Time : \(self.timeExchanger(time: index.combination.devTime).minute)' \(self.timeExchanger(time: index.combination.devTime).second)\""
             cell.filmLabel.text = index.combination.film
-            cell.timeLabel.text = index.date
+            cell.timeLabel.text = dateString
             cell.noteLabel.text = index.note
 
             DispatchQueue.global().async {

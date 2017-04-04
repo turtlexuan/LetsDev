@@ -42,10 +42,12 @@ class RecordManager {
 
         let value = ["Film": film, "Type": type, "Developer": developer, "BufferTime": bufferTime, "PreWashTime": preWashTime, "DevTime": devTime, "StopTime": stopTime, "FixTime": fixTime, "WashTime": washTime, "DevAgitation": devAgitation, "FixAgitation": fixAgitation, "Dilution": dilution, "Temp": temp] as [String : Any]
 
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy.MM.dd"
-
-        let date = dateFormatter.string(from: Date())
+//        let dateFormatter = DateFormatter()
+//        dateFormatter.dateFormat = "yyyy.MM.dd"
+//
+//        let date = dateFormatter.string(from: Date())
+        
+        let date = Date().timeIntervalSince1970 * 1000
 
         self.databaseRef.child("Records").child(uid).childByAutoId().setValue(["Date": date]) { (error, databaseRef) in
             if error != nil {
@@ -118,7 +120,8 @@ class RecordManager {
                 guard let value = task.value as? [String: Any] else { continue }
                 guard
                     let combination = value["Combination"] as? [String: Any],
-                    let date = value["Date"] as? String else { continue }
+                    let millisDate = value["Date"] as? Double else { continue }
+                
                 var note = ""
                 var photo: [String] = []
 
@@ -149,7 +152,7 @@ class RecordManager {
 
                 let combinations = Combination(film: film, type: type, preWashTime: preWashTime, dev: developer, dilution: dilution, devTime: devTime, temp: temp, devAgitation: devAgitation, stopTime: stopTime, fixTime: fixTime, fixAgitation: fixAgitation, washTime: washTime, bufferTime: bufferTime)
 
-                let record = Record(combination: combinations, note: note, photo: photo, date: date, key: task.key)
+                let record = Record(combination: combinations, note: note, photo: photo, date: millisDate, key: task.key)
 
                 records.append(record)
             }

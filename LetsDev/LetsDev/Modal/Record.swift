@@ -14,10 +14,10 @@ class Record {
     let combination: Combination!
     let note: String?
     let photo: [String?]
-    let date: String!
+    let date: Double!
     let key: String!
 
-    init(combination: Combination, note: String?, photo: [String?], date: String, key: String) {
+    init(combination: Combination, note: String?, photo: [String?], date: Double, key: String) {
 
         self.combination = combination
         self.note = note

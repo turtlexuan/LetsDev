@@ -102,6 +102,7 @@ class RecordTableViewController: UITableViewController {
             cell.washTimeLabel.text = "Wash Time : \(washTime.minute)' \(washTime.second)\""
             cell.devAgitationLabel.text = "Dev Agitation : \(self.combination.devAgitation.rawValue)"
             cell.fixAgitationLabel.text = "Fix Agitation : \(self.combination.fixAgitation.rawValue)"
+            cell.dilutionLabel.text = "Dilution : \(self.combination.dilution)"
 
             if let temp = self.combination.temp {
                 cell.temperatureLabel.text = "Temperature : \(temp) ºC"

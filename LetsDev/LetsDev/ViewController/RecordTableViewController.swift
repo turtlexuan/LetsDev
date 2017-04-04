@@ -68,7 +68,6 @@ class RecordTableViewController: UITableViewController {
     }
 
     // MARK: - Table view data source
-
     override func numberOfSections(in tableView: UITableView) -> Int {
         return self.components.count
     }
@@ -176,9 +175,9 @@ class RecordTableViewController: UITableViewController {
         let alertController = UIAlertController(title: "Choose Image From?", message: nil, preferredStyle: .actionSheet)
 
         let libraryAction = UIAlertAction(title: "Choose from photo library", style: .default) { (_) in
+
             let pickerController = DKImagePickerController()
             pickerController.assetType = .allPhotos
-
             pickerController.didSelectAssets = { [unowned self] (assets: [DKAsset]) in
                 print("didSelectAssets")
 
@@ -194,14 +193,10 @@ class RecordTableViewController: UITableViewController {
                             self.photos.append(urlString)
                             RecordManager.shared.updatePhotoUrl(with: self.photos, key: self.recordKey)
                         })
-
                     })
-
                 }
-
                 self.tableView.reloadData()
             }
-
             self.present(pickerController, animated: true, completion: nil)
         }
         let cameraAction = UIAlertAction(title: "Take a photo", style: .default) { (_) in
@@ -226,9 +221,7 @@ class RecordTableViewController: UITableViewController {
                             RecordManager.shared.updatePhotoUrl(with: self.photos, key: self.recordKey)
                         })
                     })
-
                 }
-
                 self.tableView.reloadData()
             }
             self.present(pickerController, animated: true, completion: nil)
@@ -250,15 +243,22 @@ class RecordTableViewController: UITableViewController {
     func favoriteAction(_ sender: UIBarButtonItem) {
 
         if self.isFavorite == false {
+
             self.rightBarButton = UIBarButtonItem(image: #imageLiteral(resourceName: "Favorite-Button"), style: .done, target: self, action: #selector(favoriteAction(_:)))
+
             TabBarController.favoriteKeys.append(self.recordKey)
             FavoriteManager.shared.updateFavorite(with: TabBarController.favoriteKeys)
+
             self.isFavorite = true
+
         } else if self.isFavorite == true {
+
             self.rightBarButton = UIBarButtonItem(image: #imageLiteral(resourceName: "Favorite-Origin-Button"), style: .done, target: self, action: #selector(favoriteAction(_:)))
+
             let indexOfRecord = TabBarController.favoriteKeys.index(of: self.recordKey)
             TabBarController.favoriteKeys.remove(at: indexOfRecord!)
             FavoriteManager.shared.updateFavorite(with: TabBarController.favoriteKeys)
+
             self.isFavorite = false
         }
 
@@ -284,7 +284,7 @@ extension RecordTableViewController: UICollectionViewDataSource, UICollectionVie
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        //
+
         let cell = collectionView.cellForItem(at: indexPath) as! PhotoCollectionViewCell
         // swiftlint:enable force_case
         let originImage = cell.imageView.image
@@ -308,9 +308,6 @@ extension RecordTableViewController {
         if self.photos.count == 0 { return }
 
         for string in self.photos {
-//            let photo = SKPhoto.photoWithImageURL(string)
-//            photo.shouldCachePhotoURLImage = false
-//            self.skImage.append(photo)
 
             DispatchQueue.global().async {
 

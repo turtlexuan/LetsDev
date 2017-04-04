@@ -45,12 +45,12 @@ class PersonalTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
+
         return self.components.count
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
+
         let component = self.components[section]
 
         switch component {
@@ -80,11 +80,10 @@ class PersonalTableViewController: UITableViewController {
             let cell = self.tableView.dequeueReusableCell(withIdentifier: "RecordListTableViewCell", for: indexPath) as! RecordListTableViewCell
 
             let index = self.records[indexPath.row]
-            
-            
+
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "yyyy.MM.dd"
-            
+
             let date = Date(timeIntervalSince1970: index.date / 1000)
             let dateString = dateFormatter.string(from: date)
 

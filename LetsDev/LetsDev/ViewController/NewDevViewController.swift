@@ -38,18 +38,6 @@ class NewDevViewController: UIViewController {
     var selectedTemp = 20
     var selectedAgitation = Agigtations.Every60Sec
     var selectedFixAgitation = Agigtations.Every60Sec
-    var devMinute = 00
-    var devSecond = 00
-    var preWashMinute = 00
-    var preWashSecond = 00
-    var stopMinute = 00
-    var stopSecond = 00
-    var fixMinute = 00
-    var fixSecond = 00
-    var washMinute = 00
-    var washSecond = 00
-    var bufferMinute = 00
-    var bufferSecond = 00
 
     var bufferTime = 00
     var preWashTime = 00
@@ -117,20 +105,8 @@ class NewDevViewController: UIViewController {
         self.bufferTimeInputView.delegate = self
     }
 
-    func setUpTimes() {
-        self.bufferTime = self.timeExchanger(minute: self.bufferMinute, second: self.bufferSecond)
-        self.preWashTime = self.timeExchanger(minute: self.preWashMinute, second: self.preWashSecond)
-        self.devTime = self.timeExchanger(minute: self.devMinute, second: self.devSecond)
-        self.stopTime = self.timeExchanger(minute: self.stopMinute, second: self.stopSecond)
-        self.fixTime = self.timeExchanger(minute: self.fixMinute, second: self.fixSecond)
-        self.washTime = self.timeExchanger(minute: self.washMinute, second: self.washSecond)
-    }
-
     func showPicker(_ sender: TTInputButton) {
-        let titleButton = UIBarButtonItem(title: "Select a time",
-                                          style: .plain,
-                                          target: self,
-                                          action: nil)
+        let titleButton = UIBarButtonItem(title: "Select a time", style: .plain, target: self, action: nil)
         titleButton.isEnabled = false
         titleButton.tintColor = .black
 
@@ -247,7 +223,7 @@ extension NewDevViewController: UITableViewDataSource {
             cell.agitationButton.tag = 3
             cell.dilutionTextField.delegate = self
             cell.developerButton.setTitle(self.selectedDev, for: .normal)
-            cell.timeButton.setTitle("\(self.devMinute)'\(self.devSecond)\"", for: .normal)
+            cell.timeButton.setTitle("\(self.timeExchanger(time: self.devTime).minute)'\(self.timeExchanger(time: self.devTime).second)", for: .normal)
             cell.tempButton.setTitle(String(self.selectedTemp), for: .normal)
             cell.agitationButton.setTitle(self.selectedAgitation.rawValue, for: .normal)
             cell.developerButton.addTarget(self, action: #selector(showPicker(_:)), for: .touchUpInside)
@@ -270,7 +246,7 @@ extension NewDevViewController: UITableViewDataSource {
             cell.setTimeLabel.text = Film.processes[indexPath.row].devDescript
             cell.timeButton.tag = 0
             cell.agitationButton.tag = 1
-            cell.timeButton.setTitle("\(self.fixMinute)'\(self.fixSecond)\"", for: .normal)
+            cell.timeButton.setTitle("\(self.timeExchanger(time: self.fixTime).minute)'\(self.timeExchanger(time: self.fixTime).second)", for: .normal)
             cell.agitationButton.setTitle(self.selectedFixAgitation.rawValue, for: .normal)
             cell.timeButton.addTarget(self, action: #selector(showPicker(_:)), for: .touchUpInside)
             cell.agitationButton.addTarget(self, action: #selector(showPicker(_:)), for: .touchUpInside)
@@ -286,13 +262,13 @@ extension NewDevViewController: UITableViewDataSource {
 
             switch indexPath.row {
             case 1:
-                cell.timeButton.setTitle("\(self.preWashMinute)'\(self.preWashSecond)\"", for: UIControlState.normal)
+                cell.timeButton.setTitle("\(self.timeExchanger(time: self.preWashTime).minute)'\(self.timeExchanger(time: self.preWashTime).second)", for: .normal)
             case 3:
-                cell.timeButton.setTitle("\(self.stopMinute)'\(self.stopSecond)\"", for: UIControlState.normal)
+                cell.timeButton.setTitle("\(self.timeExchanger(time: self.stopTime).minute)'\(self.timeExchanger(time: self.stopTime).second)", for: .normal)
             case 5:
-                cell.timeButton.setTitle("\(self.washMinute)'\(self.washSecond)\"", for: UIControlState.normal)
+                cell.timeButton.setTitle("\(self.timeExchanger(time: self.washTime).minute)'\(self.timeExchanger(time: self.washTime).second)", for: .normal)
             default:
-                cell.timeButton.setTitle("\(self.bufferMinute)'\(self.bufferSecond)\"", for: UIControlState.normal)
+                cell.timeButton.setTitle("\(self.timeExchanger(time: self.bufferTime).minute)'\(self.timeExchanger(time: self.bufferTime).second)", for: .normal)
             }
 
             return cell
@@ -378,28 +354,16 @@ extension NewDevViewController: UIPickerViewDelegate, UIPickerViewDataSource {
         case self.fixAgitationInputView:
             self.selectedFixAgitation = Film.agitations[row]
         case self.preWashTimeInputView:
-            self.preWashMinute = pickerView.selectedRow(inComponent: 0)
-            self.preWashSecond = pickerView.selectedRow(inComponent: 1)
             self.preWashTime = self.timeExchanger(minute: pickerView.selectedRow(inComponent: 0), second: pickerView.selectedRow(inComponent: 1))
         case self.devTimeInputView:
-            self.devMinute = pickerView.selectedRow(inComponent: 0)
-            self.devSecond = pickerView.selectedRow(inComponent: 1)
             self.devTime = self.timeExchanger(minute: pickerView.selectedRow(inComponent: 0), second: pickerView.selectedRow(inComponent: 1))
         case self.stopTimeInputView:
-            self.stopMinute = pickerView.selectedRow(inComponent: 0)
-            self.stopSecond = pickerView.selectedRow(inComponent: 1)
             self.stopTime = self.timeExchanger(minute: pickerView.selectedRow(inComponent: 0), second: pickerView.selectedRow(inComponent: 1))
         case self.fixTimeInputView:
-            self.fixMinute = pickerView.selectedRow(inComponent: 0)
-            self.fixSecond = pickerView.selectedRow(inComponent: 1)
             self.fixTime = self.timeExchanger(minute: pickerView.selectedRow(inComponent: 0), second: pickerView.selectedRow(inComponent: 1))
         case self.washTimeInputView:
-            self.washMinute = pickerView.selectedRow(inComponent: 0)
-            self.washSecond = pickerView.selectedRow(inComponent: 1)
             self.washTime = self.timeExchanger(minute: pickerView.selectedRow(inComponent: 0), second: pickerView.selectedRow(inComponent: 1))
         case self.bufferTimeInputView:
-            self.bufferMinute = pickerView.selectedRow(inComponent: 0)
-            self.bufferSecond = pickerView.selectedRow(inComponent: 1)
             self.bufferTime = self.timeExchanger(minute: pickerView.selectedRow(inComponent: 0), second: pickerView.selectedRow(inComponent: 1))
         default:
             break
@@ -424,6 +388,13 @@ extension NewDevViewController: UITextFieldDelegate {
 extension NewDevViewController {
     func timeExchanger(minute: Int, second: Int) -> Int {
         return minute * 60 + second
+    }
+
+    func timeExchanger(time: Int) -> (minute: Int, second: Int) {
+        let minute = time / 60 % 60
+        let second = time % 60
+
+        return (minute, second)
     }
 
     func timeString(time: TimeInterval) -> String {

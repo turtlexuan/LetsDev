@@ -46,7 +46,7 @@ class RecordManager {
 //        dateFormatter.dateFormat = "yyyy.MM.dd"
 //
 //        let date = dateFormatter.string(from: Date())
-        
+
         let date = Date().timeIntervalSince1970 * 1000
 
         self.databaseRef.child("Records").child(uid).childByAutoId().setValue(["Date": date]) { (error, databaseRef) in
@@ -112,7 +112,7 @@ class RecordManager {
 
         self.databaseRef.child("Records").child(uid).observeSingleEvent(of: .value, with: { (snapshot) in
 
-            records = []
+//            records = []
 
             for child in snapshot.children {
 
@@ -121,7 +121,7 @@ class RecordManager {
                 guard
                     let combination = value["Combination"] as? [String: Any],
                     let millisDate = value["Date"] as? Double else { continue }
-                
+
                 var note = ""
                 var photo: [String] = []
 

@@ -64,7 +64,7 @@ PODS:
   - GoogleToolboxForMac/NSString+URLArguments (2.1.1)
   - GTMSessionFetcher/Core (1.1.9)
   - Hex (5.0.1)
-  - IQKeyboardManagerSwift (4.0.8)
+  - IQKeyboardManagerSwift (4.0.9)
   - Protobuf (3.2.0)
   - SKPhotoBrowser (4.0.1)
 
@@ -95,7 +95,7 @@ SPEC CHECKSUMS:
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
   GTMSessionFetcher: 5c046c76a1f859bc9c187e918f18e4fc7bb57b5e
   Hex: 2c757d81a2b4b6afc842458ce485c8c097ea1c79
-  IQKeyboardManagerSwift: c04bc9f68473823f825eb44d958fce98d921bead
+  IQKeyboardManagerSwift: 2eefe6c429b86aa08bfbc1b5c891164d754adf91
   Protobuf: 745f59e122e5de98d4d7ef291e264a0eef80f58e
   SKPhotoBrowser: 3a7c6fc02aa1620ab17253a47a49fafda46536e8
 

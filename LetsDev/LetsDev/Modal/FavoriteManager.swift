@@ -21,7 +21,7 @@ class FavoriteManager {
         guard let uid = self.auth?.currentUser?.uid else { return }
 
         self.databaseRef.child("Favorite").updateChildValues([uid: recordKey]) { (error, _) in
-            //
+
             if error == nil {
                 print("Success")
             }
@@ -43,9 +43,7 @@ class FavoriteManager {
                     }
                 }
             }
-
             completion(favoriteKeys)
-
         })
     }
 
@@ -95,14 +93,7 @@ class FavoriteManager {
                     }
                 }
             }
-
-            print(combinationArray.count)
             completion(combinationArray)
         })
-
-//        for favoriteKey in TabBarController.favoriteKeys {
-//            
-//            
-//        }
     }
 }

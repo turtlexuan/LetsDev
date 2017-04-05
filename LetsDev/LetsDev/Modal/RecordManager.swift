@@ -42,11 +42,6 @@ class RecordManager {
 
         let value = ["Film": film, "Type": type, "Developer": developer, "BufferTime": bufferTime, "PreWashTime": preWashTime, "DevTime": devTime, "StopTime": stopTime, "FixTime": fixTime, "WashTime": washTime, "DevAgitation": devAgitation, "FixAgitation": fixAgitation, "Dilution": dilution, "Temp": temp] as [String : Any]
 
-//        let dateFormatter = DateFormatter()
-//        dateFormatter.dateFormat = "yyyy.MM.dd"
-//
-//        let date = dateFormatter.string(from: Date())
-
         let date = Date().timeIntervalSince1970 * 1000
 
         self.databaseRef.child("Records").child(uid).childByAutoId().setValue(["Date": date]) { (error, databaseRef) in
@@ -112,8 +107,6 @@ class RecordManager {
 
         self.databaseRef.child("Records").child(uid).observeSingleEvent(of: .value, with: { (snapshot) in
 
-//            records = []
-
             for child in snapshot.children {
 
                 guard let task = child as? FIRDataSnapshot else { continue }
@@ -159,8 +152,5 @@ class RecordManager {
             self.databaseRef.child("Records").child(uid).removeAllObservers()
             completion(records)
         })
-
-//        self.databaseRef.child("Records").child(uid).removeAllObservers()
     }
-
 }

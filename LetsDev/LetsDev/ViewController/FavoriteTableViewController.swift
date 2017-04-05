@@ -19,7 +19,6 @@ class FavoriteTableViewController: UITableViewController {
 
         self.tableView.rowHeight = 205
         self.tableView.separatorStyle = .none
-//        self.tableView.sele
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -27,19 +26,17 @@ class FavoriteTableViewController: UITableViewController {
 
         FavoriteManager.shared.fetchFavorite { (combinations) in
             self.favorites = combinations
+            self.favorites.sort(by: { $0.film < $1.film })
             self.tableView.reloadData()
         }
     }
 
     // MARK: - Table view data source
-
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return self.favorites.count
     }
 
@@ -75,10 +72,11 @@ class FavoriteTableViewController: UITableViewController {
 
         return cell
     }
-    
+
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //
         // TODO : delete favorite
+
     }
 
     func newProcess(_ sender: UIButton) {
@@ -109,6 +107,7 @@ class FavoriteTableViewController: UITableViewController {
         self.present(newDevNavigation, animated: true, completion: nil)
 
     }
+
 }
 
 extension FavoriteTableViewController {

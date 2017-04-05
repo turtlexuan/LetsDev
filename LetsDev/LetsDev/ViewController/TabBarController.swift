@@ -50,6 +50,7 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
 
         let homeVC = self.viewControllers?[4] as! HomeNavigationController
         homeVC.initTabBarItem()
+
     }
 
     override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {

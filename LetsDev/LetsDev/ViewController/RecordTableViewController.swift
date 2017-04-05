@@ -236,8 +236,11 @@ class RecordTableViewController: UITableViewController {
     }
 
     func doneAction(_ sender: UIBarButtonItem) {
-        self.dismiss(animated: true) {
-        }
+
+        let tabBarController = UIApplication.shared.keyWindow?.rootViewController as? TabBarController
+        tabBarController?.selectedIndex = 0
+
+        self.navigationController?.dismiss(animated: true, completion: nil)
     }
 
     func favoriteAction(_ sender: UIBarButtonItem) {

@@ -10,7 +10,7 @@ import UIKit
 
 class FavoriteTableViewController: UITableViewController {
 
-    var favorites: [Combination] = []
+    var favorites: [(combination: Combination, key: String)] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +26,7 @@ class FavoriteTableViewController: UITableViewController {
 
         FavoriteManager.shared.fetchFavorite { (combinations) in
             self.favorites = combinations
-            self.favorites.sort(by: { $0.film < $1.film })
+            self.favorites.sort(by: { $0.combination.film < $1.combination.film })
             self.tableView.reloadData()
         }
     }
@@ -42,7 +42,7 @@ class FavoriteTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
-        let index = self.favorites[indexPath.row]
+        let index = self.favorites[indexPath.row].combination
 
         // swiftlint:disable force_cast
         let cell = tableView.dequeueReusableCell(withIdentifier: "FavoriteTableViewCell", for: indexPath) as! FavoriteTableViewCell
@@ -89,7 +89,7 @@ class FavoriteTableViewController: UITableViewController {
             let newDevNavigation = self.storyboard?.instantiateViewController(withIdentifier: "NewDevNavigationController") as? UINavigationController,
             let newDevVC = newDevNavigation.viewControllers[0] as? NewDevViewController else { return }
 
-        let index = self.favorites[indexPath.row]
+        let index = self.favorites[indexPath.row].combination
 
         newDevVC.selectedFilm = index.film
         newDevVC.selectedType = index.type

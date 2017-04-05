@@ -48,10 +48,13 @@
 		205DC7A61E93ACFE00A3E46E /* FavoriteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205DC7A41E93ACFE00A3E46E /* FavoriteTableViewCell.swift */; };
 		205DC7A71E93ACFE00A3E46E /* FavoriteTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 205DC7A51E93ACFE00A3E46E /* FavoriteTableViewCell.xib */; };
 		205DC7A91E93B3B200A3E46E /* FavoriteTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205DC7A81E93B3B200A3E46E /* FavoriteTableViewController.swift */; };
-		206E3CB01E8B980B00DB33DD /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206E3CAF1E8B980B00DB33DD /* SignUpViewController.swift */; };
+		205DC7AF1E94ED7100A3E46E /* CreateUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205DC7AE1E94ED7100A3E46E /* CreateUserViewController.swift */; };
+		205DC7B11E94EFD000A3E46E /* UsernameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205DC7B01E94EFD000A3E46E /* UsernameViewController.swift */; };
+		205DC7B31E94F11500A3E46E /* UserPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205DC7B21E94F11500A3E46E /* UserPhotoViewController.swift */; };
 		206E3CB21E8BA32E00DB33DD /* LoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206E3CB11E8BA32E00DB33DD /* LoginManager.swift */; };
 		206E3CB41E8BA36300DB33DD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206E3CB31E8BA36300DB33DD /* User.swift */; };
 		206E3CB61E8BB36800DB33DD /* RecordManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206E3CB51E8BB36800DB33DD /* RecordManager.swift */; };
+		2084E2DC1E954D6A00EE06DA /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2084E2DB1E954D6A00EE06DA /* SignUpViewController.swift */; };
 		20892FC21E812D9B00369946 /* DevProcess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20892FC11E812D9B00369946 /* DevProcess.swift */; };
 		20892FC51E819B6200369946 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20892FC41E819B6200369946 /* Color.swift */; };
 		20892FC71E821A0700369946 /* Combination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20892FC61E821A0700369946 /* Combination.swift */; };
@@ -110,10 +113,13 @@
 		205DC7A41E93ACFE00A3E46E /* FavoriteTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteTableViewCell.swift; sourceTree = "<group>"; };
 		205DC7A51E93ACFE00A3E46E /* FavoriteTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FavoriteTableViewCell.xib; sourceTree = "<group>"; };
 		205DC7A81E93B3B200A3E46E /* FavoriteTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteTableViewController.swift; sourceTree = "<group>"; };
-		206E3CAF1E8B980B00DB33DD /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		205DC7AE1E94ED7100A3E46E /* CreateUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateUserViewController.swift; sourceTree = "<group>"; };
+		205DC7B01E94EFD000A3E46E /* UsernameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsernameViewController.swift; sourceTree = "<group>"; };
+		205DC7B21E94F11500A3E46E /* UserPhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserPhotoViewController.swift; sourceTree = "<group>"; };
 		206E3CB11E8BA32E00DB33DD /* LoginManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginManager.swift; sourceTree = "<group>"; };
 		206E3CB31E8BA36300DB33DD /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		206E3CB51E8BB36800DB33DD /* RecordManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordManager.swift; sourceTree = "<group>"; };
+		2084E2DB1E954D6A00EE06DA /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		20892FC11E812D9B00369946 /* DevProcess.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DevProcess.swift; sourceTree = "<group>"; };
 		20892FC41E819B6200369946 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		20892FC61E821A0700369946 /* Combination.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Combination.swift; sourceTree = "<group>"; };
@@ -206,9 +212,9 @@
 		201978D41E80CFAD0013FACE /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				205DC7AB1E94ED4F00A3E46E /* SignUp */,
 				20F322EC1E8FBD83008605FE /* Navigation */,
 				20F322E01E8FA82A008605FE /* TabBarController.swift */,
-				206E3CAF1E8B980B00DB33DD /* SignUpViewController.swift */,
 				201978D51E80CFBE0013FACE /* NewDevViewController.swift */,
 				2030D5FA1E839262004E2C63 /* TimerViewController.swift */,
 				2002AED01E84B8A800E21EA5 /* RecordTableViewController.swift */,
@@ -269,6 +275,17 @@
 				205DC7A51E93ACFE00A3E46E /* FavoriteTableViewCell.xib */,
 			);
 			path = Favorite;
+			sourceTree = "<group>";
+		};
+		205DC7AB1E94ED4F00A3E46E /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				2084E2DB1E954D6A00EE06DA /* SignUpViewController.swift */,
+				205DC7AE1E94ED7100A3E46E /* CreateUserViewController.swift */,
+				205DC7B01E94EFD000A3E46E /* UsernameViewController.swift */,
+				205DC7B21E94F11500A3E46E /* UserPhotoViewController.swift */,
+			);
+			path = SignUp;
 			sourceTree = "<group>";
 		};
 		20892FC31E819B5200369946 /* Constants */ = {
@@ -436,7 +453,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		F55A50C42BB17EF30594F745 /* [CP] Embed Pods Frameworks */ = {
@@ -463,7 +480,9 @@
 			files = (
 				206E3CB21E8BA32E00DB33DD /* LoginManager.swift in Sources */,
 				205DC7981E91622200A3E46E /* PersonalTableViewController.swift in Sources */,
+				205DC7AF1E94ED7100A3E46E /* CreateUserViewController.swift in Sources */,
 				205DC79C1E92382B00A3E46E /* UserManager.swift in Sources */,
+				2084E2DC1E954D6A00EE06DA /* SignUpViewController.swift in Sources */,
 				20892FC71E821A0700369946 /* Combination.swift in Sources */,
 				205DC7891E8FF99600A3E46E /* PersonalTableViewCell.swift in Sources */,
 				20892FCF1E827C0C00369946 /* TTInputButton.swift in Sources */,
@@ -488,7 +507,7 @@
 				205DC7821E8FF63B00A3E46E /* PhotoCollectionViewCell.swift in Sources */,
 				205DC7A91E93B3B200A3E46E /* FavoriteTableViewController.swift in Sources */,
 				205DC79A1E9200B300A3E46E /* Record.swift in Sources */,
-				206E3CB01E8B980B00DB33DD /* SignUpViewController.swift in Sources */,
+				205DC7B11E94EFD000A3E46E /* UsernameViewController.swift in Sources */,
 				205DC7961E902B3600A3E46E /* HomeViewController.swift in Sources */,
 				205DC7841E8FF63B00A3E46E /* PhotoTableViewCell.swift in Sources */,
 				205DC78D1E8FFD4300A3E46E /* RecordListTableViewCell.swift in Sources */,
@@ -500,6 +519,7 @@
 				205DC7761E8FF63B00A3E46E /* NewDevTableViewCell.swift in Sources */,
 				205DC7A01E93840000A3E46E /* FavoriteManager.swift in Sources */,
 				20F322E71E8FAFF1008605FE /* PersonalNavigationController.swift in Sources */,
+				205DC7B31E94F11500A3E46E /* UserPhotoViewController.swift in Sources */,
 				201978B61E80BAE20013FACE /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

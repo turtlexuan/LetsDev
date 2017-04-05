@@ -26,6 +26,7 @@ class SignUpViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setUpView()
+        self.navigationController?.isNavigationBarHidden = true
     }
 
     func setUpView() {
@@ -41,11 +42,16 @@ class SignUpViewController: UIViewController {
     }
 
     @IBAction func showCreateView(_ sender: Any) {
-        self.buttonStackView.isHidden = true
-        self.subtitleLabel.text = "Sign Up"
-        self.subtitleLabel.isHidden = false
-        self.signUpStackView.isHidden = false
-        self.createButton.isHidden = false
+//        self.buttonStackView.isHidden = true
+//        self.subtitleLabel.text = "Sign Up"
+//        self.subtitleLabel.isHidden = false
+//        self.signUpStackView.isHidden = false
+//        self.createButton.isHidden = false
+
+        // swiftlint:disable force_cast
+        let createUserVC = self.storyboard?.instantiateViewController(withIdentifier: "CreateUserViewController") as! CreateUserViewController
+        self.navigationController?.pushViewController(createUserVC, animated: true)
+
     }
 
     @IBAction func showSignInView(_ sender: Any) {

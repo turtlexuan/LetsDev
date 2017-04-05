@@ -47,9 +47,13 @@ class FavoriteManager {
         })
     }
 
-    func fetchFavorite(_ completion: @escaping (_ favorites: [Combination]) -> Void) {
+    typealias FetchSuccess = (_ favorites: [(combination: Combination, key: String)]) -> Void
+
+    func fetchFavorite(_ completion: @escaping FetchSuccess) {
 
         var combinationArray: [Combination] = []
+
+        var favoriteTuple: [(combination: Combination, key: String)] = []
 
         self.databaseRef.child("Records").observeSingleEvent(of: .value, with: { (snapshots) in
 
@@ -90,10 +94,12 @@ class FavoriteManager {
                         let combinations = Combination(film: film, type: type, preWashTime: preWashTime, dev: developer, dilution: dilution, devTime: devTime, temp: temp, devAgitation: devAgitation, stopTime: stopTime, fixTime: fixTime, fixAgitation: fixAgitation, washTime: washTime, bufferTime: bufferTime)
 
                         combinationArray.append(combinations)
+
+                        favoriteTuple.append((combinations, boy.key))
                     }
                 }
             }
-            completion(combinationArray)
+            completion(favoriteTuple)
         })
     }
 }

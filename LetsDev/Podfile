@@ -16,6 +16,10 @@ pod 'Hex'
 pod 'DKImagePickerController'
 pod 'IQKeyboardManagerSwift'
 pod 'SKPhotoBrowser'
+pod 'Kingfisher'
+pod 'NVActivityIndicatorView'
+pod 'Hero'
+pod 'SkyFloatingLabelTextField'
 
   # Pods for LetsDev
 

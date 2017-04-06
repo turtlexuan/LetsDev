@@ -807,9 +807,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="anonymous-logo" translatesAutoresizingMaskIntoConstraints="NO" id="18B-IY-5Qa">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo-camera" translatesAutoresizingMaskIntoConstraints="NO" id="18B-IY-5Qa">
                                 <rect key="frame" x="127" y="116" width="120" height="120"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="eD0-fn-Qfq"/>
@@ -820,19 +819,26 @@
                                 </connections>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xaO-9B-wCc">
-                                <rect key="frame" x="133.5" y="266" width="107" height="30"/>
+                                <rect key="frame" x="133.5" y="316" width="107" height="30"/>
                                 <state key="normal" title="Create Account"/>
                                 <connections>
                                     <action selector="createAccount:" destination="0DV-S3-aZ9" eventType="touchUpInside" id="lXQ-Np-o4B"/>
                                     <action selector="createAction:" destination="Bqy-Nw-ccV" eventType="touchUpInside" id="P6D-1F-Grc"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Upload Your Profile Picture" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dt5-hk-2TY">
+                                <rect key="frame" x="84" y="244" width="206" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="mDY-Ec-Z2f" firstAttribute="top" secondItem="f8w-Qu-4rV" secondAttribute="bottom" constant="30" id="00E-tV-oev"/>
                             <constraint firstItem="18B-IY-5Qa" firstAttribute="top" secondItem="mDY-Ec-Z2f" secondAttribute="bottom" constant="30" id="LkV-24-GyT"/>
-                            <constraint firstItem="xaO-9B-wCc" firstAttribute="top" secondItem="18B-IY-5Qa" secondAttribute="bottom" constant="30" id="Rj0-Wl-kcS"/>
+                            <constraint firstItem="xaO-9B-wCc" firstAttribute="top" secondItem="18B-IY-5Qa" secondAttribute="bottom" constant="80" id="Rj0-Wl-kcS"/>
                             <constraint firstItem="mDY-Ec-Z2f" firstAttribute="centerX" secondItem="PLe-4z-Lrw" secondAttribute="centerX" id="bZ4-xe-S0x"/>
                             <constraint firstItem="xaO-9B-wCc" firstAttribute="centerX" secondItem="PLe-4z-Lrw" secondAttribute="centerX" id="pha-e1-J9m"/>
                             <constraint firstItem="18B-IY-5Qa" firstAttribute="centerX" secondItem="PLe-4z-Lrw" secondAttribute="centerX" id="ygJ-Y3-DBM"/>
@@ -1056,8 +1062,8 @@
         <image name="Home-Origin" width="30" height="30"/>
         <image name="Personal" width="32" height="32"/>
         <image name="Personal-Origin" width="30" height="30"/>
-        <image name="anonymous-logo" width="512" height="512"/>
         <image name="oval" width="512" height="512"/>
+        <image name="photo-camera" width="512" height="512"/>
         <image name="plusButton" width="31" height="35"/>
     </resources>
 </document>

@@ -9,6 +9,12 @@
 import UIKit
 
 class CreateUserViewController: UIViewController {
+    
+    enum AlertMessage {
+        case EmailEmpty
+        case InvalidFormat
+        case PasswordEmpty
+    }
 
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -48,6 +54,19 @@ class CreateUserViewController: UIViewController {
 
         self.navigationController?.pushViewController(usernameVC, animated: true)
 
+    }
+    
+    func showCancelAlert(_ alertMessage: AlertMessage) {
+        let alertController = UIAlertController(title: "Cancel Process?", message: "Do you want to cancel the timer?", preferredStyle: .alert)
+        let doneAction = UIAlertAction(title: "Yes", style: .default) { (_) in
+            _ = self.navigationController?.popToRootViewController(animated: true)
+        }
+        let cancelAction = UIAlertAction(title: "No", style: .cancel, handler: nil)
+        
+        alertController.addAction(doneAction)
+        alertController.addAction(cancelAction)
+        
+        self.present(alertController, animated: true, completion: nil)
     }
 
     func isValidEmailAddress(emailAddressString: String) -> Bool {

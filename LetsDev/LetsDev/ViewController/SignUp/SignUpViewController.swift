@@ -12,41 +12,13 @@ class SignUpViewController: UIViewController {
 
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var buttonStackView: UIStackView!
-    @IBOutlet weak var subtitleLabel: UILabel!
-    @IBOutlet weak var signUpStackView: UIStackView!
-    @IBOutlet weak var logInStackView: UIStackView!
-    @IBOutlet weak var createButton: UIButton!
-    @IBOutlet weak var logInButton: UIButton!
-    @IBOutlet weak var usernameTextField: UITextField!
-    @IBOutlet weak var createEmailTextFiled: UITextField!
-    @IBOutlet weak var createPasswordTextField: UITextField!
-    @IBOutlet weak var emailTextField: UITextField!
-    @IBOutlet weak var passwordTextField: UITextField!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setUpView()
         self.navigationController?.isNavigationBarHidden = true
     }
 
-    func setUpView() {
-        self.subtitleLabel.isHidden = true
-        self.signUpStackView.isHidden = true
-        self.logInStackView.isHidden = true
-        self.createButton.isHidden = true
-        self.logInButton.isHidden = true
-        self.emailTextField.keyboardType = .emailAddress
-        self.createEmailTextFiled.keyboardType = .emailAddress
-        self.createPasswordTextField.isSecureTextEntry = true
-        self.passwordTextField.isSecureTextEntry = true
-    }
-
     @IBAction func showCreateView(_ sender: Any) {
-//        self.buttonStackView.isHidden = true
-//        self.subtitleLabel.text = "Sign Up"
-//        self.subtitleLabel.isHidden = false
-//        self.signUpStackView.isHidden = false
-//        self.createButton.isHidden = false
 
         // swiftlint:disable force_cast
         let createUserVC = self.storyboard?.instantiateViewController(withIdentifier: "CreateUserViewController") as! CreateUserViewController
@@ -55,38 +27,9 @@ class SignUpViewController: UIViewController {
     }
 
     @IBAction func showSignInView(_ sender: Any) {
-        self.buttonStackView.isHidden = true
-        self.subtitleLabel.text = "Log In"
-        self.subtitleLabel.isHidden = false
-        self.logInStackView.isHidden = false
-        self.logInButton.isHidden = false
-    }
-
-    @IBAction func createAccount(_ sender: Any) {
-
-        guard let email = self.createEmailTextFiled.text, let password = self.createPasswordTextField.text, let username = self.usernameTextField.text else { return }
-
-        LoginManager.shared.create(withEmail: email, password: password, username: username, success: { (user) in
-            //
-            print(user)
-
-            self.nextVC()
-        }) { (error) in
-            //
-            print(error)
-        }
-    }
-
-    @IBAction func logInAction(_ sender: Any) {
-
-        guard let email = self.emailTextField.text, let password = self.passwordTextField.text else { return }
-
-        LoginManager.shared.login(withEmail: email, password: password, success: { (email, uid) in
-            print("\(email), \(uid)")
-            self.nextVC()
-        }) { (error) in
-            print(error)
-        }
+        
+        let logInVC = self.storyboard?.instantiateViewController(withIdentifier: "LogInViewController") as! LogInViewController
+        self.navigationController?.pushViewController(logInVC, animated: true)
     }
 
     func nextVC() {

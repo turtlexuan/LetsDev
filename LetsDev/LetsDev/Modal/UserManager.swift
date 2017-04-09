@@ -26,11 +26,20 @@ class UserManager {
             //
             guard let data = snapshot.value as? [String: Any] else { return }
 
-            guard let username = data["Username"] as? String, let email = data["Email"] as? String else { return }
+            guard
+                let username = data["Username"] as? String,
+                let email = data["Email"] as? String else { return }
 
-            let user = User(uid: uid, email: email, username: username)
+            if let photoUrl = data["Profile"] as? String {
+                let user = User(uid: uid, email: email, username: username, profileImage: photoUrl)
 
-            completion(user)
+                completion(user)
+            } else {
+                let user = User(uid: uid, email: email, username: username)
+
+                completion(user)
+            }
+
         })
     }
 

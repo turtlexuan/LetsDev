@@ -16,13 +16,16 @@ class UserPhotoViewController: UIViewController {
     var email = ""
     var password = ""
     var username = ""
-    var image: UIImage!
     var imageChanged = false
+    var profileImage: UIImage?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(showImagePickerAlertSheet(_:)))
+        imageView.isUserInteractionEnabled = true
+        imageView.addGestureRecognizer(tapGestureRecognizer)
     }
 
     override func didReceiveMemoryWarning() {
@@ -33,19 +36,32 @@ class UserPhotoViewController: UIViewController {
     @IBAction func createAction(_ sender: Any) {
 
         if self.imageChanged == false {
-            // TODO: send alert
-            // TODO: create user without photo
+            self.showAlert()
+        } else {
+            self.signUp()
         }
 
-        // TODO: Sign Up
+    }
+
+    func signUp() {
+
+//        guard let image = self.profileImage else {
+//            return
+//        }
+
+        print(self.email)
+
+        LoginManager.shared.create(withEmail: self.email, password: self.password, username: self.username, image: self.profileImage, success: { (_) in
+
+            self.nextVC()
+
+        }, fail: { (error) in
+            print(error)
+        })
 
     }
 
-    @IBAction func addPhotoAction(_ sender: UITapGestureRecognizer) {
-        self.showImagePickerAlertSheet()
-    }
-
-    func showImagePickerAlertSheet() {
+    func showImagePickerAlertSheet(_ sender: UITapGestureRecognizer) {
         let alertController = UIAlertController(title: "Choose Image From?", message: nil, preferredStyle: .actionSheet)
 
         let libraryAction = UIAlertAction(title: "Choose from photo library", style: .default) { (_) in
@@ -60,6 +76,7 @@ class UserPhotoViewController: UIViewController {
                 asset?.fetchOriginalImage(true, completeBlock: { (imageData, _) in
                     guard let image = imageData else { return }
                     self.imageView.image = image
+                    self.profileImage = image
                     self.imageChanged = true
                 })
             }
@@ -78,6 +95,7 @@ class UserPhotoViewController: UIViewController {
                 asset?.fetchOriginalImage(true, completeBlock: { (imageData, _) in
                     guard let image = imageData else { return }
                     self.imageView.image = image
+                    self.profileImage = image
                     self.imageChanged = true
                 })
             }
@@ -91,6 +109,37 @@ class UserPhotoViewController: UIViewController {
         alertController.addAction(cancelAction)
 
         self.present(alertController, animated: true, completion: nil)
+    }
+
+    func showAlert() {
+        let alertController = UIAlertController(title: "Profile Image", message: "You haven't select any picture, do you want to continue?", preferredStyle: .alert)
+        let doneAction = UIAlertAction(title: "Upload Later.", style: .default) { (_) in
+
+//            self.profileImage = #imageLiteral(resourceName: "anonymous-logo")
+
+            self.signUp()
+        }
+
+        let cancelAction = UIAlertAction(title: "Upload Now.", style: .cancel, handler: nil)
+        alertController.addAction(doneAction)
+        alertController.addAction(cancelAction)
+
+        self.present(alertController, animated: true, completion: nil)
+    }
+
+    func showErrorAlert() {
+        let alertController = UIAlertController(title: "Error", message: "Something is wrong, please try again", preferredStyle: .alert)
+        let doneAction = UIAlertAction(title: "OK", style: .default)
+        alertController.addAction(doneAction)
+
+        self.present(alertController, animated: true, completion: nil)
+    }
+
+    func nextVC() {
+        // swiftlint:disable force_cast
+        let navigationController = self.storyboard?.instantiateViewController(withIdentifier: "TabBarController") as! TabBarController
+        UIApplication.shared.keyWindow?.rootViewController = navigationController
+
     }
 
 }

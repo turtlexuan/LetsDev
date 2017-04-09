@@ -65,10 +65,7 @@ class FavoriteManager {
 
                     guard let boy = kid as? FIRDataSnapshot else { continue }
 
-                    print(boy.key)
-
                     if TabBarController.favoriteKeys.contains(boy.key) {
-                        print("Yes")
 
                         guard let value = boy.value as? [String: Any] else { continue }
 

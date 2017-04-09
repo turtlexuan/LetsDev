@@ -20,6 +20,7 @@ pod 'Kingfisher'
 pod 'NVActivityIndicatorView'
 pod 'Hero'
 pod 'SkyFloatingLabelTextField'
+pod 'FontAwesome.swift'
 
   # Pods for LetsDev
 

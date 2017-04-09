@@ -50,6 +50,7 @@ PODS:
   - FirebaseStorage (1.1.0):
     - FirebaseAnalytics (~> 3.7)
     - GTMSessionFetcher/Core (~> 1.1)
+  - FontAwesome.swift (1.1.1)
   - GoogleToolboxForMac/DebugUtils (2.1.1):
     - GoogleToolboxForMac/Defines (= 2.1.1)
   - GoogleToolboxForMac/Defines (2.1.1)
@@ -81,6 +82,7 @@ DEPENDENCIES:
   - Firebase/Messaging
   - Firebase/RemoteConfig
   - Firebase/Storage
+  - FontAwesome.swift
   - Hero
   - Hex
   - IQKeyboardManagerSwift
@@ -100,6 +102,7 @@ SPEC CHECKSUMS:
   FirebaseMessaging: df8267f378580a24174ce7861233aa11d5c90109
   FirebaseRemoteConfig: af3003f4e8daa2bd1d5cf90d3cccc1fe224f8ed9
   FirebaseStorage: a5c55b23741a49a72af8f30f95b3bb5ddbeda12d
+  FontAwesome.swift: f4ff5a9199dc3b510eba5bb377e834f159aef358
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
   GTMSessionFetcher: 5c046c76a1f859bc9c187e918f18e4fc7bb57b5e
   Hero: d3c6f4dd80cdcdbb339be64e57ae3b5c3ab9938c
@@ -111,6 +114,6 @@ SPEC CHECKSUMS:
   SKPhotoBrowser: 3a7c6fc02aa1620ab17253a47a49fafda46536e8
   SkyFloatingLabelTextField: 35bc0c2653ad73c5fd8b7a34cfedf09c94367a1a
 
-PODFILE CHECKSUM: c7e5e76bb31f645ae08828dccd394af20cd95678
+PODFILE CHECKSUM: 1d2c4ebf0ab7064ecd4d16ff4375e706a8b406e3
 
-COCOAPODS: 1.2.1.beta.1
+COCOAPODS: 1.2.1.rc.1

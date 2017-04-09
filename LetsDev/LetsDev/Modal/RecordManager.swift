@@ -8,7 +8,6 @@
 
 import Foundation
 import Firebase
-import FirebaseStorage
 import SKPhotoBrowser
 
 class RecordManager {

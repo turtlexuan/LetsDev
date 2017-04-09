@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class PersonalTableViewController: UITableViewController {
 
@@ -72,6 +73,13 @@ class PersonalTableViewController: UITableViewController {
             cell.userNameLabel.text = self.currentUser.username
             cell.recordNumberLabel.text = String(self.records.count)
             cell.isUserInteractionEnabled = false
+
+            if let imageUrl = URL(string: self.currentUser.profileImage) {
+                cell.userImageView.kf.indicatorType = .activity
+                cell.userImageView.kf.setImage(with: imageUrl)
+            } else {
+                cell.userImageView.image = #imageLiteral(resourceName: "anonymous-logo")
+            }
 
             return cell
 

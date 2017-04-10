@@ -45,18 +45,12 @@ class UserPhotoViewController: UIViewController {
 
     func signUp() {
 
-//        guard let image = self.profileImage else {
-//            return
-//        }
-
-        print(self.email)
-
         LoginManager.shared.create(withEmail: self.email, password: self.password, username: self.username, image: self.profileImage, success: { (_) in
 
             self.nextVC()
 
-        }, fail: { (error) in
-            print(error)
+        }, fail: { (message) in
+            print(message)
         })
 
     }
@@ -115,8 +109,6 @@ class UserPhotoViewController: UIViewController {
         let alertController = UIAlertController(title: "Profile Image", message: "You haven't select any picture, do you want to continue?", preferredStyle: .alert)
         let doneAction = UIAlertAction(title: "Upload Later.", style: .default) { (_) in
 
-//            self.profileImage = #imageLiteral(resourceName: "anonymous-logo")
-
             self.signUp()
         }
 
@@ -127,8 +119,8 @@ class UserPhotoViewController: UIViewController {
         self.present(alertController, animated: true, completion: nil)
     }
 
-    func showErrorAlert() {
-        let alertController = UIAlertController(title: "Error", message: "Something is wrong, please try again", preferredStyle: .alert)
+    func showErrorAlert(with message: String) {
+        let alertController = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
         let doneAction = UIAlertAction(title: "OK", style: .default)
         alertController.addAction(doneAction)
 

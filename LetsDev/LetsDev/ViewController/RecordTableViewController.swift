@@ -52,13 +52,15 @@ class RecordTableViewController: UITableViewController {
 
     func setUpNavigation() {
 
-        if self.isFavorite == false {
-            self.rightBarButton = UIBarButtonItem(image: #imageLiteral(resourceName: "Favorite-Origin-Button"), style: .done, target: self, action: #selector(favoriteAction(_:)))
-        } else if self.isFavorite == true {
-            self.rightBarButton = UIBarButtonItem(image: #imageLiteral(resourceName: "Favorite-Button"), style: .done, target: self, action: #selector(favoriteAction(_:)))
-        }
+        let shareButton = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(showShareAlert(_:)))
 
-        self.navigationItem.setRightBarButton(self.rightBarButton, animated: true)
+//        if self.isFavorite == false {
+//            self.rightBarButton = UIBarButtonItem(image: #imageLiteral(resourceName: "Favorite-Origin-Button"), style: .done, target: self, action: #selector(favoriteAction(_:)))
+//        } else if self.isFavorite == true {
+//            self.rightBarButton = UIBarButtonItem(image: #imageLiteral(resourceName: "Favorite-Button"), style: .done, target: self, action: #selector(favoriteAction(_:)))
+//        }
+
+        self.navigationItem.setRightBarButton(shareButton, animated: true)
 
         if self.isFromNewProcess == true {
             self.navigationItem.title = combination.film
@@ -101,7 +103,10 @@ class RecordTableViewController: UITableViewController {
             cell.washTimeLabel.text = "Wash Time : \(washTime.minute)' \(washTime.second)\""
             cell.devAgitationLabel.text = "Dev Agitation : \(self.combination.devAgitation.rawValue)"
             cell.fixAgitationLabel.text = "Fix Agitation : \(self.combination.fixAgitation.rawValue)"
-            cell.dilutionLabel.text = "Dilution : \(self.combination.dilution)"
+
+            if let dilution = self.combination.dilution {
+                cell.dilutionLabel.text = "Dilution : \(dilution)"
+            }
 
             if let temp = self.combination.temp {
                 cell.temperatureLabel.text = "Temperature : \(temp) ºC"
@@ -230,6 +235,61 @@ class RecordTableViewController: UITableViewController {
 
         alertController.addAction(libraryAction)
         alertController.addAction(cameraAction)
+        alertController.addAction(cancelAction)
+
+        self.present(alertController, animated: true, completion: nil)
+    }
+
+    func showShareAlert(_ sender: UIBarButtonItem) {
+        let alertController = UIAlertController(title: "Choose Image From?", message: nil, preferredStyle: .actionSheet)
+        let shareAction = UIAlertAction(title: "Share With Other User.", style: .default) { (_) in
+            let sharedVC = self.storyboard?.instantiateViewController(withIdentifier: "ShareNewPostNavigation") as! UINavigationController
+            self.present(sharedVC, animated: true, completion: nil)
+
+        }
+        let useProcessAction = UIAlertAction(title: "Start a New Developement With Process.", style: .default) { (_) in
+
+            guard
+                let newDevNavigation = self.storyboard?.instantiateViewController(withIdentifier: "NewDevNavigationController") as? UINavigationController,
+                let newDevVC = newDevNavigation.viewControllers[0] as? NewDevViewController else { return }
+
+            newDevVC.selectedFilm = self.combination.film
+            newDevVC.selectedType = self.combination.type
+            newDevVC.selectedDev = self.combination.dev
+            newDevVC.selectedTemp = self.combination.temp
+            newDevVC.selectedAgitation = self.combination.devAgitation
+            newDevVC.selectedFixAgitation = self.combination.fixAgitation
+            newDevVC.preWashTime = self.combination.preWashTime
+            newDevVC.devTime = self.combination.devTime
+            newDevVC.stopTime = self.combination.stopTime
+            newDevVC.fixTime = self.combination.fixTime
+            newDevVC.washTime = self.combination.washTime
+            newDevVC.bufferTime = self.combination.bufferTime
+
+            self.present(newDevNavigation, animated: true, completion: nil)
+        }
+        var favoriteAction = UIAlertAction()
+        if self.isFavorite == true {
+            favoriteAction = UIAlertAction(title: "Mark as Favortie.", style: .default) { (_) in
+                let indexOfRecord = TabBarController.favoriteKeys.index(of: self.recordKey)
+                TabBarController.favoriteKeys.remove(at: indexOfRecord!)
+                FavoriteManager.shared.updateFavorite(with: TabBarController.favoriteKeys)
+
+                self.isFavorite = false
+            }
+        } else {
+            favoriteAction = UIAlertAction(title: "Remove Favortie.", style: .default) { (_) in
+                TabBarController.favoriteKeys.append(self.recordKey)
+                FavoriteManager.shared.updateFavorite(with: TabBarController.favoriteKeys)
+
+                self.isFavorite = true
+            }
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+
+        alertController.addAction(shareAction)
+        alertController.addAction(useProcessAction)
+        alertController.addAction(favoriteAction)
         alertController.addAction(cancelAction)
 
         self.present(alertController, animated: true, completion: nil)

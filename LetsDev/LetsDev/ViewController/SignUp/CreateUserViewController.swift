@@ -14,6 +14,7 @@ class CreateUserViewController: UIViewController {
 
     enum AlertMessage: String {
         case EmailEmpty = "Email Can't be Empty."
+        case EmailAlreadyInUse = "This Email Address is Already be Registered."
         case InvalidFormat = "Email Invalid."
         case PasswordEmpty = "Password Can't be empty."
         case PasswordInvalid = "Password Must Contains at Least 8 Charactors."
@@ -64,6 +65,7 @@ class CreateUserViewController: UIViewController {
 
         if !self.isValidEmailAddress(email) {
             self.showingTitleInProgress = true
+            self.showAlert(.InvalidFormat)
             return
         }
 
@@ -76,6 +78,7 @@ class CreateUserViewController: UIViewController {
 
         if password.characters.count < 8 {
             self.showingTitleInProgress = true
+            self.showAlert(.PasswordInvalid)
             return
         }
 
@@ -83,19 +86,25 @@ class CreateUserViewController: UIViewController {
 
     @IBAction func continueAction(_ sender: Any) {
 
+        guard let email = self.emailTextField.text else { return }
+
         self.isSubmitButtonPressed = false
 
-        if self.showingTitleInProgress == false {
+        LoginManager.shared.isEmailAlreadyInUse(email: email) { (bool) in
+            if bool == false && self.showingTitleInProgress == false {
+                // swiftlint:disable force_cast
+                let usernameVC = self.storyboard?.instantiateViewController(withIdentifier: "UsernameViewController") as! UsernameViewController
 
-            // swiftlint:disable force_cast
-            let usernameVC = self.storyboard?.instantiateViewController(withIdentifier: "UsernameViewController") as! UsernameViewController
+                usernameVC.email = self.emailTextField.text!
+                usernameVC.password = self.passwordTextField.text!
 
-            usernameVC.email = self.emailTextField.text!
-            usernameVC.password = self.passwordTextField.text!
-
-            self.navigationController?.pushViewController(usernameVC, animated: true)
+                self.navigationController?.pushViewController(usernameVC, animated: true)
+            } else if bool == true {
+                self.showAlert(.EmailAlreadyInUse)
+            } else {
+                return
+            }
         }
-
     }
 
     @IBAction func validateEmail() {
@@ -139,7 +148,7 @@ class CreateUserViewController: UIViewController {
     }
 
     func showAlert(_ alertMessage: AlertMessage) {
-        let alertController = UIAlertController(title: "Invalid Format", message: alertMessage.rawValue, preferredStyle: .alert)
+        let alertController = UIAlertController(title: "Erro", message: alertMessage.rawValue, preferredStyle: .alert)
         let doneAction = UIAlertAction(title: "OK", style: .default)
         alertController.addAction(doneAction)
 

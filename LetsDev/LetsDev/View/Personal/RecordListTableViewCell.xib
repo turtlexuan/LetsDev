@@ -16,7 +16,7 @@
             <rect key="frame" x="0.0" y="0.0" width="526" height="170"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Wb8-du-zjB" id="wef-fe-Ls9">
-                <rect key="frame" x="0.0" y="0.0" width="526" height="170"/>
+                <rect key="frame" x="0.0" y="0.0" width="526" height="169.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3ux-tk-stM">
@@ -52,7 +52,7 @@
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g1j-fS-WcU">
                                 <rect key="frame" x="74" y="89" width="416" height="36"/>
-                                <mutableString key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque dictum, nunc eget sagittis convallis, dolor sapien pharetra quam, non semper orci enim sed nisl. In nisl ligula, fringilla quis metus vitae, porttitor vehicula sapien. Praesent ipsum eros, mattis quis massa sit amet, luctus commodo lacus. Sed nisl urna, accumsan sit amet ex in, pretium elementum tellus. Donec sollicitudin porta condimentum. Fusce viverra in risus non ullamcorper. Etiam venenatis urna purus, in imperdiet sapien lobortis sit amet. Curabitur ullamcorper venenatis nisl sit amet rutrum. Etiam elementum velit quis hendrerit ultricies. Proin nec tellus a odio tincidunt auctor pharetra sed orci. Curabitur non elit eu odio elementum pulvinar.
+                                <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque dictum, nunc eget sagittis convallis, dolor sapien pharetra quam, non semper orci enim sed nisl. In nisl ligula, fringilla quis metus vitae, porttitor vehicula sapien. Praesent ipsum eros, mattis quis massa sit amet, luctus commodo lacus. Sed nisl urna, accumsan sit amet ex in, pretium elementum tellus. Donec sollicitudin porta condimentum. Fusce viverra in risus non ullamcorper. Etiam venenatis urna purus, in imperdiet sapien lobortis sit amet. Curabitur ullamcorper venenatis nisl sit amet rutrum. Etiam elementum velit quis hendrerit ultricies. Proin nec tellus a odio tincidunt auctor pharetra sed orci. Curabitur non elit eu odio elementum pulvinar.
 
 Nullam aliquam vel orci et finibus. Sed viverra et sapien pellentesque suscipit. In malesuada lectus vitae nulla gravida tincidunt. Curabitur tristique, elit ac pulvinar dignissim, ante nibh interdum ligula, eu tincidunt tortor velit a nulla. Ut convallis urna odio, iaculis tempus sapien feugiat vitae. Vivamus dapibus a diam ac ullamcorper. Nulla vulputate, est vestibulum congue faucibus, sapien sapien accumsan quam, ac venenatis lacus dui quis erat. Cras consequat lorem eu molestie lobortis. Sed bibendum, metus eget bibendum tempor, magna leo dictum magna, ac ultrices dui nunc et est. Quisque lectus ex, molestie quis mattis nec, ullamcorper at ligula. Nullam pharetra lacus sit amet libero aliquam sagittis. Aliquam vehicula lacus ac mattis hendrerit. Suspendisse vitae sem quis elit eleifend laoreet ut sit amet erat. Sed enim erat, semper quis ipsum in, fringilla condimentum diam. Vestibulum rhoncus urna et bibendum iaculis. Mauris id porttitor mi.
 
@@ -60,7 +60,7 @@ Praesent eu lectus sit amet ante ultrices consectetur. Duis interdum vestibulum 
 
 Aliquam erat volutpat. Vestibulum nec volutpat sapien. Nulla scelerisque facilisis risus nec elementum. Fusce eget dui vel mauris fermentum interdum. Donec a enim eros. Sed quis malesuada metus, nec consequat sapien. Fusce eu orci mollis dolor tempor tincidunt quis in massa. Vivamus a luctus diam. Donec in urna in augue semper egestas quis et velit.
 
-Vivamus at sem massa. Donec egestas, ligula vitae condimentum dignissim, arcu enim bibendum tortor, sit amet tristique enim quam ut metus. Pellentesque sit amet tincidunt quam. Etiam eu erat lobortis, bibendum leo non, varius mi. Etiam lacinia, enim ut ultrices suscipit, ipsum nulla consectetur risus, vel posuere est ante id nisl. Donec sem dui, maximus id suscipit eget, lacinia vel lectus. Nunc pellentesque finibus justo.</mutableString>
+Vivamus at sem massa. Donec egestas, ligula vitae condimentum dignissim, arcu enim bibendum tortor, sit amet tristique enim quam ut metus. Pellentesque sit amet tincidunt quam. Etiam eu erat lobortis, bibendum leo non, varius mi. Etiam lacinia, enim ut ultrices suscipit, ipsum nulla consectetur risus, vel posuere est ante id nisl. Donec sem dui, maximus id suscipit eget, lacinia vel lectus. Nunc pellentesque finibus justo.</string>
                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="15"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>

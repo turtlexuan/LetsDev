@@ -19,7 +19,7 @@ class PersonalTableViewController: UITableViewController {
 
     var components: [Component] = [.profile, .record]
     var records: [Record] = []
-    var currentUser = User(uid: "", email: "", username: "")
+    static var currentUser = User(uid: "", email: "", username: "")
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,7 +28,7 @@ class PersonalTableViewController: UITableViewController {
         self.tableView.register(UINib(nibName: "RecordListTableViewCell", bundle: nil), forCellReuseIdentifier: "RecordListTableViewCell")
 
         UserManager.shared.getUser { (user) in
-            self.currentUser = user
+            PersonalTableViewController.currentUser = user
         }
     }
 
@@ -70,11 +70,11 @@ class PersonalTableViewController: UITableViewController {
             // swiftlint:disable force_cast
             let cell = self.tableView.dequeueReusableCell(withIdentifier: "PersonalTableViewCell", for: indexPath) as! PersonalTableViewCell
 
-            cell.userNameLabel.text = self.currentUser.username
+            cell.userNameLabel.text = PersonalTableViewController.currentUser.username
             cell.recordNumberLabel.text = String(self.records.count)
             cell.isUserInteractionEnabled = false
 
-            if let imageUrl = URL(string: self.currentUser.profileImage) {
+            if let imageUrlString = PersonalTableViewController.currentUser.profileImage, let imageUrl = URL(string: imageUrlString) {
                 cell.userImageView.kf.indicatorType = .activity
                 cell.userImageView.kf.setImage(with: imageUrl)
             } else {

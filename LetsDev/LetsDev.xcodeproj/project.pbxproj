@@ -55,6 +55,10 @@
 		206E3CB41E8BA36300DB33DD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206E3CB31E8BA36300DB33DD /* User.swift */; };
 		206E3CB61E8BB36800DB33DD /* RecordManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206E3CB51E8BB36800DB33DD /* RecordManager.swift */; };
 		2083ABC41E99D9BB00AB0B5A /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2083ABC31E99D9BB00AB0B5A /* LogInViewController.swift */; };
+		2083ABC71E99EB7100AB0B5A /* ErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2083ABC61E99EB7100AB0B5A /* ErrorHandler.swift */; };
+		2083ABC91E9A1E4900AB0B5A /* CommunityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2083ABC81E9A1E4900AB0B5A /* CommunityManager.swift */; };
+		2083ABCB1E9A30EE00AB0B5A /* ShareNewPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2083ABCA1E9A30EE00AB0B5A /* ShareNewPostViewController.swift */; };
+		2083ABCD1E9A457B00AB0B5A /* SharedPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2083ABCC1E9A457B00AB0B5A /* SharedPost.swift */; };
 		2084E2DC1E954D6A00EE06DA /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2084E2DB1E954D6A00EE06DA /* SignUpViewController.swift */; };
 		2084E2E01E9606E300EE06DA /* fontawesome-webfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2084E2DF1E9604AD00EE06DA /* fontawesome-webfont.ttf */; };
 		20892FC21E812D9B00369946 /* DevProcess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20892FC11E812D9B00369946 /* DevProcess.swift */; };
@@ -122,6 +126,10 @@
 		206E3CB31E8BA36300DB33DD /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		206E3CB51E8BB36800DB33DD /* RecordManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordManager.swift; sourceTree = "<group>"; };
 		2083ABC31E99D9BB00AB0B5A /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
+		2083ABC61E99EB7100AB0B5A /* ErrorHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorHandler.swift; sourceTree = "<group>"; };
+		2083ABC81E9A1E4900AB0B5A /* CommunityManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommunityManager.swift; sourceTree = "<group>"; };
+		2083ABCA1E9A30EE00AB0B5A /* ShareNewPostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareNewPostViewController.swift; sourceTree = "<group>"; };
+		2083ABCC1E9A457B00AB0B5A /* SharedPost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharedPost.swift; sourceTree = "<group>"; };
 		2084E2DB1E954D6A00EE06DA /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		2084E2DF1E9604AD00EE06DA /* fontawesome-webfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "fontawesome-webfont.ttf"; sourceTree = "<group>"; };
 		20892FC11E812D9B00369946 /* DevProcess.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DevProcess.swift; sourceTree = "<group>"; };
@@ -194,10 +202,13 @@
 				205DC79B1E92382B00A3E46E /* UserManager.swift */,
 				206E3CB51E8BB36800DB33DD /* RecordManager.swift */,
 				205DC79F1E93840000A3E46E /* FavoriteManager.swift */,
+				2083ABC81E9A1E4900AB0B5A /* CommunityManager.swift */,
 				20892FC11E812D9B00369946 /* DevProcess.swift */,
 				20892FC61E821A0700369946 /* Combination.swift */,
 				206E3CB31E8BA36300DB33DD /* User.swift */,
 				205DC7991E9200B300A3E46E /* Record.swift */,
+				2083ABC61E99EB7100AB0B5A /* ErrorHandler.swift */,
+				2083ABCC1E9A457B00AB0B5A /* SharedPost.swift */,
 			);
 			path = Modal;
 			sourceTree = "<group>";
@@ -228,6 +239,7 @@
 				205DC7A81E93B3B200A3E46E /* FavoriteTableViewController.swift */,
 				205DC7931E902B2600A3E46E /* AlertViewController.swift */,
 				205DC7951E902B3600A3E46E /* HomeViewController.swift */,
+				2083ABCA1E9A30EE00AB0B5A /* ShareNewPostViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -492,6 +504,8 @@
 				2084E2DC1E954D6A00EE06DA /* SignUpViewController.swift in Sources */,
 				20892FC71E821A0700369946 /* Combination.swift in Sources */,
 				205DC7891E8FF99600A3E46E /* PersonalTableViewCell.swift in Sources */,
+				2083ABCB1E9A30EE00AB0B5A /* ShareNewPostViewController.swift in Sources */,
+				2083ABCD1E9A457B00AB0B5A /* SharedPost.swift in Sources */,
 				20892FCF1E827C0C00369946 /* TTInputButton.swift in Sources */,
 				201978BE1E80BAE20013FACE /* LetsDev.xcdatamodeld in Sources */,
 				20892FC21E812D9B00369946 /* DevProcess.swift in Sources */,
@@ -514,6 +528,7 @@
 				20F322E11E8FA82A008605FE /* TabBarController.swift in Sources */,
 				205DC7821E8FF63B00A3E46E /* PhotoCollectionViewCell.swift in Sources */,
 				205DC7A91E93B3B200A3E46E /* FavoriteTableViewController.swift in Sources */,
+				2083ABC91E9A1E4900AB0B5A /* CommunityManager.swift in Sources */,
 				205DC79A1E9200B300A3E46E /* Record.swift in Sources */,
 				205DC7B11E94EFD000A3E46E /* UsernameViewController.swift in Sources */,
 				205DC7961E902B3600A3E46E /* HomeViewController.swift in Sources */,
@@ -527,6 +542,7 @@
 				205DC7761E8FF63B00A3E46E /* NewDevTableViewCell.swift in Sources */,
 				205DC7A01E93840000A3E46E /* FavoriteManager.swift in Sources */,
 				20F322E71E8FAFF1008605FE /* PersonalNavigationController.swift in Sources */,
+				2083ABC71E99EB7100AB0B5A /* ErrorHandler.swift in Sources */,
 				205DC7B31E94F11500A3E46E /* UserPhotoViewController.swift in Sources */,
 				201978B61E80BAE20013FACE /* AppDelegate.swift in Sources */,
 			);

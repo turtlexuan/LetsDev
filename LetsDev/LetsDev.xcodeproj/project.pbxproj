@@ -66,6 +66,8 @@
 		20892FC71E821A0700369946 /* Combination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20892FC61E821A0700369946 /* Combination.swift */; };
 		20892FCD1E8223FB00369946 /* Film.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20892FCC1E8223FB00369946 /* Film.swift */; };
 		20892FCF1E827C0C00369946 /* TTInputButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20892FCE1E827C0C00369946 /* TTInputButton.swift */; };
+		20E6C6FE1E9B833C0021F1DB /* HomePageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E6C6FC1E9B833C0021F1DB /* HomePageTableViewCell.swift */; };
+		20E6C6FF1E9B833C0021F1DB /* HomePageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20E6C6FD1E9B833C0021F1DB /* HomePageTableViewCell.xib */; };
 		20F322DF1E8E1B59008605FE /* NoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F322DE1E8E1B59008605FE /* NoteViewController.swift */; };
 		20F322E11E8FA82A008605FE /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F322E01E8FA82A008605FE /* TabBarController.swift */; };
 		20F322E71E8FAFF1008605FE /* PersonalNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F322E61E8FAFF1008605FE /* PersonalNavigationController.swift */; };
@@ -137,6 +139,8 @@
 		20892FC61E821A0700369946 /* Combination.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Combination.swift; sourceTree = "<group>"; };
 		20892FCC1E8223FB00369946 /* Film.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Film.swift; sourceTree = "<group>"; };
 		20892FCE1E827C0C00369946 /* TTInputButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTInputButton.swift; sourceTree = "<group>"; };
+		20E6C6FC1E9B833C0021F1DB /* HomePageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePageTableViewCell.swift; sourceTree = "<group>"; };
+		20E6C6FD1E9B833C0021F1DB /* HomePageTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomePageTableViewCell.xib; sourceTree = "<group>"; };
 		20F322DE1E8E1B59008605FE /* NoteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteViewController.swift; sourceTree = "<group>"; };
 		20F322E01E8FA82A008605FE /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		20F322E61E8FAFF1008605FE /* PersonalNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonalNavigationController.swift; sourceTree = "<group>"; };
@@ -221,6 +225,7 @@
 				205DC7641E8FF63B00A3E46E /* NewDev */,
 				205DC76D1E8FF63B00A3E46E /* Record */,
 				205DC7861E8FF96900A3E46E /* Personal */,
+				20E6C6FB1E9B83120021F1DB /* Community */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -314,6 +319,15 @@
 				2002AEE21E8A6CF300E21EA5 /* CollectionHeight.swift */,
 			);
 			path = Constants;
+			sourceTree = "<group>";
+		};
+		20E6C6FB1E9B83120021F1DB /* Community */ = {
+			isa = PBXGroup;
+			children = (
+				20E6C6FC1E9B833C0021F1DB /* HomePageTableViewCell.swift */,
+				20E6C6FD1E9B833C0021F1DB /* HomePageTableViewCell.xib */,
+			);
+			path = Community;
 			sourceTree = "<group>";
 		};
 		20F322EC1E8FBD83008605FE /* Navigation */ = {
@@ -420,6 +434,7 @@
 				201978C01E80BAE20013FACE /* Assets.xcassets in Resources */,
 				205DC7771E8FF63B00A3E46E /* NewDevTableViewCell.xib in Resources */,
 				205DC7791E8FF63B00A3E46E /* NewDevTableViewCellFilm.xib in Resources */,
+				20E6C6FF1E9B833C0021F1DB /* HomePageTableViewCell.xib in Resources */,
 				205DC77B1E8FF63B00A3E46E /* NewDevTableViewCellOneContent.xib in Resources */,
 				205DC78E1E8FFD4300A3E46E /* RecordListTableViewCell.xib in Resources */,
 				205DC77F1E8FF63B00A3E46E /* CombinationTableViewCell.xib in Resources */,
@@ -498,6 +513,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				206E3CB21E8BA32E00DB33DD /* LoginManager.swift in Sources */,
+				20E6C6FE1E9B833C0021F1DB /* HomePageTableViewCell.swift in Sources */,
 				205DC7981E91622200A3E46E /* PersonalTableViewController.swift in Sources */,
 				205DC7AF1E94ED7100A3E46E /* CreateUserViewController.swift in Sources */,
 				205DC79C1E92382B00A3E46E /* UserManager.swift in Sources */,

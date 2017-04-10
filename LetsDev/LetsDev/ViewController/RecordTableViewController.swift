@@ -23,7 +23,7 @@ class RecordTableViewController: UITableViewController {
     var recordKey = ""
     var components: [Component] = [ .combination, .note, .photo ]
     var note = ""
-    var photos: [String] = []
+    var photos: [String] = [""]
     var assets: [DKAsset] = []
     var skImage: [SKPhoto] = []
     var isFromNewProcess = false
@@ -243,9 +243,15 @@ class RecordTableViewController: UITableViewController {
     func showShareAlert(_ sender: UIBarButtonItem) {
         let alertController = UIAlertController(title: "Choose Image From?", message: nil, preferredStyle: .actionSheet)
         let shareAction = UIAlertAction(title: "Share With Other User.", style: .default) { (_) in
-            let sharedVC = self.storyboard?.instantiateViewController(withIdentifier: "ShareNewPostNavigation") as! UINavigationController
-            self.present(sharedVC, animated: true, completion: nil)
+            let sharedNavigation = self.storyboard?.instantiateViewController(withIdentifier: "ShareNewPostNavigation") as! UINavigationController
+            let sharedVC = sharedNavigation.viewControllers[0] as! ShareNewPostViewController
 
+            sharedVC.combination = self.combination
+            sharedVC.note = self.note
+            sharedVC.photoString = self.photos
+            sharedVC.photos = self.skImage
+
+            self.present(sharedNavigation, animated: true, completion: nil)
         }
         let useProcessAction = UIAlertAction(title: "Start a New Developement With Process.", style: .default) { (_) in
 

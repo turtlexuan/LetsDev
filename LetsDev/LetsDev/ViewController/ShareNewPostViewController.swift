@@ -83,8 +83,11 @@ class ShareNewPostViewController: UIViewController {
 
         let sharedPost = SharedPost(message: self.messageTextView.text, combination: combination, note: self.note, photo: self.photoString, date: Date().timeIntervalSince1970 * 1000)
 
+        print(self.photoString)
+
         CommunityManager.shared.shareRecord(with: sharedPost, success: { (databaseRef) in
             print(databaseRef.key)
+            self.dismiss(animated: true, completion: nil)
         }) { (error) in
             print(error)
         }

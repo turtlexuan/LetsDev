@@ -70,7 +70,7 @@ class LoginManager: NSObject {
             guard let userEmail = user?.email, let uid = user?.uid else { return }
 
             success?(userEmail, uid)
-            print("Success login with user: \(String(describing: user?.email)), uid: \(String(describing: user?.uid))")
+//            print("Success login with user: \(String(describing: user?.email)), uid: \(String(describing: user?.uid))")
 
         })
         return

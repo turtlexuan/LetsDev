@@ -49,8 +49,20 @@
                             <constraint firstAttribute="height" constant="44" id="y3k-18-Ans"/>
                         </constraints>
                     </stackView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100 Likes, 200 Comments, 300 Favorites" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h2N-Ly-RXd">
-                        <rect key="frame" x="20" y="16" width="524" height="37"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100 Likes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h2N-Ly-RXd">
+                        <rect key="frame" x="20" y="16" width="54" height="37"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="200 Comments" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tZt-V1-d5P">
+                        <rect key="frame" x="78" y="16" width="87" height="37"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="300 Favorites" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y1A-9b-gpV">
+                        <rect key="frame" x="169" y="16" width="78" height="37"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
@@ -59,17 +71,30 @@
                 <color key="backgroundColor" red="0.1176470588" green="0.1176470588" blue="0.1176470588" alpha="1" colorSpace="calibratedRGB"/>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="rIr-pu-OFa" secondAttribute="bottom" id="80u-Ge-hLG"/>
+                    <constraint firstItem="tZt-V1-d5P" firstAttribute="top" secondItem="h2N-Ly-RXd" secondAttribute="top" id="95E-Ac-As6"/>
                     <constraint firstItem="rIr-pu-OFa" firstAttribute="leading" secondItem="zc2-Lj-87u" secondAttribute="leading" constant="12" id="995-Af-Nfj"/>
+                    <constraint firstItem="tZt-V1-d5P" firstAttribute="leading" secondItem="h2N-Ly-RXd" secondAttribute="trailing" constant="4" id="BWw-HG-p54"/>
+                    <constraint firstItem="tZt-V1-d5P" firstAttribute="centerY" secondItem="h2N-Ly-RXd" secondAttribute="centerY" id="BpV-RW-cla"/>
                     <constraint firstItem="h2N-Ly-RXd" firstAttribute="leading" secondItem="zc2-Lj-87u" secondAttribute="leadingMargin" constant="12" id="D9W-kc-d0h"/>
+                    <constraint firstItem="y1A-9b-gpV" firstAttribute="top" secondItem="tZt-V1-d5P" secondAttribute="top" id="RXV-x0-9wB"/>
                     <constraint firstAttribute="trailing" secondItem="rIr-pu-OFa" secondAttribute="trailing" constant="12" id="d6l-O4-1uv"/>
+                    <constraint firstItem="y1A-9b-gpV" firstAttribute="centerY" secondItem="tZt-V1-d5P" secondAttribute="centerY" id="dzU-NY-RdO"/>
                     <constraint firstItem="Xdc-Vk-RI9" firstAttribute="leading" secondItem="zc2-Lj-87u" secondAttribute="leading" constant="12" id="fAn-9N-QWG"/>
                     <constraint firstItem="Xdc-Vk-RI9" firstAttribute="top" secondItem="h2N-Ly-RXd" secondAttribute="bottom" constant="8" id="k6m-bf-5gO"/>
                     <constraint firstAttribute="trailing" secondItem="Xdc-Vk-RI9" secondAttribute="trailing" constant="12" id="tAl-Ab-ATu"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="h2N-Ly-RXd" secondAttribute="trailing" constant="12" id="vTe-ty-hHd"/>
                     <constraint firstItem="rIr-pu-OFa" firstAttribute="top" secondItem="Xdc-Vk-RI9" secondAttribute="bottom" id="wMy-eM-GWU"/>
                     <constraint firstItem="h2N-Ly-RXd" firstAttribute="top" secondItem="zc2-Lj-87u" secondAttribute="topMargin" constant="8" id="wq4-TB-UDm"/>
+                    <constraint firstItem="y1A-9b-gpV" firstAttribute="leading" secondItem="tZt-V1-d5P" secondAttribute="trailing" constant="4" id="zWB-nb-TTa"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="commentButton" destination="kpc-kY-IZO" id="LoT-Zi-8AO"/>
+                <outlet property="commentsLabel" destination="tZt-V1-d5P" id="ZGH-6w-71o"/>
+                <outlet property="favoriteButton" destination="SHL-Ud-mtN" id="29w-dv-ZJZ"/>
+                <outlet property="favoritesLabel" destination="y1A-9b-gpV" id="cAs-6Y-zus"/>
+                <outlet property="likeButton" destination="IGf-uR-IXj" id="NVf-hs-Uca"/>
+                <outlet property="likesLabel" destination="h2N-Ly-RXd" id="Cjx-Np-cE7"/>
+            </connections>
             <point key="canvasLocation" x="966" y="665.5"/>
         </tableViewCell>
     </objects>

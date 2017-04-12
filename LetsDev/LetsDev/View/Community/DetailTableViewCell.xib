@@ -179,6 +179,21 @@ Vivamus at sem massa. Donec egestas, ligula vitae condimentum dignissim, arcu en
                     <constraint firstItem="DzG-2S-XSw" firstAttribute="leading" secondItem="1eI-NE-M48" secondAttribute="leading" constant="12" id="wGC-CG-WrZ"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="devAgitationLabel" destination="Ga3-SX-RIO" id="htl-TQ-jXT"/>
+                <outlet property="devTimeLabel" destination="m0o-vq-oOS" id="2ze-Qt-lLi"/>
+                <outlet property="developerLabel" destination="2HL-0n-SVw" id="xO9-fV-VIG"/>
+                <outlet property="dilutionLabel" destination="Plo-EM-DRn" id="gOR-HF-7sz"/>
+                <outlet property="filmLabel" destination="lhP-6R-myK" id="r7e-CT-8H7"/>
+                <outlet property="fixAgitationLabel" destination="vAd-55-79B" id="Mpw-q6-q08"/>
+                <outlet property="fixTimeLabel" destination="tIB-Au-a1r" id="g2y-nS-VkJ"/>
+                <outlet property="imageCollectionView" destination="cTy-G3-wWM" id="vtW-eV-7ut"/>
+                <outlet property="noteLabel" destination="0gX-Pq-zt3" id="Oue-H6-V6R"/>
+                <outlet property="preWashTimeLabel" destination="4cc-Bf-MT0" id="J7T-y3-0tC"/>
+                <outlet property="stopTimeLabel" destination="Qnc-A6-baQ" id="v1x-F9-UUd"/>
+                <outlet property="tempLabel" destination="5Ll-Um-FZx" id="WG3-Et-RO6"/>
+                <outlet property="washTimeLabel" destination="VaV-V0-eKD" id="cPG-bB-faC"/>
+            </connections>
             <point key="canvasLocation" x="963" y="323"/>
         </tableViewCell>
     </objects>

@@ -8,6 +8,7 @@
 
 import UIKit
 import Kingfisher
+import Firebase
 
 class PersonalTableViewController: UITableViewController {
 
@@ -20,6 +21,7 @@ class PersonalTableViewController: UITableViewController {
     var components: [Component] = [.profile, .record]
     var records: [Record] = []
     static var currentUser = User(uid: "", email: "", username: "")
+    private let auth = FIRAuth.auth()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +29,9 @@ class PersonalTableViewController: UITableViewController {
         self.tableView.register(UINib(nibName: "PersonalTableViewCell", bundle: nil), forCellReuseIdentifier: "PersonalTableViewCell")
         self.tableView.register(UINib(nibName: "RecordListTableViewCell", bundle: nil), forCellReuseIdentifier: "RecordListTableViewCell")
 
-        UserManager.shared.getUser { (user) in
+        guard let uid = self.auth?.currentUser?.uid else { return }
+
+        UserManager.shared.getUser(uid) { (user) in
             PersonalTableViewController.currentUser = user
         }
     }

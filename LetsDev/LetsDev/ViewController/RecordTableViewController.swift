@@ -250,6 +250,7 @@ class RecordTableViewController: UITableViewController {
             sharedVC.note = self.note
             sharedVC.photoString = self.photos
             sharedVC.photos = self.skImage
+            sharedVC.recordKey = self.recordKey
 
             self.present(sharedNavigation, animated: true, completion: nil)
         }

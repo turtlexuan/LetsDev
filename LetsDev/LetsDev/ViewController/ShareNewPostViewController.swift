@@ -26,7 +26,8 @@ class ShareNewPostViewController: UIViewController {
     var combination = Combination()
     var note = ""
     var photos: [SKPhoto] = []
-    var photoString: [String] = []
+    var photoString: [String] = [""]
+    var recordKey = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -85,7 +86,7 @@ class ShareNewPostViewController: UIViewController {
 
         print(self.photoString)
 
-        CommunityManager.shared.shareRecord(with: sharedPost, success: { (databaseRef) in
+        CommunityManager.shared.shareRecord(with: sharedPost, recordKey: self.recordKey, success: { (databaseRef) in
             print(databaseRef.key)
             self.dismiss(animated: true, completion: nil)
         }) { (error) in

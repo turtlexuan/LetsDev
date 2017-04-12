@@ -18,9 +18,9 @@ class UserManager {
 
     typealias GetUserSuccess = (_ user: User) -> Void
 
-    func getUser(completion: @escaping GetUserSuccess) {
+    func getUser(_ uid: String, completion: @escaping GetUserSuccess) {
 
-        guard let uid = self.auth?.currentUser?.uid else { return }
+//        guard let uid = self.auth?.currentUser?.uid else { return }
 
         self.databaseRef.child("Users").child(uid).observeSingleEvent(of: .value, with: { (snapshot) in
             //

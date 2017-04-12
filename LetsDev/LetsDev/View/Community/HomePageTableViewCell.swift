@@ -7,12 +7,31 @@
 //
 
 import UIKit
+import ExpandableLabel
 
 class HomePageTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var profileImageView: UIImageView!
+    @IBOutlet weak var usernameLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var moreButton: UIButton!
+    @IBOutlet weak var messageLabel: ExpandableLabel!
+    @IBOutlet weak var combinationBackground: UIView!
+    @IBOutlet weak var filmLabel: UILabel!
+    @IBOutlet weak var devTimeLabel: UILabel!
+    @IBOutlet weak var developerLabel: UILabel!
+    @IBOutlet weak var dilutionLabel: UILabel!
+    @IBOutlet weak var filmImageView: UIImageView!
+    @IBOutlet weak var noteLabel: UILabel!
+    @IBOutlet weak var likesLabel: UILabel!
+    @IBOutlet weak var likeButton: UIButton!
+    @IBOutlet weak var commentButton: UIButton!
+    @IBOutlet weak var favoriteButton: UIButton!
+
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+
+        self.combinationBackground.layer.cornerRadius = 8
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -20,5 +39,5 @@ class HomePageTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
+
 }

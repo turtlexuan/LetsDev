@@ -19,7 +19,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lrl-se-acd">
-                        <rect key="frame" x="0.0" y="6" width="723" height="267"/>
+                        <rect key="frame" x="0.0" y="0.0" width="723" height="279"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2017.04.20" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W4O-00-0WQ">
                                 <rect key="frame" x="74" y="41" width="70" height="17"/>
@@ -43,7 +43,7 @@
                                 <state key="normal" image="more"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="34p-hG-RMt" customClass="ExpandableLabel" customModule="ExpandableLabel">
-                                <rect key="frame" x="12" y="74" width="699" height="185"/>
+                                <rect key="frame" x="12" y="74" width="699" height="197"/>
                                 <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque dictum, nunc eget sagittis convallis, dolor sapien pharetra quam, non semper orci enim sed nisl. In nisl ligula, fringilla quis metus vitae, porttitor vehicula sapien. Praesent ipsum eros, mattis quis massa sit amet, luctus commodo lacus. Sed nisl urna, accumsan sit amet ex in, pretium elementum tellus. Donec sollicitudin porta condimentum. Fusce viverra in risus non ullamcorper. Etiam venenatis urna purus, in imperdiet sapien lobortis sit amet. Curabitur ullamcorper venenatis nisl sit amet rutrum. Etiam elementum velit quis hendrerit ultricies. Proin nec tellus a odio tincidunt auctor pharetra sed orci. Curabitur non elit eu odio elementum pulvinar.
 </string>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -77,8 +77,8 @@
                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                 <constraints>
                     <constraint firstItem="Lrl-se-acd" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="bKx-hD-rKS"/>
-                    <constraint firstItem="Lrl-se-acd" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="6" id="gB5-fS-zTr"/>
-                    <constraint firstAttribute="bottom" secondItem="Lrl-se-acd" secondAttribute="bottom" constant="6" id="lHz-1X-bch"/>
+                    <constraint firstItem="Lrl-se-acd" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="gB5-fS-zTr"/>
+                    <constraint firstAttribute="bottom" secondItem="Lrl-se-acd" secondAttribute="bottom" id="lHz-1X-bch"/>
                     <constraint firstAttribute="trailing" secondItem="Lrl-se-acd" secondAttribute="trailing" id="rnc-fe-6lQ"/>
                 </constraints>
             </tableViewCellContentView>

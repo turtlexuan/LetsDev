@@ -44,7 +44,7 @@ class CommunityManager {
         self.databaseRef.child("Community").child(recordKey).setValue(["Date": date, "Uid": uid, "Combination": value, "Message": record.message, "Photo": record.photo, "Note": note]) { (error, databaseRef) in
 
             if error != nil {
-                print(error)
+                print(error ?? "")
                 fail?(error!)
                 return
             }
@@ -71,12 +71,52 @@ class CommunityManager {
                     let message         = value["Message"] as? String,
                     let uid             = value["Uid"] as? String,
                     let note            = value["Note"] as? String else { continue }
-                
+
                 var photoString = [""]
-                
+                var comment: [PostComments] = []
+                var like: [PostLikes] = []
+                var favorite: [PostFavorites] = []
+
                 if let photos = value["Photo"] as? [String] {
                     photoString = photos
                 }
+
+                // TODO: save comments
+
+                if let favorites = value["Favorite"] as? [String: Any] {
+                    for v in favorites.values {
+                        guard let value = v as? [String: Any] else { continue }
+                        guard let date = value["Date"] as? Double, let uid = value["Uid"] as? String else { continue }
+
+                        let result = PostFavorites(uid: uid, date: date)
+                        favorite.append(result)
+                    }
+                }
+
+                if let likes = value["Like"] as? [String: Any] {
+                    for v in likes.values {
+                        guard let value = v as? [String: Any] else { continue }
+                        guard let date = value["Date"] as? Double, let uid = value["Uid"] as? String else { continue }
+
+                        let result = PostLikes(uid: uid, date: date)
+                        like.append(result)
+                    }
+                }
+
+                if let comments = value["Comment"] as? [String: Any] {
+                    for v in comments.values {
+                        guard let value = v as? [String: Any] else { continue }
+                        guard
+                            let date = value["Date"] as? Double,
+                            let uid = value["Uid"] as? String,
+                            let content = value["Content"] as? String else { continue }
+
+                        let result = PostComments(uid: uid, comment: content, date: date)
+                        comment.append(result)
+                    }
+                }
+
+                print("Likes: \(like)")
 
                 guard
                     let film                = combination["Film"] as? String,
@@ -97,7 +137,7 @@ class CommunityManager {
 
                 let combinations = Combination(film: film, type: type, preWashTime: preWashTime, dev: developer, dilution: dilution, devTime: devTime, temp: temp, devAgitation: devAgitation, stopTime: stopTime, fixTime: fixTime, fixAgitation: fixAgitation, washTime: washTime, bufferTime: bufferTime)
 
-                let sharedPost = SharedPost(message: message, combination: combinations, note: note, photo: photoString, date: millisDate)
+                let sharedPost = SharedPost(combination: combinations, note: note, photo: photoString, date: millisDate, message: message, comment: comment, like: like, favorite: favorite)
 
                 sharedPostTuple.append((sharedPost, uid, task.key))
 
@@ -108,7 +148,91 @@ class CommunityManager {
 
         })
     }
-    
+
+    typealias SingleFetchSuccess = (_ sharedPost: SharedPost) -> Void
+
+    func getSinglePost(with key: String, completion: @escaping SingleFetchSuccess) {
+
+        self.databaseRef.child("Community").child(key).observe(.value, with: { (snapshot) in
+
+            guard let value = snapshot.value as? [String: Any] else { return }
+
+            guard
+                let combination     = value["Combination"] as? [String: Any],
+                let millisDate      = value["Date"] as? Double,
+                let message         = value["Message"] as? String,
+                let note            = value["Note"] as? String else { return }
+
+            var photoString = [""]
+            var comment: [PostComments] = []
+            var like: [PostLikes] = []
+            var favorite: [PostFavorites] = []
+
+            if let photos = value["Photo"] as? [String] {
+                photoString = photos
+            }
+
+            // TODO: save comments
+
+            if let favorites = value["Favorite"] as? [String: Any] {
+                for v in favorites.values {
+                    guard let value = v as? [String: Any] else { continue }
+                    guard let date = value["Date"] as? Double, let uid = value["Uid"] as? String else { continue }
+
+                    let result = PostFavorites(uid: uid, date: date)
+                    favorite.append(result)
+                }
+            }
+
+            if let likes = value["Like"] as? [String: Any] {
+                for v in likes.values {
+                    guard let value = v as? [String: Any] else { continue }
+                    guard let date = value["Date"] as? Double, let uid = value["Uid"] as? String else { continue }
+
+                    let result = PostLikes(uid: uid, date: date)
+                    like.append(result)
+                }
+            }
+
+            if let comments = value["Comment"] as? [String: Any] {
+                for v in comments.values {
+                    guard let value = v as? [String: Any] else { continue }
+                    guard
+                        let date = value["Date"] as? Double,
+                        let uid = value["Uid"] as? String,
+                        let content = value["Content"] as? String else { continue }
+
+                    let result = PostComments(uid: uid, comment: content, date: date)
+                    comment.append(result)
+                }
+            }
+
+            guard
+                let film                = combination["Film"] as? String,
+                let type                = combination["Type"] as? String,
+                let developer           = combination["Developer"] as? String,
+                let preWashTime         = combination["PreWashTime"] as? Int,
+                let devTime             = combination["DevTime"] as? Int,
+                let devAgitationString  = combination["DevAgitation"] as? String,
+                let devAgitation        = Agigtations(rawValue: devAgitationString),
+                let stopTime            = combination["StopTime"] as? Int,
+                let fixTime             = combination["FixTime"] as? Int,
+                let fixAgitationString  = combination["FixAgitation"] as? String,
+                let fixAgitation        = Agigtations(rawValue: fixAgitationString),
+                let washTime            = combination["WashTime"] as? Int,
+                let bufferTime          = combination["BufferTime"] as? Int,
+                let dilution            = combination["Dilution"] as? String,
+                let temp                = combination["Temp"] as? Int else { return }
+
+            let combinations = Combination(film: film, type: type, preWashTime: preWashTime, dev: developer, dilution: dilution, devTime: devTime, temp: temp, devAgitation: devAgitation, stopTime: stopTime, fixTime: fixTime, fixAgitation: fixAgitation, washTime: washTime, bufferTime: bufferTime)
+
+            let sharedPost = SharedPost(combination: combinations, note: note, photo: photoString, date: millisDate, message: message, comment: comment, like: like, favorite: favorite)
+
+            completion(sharedPost)
+
+        })
+    }
+
     typealias LikeActionResult = (_ success: FIRDatabaseReference, _ error: Error?) -> Void
 
     func likePost(_ key: String, completion: @escaping LikeActionResult) {
@@ -116,11 +240,11 @@ class CommunityManager {
         guard let uid = self.auth?.currentUser?.uid else { return }
 
         let date = Date().timeIntervalSince1970 * 1000
-        
+
         self.databaseRef.child("Community").child(key).child("Like").child(uid).updateChildValues(["Uid": uid, "Date": date]) { (error, databaseRef) in
             completion(databaseRef, error)
         }
-        
+
     }
 
     func removeLike(_ key: String, completion: @escaping LikeActionResult) {
@@ -133,7 +257,16 @@ class CommunityManager {
         }
     }
 
-    func commentPost() {
+    func commentPost(_ key: String, content: String, completion: @escaping LikeActionResult) {
+
+        guard let uid = self.auth?.currentUser?.uid else { return }
+
+        let date = Date().timeIntervalSince1970 * 1000
+
+        self.databaseRef.child("Community").child(key).child("Comment").childByAutoId().updateChildValues(["Uid": uid, "Date": date, "Content": content]) { (error, databaseRef) in
+            //
+            completion(databaseRef, error)
+        }
 
     }
 
@@ -158,5 +291,29 @@ class CommunityManager {
             completion(likes)
 
         })
+    }
+
+    typealias FavoriteResult = (_ success: FIRDatabaseReference, _ error: Error?) -> Void
+
+    func addFavorite(_ key: String, completion: @escaping FavoriteResult) {
+
+        guard let uid = self.auth?.currentUser?.uid else { return }
+
+        let date = Date().timeIntervalSince1970 * 1000
+
+        self.databaseRef.child("Community").child(key).child("Favorite").child(uid).updateChildValues(["Uid": uid, "Date": date]) { (error, databaseRef) in
+
+            completion(databaseRef, error)
+        }
+    }
+
+    func removeFavorite(_ key: String, completion: @escaping FavoriteResult) {
+
+        guard let uid = self.auth?.currentUser?.uid else { return }
+
+        self.databaseRef.child("Community").child(key).child("Favorite").child(uid).removeValue { (error, databaseRef) in
+
+            completion(databaseRef, error)
+        }
     }
 }

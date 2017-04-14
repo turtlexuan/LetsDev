@@ -82,7 +82,7 @@ class ShareNewPostViewController: UIViewController {
 
     @IBAction func shareAction(_ sender: Any) {
 
-        let sharedPost = SharedPost(message: self.messageTextView.text, combination: combination, note: self.note, photo: self.photoString, date: Date().timeIntervalSince1970 * 1000)
+        let sharedPost = SharedPost(combination: combination, note: self.note, photo: self.photoString, date: Date().timeIntervalSince1970 * 1000, message: self.messageTextView.text, comment: [], like: [], favorite: [])
 
         print(self.photoString)
 

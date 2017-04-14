@@ -25,7 +25,9 @@ class DetailTableViewCell: UITableViewCell {
     @IBOutlet weak var noteLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+
+        self.imageCollectionView.register(UINib(nibName: "PhotoCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "PhotoCollectionViewCell")
+        self.imageCollectionView.isScrollEnabled = true
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -33,5 +35,11 @@ class DetailTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
+
+    func setCollectionViewDataSourceDelegate<D: UICollectionViewDataSource & UICollectionViewDelegate>(_ dataSourceDelegate: D) {
+
+        self.imageCollectionView.delegate = dataSourceDelegate
+        self.imageCollectionView.dataSource = dataSourceDelegate
+        self.imageCollectionView.reloadData()
+    }
 }

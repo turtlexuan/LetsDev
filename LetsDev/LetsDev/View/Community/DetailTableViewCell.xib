@@ -109,7 +109,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="cTy-G3-wWM">
-                                <rect key="frame" x="0.0" y="194" width="534" height="80"/>
+                                <rect key="frame" x="0.0" y="186" width="534" height="80"/>
                                 <color key="backgroundColor" red="0.2470588235" green="0.2470588235" blue="0.2470588235" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="h8V-1g-WQX"/>
@@ -122,7 +122,7 @@
                                 </collectionViewFlowLayout>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0gX-Pq-zt3">
-                                <rect key="frame" x="12" y="282" width="510" height="117"/>
+                                <rect key="frame" x="12" y="266" width="510" height="133"/>
                                 <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque dictum, nunc eget sagittis convallis, dolor sapien pharetra quam, non semper orci enim sed nisl. In nisl ligula, fringilla quis metus vitae, porttitor vehicula sapien. Praesent ipsum eros, mattis quis massa sit amet, luctus commodo lacus. Sed nisl urna, accumsan sit amet ex in, pretium elementum tellus. Donec sollicitudin porta condimentum. Fusce viverra in risus non ullamcorper. Etiam venenatis urna purus, in imperdiet sapien lobortis sit amet. Curabitur ullamcorper venenatis nisl sit amet rutrum. Etiam elementum velit quis hendrerit ultricies. Proin nec tellus a odio tincidunt auctor pharetra sed orci. Curabitur non elit eu odio elementum pulvinar.
 
 Nullam aliquam vel orci et finibus. Sed viverra et sapien pellentesque suscipit. In malesuada lectus vitae nulla gravida tincidunt. Curabitur tristique, elit ac pulvinar dignissim, ante nibh interdum ligula, eu tincidunt tortor velit a nulla. Ut convallis urna odio, iaculis tempus sapien feugiat vitae. Vivamus dapibus a diam ac ullamcorper. Nulla vulputate, est vestibulum congue faucibus, sapien sapien accumsan quam, ac venenatis lacus dui quis erat. Cras consequat lorem eu molestie lobortis. Sed bibendum, metus eget bibendum tempor, magna leo dictum magna, ac ultrices dui nunc et est. Quisque lectus ex, molestie quis mattis nec, ullamcorper at ligula. Nullam pharetra lacus sit amet libero aliquam sagittis. Aliquam vehicula lacus ac mattis hendrerit. Suspendisse vitae sem quis elit eleifend laoreet ut sit amet erat. Sed enim erat, semper quis ipsum in, fringilla condimentum diam. Vestibulum rhoncus urna et bibendum iaculis. Mauris id porttitor mi.
@@ -154,11 +154,11 @@ Vivamus at sem massa. Donec egestas, ligula vitae condimentum dignissim, arcu en
                             <constraint firstItem="4cc-Bf-MT0" firstAttribute="leading" secondItem="DzG-2S-XSw" secondAttribute="leading" constant="12" id="Wis-ga-q2n"/>
                             <constraint firstItem="Ga3-SX-RIO" firstAttribute="leading" secondItem="DzG-2S-XSw" secondAttribute="leading" constant="12" id="Yoy-V6-I7g"/>
                             <constraint firstAttribute="trailing" secondItem="cTy-G3-wWM" secondAttribute="trailing" id="Z9h-Xh-hPO"/>
-                            <constraint firstItem="cTy-G3-wWM" firstAttribute="top" secondItem="vAd-55-79B" secondAttribute="bottom" constant="8" id="eGm-1J-5kt"/>
+                            <constraint firstItem="cTy-G3-wWM" firstAttribute="top" secondItem="vAd-55-79B" secondAttribute="bottom" id="eGm-1J-5kt"/>
                             <constraint firstItem="VaV-V0-eKD" firstAttribute="centerY" secondItem="tIB-Au-a1r" secondAttribute="centerY" id="irJ-2s-17d"/>
                             <constraint firstItem="lhP-6R-myK" firstAttribute="top" secondItem="DzG-2S-XSw" secondAttribute="top" constant="12" id="k1s-Fg-1A2"/>
                             <constraint firstItem="vAd-55-79B" firstAttribute="leading" secondItem="DzG-2S-XSw" secondAttribute="leading" constant="12" id="nKl-M4-74n"/>
-                            <constraint firstItem="0gX-Pq-zt3" firstAttribute="top" secondItem="cTy-G3-wWM" secondAttribute="bottom" constant="8" id="pkc-bl-NzP"/>
+                            <constraint firstItem="0gX-Pq-zt3" firstAttribute="top" secondItem="cTy-G3-wWM" secondAttribute="bottom" id="pkc-bl-NzP"/>
                             <constraint firstItem="4cc-Bf-MT0" firstAttribute="top" secondItem="5Ll-Um-FZx" secondAttribute="bottom" constant="8" id="ptT-Ry-Rlq"/>
                             <constraint firstItem="2HL-0n-SVw" firstAttribute="top" secondItem="lhP-6R-myK" secondAttribute="bottom" constant="10" id="qMe-2B-ZEQ"/>
                             <constraint firstItem="cTy-G3-wWM" firstAttribute="leading" secondItem="DzG-2S-XSw" secondAttribute="leading" id="rWU-aT-OIk"/>

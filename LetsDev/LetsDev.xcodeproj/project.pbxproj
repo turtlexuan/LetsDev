@@ -77,6 +77,9 @@
 		20EF0E331E9E0E9700943761 /* ButtonsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20EF0E311E9E0E9700943761 /* ButtonsTableViewCell.xib */; };
 		20EF0E361E9E10D800943761 /* CommentsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EF0E341E9E10D800943761 /* CommentsTableViewCell.swift */; };
 		20EF0E371E9E10D800943761 /* CommentsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20EF0E351E9E10D800943761 /* CommentsTableViewCell.xib */; };
+		20EF0E391E9F166C00943761 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EF0E381E9F166C00943761 /* Comment.swift */; };
+		20EF0E3E1E9F7D9000943761 /* InputTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EF0E3C1E9F7D9000943761 /* InputTableViewCell.swift */; };
+		20EF0E3F1E9F7D9000943761 /* InputTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20EF0E3D1E9F7D9000943761 /* InputTableViewCell.xib */; };
 		20F322DF1E8E1B59008605FE /* NoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F322DE1E8E1B59008605FE /* NoteViewController.swift */; };
 		20F322E11E8FA82A008605FE /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F322E01E8FA82A008605FE /* TabBarController.swift */; };
 		20F322E71E8FAFF1008605FE /* PersonalNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F322E61E8FAFF1008605FE /* PersonalNavigationController.swift */; };
@@ -159,6 +162,9 @@
 		20EF0E311E9E0E9700943761 /* ButtonsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ButtonsTableViewCell.xib; sourceTree = "<group>"; };
 		20EF0E341E9E10D800943761 /* CommentsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentsTableViewCell.swift; sourceTree = "<group>"; };
 		20EF0E351E9E10D800943761 /* CommentsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommentsTableViewCell.xib; sourceTree = "<group>"; };
+		20EF0E381E9F166C00943761 /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		20EF0E3C1E9F7D9000943761 /* InputTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputTableViewCell.swift; sourceTree = "<group>"; };
+		20EF0E3D1E9F7D9000943761 /* InputTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InputTableViewCell.xib; sourceTree = "<group>"; };
 		20F322DE1E8E1B59008605FE /* NoteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteViewController.swift; sourceTree = "<group>"; };
 		20F322E01E8FA82A008605FE /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		20F322E61E8FAFF1008605FE /* PersonalNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonalNavigationController.swift; sourceTree = "<group>"; };
@@ -231,6 +237,7 @@
 				205DC7991E9200B300A3E46E /* Record.swift */,
 				2083ABC61E99EB7100AB0B5A /* ErrorHandler.swift */,
 				2083ABCC1E9A457B00AB0B5A /* SharedPost.swift */,
+				20EF0E381E9F166C00943761 /* Comment.swift */,
 			);
 			path = Modal;
 			sourceTree = "<group>";
@@ -353,6 +360,8 @@
 				20EF0E311E9E0E9700943761 /* ButtonsTableViewCell.xib */,
 				20EF0E341E9E10D800943761 /* CommentsTableViewCell.swift */,
 				20EF0E351E9E10D800943761 /* CommentsTableViewCell.xib */,
+				20EF0E3C1E9F7D9000943761 /* InputTableViewCell.swift */,
+				20EF0E3D1E9F7D9000943761 /* InputTableViewCell.xib */,
 			);
 			path = Community;
 			sourceTree = "<group>";
@@ -450,6 +459,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20EF0E3F1E9F7D9000943761 /* InputTableViewCell.xib in Resources */,
 				2084E2E01E9606E300EE06DA /* fontawesome-webfont.ttf in Resources */,
 				205DC7851E8FF63B00A3E46E /* PhotoTableViewCell.xib in Resources */,
 				201978C31E80BAE20013FACE /* LaunchScreen.storyboard in Resources */,
@@ -563,6 +573,7 @@
 				205DC7941E902B2600A3E46E /* AlertViewController.swift in Sources */,
 				205DC7921E902AE800A3E46E /* HomeNavigationController.swift in Sources */,
 				205DC77C1E8FF63B00A3E46E /* NewDevTableViewCellTwoContent.swift in Sources */,
+				20EF0E391E9F166C00943761 /* Comment.swift in Sources */,
 				201978D61E80CFBE0013FACE /* NewDevViewController.swift in Sources */,
 				206E3CB41E8BA36300DB33DD /* User.swift in Sources */,
 				205DC77E1E8FF63B00A3E46E /* CombinationTableViewCell.swift in Sources */,
@@ -578,6 +589,7 @@
 				205DC7821E8FF63B00A3E46E /* PhotoCollectionViewCell.swift in Sources */,
 				205DC7A91E93B3B200A3E46E /* FavoriteTableViewController.swift in Sources */,
 				2083ABC91E9A1E4900AB0B5A /* CommunityManager.swift in Sources */,
+				20EF0E3E1E9F7D9000943761 /* InputTableViewCell.swift in Sources */,
 				205DC79A1E9200B300A3E46E /* Record.swift in Sources */,
 				205DC7B11E94EFD000A3E46E /* UsernameViewController.swift in Sources */,
 				205DC7841E8FF63B00A3E46E /* PhotoTableViewCell.swift in Sources */,

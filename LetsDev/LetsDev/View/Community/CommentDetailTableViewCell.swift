@@ -10,7 +10,7 @@ import UIKit
 import ExpandableLabel
 
 class CommentDetailTableViewCell: UITableViewCell {
-    
+
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
@@ -26,5 +26,5 @@ class CommentDetailTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
+
 }

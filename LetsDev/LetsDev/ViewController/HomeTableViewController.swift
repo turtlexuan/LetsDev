@@ -110,15 +110,15 @@ class HomeTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // push to detail view
         let key = self.sharedPosts[indexPath.row].key
-        
+
         let commentVC = self.storyboard?.instantiateViewController(withIdentifier: "CommentTableViewController") as! CommentTableViewController
-        
+
         print(self.sharedPosts[indexPath.row].sharedPost.comment.count)
-        
+
         commentVC.sharedPost = self.sharedPosts[indexPath.row].sharedPost
         commentVC.key = key
         commentVC.uid = self.sharedPosts[indexPath.row].uid
-        
+
         self.navigationController?.pushViewController(commentVC, animated: true)
     }
 

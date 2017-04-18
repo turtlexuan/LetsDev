@@ -81,8 +81,6 @@ class CommunityManager {
                     photoString = photos
                 }
 
-                // TODO: save comments
-
                 if let favorites = value["Favorite"] as? [String: Any] {
                     for v in favorites.values {
                         guard let value = v as? [String: Any] else { continue }
@@ -171,8 +169,6 @@ class CommunityManager {
             if let photos = value["Photo"] as? [String] {
                 photoString = photos
             }
-
-            // TODO: save comments
 
             if let favorites = value["Favorite"] as? [String: Any] {
                 for v in favorites.values {

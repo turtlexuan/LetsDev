@@ -47,7 +47,7 @@
                         </constraints>
                     </view>
                 </subviews>
-                <color key="backgroundColor" red="0.1176470588" green="0.1176470588" blue="0.1176470588" alpha="1" colorSpace="calibratedRGB"/>
+                <color key="backgroundColor" red="0.039215686274509803" green="0.039215686274509803" blue="0.039215686274509803" alpha="1" colorSpace="calibratedRGB"/>
                 <constraints>
                     <constraint firstItem="fAW-W6-ki1" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="473-rd-DXS"/>
                     <constraint firstAttribute="trailing" secondItem="fAW-W6-ki1" secondAttribute="trailing" id="Ddh-ig-3t0"/>

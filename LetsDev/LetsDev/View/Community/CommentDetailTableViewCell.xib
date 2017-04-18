@@ -15,7 +15,7 @@
             <rect key="frame" x="0.0" y="0.0" width="723" height="280"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="723" height="279"/>
+                <rect key="frame" x="0.0" y="0.0" width="723" height="279.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lrl-se-acd">
@@ -57,7 +57,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.1176470588" green="0.1176470588" blue="0.1176470588" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.039215686274509803" green="0.039215686274509803" blue="0.039215686274509803" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="W4O-00-0WQ" firstAttribute="top" secondItem="hju-af-WV4" secondAttribute="bottom" constant="8" id="1WU-rR-KnX"/>
                             <constraint firstAttribute="trailing" secondItem="34p-hG-RMt" secondAttribute="trailing" constant="12" id="A7f-xm-LYg"/>

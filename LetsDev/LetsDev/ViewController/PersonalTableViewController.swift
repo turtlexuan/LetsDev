@@ -105,22 +105,27 @@ class PersonalTableViewController: UITableViewController {
             cell.filmLabel.text = index.combination.film
             cell.timeLabel.text = dateString
             cell.noteLabel.text = index.note
-
-            DispatchQueue.global().async {
-
-                if let imageUrlString = index.photo.first as? String, let imageUrl = URL(string: imageUrlString) {
-                    do {
-                        let imageData = try Data(contentsOf: imageUrl)
-                        if let image = UIImage(data: imageData) {
-                            DispatchQueue.main.async {
-                                cell.imagePreView.image = image
-                            }
-                        }
-                    } catch {
-                        print(error)
-                    }
-                }
+            
+            if let imageUrlString = index.photo.first as? String, let imageUrl = URL(string: imageUrlString) {
+                
+                cell.imagePreView.kf.setImage(with: imageUrl)
             }
+
+//            DispatchQueue.global().async {
+//
+//                if let imageUrlString = index.photo.first as? String, let imageUrl = URL(string: imageUrlString) {
+//                    do {
+//                        let imageData = try Data(contentsOf: imageUrl)
+//                        if let image = UIImage(data: imageData) {
+//                            DispatchQueue.main.async {
+//                                cell.imagePreView.image = image
+//                            }
+//                        }
+//                    } catch {
+//                        print(error)
+//                    }
+//                }
+//            }
             return cell
         }
 

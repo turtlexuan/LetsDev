@@ -42,6 +42,7 @@ class CommentTableViewController: UITableViewController {
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.estimatedRowHeight = 44
         self.tableView.separatorStyle = .none
+        self.tableView.allowsSelection = false
 
         self.fetchPhotos()
     }
@@ -160,7 +161,7 @@ class CommentTableViewController: UITableViewController {
         case .buttons:
 
             let cell = tableView.dequeueReusableCell(withIdentifier: "ButtonsTableViewCell", for: indexPath) as! ButtonsTableViewCell
-            
+
             cell.commentButton.tintColor = Color.buttonColor
 
             CommunityManager.shared.getLikes(self.key) { (uids) in
@@ -220,9 +221,9 @@ class CommentTableViewController: UITableViewController {
             let cell = tableView.dequeueReusableCell(withIdentifier: "InputTableViewCell", for: indexPath) as! InputTableViewCell
 
             cell.textView.delegate = self
-            
+
             cell.sendButton.addTarget(self, action: #selector(sentCommentAction(_:)), for: .touchUpInside)
-            
+
             if self.isFromBotton == true {
                 cell.textView.becomeFirstResponder()
             }
@@ -388,8 +389,7 @@ extension CommentTableViewController: UITextViewDelegate {
 //            self.tableView.reloadRows(at: [indexPath], with: .none)
 //        }
     }
-    
-    
+
 }
 
 extension CommentTableViewController {

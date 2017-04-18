@@ -17,18 +17,18 @@
             <rect key="frame" x="0.0" y="0.0" width="510" height="224"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="510" height="223"/>
+                <rect key="frame" x="0.0" y="0.0" width="510" height="223.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7eL-OX-Scb">
-                        <rect key="frame" x="8" y="8" width="50" height="50"/>
+                        <rect key="frame" x="8" y="8" width="35" height="35"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="50" id="Fld-4Q-sUG"/>
+                            <constraint firstAttribute="width" constant="35" id="Fld-4Q-sUG"/>
                             <constraint firstAttribute="width" secondItem="7eL-OX-Scb" secondAttribute="height" multiplier="1:1" id="v9E-Id-y3X"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qSx-y8-AxL">
-                        <rect key="frame" x="66" y="28" width="424" height="179"/>
+                        <rect key="frame" x="51" y="28" width="439" height="179"/>
                         <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque dictum, nunc eget sagittis convallis, dolor sapien pharetra quam, non semper orci enim sed nisl. In nisl ligula, fringilla quis metus vitae, porttitor vehicula sapien. Praesent ipsum eros, mattis quis massa sit amet, luctus commodo lacus. Sed nisl urna, accumsan sit amet ex in, pretium elementum tellus. Donec sollicitudin porta condimentum. Fusce viverra in risus non ullamcorper. Etiam venenatis urna purus, in imperdiet sapien lobortis sit amet. Curabitur ullamcorper venenatis nisl sit amet rutrum. Etiam elementum velit quis hendrerit ultricies. Proin nec tellus a odio tincidunt auctor pharetra sed orci. Curabitur non elit eu odio elementum pulvinar.
 </string>
                         <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
@@ -36,7 +36,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SbX-7O-yRn">
-                        <rect key="frame" x="66" y="8" width="49" height="20"/>
+                        <rect key="frame" x="51" y="8" width="49" height="20"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="20" id="xd8-3T-Xe9"/>
                         </constraints>
@@ -59,7 +59,7 @@
                         </constraints>
                     </view>
                 </subviews>
-                <color key="backgroundColor" red="0.1176470588" green="0.1176470588" blue="0.1176470588" alpha="1" colorSpace="calibratedRGB"/>
+                <color key="backgroundColor" red="0.039215686274509803" green="0.039215686274509803" blue="0.039215686274509803" alpha="1" colorSpace="calibratedRGB"/>
                 <constraints>
                     <constraint firstItem="7eL-OX-Scb" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="2IC-ag-g4c"/>
                     <constraint firstItem="qSx-y8-AxL" firstAttribute="leading" secondItem="7eL-OX-Scb" secondAttribute="trailing" constant="8" id="3Hu-6u-opC"/>

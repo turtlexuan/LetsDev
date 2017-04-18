@@ -15,7 +15,7 @@
             <rect key="frame" x="0.0" y="0.0" width="558" height="408"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gub-gp-vQf" id="1eI-NE-M48">
-                <rect key="frame" x="0.0" y="0.0" width="558" height="407"/>
+                <rect key="frame" x="0.0" y="0.0" width="558" height="407.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DzG-2S-XSw">
@@ -171,7 +171,7 @@ Vivamus at sem massa. Donec egestas, ligula vitae condimentum dignissim, arcu en
                         </constraints>
                     </view>
                 </subviews>
-                <color key="backgroundColor" red="0.1176470588" green="0.1176470588" blue="0.1176470588" alpha="1" colorSpace="calibratedRGB"/>
+                <color key="backgroundColor" red="0.039215686274509803" green="0.039215686274509803" blue="0.039215686274509803" alpha="1" colorSpace="calibratedRGB"/>
                 <constraints>
                     <constraint firstItem="DzG-2S-XSw" firstAttribute="top" secondItem="1eI-NE-M48" secondAttribute="top" id="E2k-70-WTS"/>
                     <constraint firstAttribute="trailing" secondItem="DzG-2S-XSw" secondAttribute="trailing" constant="12" id="X7O-Gg-iwt"/>

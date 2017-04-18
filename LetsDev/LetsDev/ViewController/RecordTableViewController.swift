@@ -23,7 +23,7 @@ class RecordTableViewController: UITableViewController {
     var recordKey = ""
     var components: [Component] = [ .combination, .note, .photo ]
     var note = ""
-    var photos: [String] = [""]
+    var photos: [String] = []
     var assets: [DKAsset] = []
     var skImage: [SKPhoto] = []
     var isFromNewProcess = false
@@ -277,7 +277,7 @@ class RecordTableViewController: UITableViewController {
         }
         var favoriteAction = UIAlertAction()
         if self.isFavorite == true {
-            favoriteAction = UIAlertAction(title: "Mark as Favortie.", style: .default) { (_) in
+            favoriteAction = UIAlertAction(title: "Remove Favortie.", style: .default) { (_) in
                 let indexOfRecord = TabBarController.favoriteKeys.index(of: self.recordKey)
                 TabBarController.favoriteKeys.remove(at: indexOfRecord!)
                 FavoriteManager.shared.updateFavorite(with: TabBarController.favoriteKeys)
@@ -285,7 +285,7 @@ class RecordTableViewController: UITableViewController {
                 self.isFavorite = false
             }
         } else {
-            favoriteAction = UIAlertAction(title: "Remove Favortie.", style: .default) { (_) in
+            favoriteAction = UIAlertAction(title: "Mark as Favortie.", style: .default) { (_) in
                 TabBarController.favoriteKeys.append(self.recordKey)
                 FavoriteManager.shared.updateFavorite(with: TabBarController.favoriteKeys)
 

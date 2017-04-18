@@ -30,6 +30,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FIRApp.configure()
 
         IQKeyboardManager.sharedManager().enable = true
+        IQKeyboardManager.sharedManager().overrideKeyboardAppearance = true
+        IQKeyboardManager.sharedManager().keyboardAppearance = .dark
         return true
     }
 

@@ -23,6 +23,7 @@ class LogInViewController: UIViewController {
         self.emailTextField.iconMarginLeft = 8
         self.emailTextField.selectedIconColor = .black
         self.emailTextField.iconText = String.fontAwesomeIcon(name: .envelopeO)
+        self.emailTextField.keyboardType = .emailAddress
 
         self.passwordTextField.iconFont = UIFont(name: "FontAwesome", size: 20)
         self.passwordTextField.iconWidth = 30

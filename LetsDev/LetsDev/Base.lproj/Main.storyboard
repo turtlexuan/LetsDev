@@ -660,11 +660,11 @@
                         <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="0dR-Mz-D0y" kind="relationship" relationship="viewControllers" id="dnh-hF-jQJ"/>
-                        <segue destination="OTC-cj-xk7" kind="relationship" relationship="viewControllers" id="DiD-Jt-ly4"/>
-                        <segue destination="A1L-Td-7bG" kind="relationship" relationship="viewControllers" id="Q8L-3q-uLz"/>
-                        <segue destination="IeW-AS-QDS" kind="relationship" relationship="viewControllers" id="aJZ-rY-um7"/>
                         <segue destination="NVJ-2f-9RY" kind="relationship" relationship="viewControllers" id="ddu-3z-qkF"/>
+                        <segue destination="0dR-Mz-D0y" kind="relationship" relationship="viewControllers" id="dnh-hF-jQJ"/>
+                        <segue destination="A1L-Td-7bG" kind="relationship" relationship="viewControllers" id="Q8L-3q-uLz"/>
+                        <segue destination="OTC-cj-xk7" kind="relationship" relationship="viewControllers" id="DiD-Jt-ly4"/>
+                        <segue destination="IeW-AS-QDS" kind="relationship" relationship="viewControllers" id="aJZ-rY-um7"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y8W-Xr-5A1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -681,7 +681,7 @@
                     <toolbarItems/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="O8H-zw-Ary">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="O8H-zw-Ary">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -858,7 +858,7 @@ Vivamus at sem massa. Donec egestas, ligula vitae condimentum dignissim, arcu en
                     <toolbarItems/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="hqZ-PQ-GD0">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="hqZ-PQ-GD0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -902,7 +902,7 @@ Vivamus at sem massa. Donec egestas, ligula vitae condimentum dignissim, arcu en
                     <toolbarItems/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="X5m-AK-6Ef">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="X5m-AK-6Ef">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -938,11 +938,11 @@ Vivamus at sem massa. Donec egestas, ligula vitae condimentum dignissim, arcu en
         <scene sceneID="Zeu-ox-geE">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="IeW-AS-QDS" customClass="AlertNavigationController" customModule="LetsDev" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" tag="3" title="" image="Alert-Origin" selectedImage="Alert" id="66x-bW-cu3"/>
+                    <tabBarItem key="tabBarItem" tag="3" title="" image="Setting" selectedImage="Setting-Origin" id="66x-bW-cu3"/>
                     <toolbarItems/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="hj6-Tb-z2e">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="hj6-Tb-z2e">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -963,7 +963,7 @@ Vivamus at sem massa. Donec egestas, ligula vitae condimentum dignissim, arcu en
                     <toolbarItems/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="aAH-Z4-dSc">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="aAH-Z4-dSc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -987,7 +987,7 @@ Vivamus at sem massa. Donec egestas, ligula vitae condimentum dignissim, arcu en
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="ZtC-dj-J8Y">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <connections>
                             <outlet property="dataSource" destination="wZz-bQ-nvi" id="yfi-u8-YBm"/>
                             <outlet property="delegate" destination="wZz-bQ-nvi" id="BWg-aI-O4h"/>
@@ -1024,7 +1024,7 @@ Vivamus at sem massa. Donec egestas, ligula vitae condimentum dignissim, arcu en
                     <toolbarItems/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="7XO-ZF-VbG">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="7XO-ZF-VbG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1044,7 +1044,7 @@ Vivamus at sem massa. Donec egestas, ligula vitae condimentum dignissim, arcu en
                     <toolbarItems/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="RZ7-ZO-9bx">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="RZ7-ZO-9bx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1059,15 +1059,14 @@ Vivamus at sem massa. Donec egestas, ligula vitae condimentum dignissim, arcu en
         </scene>
     </scenes>
     <resources>
-        <image name="Alert" width="32" height="32"/>
-        <image name="Alert-Origin" width="30" height="30"/>
-        <image name="Favorite" width="32" height="32"/>
-        <image name="Favorite-Origin" width="30" height="30"/>
-        <image name="Home" width="30" height="30"/>
-        <image name="Home-Origin" width="30" height="30"/>
-        <image name="Personal" width="32" height="32"/>
-        <image name="Personal-Origin" width="30" height="30"/>
+        <image name="Favorite" width="25" height="25"/>
+        <image name="Favorite-Origin" width="25" height="25"/>
+        <image name="Home" width="25" height="25"/>
+        <image name="Home-Origin" width="25" height="25"/>
+        <image name="Personal" width="25" height="25"/>
+        <image name="Personal-Origin" width="25" height="25"/>
         <image name="Setting" width="25" height="25"/>
+        <image name="Setting-Origin" width="25" height="25"/>
         <image name="oval" width="512" height="512"/>
         <image name="photo-camera" width="512" height="512"/>
         <image name="plusButton" width="31" height="35"/>

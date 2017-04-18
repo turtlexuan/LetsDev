@@ -17,6 +17,7 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
         // swiftlint:disable force_cast
         // Do any additional setup after loading the view.
         self.delegate = self
+        self.tabBar.tintColor = .black
 
         FavoriteManager.shared.getFavorite { (favoriteKeys) in
             TabBarController.favoriteKeys = favoriteKeys
@@ -36,19 +37,19 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
         bgView.backgroundColor = bgColor
         tabBar.insertSubview(bgView, at: 2)
 
-        let personalVC = self.viewControllers?[0] as! PersonalNavigationController
+        let personalVC = self.viewControllers?[1] as! PersonalNavigationController
         personalVC.initTabBarItem()
 
         let newDevVc = self.viewControllers?[2] as! NewDevNavigationController
         newDevVc.initTabBarItem()
 
-        let favoriteVC = self.viewControllers?[1] as! FavoriteNavigationController
+        let favoriteVC = self.viewControllers?[3] as! FavoriteNavigationController
         favoriteVC.initTabBarItem()
 
-        let alertVC = self.viewControllers?[3] as! AlertNavigationController
+        let alertVC = self.viewControllers?[4] as! AlertNavigationController
         alertVC.initTabBarItem()
 
-        let homeVC = self.viewControllers?[4] as! HomeNavigationController
+        let homeVC = self.viewControllers?[0] as! HomeNavigationController
         homeVC.initTabBarItem()
 
     }

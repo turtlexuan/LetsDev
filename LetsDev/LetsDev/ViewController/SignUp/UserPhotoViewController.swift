@@ -42,6 +42,17 @@ class UserPhotoViewController: UIViewController {
         }
 
     }
+    @IBAction func previousAction(_ sender: Any) {
+
+        self.navigationController?.popViewController(animated: true)
+
+    }
+
+    @IBAction func cancelAction(_ sender: Any) {
+
+        self.navigationController?.popToRootViewController(animated: true)
+
+    }
 
     func signUp() {
 

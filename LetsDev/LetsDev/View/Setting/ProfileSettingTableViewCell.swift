@@ -1,19 +1,15 @@
 //
-//  PersonalTableViewCell.swift
+//  ProfileSettingTableViewCell.swift
 //  LetsDev
 //
-//  Created by 劉仲軒 on 2017/4/1.
+//  Created by 劉仲軒 on 2017/4/19.
 //  Copyright © 2017年 劉仲軒. All rights reserved.
 //
 
 import UIKit
 
-class PersonalTableViewCell: UITableViewCell {
+class ProfileSettingTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var userImageView: UIImageView!
-    @IBOutlet weak var userNameLabel: UILabel!
-    @IBOutlet weak var recordNumberLabel: UILabel!
-    @IBOutlet weak var postNumberLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

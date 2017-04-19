@@ -19,15 +19,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+
+        let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+
         let navigationBarAppearance = UINavigationBar.appearance()
         navigationBarAppearance.barTintColor = Color.navigationBarColor
         navigationBarAppearance.tintColor = Color.buttonColor
         navigationBarAppearance.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
-//        
-//        let tabBarAppearance = UITabBar.appearance()
-//        tabBarAppearance.selectionIndicatorImage?.imageRendererFormat =
 
         FIRApp.configure()
+
+        print(FIRAuth.auth()?.currentUser?.uid)
+
+        if FIRAuth.auth()?.currentUser?.uid == nil {
+            // swiftlint:disable force_cast
+            let tabBarController = mainStoryboard.instantiateViewController(withIdentifier: "signUpNavigation")
+            self.window?.rootViewController = tabBarController
+        }
 
         IQKeyboardManager.sharedManager().enable = true
         IQKeyboardManager.sharedManager().overrideKeyboardAppearance = true

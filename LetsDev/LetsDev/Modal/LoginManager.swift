@@ -70,10 +70,22 @@ class LoginManager: NSObject {
             guard let userEmail = user?.email, let uid = user?.uid else { return }
 
             success?(userEmail, uid)
-//            print("Success login with user: \(String(describing: user?.email)), uid: \(String(describing: user?.uid))")
 
         })
         return
+    }
+
+    typealias LogOutResult = (_ success: String?, _ error: String?) -> Void
+
+    func logOut(_ completion: LogOutResult?) {
+
+        do {
+            try self.auth?.signOut()
+            completion?("Success", nil)
+        } catch {
+            completion?(nil, error.localizedDescription)
+        }
+
     }
 
     typealias UsernameResult = (_ isDuplicate: Bool) -> Void

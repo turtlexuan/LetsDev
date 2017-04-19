@@ -21,7 +21,6 @@ class PersonalTableViewController: UITableViewController {
     var components: [Component] = [.profile, .record]
     var records: [Record] = []
     static var currentUser = User(uid: "", email: "", username: "")
-    private let auth = FIRAuth.auth()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,9 +28,12 @@ class PersonalTableViewController: UITableViewController {
         self.tableView.register(UINib(nibName: "PersonalTableViewCell", bundle: nil), forCellReuseIdentifier: "PersonalTableViewCell")
         self.tableView.register(UINib(nibName: "RecordListTableViewCell", bundle: nil), forCellReuseIdentifier: "RecordListTableViewCell")
 
-        guard let uid = self.auth?.currentUser?.uid else { return }
+        guard let uid1 = FIRAuth.auth()?.currentUser?.uid else { return }
 
-        UserManager.shared.getUser(uid) { (user) in
+        UserManager.shared.getUser(uid1) { (user) in
+            print(user.uid)
+            print(user.email)
+            print(user.username)
             PersonalTableViewController.currentUser = user
         }
     }
@@ -74,6 +76,7 @@ class PersonalTableViewController: UITableViewController {
             // swiftlint:disable force_cast
             let cell = self.tableView.dequeueReusableCell(withIdentifier: "PersonalTableViewCell", for: indexPath) as! PersonalTableViewCell
 
+            print(PersonalTableViewController.currentUser.username)
             cell.userNameLabel.text = PersonalTableViewController.currentUser.username
             cell.recordNumberLabel.text = String(self.records.count)
             cell.isUserInteractionEnabled = false
@@ -105,27 +108,12 @@ class PersonalTableViewController: UITableViewController {
             cell.filmLabel.text = index.combination.film
             cell.timeLabel.text = dateString
             cell.noteLabel.text = index.note
-            
+
             if let imageUrlString = index.photo.first as? String, let imageUrl = URL(string: imageUrlString) {
-                
+
                 cell.imagePreView.kf.setImage(with: imageUrl)
             }
 
-//            DispatchQueue.global().async {
-//
-//                if let imageUrlString = index.photo.first as? String, let imageUrl = URL(string: imageUrlString) {
-//                    do {
-//                        let imageData = try Data(contentsOf: imageUrl)
-//                        if let image = UIImage(data: imageData) {
-//                            DispatchQueue.main.async {
-//                                cell.imagePreView.image = image
-//                            }
-//                        }
-//                    } catch {
-//                        print(error)
-//                    }
-//                }
-//            }
             return cell
         }
 

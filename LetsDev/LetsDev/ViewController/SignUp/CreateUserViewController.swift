@@ -23,6 +23,7 @@ class CreateUserViewController: UIViewController {
     @IBOutlet weak var emailTextField: SkyFloatingLabelTextFieldWithIcon!
     @IBOutlet weak var passwordTextField: SkyFloatingLabelTextFieldWithIcon!
     @IBOutlet weak var continueButton: UIButton!
+    @IBOutlet weak var cancelButton: UIButton!
 
     var isSubmitButtonPressed = false
     var showingTitleInProgress = false
@@ -36,7 +37,11 @@ class CreateUserViewController: UIViewController {
         self.emailTextField.iconMarginBottom = 2
         self.emailTextField.iconMarginLeft = 8
         self.emailTextField.iconText = String.fontAwesomeIcon(name: .envelopeO)
-        self.emailTextField.selectedIconColor = .black
+        self.emailTextField.iconColor = .white
+        self.emailTextField.selectedLineColor = .white
+        self.emailTextField.selectedIconColor = .white
+        self.emailTextField.textColor = .white
+        self.emailTextField.placeholderText = "Your Email Address."
         self.emailTextField.delegate = self
         self.emailTextField.keyboardType = .emailAddress
 
@@ -46,7 +51,11 @@ class CreateUserViewController: UIViewController {
         self.passwordTextField.iconMarginBottom = 2
         self.passwordTextField.iconMarginLeft = 8
         self.passwordTextField.iconText = String.fontAwesomeIcon(name: .lock)
-        self.passwordTextField.selectedIconColor = .black
+        self.passwordTextField.iconColor = .white
+        self.passwordTextField.selectedIconColor = .white
+        self.passwordTextField.selectedLineColor = .white
+        self.passwordTextField.textColor = .white
+        self.passwordTextField.placeholderText = "At Least Eight Characters Password."
         self.passwordTextField.delegate = self
         self.passwordTextField.isSecureTextEntry = true
     }
@@ -116,6 +125,12 @@ class CreateUserViewController: UIViewController {
     @IBAction func validatePassword() {
 
         self.validatePasswordTextFieldWithText(password: self.passwordTextField.text)
+
+    }
+
+    @IBAction func previousAction(_ sender: Any) {
+
+        self.navigationController?.popToRootViewController(animated: true)
 
     }
 

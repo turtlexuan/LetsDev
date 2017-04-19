@@ -114,8 +114,6 @@ class CommunityManager {
                     }
                 }
 
-                print("Likes: \(like)")
-
                 guard
                     let film                = combination["Film"] as? String,
                     let type                = combination["Type"] as? String,

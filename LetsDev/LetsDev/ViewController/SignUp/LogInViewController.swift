@@ -21,7 +21,10 @@ class LogInViewController: UIViewController {
         self.emailTextField.iconWidth = 30
         self.emailTextField.iconMarginBottom = 2
         self.emailTextField.iconMarginLeft = 8
-        self.emailTextField.selectedIconColor = .black
+        self.emailTextField.iconColor = .lightGray
+        self.emailTextField.selectedLineColor = .white
+        self.emailTextField.selectedIconColor = .white
+        self.emailTextField.textColor = .white
         self.emailTextField.iconText = String.fontAwesomeIcon(name: .envelopeO)
         self.emailTextField.keyboardType = .emailAddress
 
@@ -29,6 +32,10 @@ class LogInViewController: UIViewController {
         self.passwordTextField.iconWidth = 30
         self.passwordTextField.iconMarginBottom = 2
         self.passwordTextField.iconMarginLeft = 8
+        self.passwordTextField.iconColor = .lightGray
+        self.passwordTextField.selectedLineColor = .white
+        self.passwordTextField.textColor = .white
+        self.passwordTextField.selectedIconColor = .white
         self.passwordTextField.iconText = String.fontAwesomeIcon(name: .lock)
         self.passwordTextField.selectedIconColor = .black
         self.passwordTextField.isSecureTextEntry = true
@@ -60,7 +67,7 @@ class LogInViewController: UIViewController {
     }
 
     func showAlert(_ alertMessage: String) {
-        let alertController = UIAlertController(title: "Erro", message: alertMessage, preferredStyle: .alert)
+        let alertController = UIAlertController(title: "Error", message: alertMessage, preferredStyle: .alert)
         let doneAction = UIAlertAction(title: "OK", style: .default)
         alertController.addAction(doneAction)
 

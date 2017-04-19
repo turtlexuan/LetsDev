@@ -32,7 +32,10 @@ class UsernameViewController: UIViewController {
         self.usernameTextField.iconMarginBottom = 4
         self.usernameTextField.iconMarginLeft = 8
         self.usernameTextField.iconText = String.fontAwesomeIcon(name: .user)
-        self.usernameTextField.selectedIconColor = .black
+        self.usernameTextField.iconColor = .white
+        self.usernameTextField.selectedIconColor = .white
+        self.usernameTextField.selectedLineColor = .white
+        self.usernameTextField.textColor = .white
         self.usernameTextField.delegate = self
 
     }
@@ -70,6 +73,18 @@ class UsernameViewController: UIViewController {
     @IBAction func validateUsername() {
 
         self.isValidUserName(self.usernameTextField.text)
+
+    }
+
+    @IBAction func previousAction(_ sender: Any) {
+
+        self.navigationController?.popViewController(animated: true)
+
+    }
+
+    @IBAction func cancelAction(_ sender: Any) {
+
+        self.navigationController?.popToRootViewController(animated: true)
 
     }
 

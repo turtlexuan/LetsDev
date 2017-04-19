@@ -14,8 +14,7 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // swiftlint:disable force_cast
-        // Do any additional setup after loading the view.
+
         self.delegate = self
         self.tabBar.tintColor = .black
 
@@ -37,6 +36,7 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
         bgView.backgroundColor = bgColor
         tabBar.insertSubview(bgView, at: 2)
 
+        // swiftlint:disable force_cast
         let personalVC = self.viewControllers?[1] as! PersonalNavigationController
         personalVC.initTabBarItem()
 
@@ -58,6 +58,7 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
         if item.tag == 2 {
             let newDevNavigation = self.storyboard?.instantiateViewController(withIdentifier: "NewDevNavigationController")
             self.present(newDevNavigation!, animated: true, completion: nil)
+            // swiftlint:enable force_cast
         }
     }
 

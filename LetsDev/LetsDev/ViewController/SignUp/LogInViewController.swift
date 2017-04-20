@@ -37,7 +37,6 @@ class LogInViewController: UIViewController {
         self.passwordTextField.textColor = .white
         self.passwordTextField.selectedIconColor = .white
         self.passwordTextField.iconText = String.fontAwesomeIcon(name: .lock)
-        self.passwordTextField.selectedIconColor = .black
         self.passwordTextField.isSecureTextEntry = true
 
     }

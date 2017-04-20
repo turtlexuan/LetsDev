@@ -32,8 +32,6 @@ class FavoriteManager {
 
         guard let uid = self.auth?.currentUser?.uid else { return }
 
-        print(uid)
-
         var favoriteKeys: [String] = []
 
         self.databaseRef.child("Favorite").child(uid).observeSingleEvent(of: .value, with: { (snapshots) in

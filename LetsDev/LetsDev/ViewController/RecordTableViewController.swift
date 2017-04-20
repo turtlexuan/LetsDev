@@ -54,12 +54,6 @@ class RecordTableViewController: UITableViewController {
 
         let shareButton = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(showShareAlert(_:)))
 
-//        if self.isFavorite == false {
-//            self.rightBarButton = UIBarButtonItem(image: #imageLiteral(resourceName: "Favorite-Origin-Button"), style: .done, target: self, action: #selector(favoriteAction(_:)))
-//        } else if self.isFavorite == true {
-//            self.rightBarButton = UIBarButtonItem(image: #imageLiteral(resourceName: "Favorite-Button"), style: .done, target: self, action: #selector(favoriteAction(_:)))
-//        }
-
         self.navigationItem.setRightBarButton(shareButton, animated: true)
 
         if self.isFromNewProcess == true {

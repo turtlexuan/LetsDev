@@ -179,7 +179,7 @@ class TimerViewController: UIViewController {
                 recordTableVC.combination = self.combination
                 recordTableVC.isFromNewProcess = true
                 RecordManager.shared.uploadRecord(with: self.combination, success: { (databaseRef) in
-                    print("\(String(describing: databaseRef.parent?.key))")
+//                    print("\(String(describing: databaseRef.parent?.key))")
                     guard let recordKey = databaseRef.parent?.key else { return }
                     recordTableVC.recordKey = recordKey
 

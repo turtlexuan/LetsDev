@@ -467,24 +467,6 @@
             </objects>
             <point key="canvasLocation" x="-1471" y="186"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="K4Q-71-UfE">
-            <objects>
-                <viewController id="msl-Ew-3kn" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="pPm-Dn-eKV"/>
-                        <viewControllerLayoutGuide type="bottom" id="ChB-q8-Wiv"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="RU2-rf-4d0">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="MHP-v2-eYK" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-3303" y="939"/>
-        </scene>
         <!--Create User View Controller-->
         <scene sceneID="Sd6-HJ-FyU">
             <objects>
@@ -1054,7 +1036,7 @@ Vivamus at sem massa. Donec egestas, ligula vitae condimentum dignissim, arcu en
         <!--Personal-->
         <scene sceneID="yZO-zq-lmC">
             <objects>
-                <tableViewController id="9tC-8T-gIN" customClass="PersonalTableViewController" customModule="LetsDev" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="PersonalTableViewController" id="9tC-8T-gIN" customClass="PersonalTableViewController" customModule="LetsDev" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="EEk-Lw-oyu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1064,11 +1046,7 @@ Vivamus at sem massa. Donec egestas, ligula vitae condimentum dignissim, arcu en
                             <outlet property="delegate" destination="9tC-8T-gIN" id="dST-kV-iPZ"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Personal" id="1gb-l2-8gW">
-                        <barButtonItem key="rightBarButtonItem" image="Setting" style="plain" id="nmC-Bj-DA5">
-                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Personal" id="1gb-l2-8gW"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L3v-DZ-78I" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1098,7 +1076,7 @@ Vivamus at sem massa. Donec egestas, ligula vitae condimentum dignissim, arcu en
         <!--Favorite-->
         <scene sceneID="FqW-Vl-JDX">
             <objects>
-                <tableViewController id="Nhp-KU-4Vt" customClass="FavoriteTableViewController" customModule="LetsDev" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="FavoriteTableViewController" id="Nhp-KU-4Vt" customClass="FavoriteTableViewController" customModule="LetsDev" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="NTB-Gj-Aen">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1139,11 +1117,10 @@ Vivamus at sem massa. Donec egestas, ligula vitae condimentum dignissim, arcu en
         <scene sceneID="5tX-3b-Jco">
             <objects>
                 <tableViewController id="z5U-jM-m5g" customClass="SettingsTableViewController" customModule="LetsDev" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="SeK-we-Xma">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="SeK-we-Xma">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                        <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
                         <connections>
                             <outlet property="dataSource" destination="z5U-jM-m5g" id="b1S-QT-T4a"/>
                             <outlet property="delegate" destination="z5U-jM-m5g" id="SrB-05-pV6"/>
@@ -1154,42 +1131,6 @@ Vivamus at sem massa. Donec egestas, ligula vitae condimentum dignissim, arcu en
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OBB-sO-Yf9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1601" y="939"/>
-        </scene>
-        <!--Account Setting Table View Controller-->
-        <scene sceneID="TOt-nN-uIM">
-            <objects>
-                <tableViewController id="1DV-8B-4Dd" customClass="AccountSettingTableViewController" customModule="LetsDev" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="S1I-JB-r0O">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <connections>
-                            <outlet property="dataSource" destination="1DV-8B-4Dd" id="ECq-V9-A6G"/>
-                            <outlet property="delegate" destination="1DV-8B-4Dd" id="qbF-x3-Oqz"/>
-                        </connections>
-                    </tableView>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="hVR-pY-YKa" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2340" y="939"/>
-        </scene>
-        <!--Table View Controller-->
-        <scene sceneID="6IJ-7K-2l2">
-            <objects>
-                <tableViewController id="0Fq-jZ-ib7" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="LBm-oD-qBD">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <connections>
-                            <outlet property="dataSource" destination="0Fq-jZ-ib7" id="TTV-gW-CRb"/>
-                            <outlet property="delegate" destination="0Fq-jZ-ib7" id="qba-j9-0se"/>
-                        </connections>
-                    </tableView>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="88M-ww-KzH" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3102" y="939"/>
         </scene>
         <!--Home Navigation Controller-->
         <scene sceneID="3AC-VM-gN0">

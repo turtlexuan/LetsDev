@@ -18,9 +18,13 @@ class SettingsTableViewController: UITableViewController {
     }
 
     let component: [Component] = [ .profile, .profileSetting, .accountSetting, .logout ]
+    var records: [Record] = []
+    var postCount = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        self.navigationItem.title = "Settings"
 
         self.tableView.register(UINib(nibName: "PersonalTableViewCell", bundle: nil), forCellReuseIdentifier: "PersonalTableViewCell")
         self.tableView.register(UINib(nibName: "SettingTableViewCell", bundle: nil), forCellReuseIdentifier: "SettingTableViewCell")
@@ -28,20 +32,33 @@ class SettingsTableViewController: UITableViewController {
         self.tableView.estimatedRowHeight = 120
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        RecordManager.shared.fetchRecords { (records) in
+            if let record = records {
+                self.records = record
+                self.records.sort(by: { $0.date > $1.date })
+                self.tableView.reloadData()
+            }
+        }
+
+        CommunityManager.shared.fetchCurrentUserPosts { (count) in
+            print("Posts: \(count)")
+
+            self.postCount = count
+        }
     }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
+
         return self.component.count
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
+
         return 1
     }
 
@@ -54,6 +71,10 @@ class SettingsTableViewController: UITableViewController {
             // swiftlint:disable force_cast
             let cell = self.tableView.dequeueReusableCell(withIdentifier: "PersonalTableViewCell", for: indexPath) as! PersonalTableViewCell
 
+            cell.userNameLabel.text = currentUser.username
+            cell.recordNumberLabel.text = self.records.count.description
+            cell.postNumberLabel.text = self.postCount.description
+
             return cell
 
         case .profileSetting:
@@ -61,6 +82,7 @@ class SettingsTableViewController: UITableViewController {
             let cell = tableView.dequeueReusableCell(withIdentifier: "SettingTableViewCell", for: indexPath) as! SettingTableViewCell
 
             cell.titleLabel.text = "Profile Seeting"
+            cell.accessoryType = .disclosureIndicator
 
             return cell
 
@@ -69,6 +91,7 @@ class SettingsTableViewController: UITableViewController {
             let cell = tableView.dequeueReusableCell(withIdentifier: "SettingTableViewCell", for: indexPath) as! SettingTableViewCell
 
             cell.titleLabel.text = "Account Seeting"
+            cell.accessoryType = .disclosureIndicator
 
             return cell
 

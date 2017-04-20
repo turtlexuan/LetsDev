@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import Firebase
+
+var currentUser: User!
 
 class TabBarController: UITabBarController, UITabBarControllerDelegate {
 
@@ -17,6 +20,12 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
 
         self.delegate = self
         self.tabBar.tintColor = .black
+        if let uid = FIRAuth.auth()?.currentUser?.uid {
+
+            UserManager.shared.getUser(uid) { (user) in
+                currentUser = user
+            }
+        }
 
         FavoriteManager.shared.getFavorite { (favoriteKeys) in
             TabBarController.favoriteKeys = favoriteKeys

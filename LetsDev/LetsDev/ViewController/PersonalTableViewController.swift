@@ -20,7 +20,7 @@ class PersonalTableViewController: UITableViewController {
 
     var components: [Component] = [.profile, .record]
     var records: [Record] = []
-    static var currentUser = User(uid: "", email: "", username: "")
+    var postCount = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,14 +28,8 @@ class PersonalTableViewController: UITableViewController {
         self.tableView.register(UINib(nibName: "PersonalTableViewCell", bundle: nil), forCellReuseIdentifier: "PersonalTableViewCell")
         self.tableView.register(UINib(nibName: "RecordListTableViewCell", bundle: nil), forCellReuseIdentifier: "RecordListTableViewCell")
 
-        guard let uid1 = FIRAuth.auth()?.currentUser?.uid else { return }
+        self.navigationItem.title = currentUser.username
 
-        UserManager.shared.getUser(uid1) { (user) in
-            print(user.uid)
-            print(user.email)
-            print(user.username)
-            PersonalTableViewController.currentUser = user
-        }
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -47,6 +41,12 @@ class PersonalTableViewController: UITableViewController {
                 self.records.sort(by: { $0.date > $1.date })
                 self.tableView.reloadData()
             }
+        }
+
+        CommunityManager.shared.fetchCurrentUserPosts { (count) in
+            print("Posts: \(count)")
+
+            self.postCount = count
         }
     }
     // MARK: - Table view data source
@@ -76,12 +76,13 @@ class PersonalTableViewController: UITableViewController {
             // swiftlint:disable force_cast
             let cell = self.tableView.dequeueReusableCell(withIdentifier: "PersonalTableViewCell", for: indexPath) as! PersonalTableViewCell
 
-            print(PersonalTableViewController.currentUser.username)
-            cell.userNameLabel.text = PersonalTableViewController.currentUser.username
+            print(currentUser.username)
+            cell.userNameLabel.text = currentUser.username
             cell.recordNumberLabel.text = String(self.records.count)
+            cell.postNumberLabel.text = self.postCount.description
             cell.isUserInteractionEnabled = false
 
-            if let imageUrlString = PersonalTableViewController.currentUser.profileImage, let imageUrl = URL(string: imageUrlString) {
+            if let imageUrlString = currentUser.profileImage, let imageUrl = URL(string: imageUrlString) {
                 cell.userImageView.kf.indicatorType = .activity
                 cell.userImageView.kf.setImage(with: imageUrl)
             } else {

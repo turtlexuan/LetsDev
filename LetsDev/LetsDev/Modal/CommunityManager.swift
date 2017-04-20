@@ -136,8 +136,6 @@ class CommunityManager {
                 let sharedPost = SharedPost(combination: combinations, note: note, photo: photoString, date: millisDate, message: message, comment: comment, like: like, favorite: favorite)
 
                 sharedPostTuple.append((sharedPost, uid, task.key))
-
-                print(value)
             }
 
             completion(sharedPostTuple)
@@ -225,6 +223,19 @@ class CommunityManager {
             completion(sharedPost)
 
         })
+    }
+
+    func fetchCurrentUserPosts(_ completion: @escaping (_ postsCount: Int) -> Void) {
+
+        guard let uid = self.auth?.currentUser?.uid else { return }
+
+        self.databaseRef.child("Community").queryOrdered(byChild: "Uid").queryEqual(toValue: uid).observeSingleEvent(of: .value, with: { (snapshot) in
+            print(snapshot.children.allObjects.count)
+            let count = snapshot.children.allObjects.count
+
+            completion(count)
+        })
+
     }
 
     typealias LikeActionResult = (_ success: FIRDatabaseReference, _ error: Error?) -> Void

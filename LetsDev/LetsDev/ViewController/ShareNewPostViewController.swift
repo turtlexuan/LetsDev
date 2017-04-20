@@ -54,14 +54,14 @@ class ShareNewPostViewController: UIViewController {
         let dateString = dateFormatter.string(from: Date())
         self.dateLabel.text = dateString
 
-        if PersonalTableViewController.currentUser.profileImage == nil {
+        if currentUser.profileImage == nil {
             self.profileImageView.image = #imageLiteral(resourceName: "anonymous-logo")
         } else {
-            let url = URL(string: PersonalTableViewController.currentUser.profileImage)
+            let url = URL(string: currentUser.profileImage)
             self.profileImageView.kf.setImage(with: url)
         }
 
-        self.usernameLabel.text = PersonalTableViewController.currentUser.username
+        self.usernameLabel.text = currentUser.username
 
         guard let devTime = self.combination.devTime, let dilution = self.combination.dilution else {
             return

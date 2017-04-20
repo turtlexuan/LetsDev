@@ -7,9 +7,12 @@
 //
 
 import UIKit
+import SkyFloatingLabelTextField
 
 class ProfileSettingTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var usernameTextField: SkyFloatingLabelTextFieldWithIcon!
+    @IBOutlet weak var emailTextField: SkyFloatingLabelTextFieldWithIcon!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

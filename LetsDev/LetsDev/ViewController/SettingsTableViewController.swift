@@ -36,17 +36,17 @@ class SettingsTableViewController: UITableViewController {
         super.viewWillAppear(animated)
 
         RecordManager.shared.fetchRecords { (records) in
+            CommunityManager.shared.fetchCurrentUserPosts { (count) in
+                print("Posts: \(count)")
+
+                self.postCount = count
+                self.tableView.reloadData()
+            }
             if let record = records {
                 self.records = record
                 self.records.sort(by: { $0.date > $1.date })
-                self.tableView.reloadData()
+
             }
-        }
-
-        CommunityManager.shared.fetchCurrentUserPosts { (count) in
-            print("Posts: \(count)")
-
-            self.postCount = count
         }
     }
 
@@ -81,7 +81,7 @@ class SettingsTableViewController: UITableViewController {
 
             let cell = tableView.dequeueReusableCell(withIdentifier: "SettingTableViewCell", for: indexPath) as! SettingTableViewCell
 
-            cell.titleLabel.text = "Profile Seeting"
+            cell.titleLabel.text = "Profile Setting"
             cell.accessoryType = .disclosureIndicator
 
             return cell
@@ -90,7 +90,7 @@ class SettingsTableViewController: UITableViewController {
 
             let cell = tableView.dequeueReusableCell(withIdentifier: "SettingTableViewCell", for: indexPath) as! SettingTableViewCell
 
-            cell.titleLabel.text = "Account Seeting"
+            cell.titleLabel.text = "Account Setting"
             cell.accessoryType = .disclosureIndicator
 
             return cell

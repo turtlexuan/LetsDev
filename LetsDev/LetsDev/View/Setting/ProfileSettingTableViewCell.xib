@@ -15,7 +15,7 @@
             <rect key="frame" x="0.0" y="0.0" width="479" height="90"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="479" height="89.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="479" height="89"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="O8t-c5-Hv7" customClass="SkyFloatingLabelTextFieldWithIcon" customModule="SkyFloatingLabelTextField">
@@ -50,7 +50,7 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="emailTextField" destination="jHs-vh-aGy" id="481-oR-2qS"/>
+                <outlet property="bioTextField" destination="jHs-vh-aGy" id="Upe-zV-npp"/>
                 <outlet property="usernameTextField" destination="O8t-c5-Hv7" id="wh5-jb-T7c"/>
             </connections>
             <point key="canvasLocation" x="-41.5" y="58"/>

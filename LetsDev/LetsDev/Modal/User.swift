@@ -15,11 +15,13 @@ class User {
     let username: String!
     let uid: String!
     let profileImage: String!
+    let bio: String!
 
-    init(uid: String, email: String, username: String, profileImage: String? = nil) {
+    init(uid: String, email: String, username: String, profileImage: String? = nil, bio: String? = nil) {
         self.uid = uid
         self.email = email
         self.username = username
         self.profileImage = profileImage
+        self.bio = bio
     }
 }

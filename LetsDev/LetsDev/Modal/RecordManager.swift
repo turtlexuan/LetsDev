@@ -68,11 +68,11 @@ class RecordManager {
         self.databaseRef.child("Records").child(uid).child(key).updateChildValues(value)
     }
 
-    func updatePhoto(with image: SKPhoto, success: @escaping (_ photoUrl: String) -> Void) {
+    func updatePhoto(with image: UIImage, success: @escaping (_ photoUrl: String) -> Void) {
 
         guard let uid = self.auth?.currentUser?.uid else { return }
 
-        if let uploadData = UIImageJPEGRepresentation(image.underlyingImage, 0.5) {
+        if let uploadData = UIImageJPEGRepresentation(image, 0.5) {
 
             let storagePath = storageRef.child(uid).child("\(UUID().uuidString).jpg")
             storagePath.put(uploadData, metadata: nil, completion: { (metaData, error) in

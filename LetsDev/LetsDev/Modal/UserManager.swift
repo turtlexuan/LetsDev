@@ -43,4 +43,18 @@ class UserManager {
         })
     }
 
+    typealias UpdateResult = (_ databaseRef: FIRDatabaseReference, _ error: Error?) -> Void
+
+    func updateUser(_ username: String, bio: String, profileImage: String, completion: @escaping UpdateResult) {
+
+        guard let uid = self.auth?.currentUser?.uid else { return }
+
+        let value = ["Username": username, "Profile": profileImage, "Bio": bio]
+
+        self.databaseRef.child("Users").child(uid).updateChildValues(value) { (error, databaseRef) in
+
+            completion(databaseRef, error)
+        }
+    }
+
 }

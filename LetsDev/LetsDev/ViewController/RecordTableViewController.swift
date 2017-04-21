@@ -185,10 +185,10 @@ class RecordTableViewController: UITableViewController {
                 for asset in assets {
                     asset.fetchOriginalImage(true, completeBlock: { (imageData, _) in
                         guard let image = imageData else { return }
-                        let skPhoto = SKPhoto.photoWithImage(image)
+
                         self.skImage.append(SKPhoto.photoWithImage(image))
 
-                        RecordManager.shared.updatePhoto(with: skPhoto, success: { (urlString) in
+                        RecordManager.shared.updatePhoto(with: image, success: { (urlString) in
                             self.photos.append(urlString)
                             RecordManager.shared.updatePhotoUrl(with: self.photos, key: self.recordKey)
                         })
@@ -212,10 +212,9 @@ class RecordTableViewController: UITableViewController {
                     asset.fetchOriginalImage(true, completeBlock: { (imageData, _) in
                         guard let image = imageData else { return }
 
-                        let skPhoto = SKPhoto.photoWithImage(image)
                         self.skImage.append(SKPhoto.photoWithImage(image))
 
-                        RecordManager.shared.updatePhoto(with: skPhoto, success: { (urlString) in
+                        RecordManager.shared.updatePhoto(with: image, success: { (urlString) in
                             self.photos.append(urlString)
                             RecordManager.shared.updatePhotoUrl(with: self.photos, key: self.recordKey)
                         })

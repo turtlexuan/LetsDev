@@ -8,6 +8,7 @@
 
 import UIKit
 import DKImagePickerController
+import NVActivityIndicatorView
 
 class ProfileSettingTableViewController: UITableViewController {
 
@@ -18,18 +19,87 @@ class ProfileSettingTableViewController: UITableViewController {
 
     let component: [Component] = [ .profileImage, .profileInfo ]
     var profileImage = UIImage()
+    var isPhotoChanged = false
+    var newUsername = ""
+    var newBio = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        let doneButton = UIBarButtonItem(title: "Save", style: .done, target: self, action: #selector(saveAction))
+        let cancelButton = UIBarButtonItem(title: "Cancel", style: .done, target: self, action: #selector(cancelAction))
+        self.navigationItem.hidesBackButton = true
+        self.navigationItem.leftBarButtonItem = cancelButton
+        self.navigationItem.rightBarButtonItem = doneButton
+
         self.tableView.register(UINib(nibName: "ProfileImageTableViewCell", bundle: nil), forCellReuseIdentifier: "ProfileImageTableViewCell")
         self.tableView.register(UINib(nibName: "ProfileSettingTableViewCell", bundle: nil), forCellReuseIdentifier: "ProfileSettingTableViewCell")
-//        self.tableView.register(UINib(nibName: "PersonalTableViewCell", bundle: nil), forCellReuseIdentifier: "PersonalTableViewCell")
 
         self.tableView.separatorStyle = .none
         self.tableView.backgroundColor = .black
+        self.tableView.keyboardDismissMode = .onDrag
 
-//        self.profileImage = currentUser.
+        self.newUsername = currentUser.username
+        if currentUser.bio != nil {
+            self.newBio = currentUser.bio
+        }
+
+    }
+
+    func saveAction() {
+
+//        let indicatorView = NVActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height), type: .ballRotateChase, color: .gray, padding: 10)
+//        indicatorView.startAnimating()
+        
+        let activityData = ActivityData(type: .ballRotateChase)
+        
+        NVActivityIndicatorPresenter.sharedInstance.startAnimating(activityData)
+
+        if self.isPhotoChanged == true {
+
+            RecordManager.shared.updatePhoto(with: self.profileImage, success: { (photoString) in
+
+                UserManager.shared.updateUser(self.newUsername, bio: self.newBio, profileImage: photoString, completion: { (_, error) in
+
+                    if error != nil {
+                        print(error ?? "")
+
+                        return
+                    }
+                    
+                    let newCurrentUser = User(uid: currentUser.uid, email: currentUser.email, username: self.newUsername, profileImage: photoString, bio: self.newBio)
+                    currentUser = newCurrentUser
+
+                    NVActivityIndicatorPresenter.sharedInstance.stopAnimating()
+                    self.navigationController?.popViewController(animated: true)
+
+                })
+            })
+
+        } else {
+
+            UserManager.shared.updateUser(self.newUsername, bio: self.newBio, profileImage: currentUser.profileImage, completion: { (_, error) in
+
+                if error != nil {
+                    print(error ?? "")
+
+                    return
+                }
+                
+                let newCurrentUser = User(uid: currentUser.uid, email: currentUser.email, username: self.newUsername, profileImage: currentUser.profileImage, bio: self.newBio)
+                currentUser = newCurrentUser
+
+                NVActivityIndicatorPresenter.sharedInstance.stopAnimating()
+                self.navigationController?.popViewController(animated: true)
+
+            })
+
+        }
+
+    }
+
+    func cancelAction() {
+
     }
 
     // MARK: - Table view data source
@@ -70,19 +140,21 @@ class ProfileSettingTableViewController: UITableViewController {
             let cell = self.tableView.dequeueReusableCell(withIdentifier: "ProfileSettingTableViewCell", for: indexPath) as! ProfileSettingTableViewCell
 
             cell.selectionStyle = .none
-//            cell.usernameTextField.
-            cell.emailTextField.iconFont = UIFont(name: "FontAwesome", size: 20)
-            cell.emailTextField.iconWidth = 30
-            cell.emailTextField.iconMarginBottom = 2
-            cell.emailTextField.iconMarginLeft = 8
-            cell.emailTextField.iconColor = .white
-            cell.emailTextField.selectedLineColor = .white
-            cell.emailTextField.selectedIconColor = .white
-            cell.emailTextField.textColor = .white
-            cell.emailTextField.iconText = String.fontAwesomeIcon(name: .envelopeO)
-            cell.emailTextField.keyboardType = .emailAddress
-            cell.emailTextField.text = currentUser.email
-            cell.emailTextField.delegate = self
+
+            cell.bioTextField.iconFont = UIFont(name: "FontAwesome", size: 20)
+            cell.bioTextField.iconWidth = 30
+            cell.bioTextField.iconMarginBottom = 2
+            cell.bioTextField.iconMarginLeft = 8
+            cell.bioTextField.iconColor = .white
+            cell.bioTextField.selectedLineColor = .white
+            cell.bioTextField.selectedIconColor = .white
+            cell.bioTextField.textColor = .white
+            cell.bioTextField.iconText = String.fontAwesomeIcon(name: .info)
+            cell.bioTextField.placeholder = "Bio"
+            cell.bioTextField.placeholderColor = .lightGray
+            cell.bioTextField.setTitleVisible(false)
+            cell.bioTextField.selectedTitle = ""
+            cell.bioTextField.delegate = self
 
             cell.usernameTextField.errorColor = .red
             cell.usernameTextField.iconFont = UIFont(name: "FontAwesome", size: 20)
@@ -94,7 +166,10 @@ class ProfileSettingTableViewController: UITableViewController {
             cell.usernameTextField.selectedIconColor = .white
             cell.usernameTextField.selectedLineColor = .white
             cell.usernameTextField.textColor = .white
-            cell.usernameTextField.text = currentUser.username
+            cell.usernameTextField.placeholder = "Username"
+            cell.usernameTextField.placeholderColor = .lightGray
+            cell.usernameTextField.setTitleVisible(false)
+            cell.usernameTextField.selectedTitle = ""
             cell.usernameTextField.delegate = self
 
             return cell
@@ -130,6 +205,10 @@ class ProfileSettingTableViewController: UITableViewController {
 
     }
 
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.tableView.endEditing(true)
+    }
+
     func showImagePickerAlertSheet(_ indexPath: IndexPath) {
 
         let cell = self.tableView.cellForRow(at: indexPath) as! ProfileImageTableViewCell
@@ -149,9 +228,9 @@ class ProfileSettingTableViewController: UITableViewController {
                     guard let image = imageData else { return }
 
                     cell.profileImageView.image = image
-//                    self.imageView.image = image
-//                    self.profileImage = image
-//                    self.imageChanged = true
+
+                    self.profileImage = image
+                    self.isPhotoChanged = true
                 })
             }
             self.present(pickerController, animated: true, completion: nil)
@@ -168,9 +247,11 @@ class ProfileSettingTableViewController: UITableViewController {
                 let asset = assets.first
                 asset?.fetchOriginalImage(true, completeBlock: { (imageData, _) in
                     guard let image = imageData else { return }
-//                    self.imageView.image = image
-//                    self.profileImage = image
-//                    self.imageChanged = true
+
+                    cell.profileImageView.image = image
+
+                    self.profileImage = image
+                    self.isPhotoChanged = true
                 })
             }
             self.present(pickerController, animated: true, completion: nil)
@@ -187,5 +268,32 @@ class ProfileSettingTableViewController: UITableViewController {
 }
 
 extension ProfileSettingTableViewController: UITextFieldDelegate {
+
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        return true
+    }
+
+    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+        return true
+    }
+
+    func textFieldDidEndEditing(_ textField: UITextField, reason: UITextFieldDidEndEditingReason) {
+
+        let cell = textField.superview?.superview as! ProfileSettingTableViewCell
+
+        if textField == cell.usernameTextField {
+            if let username = textField.text {
+                self.newUsername = username
+            }
+
+            print("This is username")
+        } else {
+            if let bio = textField.text {
+                self.newBio = bio
+            }
+            print("This is bio")
+        }
+
+    }
 
 }

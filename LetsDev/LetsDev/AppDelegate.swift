@@ -33,8 +33,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         if FIRAuth.auth()?.currentUser?.uid == nil {
             // swiftlint:disable force_cast
-            let tabBarController = mainStoryboard.instantiateViewController(withIdentifier: "signUpNavigation")
-            self.window?.rootViewController = tabBarController
+            let rootController = mainStoryboard.instantiateViewController(withIdentifier: "signUpNavigation")
+            self.window?.rootViewController = rootController
         }
 
         IQKeyboardManager.sharedManager().enable = true

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import NVActivityIndicatorView
 
 class SettingsTableViewController: UITableViewController {
 
@@ -74,6 +75,13 @@ class SettingsTableViewController: UITableViewController {
             cell.userNameLabel.text = currentUser.username
             cell.recordNumberLabel.text = self.records.count.description
             cell.postNumberLabel.text = self.postCount.description
+
+            if let imageUrlString = currentUser.profileImage, let imageUrl = URL(string: imageUrlString) {
+                cell.userImageView.kf.indicatorType = .activity
+                cell.userImageView.kf.setImage(with: imageUrl)
+            } else {
+                cell.userImageView.image = #imageLiteral(resourceName: "anonymous-logo")
+            }
 
             return cell
 

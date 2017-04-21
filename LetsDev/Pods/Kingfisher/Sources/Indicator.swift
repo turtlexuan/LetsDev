@@ -125,7 +125,7 @@ struct ActivityIndicator: Indicator {
             #if os(tvOS)
                 let indicatorStyle = UIActivityIndicatorViewStyle.white
             #else
-                let indicatorStyle = UIActivityIndicatorViewStyle.gray
+                let indicatorStyle = UIActivityIndicatorViewStyle.white
             #endif
             activityIndicatorView = UIActivityIndicatorView(activityIndicatorStyle:indicatorStyle)
             activityIndicatorView.autoresizingMask = [.flexibleLeftMargin, .flexibleRightMargin, .flexibleBottomMargin, .flexibleTopMargin]

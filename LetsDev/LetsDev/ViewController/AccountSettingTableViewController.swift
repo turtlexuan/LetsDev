@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import NVActivityIndicatorView
 
 class AccountSettingTableViewController: UITableViewController {
 
@@ -21,14 +22,73 @@ class AccountSettingTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        let doneButton = UIBarButtonItem(title: "Save", style: .done, target: self, action: #selector(showLogInAlert))
+        let cancelButton = UIBarButtonItem(title: "Cancel", style: .done, target: self, action: #selector(cancelAction))
+        self.navigationItem.hidesBackButton = true
+        self.navigationItem.leftBarButtonItem = cancelButton
+        self.navigationItem.rightBarButtonItem = doneButton
+
         self.tableView.register(UINib(nibName: "PrivateSettingTableViewCell", bundle: nil), forCellReuseIdentifier: "PrivateSettingTableViewCell")
         self.tableView.register(UINib(nibName: "PasswordSettingTableViewCell", bundle: nil), forCellReuseIdentifier: "PasswordSettingTableViewCell")
 
         self.tableView.separatorStyle = .none
         self.tableView.backgroundColor = .black
         self.tableView.keyboardDismissMode = .onDrag
-        
+
         self.newEmail = currentUser.email
+
+    }
+
+    func cancelAction() {
+        self.navigationController?.popViewController(animated: true)
+    }
+
+    func showLogInAlert() {
+
+        let alertController = UIAlertController(title: "Log In Again", message: "For security reason, we need you to enter your original email and password again.", preferredStyle: .alert)
+
+        alertController.addTextField { (textField) in
+            textField.placeholder = "Enter email"
+        }
+        alertController.addTextField { (textField) in
+            textField.placeholder = "Enter Password"
+            textField.isSecureTextEntry = true
+        }
+
+        let loginAction = UIAlertAction(title: "Log In", style: .default) { (_) in
+
+            let activityData = ActivityData(type: .ballRotateChase)
+
+            NVActivityIndicatorPresenter.sharedInstance.startAnimating(activityData)
+
+            if let email = alertController.textFields?[0].text, let password = alertController.textFields?[1].text {
+
+                UserManager.shared.updateEmail(with: self.newEmail, oldEmail: email, password: password, completion: { (_, error) in
+
+                    if error != nil {
+
+                        print(error ?? "")
+
+                        return
+
+                    }
+
+                    let newCurrentUser = User(uid: currentUser.uid, email: self.newEmail, username: currentUser.username, profileImage: currentUser.profileImage, bio: currentUser.bio)
+                    currentUser = newCurrentUser
+
+                    NVActivityIndicatorPresenter.sharedInstance.stopAnimating()
+                    self.navigationController?.popViewController(animated: true)
+                })
+
+            }
+        }
+
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+
+        alertController.addAction(loginAction)
+        alertController.addAction(cancelAction)
+
+        self.present(alertController, animated: true, completion: nil)
 
     }
 
@@ -119,15 +179,15 @@ class AccountSettingTableViewController: UITableViewController {
 }
 
 extension AccountSettingTableViewController: UITextFieldDelegate {
-    
+
     func textFieldDidEndEditing(_ textField: UITextField) {
 
         if let email = textField.text {
             self.newEmail = email
         }
-        
+
     }
-    
+
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         return true
     }

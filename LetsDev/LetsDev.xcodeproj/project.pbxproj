@@ -93,6 +93,10 @@
 		20EF0E391E9F166C00943761 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EF0E381E9F166C00943761 /* Comment.swift */; };
 		20EF0E3E1E9F7D9000943761 /* InputTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EF0E3C1E9F7D9000943761 /* InputTableViewCell.swift */; };
 		20EF0E3F1E9F7D9000943761 /* InputTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20EF0E3D1E9F7D9000943761 /* InputTableViewCell.xib */; };
+		20F0566E1EA9F5AB00C597B2 /* EmailSettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F0566C1EA9F5AB00C597B2 /* EmailSettingTableViewController.swift */; };
+		20F056711EA9F60000C597B2 /* PasswordSettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F056701EA9F5FF00C597B2 /* PasswordSettingTableViewController.swift */; };
+		20F056781EAA0C9700C597B2 /* PasswordSettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F056761EAA0C9700C597B2 /* PasswordSettingTableViewCell.swift */; };
+		20F056791EAA0C9700C597B2 /* PasswordSettingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20F056771EAA0C9700C597B2 /* PasswordSettingTableViewCell.xib */; };
 		20F322DF1E8E1B59008605FE /* NoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F322DE1E8E1B59008605FE /* NoteViewController.swift */; };
 		20F322E11E8FA82A008605FE /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F322E01E8FA82A008605FE /* TabBarController.swift */; };
 		20F322E71E8FAFF1008605FE /* PersonalNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F322E61E8FAFF1008605FE /* PersonalNavigationController.swift */; };
@@ -191,6 +195,10 @@
 		20EF0E381E9F166C00943761 /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		20EF0E3C1E9F7D9000943761 /* InputTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputTableViewCell.swift; sourceTree = "<group>"; };
 		20EF0E3D1E9F7D9000943761 /* InputTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InputTableViewCell.xib; sourceTree = "<group>"; };
+		20F0566C1EA9F5AB00C597B2 /* EmailSettingTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailSettingTableViewController.swift; sourceTree = "<group>"; };
+		20F056701EA9F5FF00C597B2 /* PasswordSettingTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasswordSettingTableViewController.swift; sourceTree = "<group>"; };
+		20F056761EAA0C9700C597B2 /* PasswordSettingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PasswordSettingTableViewCell.swift; path = Setting/PasswordSettingTableViewCell.swift; sourceTree = "<group>"; };
+		20F056771EAA0C9700C597B2 /* PasswordSettingTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PasswordSettingTableViewCell.xib; path = Setting/PasswordSettingTableViewCell.xib; sourceTree = "<group>"; };
 		20F322DE1E8E1B59008605FE /* NoteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteViewController.swift; sourceTree = "<group>"; };
 		20F322E01E8FA82A008605FE /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		20F322E61E8FAFF1008605FE /* PersonalNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonalNavigationController.swift; sourceTree = "<group>"; };
@@ -303,6 +311,8 @@
 				20EDD1011EA609E6000AD79B /* SettingsTableViewController.swift */,
 				200F15B41EA70A0E00268240 /* ProfileSettingTableViewController.swift */,
 				200F159E1EA7008100268240 /* AccountSettingTableViewController.swift */,
+				20F056701EA9F5FF00C597B2 /* PasswordSettingTableViewController.swift */,
+				20F0566C1EA9F5AB00C597B2 /* EmailSettingTableViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -409,6 +419,8 @@
 				200F15AD1EA7075900268240 /* ProfileSettingTableViewCell.xib */,
 				200F15B01EA7096300268240 /* PrivateSettingTableViewCell.swift */,
 				200F15B11EA7096300268240 /* PrivateSettingTableViewCell.xib */,
+				20F056761EAA0C9700C597B2 /* PasswordSettingTableViewCell.swift */,
+				20F056771EAA0C9700C597B2 /* PasswordSettingTableViewCell.xib */,
 			);
 			name = Setting;
 			sourceTree = "<group>";
@@ -526,6 +538,7 @@
 				20E6C6FF1E9B833C0021F1DB /* HomePageTableViewCell.xib in Resources */,
 				200F15AF1EA7075900268240 /* ProfileSettingTableViewCell.xib in Resources */,
 				205DC77B1E8FF63B00A3E46E /* NewDevTableViewCellOneContent.xib in Resources */,
+				20F056791EAA0C9700C597B2 /* PasswordSettingTableViewCell.xib in Resources */,
 				200F15B31EA7096300268240 /* PrivateSettingTableViewCell.xib in Resources */,
 				205DC78E1E8FFD4300A3E46E /* RecordListTableViewCell.xib in Resources */,
 				20EF0E2B1E9DF75400943761 /* CommentDetailTableViewCell.xib in Resources */,
@@ -607,6 +620,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20F056781EAA0C9700C597B2 /* PasswordSettingTableViewCell.swift in Sources */,
 				206E3CB21E8BA32E00DB33DD /* LoginManager.swift in Sources */,
 				20E6C6FE1E9B833C0021F1DB /* HomePageTableViewCell.swift in Sources */,
 				200F15B21EA7096300268240 /* PrivateSettingTableViewCell.swift in Sources */,
@@ -634,6 +648,7 @@
 				201978D61E80CFBE0013FACE /* NewDevViewController.swift in Sources */,
 				206E3CB41E8BA36300DB33DD /* User.swift in Sources */,
 				205DC77E1E8FF63B00A3E46E /* CombinationTableViewCell.swift in Sources */,
+				20F056711EA9F60000C597B2 /* PasswordSettingTableViewController.swift in Sources */,
 				20EF0E321E9E0E9700943761 /* ButtonsTableViewCell.swift in Sources */,
 				20892FCD1E8223FB00369946 /* Film.swift in Sources */,
 				2002AEE31E8A6CF300E21EA5 /* CollectionHeight.swift in Sources */,
@@ -641,6 +656,7 @@
 				20F322DF1E8E1B59008605FE /* NoteViewController.swift in Sources */,
 				20F322EB1E8FB080008605FE /* NewDevNavigationController.swift in Sources */,
 				2083ABC41E99D9BB00AB0B5A /* LogInViewController.swift in Sources */,
+				20F0566E1EA9F5AB00C597B2 /* EmailSettingTableViewController.swift in Sources */,
 				20892FC51E819B6200369946 /* Color.swift in Sources */,
 				20F322E11E8FA82A008605FE /* TabBarController.swift in Sources */,
 				205DC7821E8FF63B00A3E46E /* PhotoCollectionViewCell.swift in Sources */,

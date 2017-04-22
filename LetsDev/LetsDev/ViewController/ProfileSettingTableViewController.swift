@@ -48,11 +48,8 @@ class ProfileSettingTableViewController: UITableViewController {
 
     func saveAction() {
 
-//        let indicatorView = NVActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height), type: .ballRotateChase, color: .gray, padding: 10)
-//        indicatorView.startAnimating()
-        
         let activityData = ActivityData(type: .ballRotateChase)
-        
+
         NVActivityIndicatorPresenter.sharedInstance.startAnimating(activityData)
 
         if self.isPhotoChanged == true {
@@ -66,7 +63,7 @@ class ProfileSettingTableViewController: UITableViewController {
 
                         return
                     }
-                    
+
                     let newCurrentUser = User(uid: currentUser.uid, email: currentUser.email, username: self.newUsername, profileImage: photoString, bio: self.newBio)
                     currentUser = newCurrentUser
 
@@ -85,7 +82,7 @@ class ProfileSettingTableViewController: UITableViewController {
 
                     return
                 }
-                
+
                 let newCurrentUser = User(uid: currentUser.uid, email: currentUser.email, username: self.newUsername, profileImage: currentUser.profileImage, bio: self.newBio)
                 currentUser = newCurrentUser
 
@@ -99,7 +96,7 @@ class ProfileSettingTableViewController: UITableViewController {
     }
 
     func cancelAction() {
-
+        self.navigationController?.popViewController(animated: true)
     }
 
     // MARK: - Table view data source

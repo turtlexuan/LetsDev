@@ -36,12 +36,17 @@ class SettingsTableViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
+        let activityData = ActivityData(type: .ballRotateChase)
+
+        NVActivityIndicatorPresenter.sharedInstance.startAnimating(activityData)
+
         RecordManager.shared.fetchRecords { (records) in
             CommunityManager.shared.fetchCurrentUserPosts { (count) in
                 print("Posts: \(count)")
 
                 self.postCount = count
                 self.tableView.reloadData()
+                NVActivityIndicatorPresenter.sharedInstance.stopAnimating()
             }
             if let record = records {
                 self.records = record

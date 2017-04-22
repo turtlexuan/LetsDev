@@ -1,17 +1,17 @@
 //
-//  PrivateSettingTableViewCell.swift
+//  PasswordSettingTableViewCell.swift
 //  LetsDev
 //
-//  Created by 劉仲軒 on 2017/4/19.
+//  Created by 劉仲軒 on 2017/4/21.
 //  Copyright © 2017年 劉仲軒. All rights reserved.
 //
 
 import UIKit
-import SkyFloatingLabelTextField
 
-class PrivateSettingTableViewCell: UITableViewCell {
+class PasswordSettingTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var textField: SkyFloatingLabelTextFieldWithIcon!
+    @IBOutlet weak var changePasswordLabel: UILabel!
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

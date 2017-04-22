@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import NVActivityIndicatorView
 
 class HomeTableViewController: UITableViewController {
 
@@ -33,10 +34,16 @@ class HomeTableViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
+        let activityData = ActivityData(type: .ballRotateChase)
+
+        NVActivityIndicatorPresenter.sharedInstance.startAnimating(activityData)
+
         CommunityManager.shared.getPost { (sharedPosts) in
             self.sharedPosts = sharedPosts
             self.states = [Bool](repeating: true, count: sharedPosts.count)
             self.tableView.reloadData()
+
+            NVActivityIndicatorPresenter.sharedInstance.stopAnimating()
         }
     }
     // MARK: - Table view data source

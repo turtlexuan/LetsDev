@@ -88,4 +88,40 @@ class UserManager {
 
     }
 
+    typealias UpdatePasswordResult = (_ error: Error?) -> Void
+
+    func updatePassword(with newPassword: String, email: String, currentPassword: String, completion: @escaping UpdatePasswordResult) {
+
+        let credential = FIREmailPasswordAuthProvider.credential(withEmail: email, password: currentPassword)
+
+        self.auth?.currentUser?.reauthenticate(with: credential, completion: { (error) in
+
+            if error != nil {
+
+                print(error ?? "")
+
+                completion(error)
+
+                return
+
+            }
+
+            self.auth?.currentUser?.updatePassword(newPassword, completion: { (error) in
+
+                if error != nil {
+
+                    print(error ?? "")
+
+                    completion(error)
+
+                    return
+
+                }
+
+                completion(nil)
+            })
+        })
+
+    }
+
 }

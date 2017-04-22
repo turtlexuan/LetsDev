@@ -27,6 +27,7 @@ class AccountSettingTableViewController: UITableViewController {
         self.navigationItem.hidesBackButton = true
         self.navigationItem.leftBarButtonItem = cancelButton
         self.navigationItem.rightBarButtonItem = doneButton
+        self.navigationItem.title = "Account"
 
         self.tableView.register(UINib(nibName: "PrivateSettingTableViewCell", bundle: nil), forCellReuseIdentifier: "PrivateSettingTableViewCell")
         self.tableView.register(UINib(nibName: "PasswordSettingTableViewCell", bundle: nil), forCellReuseIdentifier: "PasswordSettingTableViewCell")
@@ -44,6 +45,8 @@ class AccountSettingTableViewController: UITableViewController {
     }
 
     func showLogInAlert() {
+
+        self.tableView.endEditing(true)
 
         let alertController = UIAlertController(title: "Log In Again", message: "For security reason, we need you to enter your original email and password again.", preferredStyle: .alert)
 
@@ -147,18 +150,18 @@ class AccountSettingTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
-        let component = self.components[indexPath.row]
+        let component = self.components[indexPath.section]
 
         switch component {
-
-        case .emailSetting:
-
-            break
 
         case .passwordSetting:
 
             let passwordVC = PasswordSettingTableViewController()
             self.navigationController?.pushViewController(passwordVC, animated: true)
+
+        default:
+
+            return
 
         }
     }

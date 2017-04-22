@@ -31,6 +31,7 @@ class ProfileSettingTableViewController: UITableViewController {
         self.navigationItem.hidesBackButton = true
         self.navigationItem.leftBarButtonItem = cancelButton
         self.navigationItem.rightBarButtonItem = doneButton
+        self.navigationItem.title = "Profile"
 
         self.tableView.register(UINib(nibName: "ProfileImageTableViewCell", bundle: nil), forCellReuseIdentifier: "ProfileImageTableViewCell")
         self.tableView.register(UINib(nibName: "ProfileSettingTableViewCell", bundle: nil), forCellReuseIdentifier: "ProfileSettingTableViewCell")

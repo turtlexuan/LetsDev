@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import NVActivityIndicatorView
 
 class TimerViewController: UIViewController {
 
@@ -162,7 +163,7 @@ class TimerViewController: UIViewController {
         let alertController = UIAlertController(title: "Cancel Process?", message: "Do you want to cancel the timer?", preferredStyle: .alert)
         let doneAction = UIAlertAction(title: "Yes", style: .default) { (_) in
             self.timer.invalidate()
-            _ = self.navigationController?.popToRootViewController(animated: true)
+            self.navigationController?.popToRootViewController(animated: true)
         }
         let cancelAction = UIAlertAction(title: "No", style: .cancel, handler: nil)
 
@@ -175,14 +176,20 @@ class TimerViewController: UIViewController {
     func showFinishAlert() {
         let alertController = UIAlertController(title: "Congratulations!", message: "Your development have just finished!\nLet’s go to record page and add some notes.", preferredStyle: .alert)
         let doneAction = UIAlertAction(title: "OK", style: .default) { (_) in
+            
+            let activityData = ActivityData(type: .ballRotateChase)
+            
+            NVActivityIndicatorPresenter.sharedInstance.startAnimating(activityData)
+            
             if let recordTableVC = self.storyboard?.instantiateViewController(withIdentifier: "RecordTableViewController") as? RecordTableViewController {
                 recordTableVC.combination = self.combination
                 recordTableVC.isFromNewProcess = true
                 RecordManager.shared.uploadRecord(with: self.combination, success: { (databaseRef) in
-//                    print("\(String(describing: databaseRef.parent?.key))")
+
                     guard let recordKey = databaseRef.parent?.key else { return }
                     recordTableVC.recordKey = recordKey
 
+                    NVActivityIndicatorPresenter.sharedInstance.stopAnimating()
                     self.navigationController?.pushViewController(recordTableVC, animated: true)
                 }, fail: { (error) in
                     print(error)

@@ -9,6 +9,7 @@
 import UIKit
 import Kingfisher
 import Firebase
+import NVActivityIndicatorView
 
 class PersonalTableViewController: UITableViewController {
 
@@ -29,26 +30,77 @@ class PersonalTableViewController: UITableViewController {
         self.tableView.register(UINib(nibName: "RecordListTableViewCell", bundle: nil), forCellReuseIdentifier: "RecordListTableViewCell")
 
         self.navigationItem.title = currentUser.username
+        self.tableView.separatorStyle = .none
 
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        let activityData = ActivityData(type: .ballRotateChase)
+        
+        NVActivityIndicatorPresenter.sharedInstance.startAnimating(activityData)
 
         RecordManager.shared.fetchRecords { (records) in
+            
+            CommunityManager.shared.fetchCurrentUserPosts { (count) in
+                print("Posts: \(count)")
+                
+                self.postCount = count
+                self.tableView.reloadData()
+                
+                NVActivityIndicatorPresenter.sharedInstance.stopAnimating()
+            }
+            
             if let record = records {
                 self.records = record
                 self.records.sort(by: { $0.date > $1.date })
-                self.tableView.reloadData()
+
+            }
+
+            if records?.count == 0 {
+                let noRecordView = self.configNoRecordView()
+                self.tableView.addSubview(noRecordView)
             }
         }
 
-        CommunityManager.shared.fetchCurrentUserPosts { (count) in
-            print("Posts: \(count)")
-
-            self.postCount = count
-        }
     }
+
+    func configNoRecordView() -> UIView {
+
+        let noReordView = UIView(frame: CGRect(x: 12, y: 150, width: self.tableView.frame.width - 24, height: 150))
+        noReordView.backgroundColor = Color.cellColor
+        noReordView.layer.cornerRadius = 10
+
+        let titleLabel = UILabel(frame: CGRect(x: 0, y: 18, width: noReordView.frame.width, height: 50))
+        titleLabel.numberOfLines = 0
+        titleLabel.textAlignment = .center
+        titleLabel.text = "You don't have any record.\nLet's start a new development!"
+        titleLabel.textColor = .white
+
+        noReordView.addSubview(titleLabel)
+
+        let startButton = UIButton(frame: CGRect(x: 0, y: titleLabel.frame.maxY + 12, width: 50, height: 50))
+        startButton.center.x = titleLabel.center.x
+        startButton.setImage(#imageLiteral(resourceName: "plusButton"), for: .normal)
+        startButton.backgroundColor = Color.buttonColor
+        startButton.layer.cornerRadius = 25
+        startButton.addTarget(self, action: #selector(showNewDevVC), for: .touchUpInside)
+
+        noReordView.addSubview(startButton)
+
+        return noReordView
+
+    }
+
+    func showNewDevVC() {
+
+        // swiftlint:disable force_cast
+        let newDevVc = self.storyboard?.instantiateViewController(withIdentifier: "NewDevNavigationController")
+        self.present(newDevVc!, animated: true, completion: nil)
+
+    }
+
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -73,7 +125,6 @@ class PersonalTableViewController: UITableViewController {
         switch component {
         case .profile:
 
-            // swiftlint:disable force_cast
             let cell = self.tableView.dequeueReusableCell(withIdentifier: "PersonalTableViewCell", for: indexPath) as! PersonalTableViewCell
 
             print(currentUser.username)

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -15,14 +15,14 @@
             <rect key="frame" x="0.0" y="0.0" width="374" height="376"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="S7e-dE-IMI" id="4Re-Jp-62H">
-                <rect key="frame" x="0.0" y="0.0" width="374" height="375"/>
+                <rect key="frame" x="0.0" y="0.0" width="374" height="375.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hcG-0R-skf">
                         <rect key="frame" x="0.0" y="8" width="374" height="359"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2017.04.20" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pZZ-Kv-m2L">
-                                <rect key="frame" x="74" y="41" width="70" height="17"/>
+                                <rect key="frame" x="74" y="40.5" width="69.5" height="17"/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -31,7 +31,7 @@
                                 <rect key="frame" x="12" y="143" width="350" height="140"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="D-76" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Dy7-hJ-AOz">
-                                        <rect key="frame" x="12" y="44" width="34" height="17"/>
+                                        <rect key="frame" x="12" y="44" width="33.5" height="17"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -42,7 +42,7 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3PX-ar-ykV">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="2" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3PX-ar-ykV">
                                         <rect key="frame" x="12" y="69" width="50" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="cL8-SD-57a"/>
@@ -50,7 +50,7 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NGB-NQ-TDe">
-                                        <rect key="frame" x="74" y="77" width="264" height="34"/>
+                                        <rect key="frame" x="74" y="77.5" width="264" height="33.5"/>
                                         <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque dictum, nunc eget sagittis convallis, dolor sapien pharetra quam, non semper orci enim sed nisl. In nisl ligula, fringilla quis metus vitae, porttitor vehicula sapien. Praesent ipsum eros, mattis quis massa sit amet, luctus commodo lacus. Sed nisl urna, accumsan sit amet ex in, pretium elementum tellus. Donec sollicitudin porta condimentum. Fusce viverra in risus non ullamcorper. Etiam venenatis urna purus, in imperdiet sapien lobortis sit amet. Curabitur ullamcorper venenatis nisl sit amet rutrum. Etiam elementum velit quis hendrerit ultricies. Proin nec tellus a odio tincidunt auctor pharetra sed orci. Curabitur non elit eu odio elementum pulvinar.
 
 Nullam aliquam vel orci et finibus. Sed viverra et sapien pellentesque suscipit. In malesuada lectus vitae nulla gravida tincidunt. Curabitur tristique, elit ac pulvinar dignissim, ante nibh interdum ligula, eu tincidunt tortor velit a nulla. Ut convallis urna odio, iaculis tempus sapien feugiat vitae. Vivamus dapibus a diam ac ullamcorper. Nulla vulputate, est vestibulum congue faucibus, sapien sapien accumsan quam, ac venenatis lacus dui quis erat. Cras consequat lorem eu molestie lobortis. Sed bibendum, metus eget bibendum tempor, magna leo dictum magna, ac ultrices dui nunc et est. Quisque lectus ex, molestie quis mattis nec, ullamcorper at ligula. Nullam pharetra lacus sit amet libero aliquam sagittis. Aliquam vehicula lacus ac mattis hendrerit. Suspendisse vitae sem quis elit eleifend laoreet ut sit amet erat. Sed enim erat, semper quis ipsum in, fringilla condimentum diam. Vestibulum rhoncus urna et bibendum iaculis. Mauris id porttitor mi.
@@ -98,7 +98,7 @@ Vivamus at sem massa. Donec egestas, ligula vitae condimentum dignissim, arcu en
                                     <constraint firstItem="Dy7-hJ-AOz" firstAttribute="leading" secondItem="B5v-hn-xaw" secondAttribute="leading" constant="12" id="zxw-LN-7lr"/>
                                 </constraints>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7i5-v5-Zab">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7i5-v5-Zab">
                                 <rect key="frame" x="12" y="12" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="HN0-wB-wdu"/>
@@ -125,15 +125,15 @@ Vivamus at sem massa. Donec egestas, ligula vitae condimentum dignissim, arcu en
                                 <rect key="frame" x="12" y="315" width="350" height="44"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7d2-cA-FRF">
-                                        <rect key="frame" x="0.0" y="0.0" width="117" height="44"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="116.5" height="44"/>
                                         <state key="normal" title="Like"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="20z-ro-vMw">
-                                        <rect key="frame" x="117" y="0.0" width="116" height="44"/>
+                                        <rect key="frame" x="116.5" y="0.0" width="117" height="44"/>
                                         <state key="normal" title="Comment"/>
                                     </button>
                                     <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sp8-Ka-VRU">
-                                        <rect key="frame" x="233" y="0.0" width="117" height="44"/>
+                                        <rect key="frame" x="233.5" y="0.0" width="116.5" height="44"/>
                                         <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Favorite"/>
                                     </button>
@@ -162,7 +162,7 @@ Vivamus at sem massa. Donec egestas, ligula vitae condimentum dignissim, arcu en
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Turtlexuan" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WPj-W6-hjy">
-                                <rect key="frame" x="74" y="12" width="81" height="21"/>
+                                <rect key="frame" x="74" y="12" width="81" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>

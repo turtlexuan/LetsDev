@@ -15,10 +15,10 @@
             <rect key="frame" x="0.0" y="0.0" width="473" height="154"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="473" height="153"/>
+                <rect key="frame" x="0.0" y="0.0" width="473" height="153.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jVe-bH-ZWy">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jVe-bH-ZWy">
                         <rect key="frame" x="187" y="12" width="100" height="100"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="100" id="4Oc-Zk-AP5"/>

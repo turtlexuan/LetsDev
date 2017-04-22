@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import NVActivityIndicatorView
 
 class FavoriteTableViewController: UITableViewController {
 
@@ -23,12 +24,41 @@ class FavoriteTableViewController: UITableViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        let activityData = ActivityData(type: .ballRotateChase)
+        
+        NVActivityIndicatorPresenter.sharedInstance.startAnimating(activityData)
 
         FavoriteManager.shared.fetchFavorite { (combinations) in
             self.favorites = combinations
             self.favorites.sort(by: { $0.combination.film < $1.combination.film })
             self.tableView.reloadData()
+            
+            NVActivityIndicatorPresenter.sharedInstance.stopAnimating()
+            
+            if combinations.count == 0 {
+                let noRecordView = self.configNoRecordView()
+                self.tableView.addSubview(noRecordView)
+            }
         }
+    }
+    
+    func configNoRecordView() -> UIView {
+        
+        let noReordView = UIView(frame: CGRect(x: 12, y: 20, width: self.tableView.frame.width - 24, height: 150))
+        noReordView.backgroundColor = Color.cellColor
+        noReordView.layer.cornerRadius = 10
+        
+        let titleLabel = UILabel(frame: CGRect(x: 0, y: 30, width: noReordView.frame.width, height: 80))
+        titleLabel.numberOfLines = 0
+        titleLabel.textAlignment = .center
+        titleLabel.text = "You don't have any favorite.\nLet's go to the community and\nfind some combinations in your favor."
+        titleLabel.textColor = .white
+        
+        noReordView.addSubview(titleLabel)
+        
+        return noReordView
+        
     }
 
     // MARK: - Table view data source

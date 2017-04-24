@@ -35,12 +35,12 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Oj-RP-yf3">
-                                <rect key="frame" x="691" y="27" width="20" height="20"/>
+                                <rect key="frame" x="687" y="27" width="20" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="20" id="NZZ-Ss-tuS"/>
                                     <constraint firstAttribute="height" constant="20" id="T9W-pi-qrg"/>
                                 </constraints>
-                                <state key="normal" image="more"/>
+                                <state key="normal" image="bookmark-white"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="34p-hG-RMt" customClass="ExpandableLabel" customModule="ExpandableLabel">
                                 <rect key="frame" x="12" y="74" width="699" height="197"/>
@@ -64,7 +64,7 @@
                             <constraint firstItem="34p-hG-RMt" firstAttribute="leading" secondItem="Lrl-se-acd" secondAttribute="leading" constant="12" id="Frs-hw-sLr"/>
                             <constraint firstItem="34p-hG-RMt" firstAttribute="top" secondItem="zul-vE-jlB" secondAttribute="bottom" constant="12" id="K4n-eB-Vo7"/>
                             <constraint firstItem="zul-vE-jlB" firstAttribute="top" secondItem="Lrl-se-acd" secondAttribute="top" constant="12" id="LEF-ox-V6E"/>
-                            <constraint firstAttribute="trailing" secondItem="9Oj-RP-yf3" secondAttribute="trailing" constant="12" id="OmJ-yB-x0t"/>
+                            <constraint firstAttribute="trailing" secondItem="9Oj-RP-yf3" secondAttribute="trailing" constant="16" id="OmJ-yB-x0t"/>
                             <constraint firstItem="hju-af-WV4" firstAttribute="leading" secondItem="zul-vE-jlB" secondAttribute="trailing" constant="12" id="Owa-Q6-Mad"/>
                             <constraint firstItem="9Oj-RP-yf3" firstAttribute="centerY" secondItem="zul-vE-jlB" secondAttribute="centerY" id="QQT-p3-wrx"/>
                             <constraint firstAttribute="bottom" secondItem="34p-hG-RMt" secondAttribute="bottom" constant="8" id="RAw-rk-Akh"/>
@@ -83,6 +83,7 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="favoriteButton" destination="9Oj-RP-yf3" id="679-xH-gBx"/>
                 <outlet property="messageLabel" destination="34p-hG-RMt" id="IRE-Nd-Agp"/>
                 <outlet property="profileImageView" destination="zul-vE-jlB" id="AnM-0i-RKa"/>
                 <outlet property="timeLabel" destination="W4O-00-0WQ" id="p17-vK-N31"/>
@@ -92,6 +93,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="more" width="512" height="512"/>
+        <image name="bookmark-white" width="512" height="512"/>
     </resources>
 </document>

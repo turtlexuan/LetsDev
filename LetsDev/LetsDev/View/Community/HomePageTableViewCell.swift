@@ -23,10 +23,6 @@ class HomePageTableViewCell: UITableViewCell {
     @IBOutlet weak var dilutionLabel: UILabel!
     @IBOutlet weak var filmImageView: UIImageView!
     @IBOutlet weak var noteLabel: UILabel!
-    @IBOutlet weak var likesLabel: UILabel!
-    @IBOutlet weak var likeButton: UIButton!
-    @IBOutlet weak var commentButton: UIButton!
-    @IBOutlet weak var favoriteButton: UIButton!
 
     override func awakeFromNib() {
         super.awakeFromNib()

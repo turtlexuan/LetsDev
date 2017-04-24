@@ -19,7 +19,7 @@ class CommentTableViewController: UITableViewController {
 
     }
 
-    let components: [Component] = [.commentDetail, .detail, .buttons, .comments, .commentInput]
+    let components: [Component] = [.commentDetail, .detail]
     var comments: [Comment] = []
     var sharedPost = SharedPost(combination: Combination(), note: "", photo: [], date: 0, message: "", comment: [], like: [], favorite: [])
     var uid = ""
@@ -118,6 +118,16 @@ class CommentTableViewController: UITableViewController {
 
             cell.messageLabel.text = self.sharedPost.message
             cell.timeLabel.text = dateString
+            
+            cell.favoriteButton.tintColor = Color.buttonColor
+            
+            if TabBarController.favoriteKeys.contains(self.key) {
+                cell.favoriteButton.setImage(#imageLiteral(resourceName: "bookmark-black-shape"), for: .normal)
+                cell.favoriteButton.addTarget(self, action: #selector(removeFavorite(_:)), for: .touchUpInside)
+            } else {
+                cell.favoriteButton.setImage(#imageLiteral(resourceName: "bookmark-white"), for: .normal)
+                cell.favoriteButton.addTarget(self, action: #selector(favoriteAction(_:)), for: .touchUpInside)
+            }
 
             return cell
 

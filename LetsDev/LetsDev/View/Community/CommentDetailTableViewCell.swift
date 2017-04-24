@@ -15,6 +15,7 @@ class CommentDetailTableViewCell: UITableViewCell {
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var messageLabel: ExpandableLabel!
+    @IBOutlet weak var favoriteButton: UIButton!
 
     override func awakeFromNib() {
         super.awakeFromNib()

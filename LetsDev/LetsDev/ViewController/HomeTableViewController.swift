@@ -91,26 +91,15 @@ class HomeTableViewController: UITableViewController {
         cell.devTimeLabel.text = "\(index.sharedPost.combination.devTime)"
         cell.dilutionLabel.text = index.sharedPost.combination.dilution
         cell.noteLabel.text = index.sharedPost.note
-
-        cell.commentButton.tintColor = Color.buttonColor
-        cell.commentButton.addTarget(self, action: #selector(commentAction(_:)), for: .touchUpInside)
-
-        CommunityManager.shared.getLikes(index.key) { (uids) in
-            if uids.contains(self.uid) {
-                cell.likeButton.tintColor = UIColor.orange
-                cell.likeButton.addTarget(self, action: #selector(self.removeLike(_:)), for: .touchUpInside)
-            } else {
-                cell.likeButton.tintColor = Color.buttonColor
-                cell.likeButton.addTarget(self, action: #selector(self.likeAction(_:)), for: .touchUpInside)
-            }
-        }
+        
+        cell.moreButton.tintColor = Color.buttonColor
 
         if TabBarController.favoriteKeys.contains(index.key) {
-            cell.favoriteButton.tintColor = UIColor.orange
-            cell.favoriteButton.addTarget(self, action: #selector(removeFavorite(_:)), for: .touchUpInside)
+            cell.moreButton.setImage(#imageLiteral(resourceName: "bookmark-black-shape"), for: .normal)
+            cell.moreButton.addTarget(self, action: #selector(removeFavorite(_:)), for: .touchUpInside)
         } else {
-            cell.favoriteButton.tintColor = Color.buttonColor
-            cell.favoriteButton.addTarget(self, action: #selector(favoriteAction(_:)), for: .touchUpInside)
+            cell.moreButton.setImage(#imageLiteral(resourceName: "bookmark-white"), for: .normal)
+            cell.moreButton.addTarget(self, action: #selector(favoriteAction(_:)), for: .touchUpInside)
         }
 
         return cell
@@ -182,7 +171,7 @@ class HomeTableViewController: UITableViewController {
 
     func favoriteAction(_ sender: UIButton) {
         guard
-            let cell = sender.superview?.superview?.superview?.superview as? UITableViewCell,
+            let cell = sender.superview?.superview?.superview as? UITableViewCell,
             let indexPath = self.tableView.indexPath(for: cell) else { return }
         let key = self.sharedPosts[indexPath.row].key
 
@@ -201,7 +190,7 @@ class HomeTableViewController: UITableViewController {
 
     func removeFavorite(_ sender: UIButton) {
         guard
-            let cell = sender.superview?.superview?.superview?.superview as? UITableViewCell,
+            let cell = sender.superview?.superview?.superview as? UITableViewCell,
             let indexPath = self.tableView.indexPath(for: cell) else { return }
         let key = self.sharedPosts[indexPath.row].key
 

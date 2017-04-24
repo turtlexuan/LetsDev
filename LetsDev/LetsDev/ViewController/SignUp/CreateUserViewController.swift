@@ -61,6 +61,8 @@ class CreateUserViewController: UIViewController {
     }
 
     @IBAction func continueActionDown(_ sender: Any) {
+        
+        self.view.endEditing(true)
 
         if !self.emailTextField.hasText {
             self.showingTitleInProgress = true
@@ -135,6 +137,11 @@ class CreateUserViewController: UIViewController {
     }
 
     @IBAction func goSignInAction(_ sender: Any) {
+        
+        let logInVc = self.storyboard?.instantiateViewController(withIdentifier: "LogInViewController") as! LogInViewController
+        
+        self.navigationController?.pushViewController(logInVc, animated: true)
+        
     }
 
     func validateEmailTextFieldWithText(email: String?) {

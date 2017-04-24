@@ -31,8 +31,8 @@ class CommentTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        IQKeyboardManager.sharedManager().enableAutoToolbar = false
+        
+        self.navigationItem.title = self.sharedPost.combination.film
 
         self.tableView.register(UINib(nibName: "CommentDetailTableViewCell", bundle: nil), forCellReuseIdentifier: "CommentDetailTableViewCell")
         self.tableView.register(UINib(nibName: "DetailTableViewCell", bundle: nil), forCellReuseIdentifier: "DetailTableViewCell")
@@ -140,8 +140,12 @@ class CommentTableViewController: UITableViewController {
             cell.filmLabel.text = combination.film
             cell.devTimeLabel.text = "Dev Time : \(self.timeExchanger(time: combination.devTime).minute)' \(self.timeExchanger(time: combination.devTime).second)"
             cell.developerLabel.text = combination.dev
-            cell.dilutionLabel.text = "Dilution : \(combination.dilution)"
-            cell.tempLabel.text = "Temperature : \(combination.temp)ºC"
+            
+            if let dilution = combination.dilution, let temp = combination.temp {
+                cell.dilutionLabel.text = "Dilution : \(dilution)"
+                cell.tempLabel.text = "Temperature : \(temp)ºC"
+            }
+            
             cell.preWashTimeLabel.text = "Pre-Wash : \(self.timeExchanger(time: combination.preWashTime).minute)' \(self.timeExchanger(time: combination.preWashTime).second)"
             cell.stopTimeLabel.text = "Stop Time : \(self.timeExchanger(time: combination.stopTime).minute)' \(self.timeExchanger(time: combination.stopTime).second)"
             cell.fixTimeLabel.text = "Fix Time : \(self.timeExchanger(time: combination.fixTime).minute)' \(self.timeExchanger(time: combination.fixTime).second)"
@@ -297,6 +301,14 @@ class CommentTableViewController: UITableViewController {
     }
 
     func favoriteAction(_ sender: UIButton) {
+        
+        if currentUser.uid == nil {
+            
+            self.showNoAccountAlert()
+            
+            return
+            
+        }
 
         guard
             let cell = sender.superview?.superview?.superview as? UITableViewCell,
@@ -332,6 +344,33 @@ class CommentTableViewController: UITableViewController {
             FavoriteManager.shared.updateFavorite(with: TabBarController.favoriteKeys)
             self.tableView.reloadRows(at: [indexPath], with: .none)
         }
+    }
+
+    func showNoAccountAlert() {
+        
+        let alertController = UIAlertController(title: "Sorry", message: "Only registered member can add favorite.", preferredStyle: .alert)
+        let signUpAction = UIAlertAction(title: "Sign Up", style: .default) { (_) in
+            
+            let signUpVC = self.storyboard?.instantiateViewController(withIdentifier: "CreateUserNavigation")
+            
+            self.present(signUpVC!, animated: true, completion: nil)
+            
+        }
+        let signInAction = UIAlertAction(title: "Sign In", style: .default) { (_) in
+            
+            let logInVC = self.storyboard?.instantiateViewController(withIdentifier: "logInNavigation")
+            
+            self.present(logInVC!, animated: true, completion: nil)
+            
+        }
+        let laterAction = UIAlertAction(title: "Not Now", style: .cancel, handler: nil)
+        
+        alertController.addAction(signInAction)
+        alertController.addAction(signUpAction)
+        alertController.addAction(laterAction)
+        
+        self.present(alertController, animated: true, completion: nil)
+        
     }
 
 }

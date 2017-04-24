@@ -55,6 +55,11 @@ class UserPhotoViewController: UIViewController {
     }
 
     @IBAction func goSignInAction(_ sender: Any) {
+        
+        let logInVc = self.storyboard?.instantiateViewController(withIdentifier: "LogInViewController") as! LogInViewController
+        
+        self.navigationController?.pushViewController(logInVc, animated: true)
+
     }
 
     func signUp() {

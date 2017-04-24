@@ -503,7 +503,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R0u-rL-5vN">
-                                <rect key="frame" x="20" y="20" width="57" height="33"/>
+                                <rect key="frame" x="20" y="30" width="57" height="33"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <state key="normal" title="Cancel">
                                     <color key="titleColor" red="0.67758980550000003" green="0.81282903139999996" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -593,7 +593,7 @@
                             <constraint firstItem="kRt-hQ-ugt" firstAttribute="top" secondItem="WyD-Ql-xxa" secondAttribute="bottom" id="eBp-0P-WQ0"/>
                             <constraint firstItem="WyD-Ql-xxa" firstAttribute="top" secondItem="gHz-qA-lL5" secondAttribute="top" id="fzc-eg-dWL"/>
                             <constraint firstItem="kRt-hQ-ugt" firstAttribute="top" secondItem="Gie-pt-Xxa" secondAttribute="bottom" id="gmo-sP-ZgP"/>
-                            <constraint firstItem="R0u-rL-5vN" firstAttribute="top" secondItem="gHz-qA-lL5" secondAttribute="top" constant="20" id="hI0-X2-fMd"/>
+                            <constraint firstItem="R0u-rL-5vN" firstAttribute="top" secondItem="gHz-qA-lL5" secondAttribute="top" constant="30" id="hI0-X2-fMd"/>
                             <constraint firstItem="Gie-pt-Xxa" firstAttribute="top" secondItem="gHz-qA-lL5" secondAttribute="top" id="ivu-Qi-WY6"/>
                             <constraint firstItem="R0u-rL-5vN" firstAttribute="leading" secondItem="gHz-qA-lL5" secondAttribute="leading" constant="20" id="nv3-im-GTP"/>
                             <constraint firstItem="DNJ-Np-ivG" firstAttribute="centerX" secondItem="gHz-qA-lL5" secondAttribute="centerX" id="r61-mI-i7c"/>
@@ -649,7 +649,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="90o-he-INe">
-                                <rect key="frame" x="20" y="20" width="57" height="33"/>
+                                <rect key="frame" x="20" y="30" width="57" height="33"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <state key="normal" title="Cancel">
                                     <color key="titleColor" red="0.67758980550000003" green="0.81282903139999996" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -715,7 +715,7 @@
                             <constraint firstItem="qcU-3A-HDx" firstAttribute="leading" secondItem="Sxy-7B-Qqv" secondAttribute="leading" id="2lE-n8-Oiq"/>
                             <constraint firstItem="jjs-BI-d2L" firstAttribute="centerX" secondItem="Sxy-7B-Qqv" secondAttribute="centerX" id="457-6C-fNf"/>
                             <constraint firstItem="62F-zB-44r" firstAttribute="top" secondItem="jjs-BI-d2L" secondAttribute="bottom" constant="50" id="Awd-Kn-pak"/>
-                            <constraint firstItem="90o-he-INe" firstAttribute="top" secondItem="Sxy-7B-Qqv" secondAttribute="top" constant="20" id="EBA-XV-KQO"/>
+                            <constraint firstItem="90o-he-INe" firstAttribute="top" secondItem="Sxy-7B-Qqv" secondAttribute="top" constant="30" id="EBA-XV-KQO"/>
                             <constraint firstItem="x1G-bQ-AAb" firstAttribute="top" secondItem="Sxy-7B-Qqv" secondAttribute="top" id="Gcd-Zm-KlP"/>
                             <constraint firstItem="hDT-73-PrS" firstAttribute="top" secondItem="qcU-3A-HDx" secondAttribute="bottom" id="MW7-pq-P0z"/>
                             <constraint firstItem="qcU-3A-HDx" firstAttribute="top" secondItem="Sxy-7B-Qqv" secondAttribute="top" id="SGe-CT-qfZ"/>
@@ -804,7 +804,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6ho-Ti-rx1">
-                                <rect key="frame" x="20" y="20" width="57" height="33"/>
+                                <rect key="frame" x="20" y="30" width="57" height="33"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <state key="normal" title="Cancel">
                                     <color key="titleColor" red="0.67758980550000003" green="0.81282903139999996" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -834,7 +834,7 @@
                             <constraint firstItem="dt5-hk-2TY" firstAttribute="top" secondItem="18B-IY-5Qa" secondAttribute="bottom" constant="8" symbolic="YES" id="98Z-lr-jTy"/>
                             <constraint firstItem="JKd-DF-RzK" firstAttribute="top" secondItem="uOS-ix-21n" secondAttribute="bottom" id="BuQ-a4-3Up"/>
                             <constraint firstItem="dt5-hk-2TY" firstAttribute="centerX" secondItem="j2a-1l-EcE" secondAttribute="centerX" id="Dz0-vi-VM2"/>
-                            <constraint firstItem="6ho-Ti-rx1" firstAttribute="top" secondItem="PLe-4z-Lrw" secondAttribute="top" constant="20" id="JIT-s4-nZg"/>
+                            <constraint firstItem="6ho-Ti-rx1" firstAttribute="top" secondItem="PLe-4z-Lrw" secondAttribute="top" constant="30" id="JIT-s4-nZg"/>
                             <constraint firstItem="18B-IY-5Qa" firstAttribute="top" secondItem="mDY-Ec-Z2f" secondAttribute="bottom" constant="30" id="LkV-24-GyT"/>
                             <constraint firstItem="fDm-DS-SNr" firstAttribute="centerX" secondItem="PLe-4z-Lrw" secondAttribute="centerX" id="Os0-vk-afg"/>
                             <constraint firstItem="5aa-Yq-0FS" firstAttribute="centerX" secondItem="PLe-4z-Lrw" secondAttribute="centerX" id="VaT-pJ-6rc"/>

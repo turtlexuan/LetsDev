@@ -42,6 +42,8 @@ class LogInViewController: UIViewController {
     }
 
     @IBAction func logInAction(_ sender: Any) {
+        
+        self.view.endEditing(true)
 
         if self.emailTextField.text == nil {
             self.showAlert("Email Empty.")
@@ -66,6 +68,11 @@ class LogInViewController: UIViewController {
     }
 
     @IBAction func goSignUpAction(_ sender: Any) {
+        
+        let signUpVC = self.storyboard?.instantiateViewController(withIdentifier: "CreateUserViewController") as! CreateUserViewController
+        
+        self.navigationController?.pushViewController(signUpVC, animated: true)
+        
     }
 
     func showAlert(_ alertMessage: String) {

@@ -33,6 +33,8 @@ class RecordTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.navigationItem.title = self.combination.film
 
         if TabBarController.favoriteKeys.contains(self.recordKey) {
             self.isFavorite = true

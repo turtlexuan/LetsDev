@@ -38,6 +38,10 @@ class RecordTableViewController: UITableViewController {
             self.isFavorite = true
         }
 
+        if currentUser.uid == nil {
+            self.components = [.combination]
+        }
+
         self.setUpNavigation()
 
         self.tableView.register(UINib(nibName: "CombinationTableViewCell", bundle: nil), forCellReuseIdentifier: "CombinationTableViewCell")
@@ -234,7 +238,7 @@ class RecordTableViewController: UITableViewController {
     }
 
     func showShareAlert(_ sender: UIBarButtonItem) {
-        let alertController = UIAlertController(title: "Choose Image From?", message: nil, preferredStyle: .actionSheet)
+        let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         let shareAction = UIAlertAction(title: "Share With Other User.", style: .default) { (_) in
             let sharedNavigation = self.storyboard?.instantiateViewController(withIdentifier: "ShareNewPostNavigation") as! UINavigationController
             let sharedVC = sharedNavigation.viewControllers[0] as! ShareNewPostViewController
@@ -247,7 +251,7 @@ class RecordTableViewController: UITableViewController {
 
             self.present(sharedNavigation, animated: true, completion: nil)
         }
-        let useProcessAction = UIAlertAction(title: "Start a New Developement With Process.", style: .default) { (_) in
+        let useProcessAction = UIAlertAction(title: "Start a New Developement.", style: .default) { (_) in
 
             guard
                 let newDevNavigation = self.storyboard?.instantiateViewController(withIdentifier: "NewDevNavigationController") as? UINavigationController,
@@ -287,10 +291,15 @@ class RecordTableViewController: UITableViewController {
         }
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
 
-        alertController.addAction(shareAction)
-        alertController.addAction(useProcessAction)
-        alertController.addAction(favoriteAction)
-        alertController.addAction(cancelAction)
+        if currentUser.uid == nil {
+            alertController.addAction(useProcessAction)
+            alertController.addAction(cancelAction)
+        } else {
+            alertController.addAction(shareAction)
+            alertController.addAction(useProcessAction)
+            alertController.addAction(favoriteAction)
+            alertController.addAction(cancelAction)
+        }
 
         self.present(alertController, animated: true, completion: nil)
     }

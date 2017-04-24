@@ -47,16 +47,6 @@ class CommentTableViewController: UITableViewController {
         self.fetchPhotos()
     }
 
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-
-//        CommunityManager.shared.getSinglePost(with: self.key) { (sharedPost) in
-//            self.sharedPost = sharedPost
-            print(self.sharedPost.comment.count)
-//            self.tableView.reloadData()
-//        }
-    }
-
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
 

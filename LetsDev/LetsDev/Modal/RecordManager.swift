@@ -100,7 +100,12 @@ class RecordManager {
 
     func fetchRecords(_ completion: @escaping FetchSuccess) {
 
-        guard let uid = self.auth?.currentUser?.uid else { return }
+        guard let uid = self.auth?.currentUser?.uid else {
+
+            completion(nil)
+
+            return
+        }
 
         var records: [Record] = []
 

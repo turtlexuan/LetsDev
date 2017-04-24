@@ -32,6 +32,20 @@ class SignUpViewController: UIViewController {
         self.navigationController?.pushViewController(logInVC, animated: true)
     }
 
+    @IBAction func signUpLater(_ sender: Any) {
+
+        guard let window = UIApplication.shared.keyWindow, let rootViewController = window.rootViewController else { return }
+
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let tabBarVC = storyboard.instantiateViewController(withIdentifier: "TabBarController") as! TabBarController
+        tabBarVC.view.frame = rootViewController.view.frame
+        tabBarVC.view.layoutIfNeeded()
+
+        UIView.transition(with: window, duration: 0.5, options: .transitionCrossDissolve, animations: {
+            window.rootViewController = tabBarVC
+        })
+    }
+
     func nextVC() {
         // swiftlint:disable force_cast
         let navigationController = self.storyboard?.instantiateViewController(withIdentifier: "TabBarController") as! TabBarController

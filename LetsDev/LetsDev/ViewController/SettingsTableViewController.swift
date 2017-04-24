@@ -16,9 +16,11 @@ class SettingsTableViewController: UITableViewController {
         case profileSetting
         case accountSetting
         case logout
+        case signUp
+        case logIn
     }
 
-    let component: [Component] = [ .profile, .profileSetting, .accountSetting, .logout ]
+    var component: [Component] = [ .profile, .profileSetting, .accountSetting, .logout ]
     var records: [Record] = []
     var postCount = 0
 
@@ -31,6 +33,10 @@ class SettingsTableViewController: UITableViewController {
         self.tableView.register(UINib(nibName: "SettingTableViewCell", bundle: nil), forCellReuseIdentifier: "SettingTableViewCell")
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.estimatedRowHeight = 120
+
+        if currentUser.uid == nil {
+            self.component = [.profile, .signUp, .logIn]
+        }
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -39,6 +45,13 @@ class SettingsTableViewController: UITableViewController {
         let activityData = ActivityData(type: .ballRotateChase)
 
         NVActivityIndicatorPresenter.sharedInstance.startAnimating(activityData)
+
+        if currentUser.uid == nil {
+
+            NVActivityIndicatorPresenter.sharedInstance.stopAnimating()
+
+            return
+        }
 
         RecordManager.shared.fetchRecords { (records) in
             CommunityManager.shared.fetchCurrentUserPosts { (count) in
@@ -116,6 +129,22 @@ class SettingsTableViewController: UITableViewController {
 
             return cell
 
+        case .signUp:
+
+            let cell = tableView.dequeueReusableCell(withIdentifier: "SettingTableViewCell", for: indexPath) as! SettingTableViewCell
+
+            cell.titleLabel.text = "Sign Up"
+
+            return cell
+
+        case .logIn:
+
+            let cell = tableView.dequeueReusableCell(withIdentifier: "SettingTableViewCell", for: indexPath) as! SettingTableViewCell
+
+            cell.titleLabel.text = "Log In"
+
+            return cell
+
         }
     }
 
@@ -123,19 +152,35 @@ class SettingsTableViewController: UITableViewController {
 
         let component = self.component[indexPath.section]
 
-        if component == .profileSetting {
+        switch component {
+        case .profileSetting:
 
             let profileVC = ProfileSettingTableViewController()
             self.navigationController?.pushViewController(profileVC, animated: true)
 
-        } else if component == .accountSetting {
+        case .accountSetting:
 
             let accountVC = AccountSettingTableViewController()
             self.navigationController?.pushViewController(accountVC, animated: true)
 
-        } else if component == .logout {
+        case .logout:
 
             self.showLogOutAlert()
+
+        case .signUp:
+
+            let signUpVC = self.storyboard?.instantiateViewController(withIdentifier: "CreateUserNavigation")
+
+            self.present(signUpVC!, animated: true, completion: nil)
+
+        case .logIn:
+
+            let logInVC = self.storyboard?.instantiateViewController(withIdentifier: "logInNavigation")
+
+            self.present(logInVC!, animated: true, completion: nil)
+        default:
+
+            break
         }
     }
 
@@ -152,8 +197,16 @@ class SettingsTableViewController: UITableViewController {
                     return
                 } else if success != nil {
 
-                    let signUpVC = self.storyboard?.instantiateViewController(withIdentifier: "signUpNavigation")
-                    UIApplication.shared.keyWindow?.rootViewController = signUpVC
+                    guard let window = UIApplication.shared.keyWindow, let rootViewController = window.rootViewController else { return }
+
+                    if let signUpVC = self.storyboard?.instantiateViewController(withIdentifier: "signUpNavigation") {
+                        signUpVC.view.frame = rootViewController.view.frame
+                        signUpVC.view.layoutIfNeeded()
+
+                        UIView.transition(with: window, duration: 0.5, options: .transitionCrossDissolve, animations: {
+                            window.rootViewController = signUpVC
+                        })
+                    }
                 }
 
             })

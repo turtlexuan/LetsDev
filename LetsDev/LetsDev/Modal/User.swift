@@ -17,7 +17,7 @@ class User {
     let profileImage: String!
     let bio: String!
 
-    init(uid: String, email: String, username: String, profileImage: String? = nil, bio: String? = nil) {
+    init(uid: String?, email: String?, username: String?, profileImage: String? = nil, bio: String? = nil) {
         self.uid = uid
         self.email = email
         self.username = username

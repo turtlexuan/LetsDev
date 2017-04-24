@@ -50,8 +50,11 @@ class UserPhotoViewController: UIViewController {
 
     @IBAction func cancelAction(_ sender: Any) {
 
-        self.navigationController?.popToRootViewController(animated: true)
+        self.dismiss(animated: true, completion: nil)
 
+    }
+
+    @IBAction func goSignInAction(_ sender: Any) {
     }
 
     func signUp() {
@@ -139,10 +142,17 @@ class UserPhotoViewController: UIViewController {
     }
 
     func nextVC() {
-        // swiftlint:disable force_cast
-        let navigationController = self.storyboard?.instantiateViewController(withIdentifier: "TabBarController") as! TabBarController
-        UIApplication.shared.keyWindow?.rootViewController = navigationController
 
+        guard let window = UIApplication.shared.keyWindow, let rootViewController = window.rootViewController else { return }
+
+        if let tabBarVc = self.storyboard?.instantiateViewController(withIdentifier: "TabBarController") as? TabBarController {
+            tabBarVc.view.frame = rootViewController.view.frame
+            tabBarVc.view.layoutIfNeeded()
+
+            UIView.transition(with: window, duration: 0.5, options: .transitionCrossDissolve, animations: {
+                window.rootViewController = tabBarVc
+            })
+        }
     }
 
 }

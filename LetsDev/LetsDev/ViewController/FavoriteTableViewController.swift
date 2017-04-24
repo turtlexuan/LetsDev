@@ -24,41 +24,106 @@ class FavoriteTableViewController: UITableViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+
+        if currentUser.uid == nil {
+            let goSignUpView = self.configGoSignUpView()
+            self.tableView.addSubview(goSignUpView)
+
+            return
+        }
+
         let activityData = ActivityData(type: .ballRotateChase)
-        
+
         NVActivityIndicatorPresenter.sharedInstance.startAnimating(activityData)
 
         FavoriteManager.shared.fetchFavorite { (combinations) in
             self.favorites = combinations
             self.favorites.sort(by: { $0.combination.film < $1.combination.film })
             self.tableView.reloadData()
-            
+
             NVActivityIndicatorPresenter.sharedInstance.stopAnimating()
-            
+
             if combinations.count == 0 {
                 let noRecordView = self.configNoRecordView()
                 self.tableView.addSubview(noRecordView)
             }
         }
     }
-    
+
     func configNoRecordView() -> UIView {
-        
+
         let noReordView = UIView(frame: CGRect(x: 12, y: 20, width: self.tableView.frame.width - 24, height: 150))
         noReordView.backgroundColor = Color.cellColor
         noReordView.layer.cornerRadius = 10
-        
+
         let titleLabel = UILabel(frame: CGRect(x: 0, y: 30, width: noReordView.frame.width, height: 80))
         titleLabel.numberOfLines = 0
         titleLabel.textAlignment = .center
         titleLabel.text = "You don't have any favorite.\nLet's go to the community and\nfind some combinations in your favor."
         titleLabel.textColor = .white
-        
+
         noReordView.addSubview(titleLabel)
-        
+
         return noReordView
-        
+
+    }
+
+    func configGoSignUpView() -> UIView {
+
+        let goSignUpView = UIView(frame: CGRect(x: 12, y: 20, width: self.tableView.frame.width - 24, height: 150))
+        goSignUpView.backgroundColor = Color.cellColor
+        goSignUpView.layer.cornerRadius = 10
+
+        let titleLabel = UILabel(frame: CGRect(x: 0, y: 18, width: goSignUpView.frame.width, height: 50))
+        titleLabel.numberOfLines = 0
+        titleLabel.textAlignment = .center
+        titleLabel.text = "Only registered member can store favorites.\nYou need to Sign Up / Log In."
+        titleLabel.textColor = .white
+
+        goSignUpView.addSubview(titleLabel)
+
+        let signUpButton = UIButton(frame: CGRect(x: 0, y: titleLabel.frame.maxY + 15, width: 100, height: 44))
+        signUpButton.setTitle("Sign Up", for: .normal)
+        signUpButton.setTitleColor(.white, for: .normal)
+        signUpButton.backgroundColor = Color.buttonColor
+        signUpButton.layer.cornerRadius = 10
+        signUpButton.addTarget(self, action: #selector(showSignUpVC), for: .touchUpInside)
+
+        let logInButton = UIButton(frame: CGRect(x: 0, y: titleLabel.frame.maxY + 15, width: 100, height: 44))
+        logInButton.setTitle("Log In", for: .normal)
+        logInButton.setTitleColor(.white, for: .normal)
+        logInButton.backgroundColor = Color.buttonColor
+        logInButton.layer.cornerRadius = 10
+        logInButton.addTarget(self, action: #selector(showLogInVC), for: .touchUpInside)
+
+        let buttonArray = [signUpButton, logInButton]
+
+        let stackView = UIStackView(arrangedSubviews: buttonArray)
+        stackView.axis = .horizontal
+        stackView.spacing = 10
+        stackView.distribution = .fillEqually
+        stackView.frame = CGRect(x: 0, y: titleLabel.frame.maxY + 15, width: 210, height: 44)
+        stackView.center.x = titleLabel.center.x
+
+        goSignUpView.addSubview(stackView)
+
+        return goSignUpView
+
+    }
+
+    func showSignUpVC() {
+
+        let signUpVC = self.storyboard?.instantiateViewController(withIdentifier: "CreateUserNavigation")
+
+        self.present(signUpVC!, animated: true, completion: nil)
+
+    }
+
+    func showLogInVC() {
+
+        let logInVC = self.storyboard?.instantiateViewController(withIdentifier: "logInNavigation")
+
+        self.present(logInVC!, animated: true, completion: nil)
     }
 
     // MARK: - Table view data source

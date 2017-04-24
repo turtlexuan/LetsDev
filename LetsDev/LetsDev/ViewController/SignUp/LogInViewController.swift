@@ -65,6 +65,9 @@ class LogInViewController: UIViewController {
 
     }
 
+    @IBAction func goSignUpAction(_ sender: Any) {
+    }
+
     func showAlert(_ alertMessage: String) {
         let alertController = UIAlertController(title: "Error", message: alertMessage, preferredStyle: .alert)
         let doneAction = UIAlertAction(title: "OK", style: .default)
@@ -74,10 +77,17 @@ class LogInViewController: UIViewController {
     }
 
     func nextVC() {
-        // swiftlint:disable force_cast
-        let navigationController = self.storyboard?.instantiateViewController(withIdentifier: "TabBarController") as! TabBarController
-        UIApplication.shared.keyWindow?.rootViewController = navigationController
 
+        guard let window = UIApplication.shared.keyWindow, let rootViewController = window.rootViewController else { return }
+
+        if let tabBarVc = self.storyboard?.instantiateViewController(withIdentifier: "TabBarController") as? TabBarController {
+            tabBarVc.view.frame = rootViewController.view.frame
+            tabBarVc.view.layoutIfNeeded()
+
+            UIView.transition(with: window, duration: 0.5, options: .transitionCrossDissolve, animations: {
+                window.rootViewController = tabBarVc
+            })
+        }
     }
 
 }

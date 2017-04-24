@@ -25,6 +25,10 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
             UserManager.shared.getUser(uid) { (user) in
                 currentUser = user
             }
+        } else {
+
+            currentUser = User(uid: nil, email: nil, username: "Anonymous")
+
         }
 
         FavoriteManager.shared.getFavorite { (favoriteKeys) in

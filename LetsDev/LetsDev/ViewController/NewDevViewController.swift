@@ -52,6 +52,15 @@ class NewDevViewController: UIViewController {
         self.setUpPickerView()
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        if currentUser.uid == nil {
+            self.showNoAccountAlert()
+        }
+
+    }
+
     @IBAction func startAction(_ sender: Any) {
         let combination = Combination(film: self.selectedFilm, type: self.selectedType, preWashTime: self.preWashTime, dev: self.selectedDev, dilution: self.dilution, devTime: self.devTime, temp: self.selectedTemp, devAgitation: self.selectedAgitation, stopTime: self.stopTime, fixTime: self.fixTime, fixAgitation: self.selectedFixAgitation, washTime: self.washTime, bufferTime: self.bufferTime)
 
@@ -172,6 +181,33 @@ class NewDevViewController: UIViewController {
 
         sender.inputAccessoryView = toolBar
         sender.becomeFirstResponder()
+    }
+
+    func showNoAccountAlert() {
+
+        let alertController = UIAlertController(title: "You haven't sign up / in yet!", message: "We will not save your record after you finish develop\nWe highly recommend you to sign up / sign in and keep your records!", preferredStyle: .alert)
+        let signUpButton = UIAlertAction(title: "Sign Up", style: .default) { (_) in
+
+            let signUpVC = self.storyboard?.instantiateViewController(withIdentifier: "CreateUserNavigation")
+
+            self.present(signUpVC!, animated: true, completion: nil)
+
+        }
+        let logInButton = UIAlertAction(title: "Log In", style: .default) { (_) in
+
+            let logInVC = self.storyboard?.instantiateViewController(withIdentifier: "logInNavigation")
+
+            self.present(logInVC!, animated: true, completion: nil)
+
+        }
+        let notNowButton = UIAlertAction(title: "Not Now", style: .default, handler: nil)
+
+        alertController.addAction(signUpButton)
+        alertController.addAction(logInButton)
+        alertController.addAction(notNowButton)
+
+        self.present(alertController, animated: true, completion: nil)
+
     }
 
     func donePicker(_ sender: UIBarButtonItem) {

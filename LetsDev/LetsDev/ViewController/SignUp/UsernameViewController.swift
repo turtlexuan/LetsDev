@@ -84,8 +84,11 @@ class UsernameViewController: UIViewController {
 
     @IBAction func cancelAction(_ sender: Any) {
 
-        self.navigationController?.popToRootViewController(animated: true)
+        self.dismiss(animated: true, completion: nil)
 
+    }
+
+    @IBAction func goSignInAction(_ sender: Any) {
     }
 
     func isValidUserName(_ username: String?) {

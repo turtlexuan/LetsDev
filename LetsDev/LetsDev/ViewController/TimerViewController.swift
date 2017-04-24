@@ -176,14 +176,21 @@ class TimerViewController: UIViewController {
     func showFinishAlert() {
         let alertController = UIAlertController(title: "Congratulations!", message: "Your development have just finished!\nLet’s go to record page and add some notes.", preferredStyle: .alert)
         let doneAction = UIAlertAction(title: "OK", style: .default) { (_) in
-            
+
             let activityData = ActivityData(type: .ballRotateChase)
-            
+
             NVActivityIndicatorPresenter.sharedInstance.startAnimating(activityData)
-            
+
             if let recordTableVC = self.storyboard?.instantiateViewController(withIdentifier: "RecordTableViewController") as? RecordTableViewController {
                 recordTableVC.combination = self.combination
                 recordTableVC.isFromNewProcess = true
+
+                if currentUser.uid == nil {
+                    NVActivityIndicatorPresenter.sharedInstance.stopAnimating()
+                    self.navigationController?.pushViewController(recordTableVC, animated: true)
+                    return
+                }
+
                 RecordManager.shared.uploadRecord(with: self.combination, success: { (databaseRef) in
 
                     guard let recordKey = databaseRef.parent?.key else { return }

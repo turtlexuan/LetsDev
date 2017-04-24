@@ -130,8 +130,11 @@ class CreateUserViewController: UIViewController {
 
     @IBAction func previousAction(_ sender: Any) {
 
-        self.navigationController?.popToRootViewController(animated: true)
+        self.dismiss(animated: true, completion: nil)
 
+    }
+
+    @IBAction func goSignInAction(_ sender: Any) {
     }
 
     func validateEmailTextFieldWithText(email: String?) {

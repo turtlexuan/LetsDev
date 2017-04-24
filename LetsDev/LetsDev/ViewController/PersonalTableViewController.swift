@@ -36,22 +36,29 @@ class PersonalTableViewController: UITableViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+
+        if currentUser.uid == nil {
+            let goSignUpView = self.configGoSignUpView()
+            self.tableView.addSubview(goSignUpView)
+
+            return
+        }
+
         let activityData = ActivityData(type: .ballRotateChase)
-        
+
         NVActivityIndicatorPresenter.sharedInstance.startAnimating(activityData)
 
         RecordManager.shared.fetchRecords { (records) in
-            
+
             CommunityManager.shared.fetchCurrentUserPosts { (count) in
                 print("Posts: \(count)")
-                
+
                 self.postCount = count
                 self.tableView.reloadData()
-                
+
                 NVActivityIndicatorPresenter.sharedInstance.stopAnimating()
             }
-            
+
             if let record = records {
                 self.records = record
                 self.records.sort(by: { $0.date > $1.date })
@@ -93,12 +100,70 @@ class PersonalTableViewController: UITableViewController {
 
     }
 
+    func configGoSignUpView() -> UIView {
+
+        let goSignUpView = UIView(frame: CGRect(x: 12, y: 150, width: self.tableView.frame.width - 24, height: 150))
+        goSignUpView.backgroundColor = Color.cellColor
+        goSignUpView.layer.cornerRadius = 10
+
+        let titleLabel = UILabel(frame: CGRect(x: 0, y: 18, width: goSignUpView.frame.width, height: 50))
+        titleLabel.numberOfLines = 0
+        titleLabel.textAlignment = .center
+        titleLabel.text = "Only registered member can store records.\nYou need to Sign Up / Log In."
+        titleLabel.textColor = .white
+
+        goSignUpView.addSubview(titleLabel)
+
+        let signUpButton = UIButton(frame: CGRect(x: 0, y: titleLabel.frame.maxY + 15, width: 100, height: 44))
+        signUpButton.setTitle("Sign Up", for: .normal)
+        signUpButton.setTitleColor(.white, for: .normal)
+        signUpButton.backgroundColor = Color.buttonColor
+        signUpButton.layer.cornerRadius = 10
+        signUpButton.addTarget(self, action: #selector(showSignUpVC), for: .touchUpInside)
+
+        let logInButton = UIButton(frame: CGRect(x: 0, y: titleLabel.frame.maxY + 15, width: 100, height: 44))
+        logInButton.setTitle("Log In", for: .normal)
+        logInButton.setTitleColor(.white, for: .normal)
+        logInButton.backgroundColor = Color.buttonColor
+        logInButton.layer.cornerRadius = 10
+        logInButton.addTarget(self, action: #selector(showLogInVC), for: .touchUpInside)
+
+        let buttonArray = [signUpButton, logInButton]
+
+        let stackView = UIStackView(arrangedSubviews: buttonArray)
+        stackView.axis = .horizontal
+        stackView.spacing = 10
+        stackView.distribution = .fillEqually
+        stackView.frame = CGRect(x: 0, y: titleLabel.frame.maxY + 15, width: 210, height: 44)
+        stackView.center.x = titleLabel.center.x
+
+        goSignUpView.addSubview(stackView)
+
+        return goSignUpView
+
+    }
+
     func showNewDevVC() {
 
         // swiftlint:disable force_cast
         let newDevVc = self.storyboard?.instantiateViewController(withIdentifier: "NewDevNavigationController")
         self.present(newDevVc!, animated: true, completion: nil)
 
+    }
+
+    func showSignUpVC() {
+
+        let signUpVC = self.storyboard?.instantiateViewController(withIdentifier: "CreateUserNavigation")
+
+        self.present(signUpVC!, animated: true, completion: nil)
+
+    }
+
+    func showLogInVC() {
+
+        let logInVC = self.storyboard?.instantiateViewController(withIdentifier: "logInNavigation")
+
+        self.present(logInVC!, animated: true, completion: nil)
     }
 
     // MARK: - Table view data source

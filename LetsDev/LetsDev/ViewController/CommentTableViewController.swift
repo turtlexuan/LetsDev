@@ -118,9 +118,9 @@ class CommentTableViewController: UITableViewController {
 
             cell.messageLabel.text = self.sharedPost.message
             cell.timeLabel.text = dateString
-            
+
             cell.favoriteButton.tintColor = Color.buttonColor
-            
+
             if TabBarController.favoriteKeys.contains(self.key) {
                 cell.favoriteButton.setImage(#imageLiteral(resourceName: "bookmark-black-shape"), for: .normal)
                 cell.favoriteButton.addTarget(self, action: #selector(removeFavorite(_:)), for: .touchUpInside)
@@ -138,16 +138,16 @@ class CommentTableViewController: UITableViewController {
             guard let combination = self.sharedPost.combination else { return UITableViewCell() }
 
             cell.filmLabel.text = combination.film
-            cell.devTimeLabel.text = "\(self.timeExchanger(time: combination.devTime).minute)' \(self.timeExchanger(time: combination.devTime).second)"
+            cell.devTimeLabel.text = "Dev Time : \(self.timeExchanger(time: combination.devTime).minute)' \(self.timeExchanger(time: combination.devTime).second)"
             cell.developerLabel.text = combination.dev
-            cell.dilutionLabel.text = combination.dilution
-            cell.tempLabel.text = "\(combination.temp)ºC"
-            cell.preWashTimeLabel.text = "\(self.timeExchanger(time: combination.preWashTime).minute)' \(self.timeExchanger(time: combination.preWashTime).second)"
-            cell.stopTimeLabel.text = "\(self.timeExchanger(time: combination.stopTime).minute)' \(self.timeExchanger(time: combination.stopTime).second)"
-            cell.fixTimeLabel.text = "\(self.timeExchanger(time: combination.fixTime).minute)' \(self.timeExchanger(time: combination.fixTime).second)"
-            cell.washTimeLabel.text = "\(self.timeExchanger(time: combination.washTime).minute)' \(self.timeExchanger(time: combination.washTime).second)"
-            cell.devAgitationLabel.text = combination.devAgitation.rawValue
-            cell.fixAgitationLabel.text = combination.fixAgitation.rawValue
+            cell.dilutionLabel.text = "Dilution : \(combination.dilution)"
+            cell.tempLabel.text = "Temperature : \(combination.temp)ºC"
+            cell.preWashTimeLabel.text = "Pre-Wash : \(self.timeExchanger(time: combination.preWashTime).minute)' \(self.timeExchanger(time: combination.preWashTime).second)"
+            cell.stopTimeLabel.text = "Stop Time : \(self.timeExchanger(time: combination.stopTime).minute)' \(self.timeExchanger(time: combination.stopTime).second)"
+            cell.fixTimeLabel.text = "Fix Time : \(self.timeExchanger(time: combination.fixTime).minute)' \(self.timeExchanger(time: combination.fixTime).second)"
+            cell.washTimeLabel.text = "Wash Time : \(self.timeExchanger(time: combination.washTime).minute)' \(self.timeExchanger(time: combination.washTime).second)"
+            cell.devAgitationLabel.text = "Dev Agitation : \(combination.devAgitation.rawValue)"
+            cell.fixAgitationLabel.text = "Fix Agitation : \(combination.fixAgitation.rawValue)"
             cell.noteLabel.text = self.sharedPost.note
 
             cell.setCollectionViewDataSourceDelegate(self)
@@ -377,17 +377,6 @@ extension CommentTableViewController: UITextViewDelegate {
         self.tableView.endUpdates()
         UIView.setAnimationsEnabled(true)
         self.tableView.setContentOffset(currentOffset, animated: false)
-
-//        guard let cell = textView.superview?.superview?.superview as? UITableViewCell else { return }
-//        guard let indexPath = self.tableView.indexPath(for: cell) else { return }
-//        
-//        if textView.text.characters.count == 0 {
-//            self.isSendable = false
-//            self.tableView.reloadRows(at: [indexPath], with: .none)
-//        } else {
-//            self.isSendable = true
-//            self.tableView.reloadRows(at: [indexPath], with: .none)
-//        }
     }
 
 }

@@ -88,10 +88,10 @@ class HomeTableViewController: UITableViewController {
         cell.messageLabel.text = index.sharedPost.message
         cell.filmLabel.text = index.sharedPost.combination.film
         cell.developerLabel.text = index.sharedPost.combination.dev
-        cell.devTimeLabel.text = "\(index.sharedPost.combination.devTime)"
-        cell.dilutionLabel.text = index.sharedPost.combination.dilution
+        cell.devTimeLabel.text = "Dev Time : \(self.timeExchanger(time: index.sharedPost.combination.devTime).minute)'\(self.timeExchanger(time: index.sharedPost.combination.devTime).second)"
+        cell.dilutionLabel.text = "Dilution : \(index.sharedPost.combination.dilution)"
         cell.noteLabel.text = index.sharedPost.note
-        
+
         cell.moreButton.tintColor = Color.buttonColor
 
         if TabBarController.favoriteKeys.contains(index.key) {
@@ -206,5 +206,14 @@ class HomeTableViewController: UITableViewController {
             FavoriteManager.shared.updateFavorite(with: TabBarController.favoriteKeys)
             self.tableView.reloadRows(at: [indexPath], with: .none)
         }
+    }
+}
+
+extension HomeTableViewController {
+    func timeExchanger(time: Int) -> (minute: Int, second: Int) {
+        let minute = time / 60 % 60
+        let second = time % 60
+
+        return (minute, second)
     }
 }

@@ -55,9 +55,10 @@ class UserPhotoViewController: UIViewController {
     }
 
     @IBAction func goSignInAction(_ sender: Any) {
-        
+
+        // swiftlint:disable force_cast
         let logInVc = self.storyboard?.instantiateViewController(withIdentifier: "LogInViewController") as! LogInViewController
-        
+
         self.navigationController?.pushViewController(logInVc, animated: true)
 
     }

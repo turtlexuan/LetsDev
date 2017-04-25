@@ -8,6 +8,7 @@
 
 import UIKit
 import NVActivityIndicatorView
+import Firebase
 
 class TimerViewController: UIViewController {
 
@@ -105,6 +106,8 @@ class TimerViewController: UIViewController {
 
     func startTimer() {
         self.timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
+        
+        FIRAnalytics.logEvent(withName: "Timer_Start", parameters: nil)
     }
 
     func updateTimer() {
@@ -140,6 +143,9 @@ class TimerViewController: UIViewController {
     func showRestartAlert() {
         let alertController = UIAlertController(title: "Reset Timer?", message: "Do you want to stop the timer and restart?", preferredStyle: .alert)
         let doneAction = UIAlertAction(title: "Yes", style: .default) { (_) in
+            
+            FIRAnalytics.logEvent(withName: "Timer_Restarted", parameters: nil)
+            
             self.timer.invalidate()
             self.setUpTimes()
             self.nowStep = 0
@@ -162,6 +168,9 @@ class TimerViewController: UIViewController {
     func showCancelAlert() {
         let alertController = UIAlertController(title: "Cancel Process?", message: "Do you want to cancel the timer?", preferredStyle: .alert)
         let doneAction = UIAlertAction(title: "Yes", style: .default) { (_) in
+            
+            FIRAnalytics.logEvent(withName: "Timer_Canceled", parameters: nil)
+            
             self.timer.invalidate()
             self.navigationController?.popToRootViewController(animated: true)
         }
@@ -206,8 +215,20 @@ class TimerViewController: UIViewController {
         }
 
         alertController.addAction(doneAction)
+        
+        self.present(alertController, animated: true) { 
+            
+            FIRAnalytics.logEvent(withName: "New_Dev", parameters: [
+                "Film": self.combination.film as NSObject,
+                "Type": self.combination.type as NSObject,
+                "Developer": self.combination.dev as NSObject,
+                "Dev_Time": self.combination.devTime as NSObject,
+                "Dilution": self.combination.dilution as NSObject,
+                "Temperature": self.combination.temp as NSObject])
+            
+        }
 
-        self.present(alertController, animated: true, completion: nil)
+//        self.present(alertController, animated: true, completion: nil)
     }
 }
 

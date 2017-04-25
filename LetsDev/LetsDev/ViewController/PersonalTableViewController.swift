@@ -79,11 +79,12 @@ class PersonalTableViewController: UITableViewController {
         noReordView.backgroundColor = Color.cellColor
         noReordView.layer.cornerRadius = 10
 
-        let titleLabel = UILabel(frame: CGRect(x: 0, y: 18, width: noReordView.frame.width, height: 50))
+        let titleLabel = UILabel(frame: CGRect(x: 12, y: 18, width: noReordView.frame.width - 24, height: 50))
         titleLabel.numberOfLines = 0
         titleLabel.textAlignment = .center
         titleLabel.text = "You don't have any record.\nLet's start a new development!"
         titleLabel.textColor = .white
+        titleLabel.adjustsFontSizeToFitWidth = true
 
         noReordView.addSubview(titleLabel)
 
@@ -106,11 +107,12 @@ class PersonalTableViewController: UITableViewController {
         goSignUpView.backgroundColor = Color.cellColor
         goSignUpView.layer.cornerRadius = 10
 
-        let titleLabel = UILabel(frame: CGRect(x: 0, y: 18, width: goSignUpView.frame.width, height: 50))
+        let titleLabel = UILabel(frame: CGRect(x: 12, y: 18, width: goSignUpView.frame.width - 24, height: 50))
         titleLabel.numberOfLines = 0
         titleLabel.textAlignment = .center
         titleLabel.text = "Only registered member can store records.\nYou need to Sign Up / Log In."
         titleLabel.textColor = .white
+        titleLabel.adjustsFontSizeToFitWidth = true
 
         goSignUpView.addSubview(titleLabel)
 

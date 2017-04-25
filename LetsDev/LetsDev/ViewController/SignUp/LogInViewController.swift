@@ -42,7 +42,7 @@ class LogInViewController: UIViewController {
     }
 
     @IBAction func logInAction(_ sender: Any) {
-        
+
         self.view.endEditing(true)
 
         if self.emailTextField.text == nil {
@@ -68,11 +68,12 @@ class LogInViewController: UIViewController {
     }
 
     @IBAction func goSignUpAction(_ sender: Any) {
-        
+
+        // swiftlint:disable force_cast
         let signUpVC = self.storyboard?.instantiateViewController(withIdentifier: "CreateUserViewController") as! CreateUserViewController
-        
+
         self.navigationController?.pushViewController(signUpVC, animated: true)
-        
+
     }
 
     func showAlert(_ alertMessage: String) {

@@ -172,14 +172,14 @@ class HomeTableViewController: UITableViewController {
     }
 
     func favoriteAction(_ sender: UIButton) {
-        
+
         if currentUser.uid == nil {
-            
+
             self.showNoAccountAlert()
-            
+
             return
         }
-        
+
         guard
             let cell = sender.superview?.superview?.superview as? UITableViewCell,
             let indexPath = self.tableView.indexPath(for: cell) else { return }
@@ -194,6 +194,11 @@ class HomeTableViewController: UITableViewController {
 
             TabBarController.favoriteKeys.append(key)
             FavoriteManager.shared.updateFavorite(with: TabBarController.favoriteKeys)
+            
+            FIRAnalytics.logEvent(withName: "Add_Favorite", parameters: [
+                "User": currentUser.uid as NSObject,
+                "Post": key as NSObject])
+
             self.tableView.reloadRows(at: [indexPath], with: .none)
         }
     }
@@ -214,35 +219,40 @@ class HomeTableViewController: UITableViewController {
             guard let indexOfRecord = TabBarController.favoriteKeys.index(of: key) else { return }
             TabBarController.favoriteKeys.remove(at: indexOfRecord)
             FavoriteManager.shared.updateFavorite(with: TabBarController.favoriteKeys)
+            
+            FIRAnalytics.logEvent(withName: "Remove_Favorite", parameters: [
+                "User": currentUser.uid as NSObject,
+                "Post": key as NSObject])
+
             self.tableView.reloadRows(at: [indexPath], with: .none)
         }
     }
-    
+
     func showNoAccountAlert() {
-        
+
         let alertController = UIAlertController(title: "Sorry", message: "Only registered member can add favorite.", preferredStyle: .alert)
         let signUpAction = UIAlertAction(title: "Sign Up", style: .default) { (_) in
-            
+
             let signUpVC = self.storyboard?.instantiateViewController(withIdentifier: "CreateUserNavigation")
-            
+
             self.present(signUpVC!, animated: true, completion: nil)
 
         }
         let signInAction = UIAlertAction(title: "Sign In", style: .default) { (_) in
 
             let logInVC = self.storyboard?.instantiateViewController(withIdentifier: "logInNavigation")
-            
+
             self.present(logInVC!, animated: true, completion: nil)
 
         }
         let laterAction = UIAlertAction(title: "Not Now", style: .cancel, handler: nil)
-        
+
         alertController.addAction(signInAction)
         alertController.addAction(signUpAction)
         alertController.addAction(laterAction)
-        
+
         self.present(alertController, animated: true, completion: nil)
-        
+
     }
 }
 

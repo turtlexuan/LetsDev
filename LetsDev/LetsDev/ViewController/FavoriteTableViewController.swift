@@ -8,6 +8,7 @@
 
 import UIKit
 import NVActivityIndicatorView
+import Firebase
 
 class FavoriteTableViewController: UITableViewController {
 
@@ -56,11 +57,12 @@ class FavoriteTableViewController: UITableViewController {
         noReordView.backgroundColor = Color.cellColor
         noReordView.layer.cornerRadius = 10
 
-        let titleLabel = UILabel(frame: CGRect(x: 0, y: 30, width: noReordView.frame.width, height: 80))
+        let titleLabel = UILabel(frame: CGRect(x: 12, y: 30, width: noReordView.frame.width - 24, height: 80))
         titleLabel.numberOfLines = 0
         titleLabel.textAlignment = .center
         titleLabel.text = "You don't have any favorite.\nLet's go to the community and\nfind some combinations in your favor."
         titleLabel.textColor = .white
+        titleLabel.adjustsFontSizeToFitWidth = true
 
         noReordView.addSubview(titleLabel)
 
@@ -74,11 +76,12 @@ class FavoriteTableViewController: UITableViewController {
         goSignUpView.backgroundColor = Color.cellColor
         goSignUpView.layer.cornerRadius = 10
 
-        let titleLabel = UILabel(frame: CGRect(x: 0, y: 18, width: goSignUpView.frame.width, height: 50))
+        let titleLabel = UILabel(frame: CGRect(x: 12, y: 18, width: goSignUpView.frame.width - 24, height: 50))
         titleLabel.numberOfLines = 0
         titleLabel.textAlignment = .center
         titleLabel.text = "Only registered member can store favorites.\nYou need to Sign Up / Log In."
         titleLabel.textColor = .white
+        titleLabel.adjustsFontSizeToFitWidth = true
 
         goSignUpView.addSubview(titleLabel)
 
@@ -175,6 +178,8 @@ class FavoriteTableViewController: UITableViewController {
     }
 
     func newProcess(_ sender: UIButton) {
+        
+        FIRAnalytics.logEvent(withName: "New_Process_From_Favorite", parameters: nil)
 
         guard
             let cell = sender.superview?.superview?.superview as? FavoriteTableViewCell,

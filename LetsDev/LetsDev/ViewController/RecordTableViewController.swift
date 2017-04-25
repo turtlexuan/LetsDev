@@ -9,6 +9,7 @@
 import UIKit
 import DKImagePickerController
 import SKPhotoBrowser
+import Firebase
 
 class RecordTableViewController: UITableViewController {
 
@@ -33,7 +34,7 @@ class RecordTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         self.navigationItem.title = self.combination.film
 
         if TabBarController.favoriteKeys.contains(self.recordKey) {
@@ -280,6 +281,10 @@ class RecordTableViewController: UITableViewController {
                 let indexOfRecord = TabBarController.favoriteKeys.index(of: self.recordKey)
                 TabBarController.favoriteKeys.remove(at: indexOfRecord!)
                 FavoriteManager.shared.updateFavorite(with: TabBarController.favoriteKeys)
+                
+                FIRAnalytics.logEvent(withName: "Remove_Favorite", parameters: [
+                    "User": currentUser.uid as NSObject,
+                    "Post": self.recordKey as NSObject])
 
                 self.isFavorite = false
             }
@@ -287,6 +292,10 @@ class RecordTableViewController: UITableViewController {
             favoriteAction = UIAlertAction(title: "Mark as Favortie.", style: .default) { (_) in
                 TabBarController.favoriteKeys.append(self.recordKey)
                 FavoriteManager.shared.updateFavorite(with: TabBarController.favoriteKeys)
+                
+                FIRAnalytics.logEvent(withName: "Add_Favorite", parameters: [
+                    "User": currentUser.uid as NSObject,
+                    "Post": self.recordKey as NSObject])
 
                 self.isFavorite = true
             }
@@ -322,6 +331,10 @@ class RecordTableViewController: UITableViewController {
 
             TabBarController.favoriteKeys.append(self.recordKey)
             FavoriteManager.shared.updateFavorite(with: TabBarController.favoriteKeys)
+            
+            FIRAnalytics.logEvent(withName: "Add_Favorite", parameters: [
+                "User": currentUser.uid as NSObject,
+                "Post": self.recordKey as NSObject])
 
             self.isFavorite = true
 
@@ -332,6 +345,10 @@ class RecordTableViewController: UITableViewController {
             let indexOfRecord = TabBarController.favoriteKeys.index(of: self.recordKey)
             TabBarController.favoriteKeys.remove(at: indexOfRecord!)
             FavoriteManager.shared.updateFavorite(with: TabBarController.favoriteKeys)
+            
+            FIRAnalytics.logEvent(withName: "Remove_Favorite", parameters: [
+                "User": currentUser.uid as NSObject,
+                "Post": self.recordKey as NSObject])
 
             self.isFavorite = false
         }

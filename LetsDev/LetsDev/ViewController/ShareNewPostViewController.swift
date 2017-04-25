@@ -8,6 +8,7 @@
 
 import UIKit
 import SKPhotoBrowser
+import Firebase
 
 class ShareNewPostViewController: UIViewController {
 
@@ -81,6 +82,10 @@ class ShareNewPostViewController: UIViewController {
     }
 
     @IBAction func shareAction(_ sender: Any) {
+        
+        FIRAnalytics.logEvent(withName: "Share_Post", parameters: [
+            "User": currentUser.uid as NSObject,
+            "Post": self.recordKey as NSObject])
 
         let sharedPost = SharedPost(combination: combination, note: self.note, photo: self.photoString, date: Date().timeIntervalSince1970 * 1000, message: self.messageTextView.text, comment: [], like: [], favorite: [])
 

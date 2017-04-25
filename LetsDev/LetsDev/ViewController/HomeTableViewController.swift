@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import NVActivityIndicatorView
+import Crashlytics
 
 class HomeTableViewController: UITableViewController {
 
@@ -36,7 +37,7 @@ class HomeTableViewController: UITableViewController {
 
         let activityData = ActivityData(type: .ballRotateChase)
 
-//        NVActivityIndicatorPresenter.sharedInstance.startAnimating(activityData)
+        NVActivityIndicatorPresenter.sharedInstance.startAnimating(activityData)
 
         CommunityManager.shared.getPost { (sharedPosts) in
             self.sharedPosts = sharedPosts
@@ -108,6 +109,7 @@ class HomeTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+
         // push to detail view
         let key = self.sharedPosts[indexPath.row].key
 
@@ -194,7 +196,7 @@ class HomeTableViewController: UITableViewController {
 
             TabBarController.favoriteKeys.append(key)
             FavoriteManager.shared.updateFavorite(with: TabBarController.favoriteKeys)
-            
+
             FIRAnalytics.logEvent(withName: "Add_Favorite", parameters: [
                 "User": currentUser.uid as NSObject,
                 "Post": key as NSObject])
@@ -219,7 +221,7 @@ class HomeTableViewController: UITableViewController {
             guard let indexOfRecord = TabBarController.favoriteKeys.index(of: key) else { return }
             TabBarController.favoriteKeys.remove(at: indexOfRecord)
             FavoriteManager.shared.updateFavorite(with: TabBarController.favoriteKeys)
-            
+
             FIRAnalytics.logEvent(withName: "Remove_Favorite", parameters: [
                 "User": currentUser.uid as NSObject,
                 "Post": key as NSObject])

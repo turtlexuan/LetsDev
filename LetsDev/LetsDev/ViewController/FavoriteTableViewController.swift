@@ -178,7 +178,7 @@ class FavoriteTableViewController: UITableViewController {
     }
 
     func newProcess(_ sender: UIButton) {
-        
+
         FIRAnalytics.logEvent(withName: "New_Process_From_Favorite", parameters: nil)
 
         guard

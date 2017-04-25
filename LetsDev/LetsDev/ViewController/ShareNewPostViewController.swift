@@ -82,7 +82,7 @@ class ShareNewPostViewController: UIViewController {
     }
 
     @IBAction func shareAction(_ sender: Any) {
-        
+
         FIRAnalytics.logEvent(withName: "Share_Post", parameters: [
             "User": currentUser.uid as NSObject,
             "Post": self.recordKey as NSObject])

@@ -324,7 +324,7 @@ class CommentTableViewController: UITableViewController {
 
             TabBarController.favoriteKeys.append(self.key)
             FavoriteManager.shared.updateFavorite(with: TabBarController.favoriteKeys)
-            
+
             FIRAnalytics.logEvent(withName: "Add_Favorite", parameters: [
                 "User": currentUser.uid as NSObject,
                 "Post": self.key as NSObject])
@@ -348,7 +348,7 @@ class CommentTableViewController: UITableViewController {
             guard let indexOfRecord = TabBarController.favoriteKeys.index(of: self.key) else { return }
             TabBarController.favoriteKeys.remove(at: indexOfRecord)
             FavoriteManager.shared.updateFavorite(with: TabBarController.favoriteKeys)
-            
+
             FIRAnalytics.logEvent(withName: "Remove_Favorite", parameters: [
                 "User": currentUser.uid as NSObject,
                 "Post": self.key as NSObject])

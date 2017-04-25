@@ -281,7 +281,7 @@ class RecordTableViewController: UITableViewController {
                 let indexOfRecord = TabBarController.favoriteKeys.index(of: self.recordKey)
                 TabBarController.favoriteKeys.remove(at: indexOfRecord!)
                 FavoriteManager.shared.updateFavorite(with: TabBarController.favoriteKeys)
-                
+
                 FIRAnalytics.logEvent(withName: "Remove_Favorite", parameters: [
                     "User": currentUser.uid as NSObject,
                     "Post": self.recordKey as NSObject])
@@ -292,7 +292,7 @@ class RecordTableViewController: UITableViewController {
             favoriteAction = UIAlertAction(title: "Mark as Favortie.", style: .default) { (_) in
                 TabBarController.favoriteKeys.append(self.recordKey)
                 FavoriteManager.shared.updateFavorite(with: TabBarController.favoriteKeys)
-                
+
                 FIRAnalytics.logEvent(withName: "Add_Favorite", parameters: [
                     "User": currentUser.uid as NSObject,
                     "Post": self.recordKey as NSObject])
@@ -331,7 +331,7 @@ class RecordTableViewController: UITableViewController {
 
             TabBarController.favoriteKeys.append(self.recordKey)
             FavoriteManager.shared.updateFavorite(with: TabBarController.favoriteKeys)
-            
+
             FIRAnalytics.logEvent(withName: "Add_Favorite", parameters: [
                 "User": currentUser.uid as NSObject,
                 "Post": self.recordKey as NSObject])
@@ -345,7 +345,7 @@ class RecordTableViewController: UITableViewController {
             let indexOfRecord = TabBarController.favoriteKeys.index(of: self.recordKey)
             TabBarController.favoriteKeys.remove(at: indexOfRecord!)
             FavoriteManager.shared.updateFavorite(with: TabBarController.favoriteKeys)
-            
+
             FIRAnalytics.logEvent(withName: "Remove_Favorite", parameters: [
                 "User": currentUser.uid as NSObject,
                 "Post": self.recordKey as NSObject])

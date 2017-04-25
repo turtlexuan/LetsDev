@@ -1,10 +1,13 @@
 PODS:
+  - Crashlytics (3.8.4):
+    - Fabric (~> 1.6.3)
   - DKImagePickerController (3.5.1):
     - DKImagePickerController/Camera (= 3.5.1)
     - DKImagePickerController/ImageManager (= 3.5.1)
   - DKImagePickerController/Camera (3.5.1)
   - DKImagePickerController/ImageManager (3.5.1)
   - ExpandableLabel (0.1.4)
+  - Fabric (1.6.11)
   - Firebase (3.16.0):
     - Firebase/Core (= 3.16.0)
   - Firebase/Auth (3.16.0):
@@ -73,11 +76,13 @@ PODS:
   - NVActivityIndicatorView (3.6.1)
   - Protobuf (3.2.1)
   - SKPhotoBrowser (4.0.1)
-  - SkyFloatingLabelTextField (3.0.0)
+  - SkyFloatingLabelTextField (3.1.0)
 
 DEPENDENCIES:
+  - Crashlytics
   - DKImagePickerController
   - ExpandableLabel
+  - Fabric
   - Firebase
   - Firebase/Auth
   - Firebase/Core
@@ -95,8 +100,10 @@ DEPENDENCIES:
   - SkyFloatingLabelTextField
 
 SPEC CHECKSUMS:
+  Crashlytics: 79e236942ca1e7fc641df1feb9a275360a78ab6a
   DKImagePickerController: 8db7e76a88a7a66a893ba30e935cc4c9bb7ed335
   ExpandableLabel: e82b5dbd9ec1d30d945ca47836f1354f5e782b73
+  Fabric: 5911403591946b8228ab1c51d98f1d7137e863c6
   Firebase: 21bf4a89d3f01bfbe11adc3a5d934a4a3d3a5fd6
   FirebaseAnalytics: 920e46455f27b0a52a80907a6d9b73ee4bd1c635
   FirebaseAuth: cc8a1824170adbd351edb7f994490a3fb5c18be6
@@ -116,8 +123,8 @@ SPEC CHECKSUMS:
   NVActivityIndicatorView: 9f52a7f84bf5c6a798722c450fe3c198e01c56ed
   Protobuf: 2ccbaf193f6c65adc67745453ca0c13234c32796
   SKPhotoBrowser: 3a7c6fc02aa1620ab17253a47a49fafda46536e8
-  SkyFloatingLabelTextField: 35bc0c2653ad73c5fd8b7a34cfedf09c94367a1a
+  SkyFloatingLabelTextField: 26a92ad407044dd5a7c3e4e348738ff0991514fe
 
-PODFILE CHECKSUM: f68345493bca6f760d3ac20cebf3da4ee5f7951b
+PODFILE CHECKSUM: 5f56e3dafb6b6a490c39b9170edc04187596ade5
 
 COCOAPODS: 1.2.1

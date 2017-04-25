@@ -76,8 +76,6 @@
 		20E6C6FE1E9B833C0021F1DB /* HomePageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E6C6FC1E9B833C0021F1DB /* HomePageTableViewCell.swift */; };
 		20E6C6FF1E9B833C0021F1DB /* HomePageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20E6C6FD1E9B833C0021F1DB /* HomePageTableViewCell.xib */; };
 		20E6C7011E9C76870021F1DB /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E6C7001E9C76870021F1DB /* HomeTableViewController.swift */; };
-		20EDD0FC1EA5EC1E000AD79B /* 10552443_10201179528689048_3946491356923333351_n.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 20EDD0FB1EA5EC1E000AD79B /* 10552443_10201179528689048_3946491356923333351_n.jpg */; };
-		20EDD1001EA5EDDD000AD79B /* IMG_1775.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 20EDD0FF1EA5EDDD000AD79B /* IMG_1775.jpg */; };
 		20EDD1021EA609E6000AD79B /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EDD1011EA609E6000AD79B /* SettingsTableViewController.swift */; };
 		20EDD1061EA618E8000AD79B /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EDD1041EA618E8000AD79B /* SettingTableViewCell.swift */; };
 		20EDD1071EA618E8000AD79B /* SettingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20EDD1051EA618E8000AD79B /* SettingTableViewCell.xib */; };
@@ -178,8 +176,6 @@
 		20E6C6FC1E9B833C0021F1DB /* HomePageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePageTableViewCell.swift; sourceTree = "<group>"; };
 		20E6C6FD1E9B833C0021F1DB /* HomePageTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomePageTableViewCell.xib; sourceTree = "<group>"; };
 		20E6C7001E9C76870021F1DB /* HomeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
-		20EDD0FB1EA5EC1E000AD79B /* 10552443_10201179528689048_3946491356923333351_n.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 10552443_10201179528689048_3946491356923333351_n.jpg; sourceTree = "<group>"; };
-		20EDD0FF1EA5EDDD000AD79B /* IMG_1775.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_1775.jpg; sourceTree = "<group>"; };
 		20EDD1011EA609E6000AD79B /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		20EDD1041EA618E8000AD79B /* SettingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
 		20EDD1051EA618E8000AD79B /* SettingTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingTableViewCell.xib; sourceTree = "<group>"; };
@@ -249,8 +245,6 @@
 				2002AECE1E83D54300E21EA5 /* GoogleService-Info.plist */,
 				2084E2DF1E9604AD00EE06DA /* fontawesome-webfont.ttf */,
 				201978BC1E80BAE20013FACE /* LetsDev.xcdatamodeld */,
-				20EDD0FB1EA5EC1E000AD79B /* 10552443_10201179528689048_3946491356923333351_n.jpg */,
-				20EDD0FF1EA5EDDD000AD79B /* IMG_1775.jpg */,
 				200F159A1EA65DA500268240 /* IMG_1777.jpg */,
 				201978D21E80CFAD0013FACE /* Modal */,
 				201978D31E80CFAD0013FACE /* View */,
@@ -468,6 +462,7 @@
 				201978CA1E80CA7B0013FACE /* Run Swiftlint */,
 				F55A50C42BB17EF30594F745 /* [CP] Embed Pods Frameworks */,
 				1A5E8916BC080072DA44C1E3 /* [CP] Copy Pods Resources */,
+				203793E51EAEFF6500210B71 /* Crashlytics */,
 			);
 			buildRules = (
 			);
@@ -534,7 +529,6 @@
 				201978C01E80BAE20013FACE /* Assets.xcassets in Resources */,
 				205DC7771E8FF63B00A3E46E /* NewDevTableViewCell.xib in Resources */,
 				205DC7791E8FF63B00A3E46E /* NewDevTableViewCellFilm.xib in Resources */,
-				20EDD0FC1EA5EC1E000AD79B /* 10552443_10201179528689048_3946491356923333351_n.jpg in Resources */,
 				20E6C6FF1E9B833C0021F1DB /* HomePageTableViewCell.xib in Resources */,
 				200F15AF1EA7075900268240 /* ProfileSettingTableViewCell.xib in Resources */,
 				205DC77B1E8FF63B00A3E46E /* NewDevTableViewCellOneContent.xib in Resources */,
@@ -543,7 +537,6 @@
 				205DC78E1E8FFD4300A3E46E /* RecordListTableViewCell.xib in Resources */,
 				20EF0E2B1E9DF75400943761 /* CommentDetailTableViewCell.xib in Resources */,
 				205DC77F1E8FF63B00A3E46E /* CombinationTableViewCell.xib in Resources */,
-				20EDD1001EA5EDDD000AD79B /* IMG_1775.jpg in Resources */,
 				205DC7831E8FF63B00A3E46E /* PhotoCollectionViewCell.xib in Resources */,
 				201978BB1E80BAE20013FACE /* Main.storyboard in Resources */,
 				20EF0E331E9E0E9700943761 /* ButtonsTableViewCell.xib in Resources */,
@@ -582,6 +575,20 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+		};
+		203793E51EAEFF6500210B71 /* Crashlytics */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = Crashlytics;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" 2d178452bb6c172cc052578b18d1ea2cd68f3537 020b342b57a78b6972709d98e01ed28107e8c6d3233a9685b9bf244ffc221138";
 		};
 		54372547FCCA18FB5425FE31 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -733,7 +740,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;

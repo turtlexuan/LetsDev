@@ -31,7 +31,7 @@ class LoginManager: NSObject {
                 let message = ErrorHandler.getAuthErrorMessage(with: errorCode)
                 fail?(message)
             }
-            
+
             FIRAnalytics.logEvent(withName: kFIREventSignUp, parameters: [kFIRParameterSignUpMethod: "Email" as NSObject])
 
             if let image = image {
@@ -68,7 +68,7 @@ class LoginManager: NSObject {
                 let message = ErrorHandler.getAuthErrorMessage(with: errorCode)
                 fail?(message)
             }
-            
+
             FIRAnalytics.logEvent(withName: kFIREventLogin, parameters: [kFIRParameterSignUpMethod: "Email" as NSObject])
 
             guard let userEmail = user?.email, let uid = user?.uid else { return }

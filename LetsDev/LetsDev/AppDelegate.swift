@@ -11,6 +11,8 @@ import CoreData
 import Hex
 import Firebase
 import IQKeyboardManagerSwift
+import Fabric
+import Crashlytics
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -29,13 +31,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         FIRApp.configure()
 
-        print(FIRAuth.auth()?.currentUser?.uid)
-
         if FIRAuth.auth()?.currentUser?.uid == nil {
             // swiftlint:disable force_cast
             let rootController = mainStoryboard.instantiateViewController(withIdentifier: "signUpNavigation")
             self.window?.rootViewController = rootController
         }
+
+        Fabric.with([Crashlytics.self])
 
         IQKeyboardManager.sharedManager().enable = true
         IQKeyboardManager.sharedManager().overrideKeyboardAppearance = true

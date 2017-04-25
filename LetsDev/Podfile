@@ -22,6 +22,8 @@ pod 'Hero'
 pod 'SkyFloatingLabelTextField'
 pod 'FontAwesome.swift'
 pod 'ExpandableLabel'
+pod 'Fabric'
+pod 'Crashlytics'
 
   # Pods for LetsDev
 

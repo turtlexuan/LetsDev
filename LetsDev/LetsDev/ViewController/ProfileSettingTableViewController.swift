@@ -48,6 +48,8 @@ class ProfileSettingTableViewController: UITableViewController {
     }
 
     func saveAction() {
+        
+        self.tableView.endEditing(true)
 
         let activityData = ActivityData(type: .ballRotateChase)
 
@@ -168,6 +170,7 @@ class ProfileSettingTableViewController: UITableViewController {
             cell.usernameTextField.placeholderColor = .lightGray
             cell.usernameTextField.setTitleVisible(false)
             cell.usernameTextField.selectedTitle = ""
+            cell.usernameTextField.text = currentUser.username
             cell.usernameTextField.delegate = self
 
             return cell

@@ -153,7 +153,7 @@ class NewDevViewController: UIViewController {
         case 4:
             if sender.tag == 0 {
                 sender.inputView = self.fixTimeInputView
-                titleButton.title = "Select Stop Time"
+                titleButton.title = "Select Fix Time"
             } else {
                 sender.inputView = self.fixAgitationInputView
                 titleButton.title = "Select Agitation"

@@ -77,6 +77,11 @@ class HomeTableViewController: UITableViewController {
 
             cell.usernameLabel.text = user.username
         }
+        
+        if let imageUrlString = index.sharedPost.photo.first as? String, let imageUrl = URL(string: imageUrlString) {
+            
+            cell.filmImageView.kf.setImage(with: imageUrl)
+        }
 
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy.MM.dd"

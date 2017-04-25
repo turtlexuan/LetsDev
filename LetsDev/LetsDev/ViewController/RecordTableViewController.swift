@@ -151,7 +151,7 @@ class RecordTableViewController: UITableViewController {
 
         switch component {
         case .combination:
-            return 265
+            return 240
         case .note:
             return UITableViewAutomaticDimension
         case .photo:

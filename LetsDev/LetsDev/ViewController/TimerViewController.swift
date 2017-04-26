@@ -16,6 +16,7 @@ class TimerViewController: UIViewController {
     @IBOutlet weak var countDownLabel: UILabel!
     @IBOutlet weak var restartButton: UIButton!
     @IBOutlet weak var stopButton: UIButton!
+    @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var nextStepLabel: UILabel!
     @IBOutlet weak var nextProcessLabel: UILabel!
     @IBOutlet weak var nextProcessTimeLabel: UILabel!
@@ -60,6 +61,9 @@ class TimerViewController: UIViewController {
         self.stopButton.layer.borderWidth = 1
         self.stopButton.layer.borderColor = UIColor.white.cgColor
         self.stopButton.layer.cornerRadius = 10
+        self.nextButton.layer.borderColor = UIColor.white.cgColor
+        self.nextButton.layer.borderWidth = 1
+        self.nextButton.layer.cornerRadius = 10
         self.nextAreaView.layer.borderWidth = 1
         self.nextAreaView.layer.borderColor = UIColor.white.cgColor
         self.nextAreaView.layer.cornerRadius = 10
@@ -97,6 +101,10 @@ class TimerViewController: UIViewController {
 
     @IBAction func restartAction(_ sender: Any) {
         self.showRestartAlert()
+    }
+
+    @IBAction func nextAction(_ sender: Any) {
+        self.nextTimer()
     }
 
     func cancelAction() {
@@ -138,6 +146,29 @@ class TimerViewController: UIViewController {
                 self.countDownLabel.text = timeString(time: TimeInterval(self.processTimes[self.nowStep]))
             }
         }
+    }
+
+    func nextTimer() {
+
+        self.timer.invalidate()
+
+        if self.nowStep == 9 {
+
+            self.showFinishAlert()
+
+        } else {
+
+            self.nowStep += 1
+
+            self.processingLabel.text = self.processTitle[self.nowStep]
+            self.countDownLabel.text = self.timeString(time: TimeInterval(self.processTimes[self.nowStep]))
+            self.nextProcessLabel.text = self.nextStepTitle[self.nowStep]
+            self.nextProcessTimeLabel.text = self.timeString(time: TimeInterval(self.nextStepTime[self.nowStep]))
+            DispatchQueue.main.asyncAfter(deadline: .now(), execute: {
+                self.startTimer()
+            })
+        }
+
     }
 
     func showRestartAlert() {

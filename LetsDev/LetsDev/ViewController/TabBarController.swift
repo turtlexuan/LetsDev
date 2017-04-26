@@ -30,16 +30,16 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+
         if let uid = FIRAuth.auth()?.currentUser?.uid {
-            
+
             UserManager.shared.getUser(uid) { (user) in
                 currentUser = user
             }
         } else {
-            
+
             currentUser = User(uid: nil, email: nil, username: "Anonymous")
-            
+
         }
 
         let itemIndex = 2

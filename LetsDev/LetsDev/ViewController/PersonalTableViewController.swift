@@ -66,9 +66,9 @@ class PersonalTableViewController: UITableViewController {
             }
 
             let noRecordView = self.configNoRecordView()
-            
+
             if records?.count == 0 {
-                
+
                 self.tableView.addSubview(noRecordView)
             } else {
                 noRecordView.removeFromSuperview()

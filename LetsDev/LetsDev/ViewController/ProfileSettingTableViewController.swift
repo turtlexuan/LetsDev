@@ -48,7 +48,7 @@ class ProfileSettingTableViewController: UITableViewController {
     }
 
     func saveAction() {
-        
+
         self.tableView.endEditing(true)
 
         let activityData = ActivityData(type: .ballRotateChase)

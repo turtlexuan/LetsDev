@@ -75,6 +75,7 @@
 		20892FCF1E827C0C00369946 /* TTInputButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20892FCE1E827C0C00369946 /* TTInputButton.swift */; };
 		20C388871EB1A6DA0091FA4E /* PrivacyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C388861EB1A6DA0091FA4E /* PrivacyViewController.swift */; };
 		20C388891EB1BC520091FA4E /* PrivacyPolicyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C388881EB1BC520091FA4E /* PrivacyPolicyViewController.swift */; };
+		20C3888B1EB1BEEC0091FA4E /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20C3888A1EB1BEEC0091FA4E /* MessageUI.framework */; };
 		20E6C6FE1E9B833C0021F1DB /* HomePageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E6C6FC1E9B833C0021F1DB /* HomePageTableViewCell.swift */; };
 		20E6C6FF1E9B833C0021F1DB /* HomePageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20E6C6FD1E9B833C0021F1DB /* HomePageTableViewCell.xib */; };
 		20E6C7011E9C76870021F1DB /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E6C7001E9C76870021F1DB /* HomeTableViewController.swift */; };
@@ -177,6 +178,7 @@
 		20892FCE1E827C0C00369946 /* TTInputButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTInputButton.swift; sourceTree = "<group>"; };
 		20C388861EB1A6DA0091FA4E /* PrivacyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrivacyViewController.swift; sourceTree = "<group>"; };
 		20C388881EB1BC520091FA4E /* PrivacyPolicyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyViewController.swift; sourceTree = "<group>"; };
+		20C3888A1EB1BEEC0091FA4E /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		20E6C6FC1E9B833C0021F1DB /* HomePageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePageTableViewCell.swift; sourceTree = "<group>"; };
 		20E6C6FD1E9B833C0021F1DB /* HomePageTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomePageTableViewCell.xib; sourceTree = "<group>"; };
 		20E6C7001E9C76870021F1DB /* HomeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
@@ -213,6 +215,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20C3888B1EB1BEEC0091FA4E /* MessageUI.framework in Frameworks */,
 				E4F1FE23674C8589E00ACF52 /* Pods_LetsDev.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -440,6 +443,7 @@
 		A322150B5658DCF6C41AF1BA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				20C3888A1EB1BEEC0091FA4E /* MessageUI.framework */,
 				DD5025F6EEDEA83A6E3AA888 /* Pods_LetsDev.framework */,
 			);
 			name = Frameworks;
@@ -491,7 +495,7 @@
 				TargetAttributes = {
 					201978B11E80BAE20013FACE = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = D3SFCFQ6Q5;
+						DevelopmentTeam = U9WVFKNWBQ;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -824,11 +828,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = D3SFCFQ6Q5;
+				DEVELOPMENT_TEAM = U9WVFKNWBQ;
 				INFOPLIST_FILE = LetsDev/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.turtlexuan.LetDev;
+				PRODUCT_BUNDLE_IDENTIFIER = com.turtlexuan.LetsDev;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -841,11 +846,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = D3SFCFQ6Q5;
+				DEVELOPMENT_TEAM = U9WVFKNWBQ;
 				INFOPLIST_FILE = LetsDev/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.turtlexuan.LetDev;
+				PRODUCT_BUNDLE_IDENTIFIER = com.turtlexuan.LetsDev;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;

@@ -8,6 +8,7 @@
 
 import UIKit
 import NVActivityIndicatorView
+import MessageUI
 
 class SettingsTableViewController: UITableViewController {
 
@@ -16,12 +17,13 @@ class SettingsTableViewController: UITableViewController {
         case profileSetting
         case accountSetting
         case privacyPolicy
+        case contactUs
         case logout
         case signUp
         case logIn
     }
 
-    var component: [Component] = [ .profile, .profileSetting, .accountSetting, .privacyPolicy, .logout ]
+    var component: [Component] = [ .profile, .profileSetting, .accountSetting, .contactUs, .privacyPolicy, .logout ]
     var records: [Record] = []
     var postCount = 0
 
@@ -36,7 +38,7 @@ class SettingsTableViewController: UITableViewController {
         self.tableView.estimatedRowHeight = 120
 
         if currentUser.uid == nil {
-            self.component = [ .profile, .signUp, .logIn, .privacyPolicy ]
+            self.component = [ .profile, .signUp, .logIn, .contactUs, .privacyPolicy ]
         }
     }
 
@@ -154,6 +156,14 @@ class SettingsTableViewController: UITableViewController {
 
             return cell
 
+        case .contactUs:
+
+            let cell = tableView.dequeueReusableCell(withIdentifier: "SettingTableViewCell", for: indexPath) as! SettingTableViewCell
+
+            cell.titleLabel.text = "Contact Us"
+
+            return cell
+
         }
     }
 
@@ -194,10 +204,28 @@ class SettingsTableViewController: UITableViewController {
 
             self.navigationController?.pushViewController(privacyVC, animated: true)
 
+        case .contactUs:
+
+            self.sendEmail()
+
         default:
 
             break
         }
+    }
+
+    func sendEmail() {
+
+        if MFMailComposeViewController.canSendMail() {
+            let mail = MFMailComposeViewController()
+            mail.mailComposeDelegate = self
+            mail.setToRecipients(["paul@hackingwithswift.com"])
+
+            present(mail, animated: true)
+        } else {
+            return
+        }
+
     }
 
     func showLogOutAlert() {
@@ -245,6 +273,15 @@ class SettingsTableViewController: UITableViewController {
         alertController.addAction(doneAction)
 
         self.present(alertController, animated: true, completion: nil)
+    }
+
+}
+
+extension SettingsTableViewController: MFMailComposeViewControllerDelegate {
+
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+
+        controller.dismiss(animated: true)
     }
 
 }

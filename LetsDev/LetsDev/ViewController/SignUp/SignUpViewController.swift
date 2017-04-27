@@ -21,7 +21,7 @@ class SignUpViewController: UIViewController {
     @IBAction func showCreateView(_ sender: Any) {
 
         // swiftlint:disable force_cast
-        let createUserVC = self.storyboard?.instantiateViewController(withIdentifier: "CreateUserViewController") as! CreateUserViewController
+        let createUserVC = self.storyboard?.instantiateViewController(withIdentifier: "PrivacyViewController") as! PrivacyViewController
         self.navigationController?.pushViewController(createUserVC, animated: true)
 
     }

@@ -31,11 +31,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         FIRApp.configure()
 
-        if FIRAuth.auth()?.currentUser?.uid == nil {
-            // swiftlint:disable force_cast
-            let rootController = mainStoryboard.instantiateViewController(withIdentifier: "signUpNavigation")
-            self.window?.rootViewController = rootController
-        }
+//        if FIRAuth.auth()?.currentUser?.uid == nil {
+//            // swiftlint:disable force_cast
+//            let rootController = mainStoryboard.instantiateViewController(withIdentifier: "signUpNavigation")
+//            self.window?.rootViewController = rootController
+//        }
 
         Fabric.with([Crashlytics.self])
 

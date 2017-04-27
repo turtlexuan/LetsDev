@@ -20,7 +20,7 @@
                         <viewControllerLayoutGuide type="top" id="mUl-EU-xV6"/>
                         <viewControllerLayoutGuide type="bottom" id="4UX-Oh-m2o"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" misplaced="YES" id="APn-ey-6Au">
+                    <view key="view" contentMode="scaleToFill" id="APn-ey-6Au">
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -94,7 +94,7 @@
                                 <rect key="frame" x="38" y="415" width="300" height="64"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZjS-E5-b7J">
-                                        <rect key="frame" x="0.0" y="0.0" width="87" height="64"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="86.5" height="64"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="64" id="YLz-XD-YTv"/>
                                         </constraints>
@@ -107,7 +107,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MbX-1Y-xPm">
-                                        <rect key="frame" x="107" y="0.0" width="86" height="64"/>
+                                        <rect key="frame" x="106.5" y="0.0" width="87" height="64"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="64" id="D8Y-cl-pLU"/>
                                         </constraints>
@@ -120,7 +120,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Gq-Yg-jrB">
-                                        <rect key="frame" x="213" y="0.0" width="87" height="64"/>
+                                        <rect key="frame" x="213.5" y="0.0" width="86.5" height="64"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
                                         <state key="normal" title="Next">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -170,7 +170,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Next Step" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bEJ-aW-Lmx">
-                                <rect key="frame" x="20" y="578" width="78" height="21"/>
+                                <rect key="frame" x="20" y="578.5" width="77.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -326,7 +326,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Let's Dev!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="YcB-2q-iac">
-                                <rect key="frame" x="36" y="80" width="303" height="56"/>
+                                <rect key="frame" x="36" y="80" width="303" height="55.5"/>
                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="48"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -348,7 +348,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W1j-WX-7Pq">
-                                        <rect key="frame" x="3" y="70" width="150" height="40"/>
+                                        <rect key="frame" x="2.5" y="70" width="150" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="150" id="1V7-eO-Ll7"/>
                                             <constraint firstAttribute="height" constant="40" id="3hA-S7-5cE"/>
@@ -362,7 +362,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RuF-eD-ZuL">
-                                        <rect key="frame" x="15" y="140" width="126" height="33"/>
+                                        <rect key="frame" x="14.5" y="140" width="126" height="33"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                         <state key="normal" title="SIGN UP LATER">
                                             <color key="titleColor" red="0.67758980550000003" green="0.81282903139999996" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -639,7 +639,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="buG-d1-viz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2386.4000000000001" y="938.68065967016503"/>
+            <point key="canvasLocation" x="-1447.2" y="938.68065967016503"/>
         </scene>
         <!--Username View Controller-->
         <scene sceneID="7ef-6y-Txo">
@@ -766,7 +766,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hvP-lw-Zgb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1474" y="939"/>
+            <point key="canvasLocation" x="-535.20000000000005" y="938.68065967016503"/>
         </scene>
         <!--User Photo View Controller-->
         <scene sceneID="7pc-CQ-sO5">
@@ -788,7 +788,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="5aa-Yq-0FS">
-                                <rect key="frame" x="63" y="408" width="250" height="33"/>
+                                <rect key="frame" x="63" y="407.5" width="250" height="33"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <state key="normal" title="Already Have Account? Sign In">
                                     <color key="titleColor" red="0.67758980550000003" green="0.81282903139999996" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -798,7 +798,7 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fDm-DS-SNr">
-                                <rect key="frame" x="60" y="345" width="256" height="33"/>
+                                <rect key="frame" x="60" y="344.5" width="256" height="33"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gZG-yd-y9E">
                                         <rect key="frame" x="0.0" y="0.0" width="128" height="33"/>
@@ -826,7 +826,7 @@
                                 </constraints>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign Up" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mDY-Ec-Z2f">
-                                <rect key="frame" x="134" y="50" width="108" height="36"/>
+                                <rect key="frame" x="134.5" y="50" width="107.5" height="36"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="30"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -850,7 +850,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Upload Your Profile Picture" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dt5-hk-2TY">
-                                <rect key="frame" x="84" y="244" width="206" height="21"/>
+                                <rect key="frame" x="84.5" y="244" width="205.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -886,7 +886,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5rg-Ux-ITa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-719" y="939"/>
+            <point key="canvasLocation" x="220" y="938.68065967016503"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="pfI-in-NuZ">
@@ -911,7 +911,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y8W-Xr-5A1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="751.20000000000005" y="231.63418290854574"/>
+            <point key="canvasLocation" x="54" y="232"/>
         </scene>
         <!--New Dev Navigation Controller-->
         <scene sceneID="qLM-Qn-0hx">
@@ -1191,7 +1191,7 @@ Vivamus at sem massa. Donec egestas, ligula vitae condimentum dignissim, arcu en
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rte-Bq-hOK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1740" y="938.68065967016503"/>
+            <point key="canvasLocation" x="2679.1999999999998" y="938.68065967016503"/>
         </scene>
         <!--Settings Table View Controller-->
         <scene sceneID="5tX-3b-Jco">
@@ -1210,7 +1210,7 @@ Vivamus at sem massa. Donec egestas, ligula vitae condimentum dignissim, arcu en
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OBB-sO-Yf9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2540" y="938.68065967016503"/>
+            <point key="canvasLocation" x="3479.1999999999998" y="938.68065967016503"/>
         </scene>
         <!--Home Navigation Controller-->
         <scene sceneID="3AC-VM-gN0">
@@ -1274,6 +1274,131 @@ Vivamus at sem massa. Donec egestas, ligula vitae condimentum dignissim, arcu en
             </objects>
             <point key="canvasLocation" x="1601" y="2440"/>
         </scene>
+        <!--Privacy Policy View Controller-->
+        <scene sceneID="zGr-Z4-NFe">
+            <objects>
+                <viewController storyboardIdentifier="PrivacyPolicyViewController" id="qD1-Iv-th7" customClass="PrivacyPolicyViewController" customModule="LetsDev" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="FEv-5y-Jqj"/>
+                        <viewControllerLayoutGuide type="bottom" id="fWc-oN-EeY"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1t2-e0-PdN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Privacy Policy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="79a-Dy-wyG">
+                                <rect key="frame" x="93" y="60" width="189" height="36"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="mmY-9q-gsN">
+                                <rect key="frame" x="20" y="116" width="335" height="531"/>
+                                <color key="backgroundColor" red="0.24313725490196078" green="0.24313725490196078" blue="0.24313725490196078" alpha="1" colorSpace="calibratedRGB"/>
+                                <mutableString key="text">This privacy policy has been compiled to better serve those who are concerned with how their 'Personally Identifiable Information' (PII) is being used online. PII, as described in US privacy law and information security, is information that can be used on its own or with other information to identify, contact, or locate a single person, or to identify an individual in context. Please read our privacy policy carefully to get a clear understanding of how we collect, use, protect or otherwise handle your Personally Identifiable Information in accordance with our website.
+
+What personal information do we collect from the people that visit our blog, website or app?
+
+We do not collect information from visitors of our site.
+or other details to help you with your experience.
+
+When do we collect information?
+
+We collect information from you when you register on our site or enter information on our site.
+
+
+How do we use your information?
+
+We may use the information we collect from you when you register, make a purchase, sign up for our newsletter, respond to a survey or marketing communication, surf the website, or use certain other site features in the following ways:
+
+      • To personalize your experience and to allow us to deliver the type of content and product offerings in which you are most interested.
+      • To allow us to better service you in responding to your customer service requests.
+
+How do we protect your information?
+
+We do not use vulnerability scanning and/or scanning to PCI standards.
+We only provide articles and information. We never ask for credit card numbers.
+We do not use Malware Scanning.
+
+We do not use an SSL certificate
+      • We only provide articles and information. We never ask for personal or private information like names, email addresses, or credit card numbers.
+
+Do we use 'cookies'?
+
+We do not use cookies for tracking purposes
+
+You can choose to have your computer warn you each time a cookie is being sent, or you can choose to turn off all cookies. You do this through your browser settings. Since browser is a little different, look at your browser's Help Menu to learn the correct way to modify your cookies.
+
+If you turn cookies off, Some of the features that make your site experience more efficient may not function properly.that make your site experience more efficient and may not function properly.
+
+
+Third-party disclosure
+
+We do not sell, trade, or otherwise transfer to outside parties your Personally Identifiable Information.
+
+Third-party links
+
+We do not include or offer third-party products or services on our website.
+
+California Online Privacy Protection Act
+
+CalOPPA is the first state law in the nation to require commercial websites and online services to post a privacy policy. The law's reach stretches well beyond California to require any person or company in the United States (and conceivably the world) that operates websites collecting Personally Identifiable Information from California consumers to post a conspicuous privacy policy on its website stating exactly the information being collected and those individuals or companies with whom it is being shared. - See more at: http://consumercal.org/california-online-privacy-protection-act-caloppa/#sthash.0FdRbT51.dpuf
+
+According to CalOPPA, we agree to the following:
+Users can visit our site anonymously.
+Once this privacy policy is created, we will add a link to it on our home page or as a minimum, on the first significant page after entering our website.
+Our Privacy Policy link includes the word 'Privacy' and can easily be found on the page specified above.
+
+You will be notified of any Privacy Policy changes:
+      • On our Privacy Policy Page
+Can change your personal information:
+      • By logging in to your account
+
+How does our site handle Do Not Track signals?
+We honor Do Not Track signals and Do Not Track, plant cookies, or use advertising when a Do Not Track (DNT) browser mechanism is in place.
+
+Does our site allow third-party behavioral tracking?
+It's also important to note that we allow third-party behavioral tracking
+
+COPPA (Children Online Privacy Protection Act)
+
+When it comes to the collection of personal information from children under the age of 13 years old, the Children's Online Privacy Protection Act (COPPA) puts parents in control. The Federal Trade Commission, United States' consumer protection agency, enforces the COPPA Rule, which spells out what operators of websites and online services must do to protect children's privacy and safety online.
+
+We do not specifically market to children under the age of 13 years old.
+
+Fair Information Practices
+
+The Fair Information Practices Principles form the backbone of privacy law in the United States and the concepts they include have played a significant role in the development of data protection laws around the globe. Understanding the Fair Information Practice Principles and how they should be implemented is critical to comply with the various privacy laws that protect personal information.
+
+In order to be in line with Fair Information Practices we will take the following responsive action, should a data breach occur:
+We will notify the users via in-site notification
+      • Within 7 business days
+
+We also agree to the Individual Redress Principle which requires that individuals have the right to legally pursue enforceable rights against data collectors and processors who fail to adhere to the law. This principle requires not only that individuals have enforceable rights against data users, but also that individuals have recourse to courts or government agencies to investigate and/or prosecute non-compliance by data processors.
+</mutableString>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="79a-Dy-wyG" firstAttribute="centerX" secondItem="1t2-e0-PdN" secondAttribute="centerX" id="YfD-5d-flv"/>
+                            <constraint firstItem="mmY-9q-gsN" firstAttribute="top" secondItem="79a-Dy-wyG" secondAttribute="bottom" constant="20" id="bD6-jC-Ssl"/>
+                            <constraint firstItem="fWc-oN-EeY" firstAttribute="top" secondItem="mmY-9q-gsN" secondAttribute="bottom" constant="20" id="gBj-4a-fmf"/>
+                            <constraint firstItem="mmY-9q-gsN" firstAttribute="leading" secondItem="1t2-e0-PdN" secondAttribute="leading" constant="20" id="qDS-um-xUa"/>
+                            <constraint firstItem="79a-Dy-wyG" firstAttribute="top" secondItem="FEv-5y-Jqj" secondAttribute="bottom" constant="40" id="wPO-K0-nYT"/>
+                            <constraint firstAttribute="trailing" secondItem="mmY-9q-gsN" secondAttribute="trailing" constant="20" id="zgf-jF-KP0"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="privacyTextView" destination="mmY-9q-gsN" id="sZP-Ae-gOP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aL7-9K-Rj2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2340" y="2439"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="MVs-fK-FoT">
             <objects>
@@ -1332,21 +1457,232 @@ Vivamus at sem massa. Donec egestas, ligula vitae condimentum dignissim, arcu en
             </objects>
             <point key="canvasLocation" x="-1473" y="186"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="v4c-G2-bS3">
+        <!--Privacy View Controller-->
+        <scene sceneID="Qq5-Yh-hbG">
             <objects>
-                <navigationController storyboardIdentifier="CreateUserNavigation" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="okP-Qi-g5v" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PrivacyViewController" id="X3W-rO-qW2" customClass="PrivacyViewController" customModule="LetsDev" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="FOW-2j-SdW"/>
+                        <viewControllerLayoutGuide type="bottom" id="1B6-OK-VtO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2Qd-uA-lpX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view alpha="0.20000000298023224" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OFq-gP-FFn">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IMG_1777.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="iaz-Af-SA9">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bT2-9s-Ofv">
+                                <rect key="frame" x="20" y="60" width="335" height="567"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Privacy Policy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K6j-MT-87w">
+                                        <rect key="frame" x="72.5" y="20" width="189" height="36"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="30"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="1Xw-iS-qBx">
+                                        <rect key="frame" x="20" y="66" width="295" height="397"/>
+                                        <color key="backgroundColor" red="0.94117647058823528" green="0.94117647058823528" blue="0.94117647058823528" alpha="1" colorSpace="calibratedRGB"/>
+                                        <mutableString key="text">This privacy policy has been compiled to better serve those who are concerned with how their 'Personally Identifiable Information' (PII) is being used online. PII, as described in US privacy law and information security, is information that can be used on its own or with other information to identify, contact, or locate a single person, or to identify an individual in context. Please read our privacy policy carefully to get a clear understanding of how we collect, use, protect or otherwise handle your Personally Identifiable Information in accordance with our website.
+
+What personal information do we collect from the people that visit our blog, website or app?
+
+We do not collect information from visitors of our site.
+or other details to help you with your experience.
+
+When do we collect information?
+
+We collect information from you when you register on our site or enter information on our site.
+
+
+How do we use your information?
+
+We may use the information we collect from you when you register, make a purchase, sign up for our newsletter, respond to a survey or marketing communication, surf the website, or use certain other site features in the following ways:
+
+      • To personalize your experience and to allow us to deliver the type of content and product offerings in which you are most interested.
+      • To allow us to better service you in responding to your customer service requests.
+
+How do we protect your information?
+
+We do not use vulnerability scanning and/or scanning to PCI standards.
+We only provide articles and information. We never ask for credit card numbers.
+We do not use Malware Scanning.
+
+We do not use an SSL certificate
+      • We only provide articles and information. We never ask for personal or private information like names, email addresses, or credit card numbers.
+
+Do we use 'cookies'?
+
+We do not use cookies for tracking purposes
+
+You can choose to have your computer warn you each time a cookie is being sent, or you can choose to turn off all cookies. You do this through your browser settings. Since browser is a little different, look at your browser's Help Menu to learn the correct way to modify your cookies.
+
+If you turn cookies off, Some of the features that make your site experience more efficient may not function properly.that make your site experience more efficient and may not function properly.
+
+
+Third-party disclosure
+
+We do not sell, trade, or otherwise transfer to outside parties your Personally Identifiable Information.
+
+Third-party links
+
+We do not include or offer third-party products or services on our website.
+
+California Online Privacy Protection Act
+
+CalOPPA is the first state law in the nation to require commercial websites and online services to post a privacy policy. The law's reach stretches well beyond California to require any person or company in the United States (and conceivably the world) that operates websites collecting Personally Identifiable Information from California consumers to post a conspicuous privacy policy on its website stating exactly the information being collected and those individuals or companies with whom it is being shared. - See more at: http://consumercal.org/california-online-privacy-protection-act-caloppa/#sthash.0FdRbT51.dpuf
+
+According to CalOPPA, we agree to the following:
+Users can visit our site anonymously.
+Once this privacy policy is created, we will add a link to it on our home page or as a minimum, on the first significant page after entering our website.
+Our Privacy Policy link includes the word 'Privacy' and can easily be found on the page specified above.
+
+You will be notified of any Privacy Policy changes:
+      • On our Privacy Policy Page
+Can change your personal information:
+      • By logging in to your account
+
+How does our site handle Do Not Track signals?
+We honor Do Not Track signals and Do Not Track, plant cookies, or use advertising when a Do Not Track (DNT) browser mechanism is in place.
+
+Does our site allow third-party behavioral tracking?
+It's also important to note that we allow third-party behavioral tracking
+
+COPPA (Children Online Privacy Protection Act)
+
+When it comes to the collection of personal information from children under the age of 13 years old, the Children's Online Privacy Protection Act (COPPA) puts parents in control. The Federal Trade Commission, United States' consumer protection agency, enforces the COPPA Rule, which spells out what operators of websites and online services must do to protect children's privacy and safety online.
+
+We do not specifically market to children under the age of 13 years old.
+
+Fair Information Practices
+
+The Fair Information Practices Principles form the backbone of privacy law in the United States and the concepts they include have played a significant role in the development of data protection laws around the globe. Understanding the Fair Information Practice Principles and how they should be implemented is critical to comply with the various privacy laws that protect personal information.
+
+In order to be in line with Fair Information Practices we will take the following responsive action, should a data breach occur:
+We will notify the users via in-site notification
+      • Within 7 business days
+
+We also agree to the Individual Redress Principle which requires that individuals have the right to legally pursue enforceable rights against data collectors and processors who fail to adhere to the law. This principle requires not only that individuals have enforceable rights against data users, but also that individuals have recourse to courts or government agencies to investigate and/or prosecute non-compliance by data processors.
+</mutableString>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Cvv-jH-7ZX">
+                                        <rect key="frame" x="20" y="503" width="295" height="44"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dB7-9Z-n7j">
+                                                <rect key="frame" x="0.0" y="0.0" width="137.5" height="44"/>
+                                                <color key="backgroundColor" red="1" green="0.43137254901960786" blue="0.3529411764705882" alpha="1" colorSpace="calibratedRGB"/>
+                                                <state key="normal" title="Disagree / Leave">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="disagreeAction:" destination="X3W-rO-qW2" eventType="touchUpInside" id="8fe-3R-1zD"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hSV-mZ-2Ju">
+                                                <rect key="frame" x="157.5" y="0.0" width="137.5" height="44"/>
+                                                <color key="backgroundColor" red="0.67758980550000003" green="0.81282903139999996" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <state key="normal" title="Agree / Next">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="agreeAction:" destination="X3W-rO-qW2" eventType="touchUpInside" id="elx-YZ-4gj"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="dB7-9Z-n7j" firstAttribute="width" secondItem="hSV-mZ-2Ju" secondAttribute="width" id="OLa-kN-G1t"/>
+                                            <constraint firstAttribute="height" constant="44" id="PuQ-xU-uOo"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="NUL-Do-aL3">
+                                        <rect key="frame" x="63" y="473" width="208" height="20"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kYp-kn-dWH">
+                                                <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="20" id="YmG-dh-AK1"/>
+                                                    <constraint firstAttribute="width" constant="20" id="ZTw-Oc-zmV"/>
+                                                </constraints>
+                                                <state key="normal" title="Check"/>
+                                                <connections>
+                                                    <action selector="checkAction:" destination="X3W-rO-qW2" eventType="touchUpInside" id="fK9-yW-eEZ"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I have read the private policy " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BHj-Nh-aIY">
+                                                <rect key="frame" x="30" y="0.0" width="178" height="20"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="1Xw-iS-qBx" firstAttribute="leading" secondItem="bT2-9s-Ofv" secondAttribute="leading" constant="20" id="47P-XY-Q7f"/>
+                                    <constraint firstItem="Cvv-jH-7ZX" firstAttribute="top" secondItem="NUL-Do-aL3" secondAttribute="bottom" constant="10" id="Dlk-Gf-gHE"/>
+                                    <constraint firstItem="1Xw-iS-qBx" firstAttribute="top" secondItem="K6j-MT-87w" secondAttribute="bottom" constant="10" id="Lbf-P2-DA2"/>
+                                    <constraint firstItem="NUL-Do-aL3" firstAttribute="top" secondItem="1Xw-iS-qBx" secondAttribute="bottom" constant="10" id="NQW-Gt-RZw"/>
+                                    <constraint firstItem="K6j-MT-87w" firstAttribute="centerX" secondItem="bT2-9s-Ofv" secondAttribute="centerX" id="OJo-S4-h7L"/>
+                                    <constraint firstItem="NUL-Do-aL3" firstAttribute="centerX" secondItem="bT2-9s-Ofv" secondAttribute="centerX" id="OZY-H3-Tv5"/>
+                                    <constraint firstAttribute="bottom" secondItem="Cvv-jH-7ZX" secondAttribute="bottom" constant="20" id="Ocx-E5-HBd"/>
+                                    <constraint firstItem="K6j-MT-87w" firstAttribute="top" secondItem="bT2-9s-Ofv" secondAttribute="top" constant="20" id="Sci-ZX-EEY"/>
+                                    <constraint firstAttribute="trailing" secondItem="1Xw-iS-qBx" secondAttribute="trailing" constant="20" id="aVe-AO-ClP"/>
+                                    <constraint firstItem="Cvv-jH-7ZX" firstAttribute="width" secondItem="1Xw-iS-qBx" secondAttribute="width" id="cK5-e9-L43"/>
+                                    <constraint firstItem="Cvv-jH-7ZX" firstAttribute="centerX" secondItem="bT2-9s-Ofv" secondAttribute="centerX" id="r0h-wk-fv6"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="iaz-Af-SA9" secondAttribute="trailing" id="4Ia-j6-GcS"/>
+                            <constraint firstAttribute="trailing" secondItem="bT2-9s-Ofv" secondAttribute="trailing" constant="20" id="8ON-kk-DSh"/>
+                            <constraint firstItem="1B6-OK-VtO" firstAttribute="top" secondItem="bT2-9s-Ofv" secondAttribute="bottom" constant="40" id="Mdf-zj-pMC"/>
+                            <constraint firstAttribute="trailing" secondItem="OFq-gP-FFn" secondAttribute="trailing" id="Ug7-YG-MRO"/>
+                            <constraint firstItem="1B6-OK-VtO" firstAttribute="top" secondItem="OFq-gP-FFn" secondAttribute="bottom" id="W4C-hc-5OW"/>
+                            <constraint firstItem="OFq-gP-FFn" firstAttribute="top" secondItem="2Qd-uA-lpX" secondAttribute="top" id="aYR-Sq-7nb"/>
+                            <constraint firstItem="iaz-Af-SA9" firstAttribute="top" secondItem="2Qd-uA-lpX" secondAttribute="top" id="jmc-q2-i8q"/>
+                            <constraint firstItem="iaz-Af-SA9" firstAttribute="leading" secondItem="2Qd-uA-lpX" secondAttribute="leading" id="lOL-k7-M0X"/>
+                            <constraint firstItem="OFq-gP-FFn" firstAttribute="leading" secondItem="2Qd-uA-lpX" secondAttribute="leading" id="oQJ-Ny-OdX"/>
+                            <constraint firstItem="bT2-9s-Ofv" firstAttribute="top" secondItem="FOW-2j-SdW" secondAttribute="bottom" constant="40" id="uKt-lx-f88"/>
+                            <constraint firstItem="1B6-OK-VtO" firstAttribute="top" secondItem="iaz-Af-SA9" secondAttribute="bottom" id="vId-tc-k3q"/>
+                            <constraint firstItem="bT2-9s-Ofv" firstAttribute="leading" secondItem="2Qd-uA-lpX" secondAttribute="leading" constant="20" id="z5K-QQ-8nZ"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="qcf-Bd-WjM"/>
+                    <connections>
+                        <outlet property="agreeButton" destination="hSV-mZ-2Ju" id="pG5-3b-Tam"/>
+                        <outlet property="checkboxButton" destination="kYp-kn-dWH" id="ahw-DE-b0b"/>
+                        <outlet property="disagreeButton" destination="dB7-9Z-n7j" id="qJr-Pz-yk0"/>
+                        <outlet property="privacyTextView" destination="1Xw-iS-qBx" id="1fV-EK-0Cj"/>
+                        <outlet property="privacyView" destination="bT2-9s-Ofv" id="xjW-Km-d4a"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="a9l-N5-nx8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2386.4000000000001" y="938.68065967016503"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="qBP-nX-Byy">
+            <objects>
+                <navigationController storyboardIdentifier="CreateUserNavigation" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="0zc-Do-RDp" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="8AG-Tr-6EA">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Ook-hM-e0v">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="o6T-gl-WtX" kind="relationship" relationship="rootViewController" id="Ows-kv-T6s"/>
+                        <segue destination="X3W-rO-qW2" kind="relationship" relationship="rootViewController" id="6X5-FD-wlJ"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ygz-1n-00L" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="isE-1n-PmL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-3303" y="939"/>
         </scene>

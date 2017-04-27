@@ -15,12 +15,13 @@ class SettingsTableViewController: UITableViewController {
         case profile
         case profileSetting
         case accountSetting
+        case privacyPolicy
         case logout
         case signUp
         case logIn
     }
 
-    var component: [Component] = [ .profile, .profileSetting, .accountSetting, .logout ]
+    var component: [Component] = [ .profile, .profileSetting, .accountSetting, .privacyPolicy, .logout ]
     var records: [Record] = []
     var postCount = 0
 
@@ -35,7 +36,7 @@ class SettingsTableViewController: UITableViewController {
         self.tableView.estimatedRowHeight = 120
 
         if currentUser.uid == nil {
-            self.component = [.profile, .signUp, .logIn]
+            self.component = [ .profile, .signUp, .logIn, .privacyPolicy ]
         }
     }
 
@@ -145,6 +146,14 @@ class SettingsTableViewController: UITableViewController {
 
             return cell
 
+        case .privacyPolicy:
+
+            let cell = tableView.dequeueReusableCell(withIdentifier: "SettingTableViewCell", for: indexPath) as! SettingTableViewCell
+
+            cell.titleLabel.text = "Privacy Policy"
+
+            return cell
+
         }
     }
 
@@ -178,6 +187,13 @@ class SettingsTableViewController: UITableViewController {
             let logInVC = self.storyboard?.instantiateViewController(withIdentifier: "logInNavigation")
 
             self.present(logInVC!, animated: true, completion: nil)
+
+        case .privacyPolicy:
+
+            let privacyVC = self.storyboard?.instantiateViewController(withIdentifier: "PrivacyPolicyViewController") as! PrivacyPolicyViewController
+
+            self.navigationController?.pushViewController(privacyVC, animated: true)
+
         default:
 
             break

@@ -73,6 +73,8 @@
 		20892FC71E821A0700369946 /* Combination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20892FC61E821A0700369946 /* Combination.swift */; };
 		20892FCD1E8223FB00369946 /* Film.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20892FCC1E8223FB00369946 /* Film.swift */; };
 		20892FCF1E827C0C00369946 /* TTInputButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20892FCE1E827C0C00369946 /* TTInputButton.swift */; };
+		20C388871EB1A6DA0091FA4E /* PrivacyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C388861EB1A6DA0091FA4E /* PrivacyViewController.swift */; };
+		20C388891EB1BC520091FA4E /* PrivacyPolicyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C388881EB1BC520091FA4E /* PrivacyPolicyViewController.swift */; };
 		20E6C6FE1E9B833C0021F1DB /* HomePageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E6C6FC1E9B833C0021F1DB /* HomePageTableViewCell.swift */; };
 		20E6C6FF1E9B833C0021F1DB /* HomePageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20E6C6FD1E9B833C0021F1DB /* HomePageTableViewCell.xib */; };
 		20E6C7011E9C76870021F1DB /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E6C7001E9C76870021F1DB /* HomeTableViewController.swift */; };
@@ -173,6 +175,8 @@
 		20892FC61E821A0700369946 /* Combination.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Combination.swift; sourceTree = "<group>"; };
 		20892FCC1E8223FB00369946 /* Film.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Film.swift; sourceTree = "<group>"; };
 		20892FCE1E827C0C00369946 /* TTInputButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTInputButton.swift; sourceTree = "<group>"; };
+		20C388861EB1A6DA0091FA4E /* PrivacyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrivacyViewController.swift; sourceTree = "<group>"; };
+		20C388881EB1BC520091FA4E /* PrivacyPolicyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyViewController.swift; sourceTree = "<group>"; };
 		20E6C6FC1E9B833C0021F1DB /* HomePageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePageTableViewCell.swift; sourceTree = "<group>"; };
 		20E6C6FD1E9B833C0021F1DB /* HomePageTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomePageTableViewCell.xib; sourceTree = "<group>"; };
 		20E6C7001E9C76870021F1DB /* HomeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
@@ -307,6 +311,7 @@
 				200F159E1EA7008100268240 /* AccountSettingTableViewController.swift */,
 				20F056701EA9F5FF00C597B2 /* PasswordSettingTableViewController.swift */,
 				20F0566C1EA9F5AB00C597B2 /* EmailSettingTableViewController.swift */,
+				20C388881EB1BC520091FA4E /* PrivacyPolicyViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -364,6 +369,7 @@
 		205DC7AB1E94ED4F00A3E46E /* SignUp */ = {
 			isa = PBXGroup;
 			children = (
+				20C388861EB1A6DA0091FA4E /* PrivacyViewController.swift */,
 				2084E2DB1E954D6A00EE06DA /* SignUpViewController.swift */,
 				205DC7AE1E94ED7100A3E46E /* CreateUserViewController.swift */,
 				205DC7B01E94EFD000A3E46E /* UsernameViewController.swift */,
@@ -638,12 +644,14 @@
 				20892FC71E821A0700369946 /* Combination.swift in Sources */,
 				205DC7891E8FF99600A3E46E /* PersonalTableViewCell.swift in Sources */,
 				2083ABCB1E9A30EE00AB0B5A /* ShareNewPostViewController.swift in Sources */,
+				20C388871EB1A6DA0091FA4E /* PrivacyViewController.swift in Sources */,
 				2083ABCD1E9A457B00AB0B5A /* SharedPost.swift in Sources */,
 				20892FCF1E827C0C00369946 /* TTInputButton.swift in Sources */,
 				200F15B51EA70A0E00268240 /* ProfileSettingTableViewController.swift in Sources */,
 				20E6C7011E9C76870021F1DB /* HomeTableViewController.swift in Sources */,
 				20EDD1061EA618E8000AD79B /* SettingTableViewCell.swift in Sources */,
 				201978BE1E80BAE20013FACE /* LetsDev.xcdatamodeld in Sources */,
+				20C388891EB1BC520091FA4E /* PrivacyPolicyViewController.swift in Sources */,
 				20892FC21E812D9B00369946 /* DevProcess.swift in Sources */,
 				205DC77A1E8FF63B00A3E46E /* NewDevTableViewCellOneContent.swift in Sources */,
 				205DC7A61E93ACFE00A3E46E /* FavoriteTableViewCell.swift in Sources */,

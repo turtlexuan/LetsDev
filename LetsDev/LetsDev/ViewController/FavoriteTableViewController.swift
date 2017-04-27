@@ -44,9 +44,14 @@ class FavoriteTableViewController: UITableViewController {
 
             NVActivityIndicatorPresenter.sharedInstance.stopAnimating()
 
+            let noRecordView = self.configNoRecordView()
+
             if combinations.count == 0 {
-                let noRecordView = self.configNoRecordView()
+
                 self.tableView.addSubview(noRecordView)
+            } else {
+
+                noRecordView.removeFromSuperview()
             }
         }
     }
@@ -129,6 +134,35 @@ class FavoriteTableViewController: UITableViewController {
         self.present(logInVC!, animated: true, completion: nil)
     }
 
+    func showRemoveFavoriteAlert() {
+
+//        func removeFavorite(_ sender: UIButton) {
+//            guard
+//                let cell = sender.superview?.superview?.superview as? UITableViewCell,
+//                let indexPath = self.tableView.indexPath(for: cell) else { return }
+//            let key = self.sharedPosts[indexPath.row].key
+//            
+//            CommunityManager.shared.removeFavorite(key) { (_, error) in
+//                
+//                if error != nil {
+//                    print(error ?? "")
+//                    return
+//                }
+//                
+//                guard let indexOfRecord = TabBarController.favoriteKeys.index(of: key) else { return }
+//                TabBarController.favoriteKeys.remove(at: indexOfRecord)
+//                FavoriteManager.shared.updateFavorite(with: TabBarController.favoriteKeys)
+//                
+//                FIRAnalytics.logEvent(withName: "Remove_Favorite", parameters: [
+//                    "User": currentUser.uid as NSObject,
+//                    "Post": key as NSObject])
+//                
+//                self.tableView.reloadRows(at: [indexPath], with: .none)
+//            }
+//        }
+
+    }
+
     // MARK: - Table view data source
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -172,8 +206,43 @@ class FavoriteTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //
-        // TODO : delete favorite
+
+        self.showRemoveFavoriteAlert()
+
+    }
+
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+
+        if editingStyle == .delete {
+
+            CommunityManager.shared.removeFavorite(self.favorites[indexPath.row].key, completion: { (_, error) in
+
+                if error != nil {
+                    print(error ?? "")
+                    return
+                }
+
+                guard let indexOfRecord = TabBarController.favoriteKeys.index(of: self.favorites[indexPath.row].key) else { return }
+                TabBarController.favoriteKeys.remove(at: indexOfRecord)
+
+                FavoriteManager.shared.updateFavorite(with: TabBarController.favoriteKeys)
+
+                FIRAnalytics.logEvent(withName: "Remove_Favorite", parameters: [
+                    "User": currentUser.uid as NSObject,
+                    "Post": self.favorites[indexPath.row].key as NSObject])
+
+                self.favorites.remove(at: indexPath.row)
+
+                if self.favorites.count == 0 {
+                    let noRecordView = self.configNoRecordView()
+                    self.tableView.addSubview(noRecordView)
+                }
+
+                self.tableView.reloadData()
+
+            })
+
+        }
 
     }
 

@@ -219,7 +219,7 @@ class SettingsTableViewController: UITableViewController {
         if MFMailComposeViewController.canSendMail() {
             let mail = MFMailComposeViewController()
             mail.mailComposeDelegate = self
-            mail.setToRecipients(["paul@hackingwithswift.com"])
+            mail.setToRecipients(["turtlexuan@gmail.com"])
 
             present(mail, animated: true)
         } else {

@@ -43,6 +43,37 @@ class UserManager {
         })
     }
 
+    typealias BlockUsers = (_ blockList: [(uid: String, username: String)]) -> Void
+
+    func getBlockUser(completion: @escaping BlockUsers) {
+
+        guard let uid = self.auth?.currentUser?.uid else { return }
+
+        var blockList: [(uid: String, username: String)] = []
+//        var sharedPostTuple: [(sharedPost: SharedPost, uid: String, key: String)] = []
+
+        self.databaseRef.child("Users").child(uid).child("Block").observeSingleEvent(of: .value, with: { (snapshot) in
+
+            for children in snapshot.children {
+
+                guard let child = children as? FIRDataSnapshot, let result = child.value as? [String: Any] else { return }
+
+                guard
+                    let uid = result["Uid"] as? String,
+                    let username = result["Username"] as? String else { return }
+
+                blockList.append((uid, username))
+
+                print(result)
+
+            }
+
+            completion(blockList)
+
+        })
+
+    }
+
     typealias UpdateResult = (_ databaseRef: FIRDatabaseReference, _ error: Error?) -> Void
 
     func updateUser(_ username: String, bio: String, profileImage: String, completion: @escaping UpdateResult) {
@@ -121,6 +152,20 @@ class UserManager {
                 completion(nil)
             })
         })
+
+    }
+
+    typealias BlockResult = (_ error: Error?) -> Void
+
+    func blockUser(with username: String, userUid: String, completion: @escaping BlockResult) {
+
+        guard let uid = self.auth?.currentUser?.uid else { return }
+
+        self.databaseRef.child("Users").child(uid).child("Block").child(userUid).updateChildValues(["Username": username, "Uid": userUid]) { (error, _) in
+
+            completion(error)
+
+        }
 
     }
 

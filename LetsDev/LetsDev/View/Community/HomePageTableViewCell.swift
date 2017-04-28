@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import ExpandableLabel
 
 class HomePageTableViewCell: UITableViewCell {
 
@@ -15,7 +14,7 @@ class HomePageTableViewCell: UITableViewCell {
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var moreButton: UIButton!
-    @IBOutlet weak var messageLabel: ExpandableLabel!
+    @IBOutlet weak var messageLabel: UILabel!
     @IBOutlet weak var combinationBackground: UIView!
     @IBOutlet weak var filmLabel: UILabel!
     @IBOutlet weak var devTimeLabel: UILabel!
@@ -23,6 +22,7 @@ class HomePageTableViewCell: UITableViewCell {
     @IBOutlet weak var dilutionLabel: UILabel!
     @IBOutlet weak var filmImageView: UIImageView!
     @IBOutlet weak var noteLabel: UILabel!
+    @IBOutlet weak var reportButton: UIButton!
 
     override func awakeFromNib() {
         super.awakeFromNib()

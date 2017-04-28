@@ -106,7 +106,7 @@ Vivamus at sem massa. Donec egestas, ligula vitae condimentum dignissim, arcu en
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dyT-dN-bEK">
-                                <rect key="frame" x="338" y="27" width="20" height="20"/>
+                                <rect key="frame" x="310" y="27" width="20" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="g61-MG-DY2"/>
                                     <constraint firstAttribute="width" constant="20" id="pBT-H2-uGb"/>
@@ -114,7 +114,7 @@ Vivamus at sem massa. Donec egestas, ligula vitae condimentum dignissim, arcu en
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" image="bookmark-white"/>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ApZ-cu-o81" customClass="ExpandableLabel" customModule="ExpandableLabel">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ApZ-cu-o81">
                                 <rect key="frame" x="12" y="74" width="350" height="58.5"/>
                                 <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque dictum, nunc eget sagittis convallis, dolor sapien pharetra quam, non semper orci enim sed nisl. In nisl ligula, fringilla quis metus vitae, porttitor vehicula sapien. Praesent ipsum eros, mattis quis massa sit amet, luctus commodo lacus. Sed nisl urna, accumsan sit amet ex in, pretium elementum tellus. Donec sollicitudin porta condimentum. Fusce viverra in risus non ullamcorper. Etiam venenatis urna purus, in imperdiet sapien lobortis sit amet. Curabitur ullamcorper venenatis nisl sit amet rutrum. Etiam elementum velit quis hendrerit ultricies. Proin nec tellus a odio tincidunt auctor pharetra sed orci. Curabitur non elit eu odio elementum pulvinar.
 </string>
@@ -128,12 +128,22 @@ Vivamus at sem massa. Donec egestas, ligula vitae condimentum dignissim, arcu en
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mtq-ba-dbC">
+                                <rect key="frame" x="342" y="27" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="T6G-zi-VNg"/>
+                                    <constraint firstAttribute="width" constant="20" id="dQP-Nd-gcO"/>
+                                </constraints>
+                                <color key="tintColor" red="0.67758980550000003" green="0.81282903139999996" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Button" image="more"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.11764705882352941" green="0.11764705882352941" blue="0.11764705882352941" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="ApZ-cu-o81" secondAttribute="trailing" constant="12" id="1CL-Mz-yyG"/>
-                            <constraint firstAttribute="trailing" secondItem="dyT-dN-bEK" secondAttribute="trailing" constant="16" id="27T-QC-7sG"/>
                             <constraint firstItem="ApZ-cu-o81" firstAttribute="leading" secondItem="hcG-0R-skf" secondAttribute="leading" constant="12" id="5Cr-cB-tj1"/>
+                            <constraint firstItem="Mtq-ba-dbC" firstAttribute="centerY" secondItem="7i5-v5-Zab" secondAttribute="centerY" id="5X8-n9-PRE"/>
+                            <constraint firstAttribute="trailing" secondItem="Mtq-ba-dbC" secondAttribute="trailing" constant="12" id="6lL-XQ-wAd"/>
                             <constraint firstItem="WPj-W6-hjy" firstAttribute="leading" secondItem="7i5-v5-Zab" secondAttribute="trailing" constant="12" id="BpI-WF-dgX"/>
                             <constraint firstItem="7i5-v5-Zab" firstAttribute="top" secondItem="hcG-0R-skf" secondAttribute="top" constant="12" id="FcL-73-S5l"/>
                             <constraint firstAttribute="bottom" secondItem="B5v-hn-xaw" secondAttribute="bottom" constant="8" id="OGj-cJ-Pe9"/>
@@ -143,6 +153,7 @@ Vivamus at sem massa. Donec egestas, ligula vitae condimentum dignissim, arcu en
                             <constraint firstItem="B5v-hn-xaw" firstAttribute="top" secondItem="ApZ-cu-o81" secondAttribute="bottom" constant="12" id="gUV-Td-F20"/>
                             <constraint firstItem="WPj-W6-hjy" firstAttribute="top" secondItem="hcG-0R-skf" secondAttribute="top" constant="12" id="h4N-d1-gLO"/>
                             <constraint firstAttribute="trailing" secondItem="B5v-hn-xaw" secondAttribute="trailing" constant="12" id="iwX-gH-2aj"/>
+                            <constraint firstItem="Mtq-ba-dbC" firstAttribute="leading" secondItem="dyT-dN-bEK" secondAttribute="trailing" constant="12" id="oCs-fH-9R6"/>
                             <constraint firstItem="pZZ-Kv-m2L" firstAttribute="leading" secondItem="7i5-v5-Zab" secondAttribute="trailing" constant="12" id="v6T-bQ-wEW"/>
                             <constraint firstItem="pZZ-Kv-m2L" firstAttribute="top" secondItem="WPj-W6-hjy" secondAttribute="bottom" constant="8" id="vnJ-25-HA3"/>
                             <constraint firstItem="dyT-dN-bEK" firstAttribute="centerY" secondItem="7i5-v5-Zab" secondAttribute="centerY" id="wiT-jd-Hyp"/>
@@ -169,6 +180,7 @@ Vivamus at sem massa. Donec egestas, ligula vitae condimentum dignissim, arcu en
                 <outlet property="moreButton" destination="dyT-dN-bEK" id="3Mg-xv-fbi"/>
                 <outlet property="noteLabel" destination="NGB-NQ-TDe" id="Ye2-xE-P6e"/>
                 <outlet property="profileImageView" destination="7i5-v5-Zab" id="CpW-7E-KWx"/>
+                <outlet property="reportButton" destination="Mtq-ba-dbC" id="vVO-xw-J0d"/>
                 <outlet property="usernameLabel" destination="WPj-W6-hjy" id="ccU-Gv-gTg"/>
             </connections>
             <point key="canvasLocation" x="109" y="-73.5"/>
@@ -176,5 +188,6 @@ Vivamus at sem massa. Donec egestas, ligula vitae condimentum dignissim, arcu en
     </objects>
     <resources>
         <image name="bookmark-white" width="512" height="512"/>
+        <image name="more" width="512" height="512"/>
     </resources>
 </document>

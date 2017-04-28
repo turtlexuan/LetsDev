@@ -11,6 +11,7 @@ import SKPhotoBrowser
 import Kingfisher
 import IQKeyboardManagerSwift
 import Firebase
+import MessageUI
 
 class CommentTableViewController: UITableViewController {
 
@@ -121,6 +122,8 @@ class CommentTableViewController: UITableViewController {
             cell.timeLabel.text = dateString
 
             cell.favoriteButton.tintColor = Color.buttonColor
+            cell.moreButton.tintColor = Color.buttonColor
+            cell.moreButton.addTarget(self, action: #selector(showReportAlert(_:)), for: .touchUpInside)
 
             if TabBarController.favoriteKeys.contains(self.key) {
                 cell.favoriteButton.setImage(#imageLiteral(resourceName: "bookmark-black-shape"), for: .normal)
@@ -384,6 +387,64 @@ class CommentTableViewController: UITableViewController {
 
     }
 
+    func showReportAlert(_ sender: UIButton) {
+
+        let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+
+        let reportAction = UIAlertAction(title: "Report", style: .default) { (_) in
+            //
+            if MFMailComposeViewController.canSendMail() {
+
+                let mail = MFMailComposeViewController()
+                mail.mailComposeDelegate = self
+                mail.setToRecipients(["turtlexuan@gmail.com"])
+                mail.setSubject("Report")
+                mail.setMessageBody("I want to report post : \(self.key) because", isHTML: false)
+
+                self.present(mail, animated: true)
+
+            } else {
+                return
+            }
+
+        }
+
+        let deleteAction = UIAlertAction(title: "Delete Post", style: .default) { (_) in
+            //
+            CommunityManager.shared.removePost(with: self.key) { error in
+
+                if error != nil {
+
+                    print(error ?? "")
+
+                    return
+                }
+
+                self.navigationController?.popViewController(animated: true)
+
+            }
+        }
+
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+
+        if currentUser.uid != nil {
+            if currentUser.uid == uid {
+
+                alertController.addAction(deleteAction)
+
+            }
+
+        } else {
+
+            alertController.addAction(reportAction)
+        }
+
+        alertController.addAction(cancelAction)
+
+        self.present(alertController, animated: true, completion: nil)
+
+    }
+
 }
 
 extension CommentTableViewController: UICollectionViewDataSource, UICollectionViewDelegate {
@@ -413,6 +474,20 @@ extension CommentTableViewController: UICollectionViewDataSource, UICollectionVi
 
         self.present(browser, animated: true, completion: nil)
     }
+}
+
+extension CommentTableViewController: MFMailComposeViewControllerDelegate {
+
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+
+        if error != nil {
+
+            return
+        }
+
+        controller.dismiss(animated: true)
+    }
+
 }
 
 extension CommentTableViewController: UITextViewDelegate {

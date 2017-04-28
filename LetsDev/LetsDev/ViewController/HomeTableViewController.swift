@@ -10,11 +10,11 @@ import UIKit
 import Firebase
 import NVActivityIndicatorView
 import Crashlytics
+import MessageUI
 
 class HomeTableViewController: UITableViewController {
 
     var sharedPosts: [(sharedPost: SharedPost, uid: String, key: String)] = []
-    var states: [Bool]!
     private var uid = ""
 
     override func viewDidLoad() {
@@ -39,13 +39,32 @@ class HomeTableViewController: UITableViewController {
 
         NVActivityIndicatorPresenter.sharedInstance.startAnimating(activityData)
 
-        CommunityManager.shared.getPost { (sharedPosts) in
-            self.sharedPosts = sharedPosts
-            self.states = [Bool](repeating: true, count: sharedPosts.count)
-            self.tableView.reloadData()
+        if self.uid != "" {
 
-            NVActivityIndicatorPresenter.sharedInstance.stopAnimating()
+            UserManager.shared.getBlockUser { (blockList) in
+                //
+                var blockUid: [String] = []
+                for item in blockList {
+                    blockUid.append(item.uid)
+                }
+
+                CommunityManager.shared.getPost(with: blockUid, completion: { (sharedPosts) in
+                    self.sharedPosts = sharedPosts
+                    self.tableView.reloadData()
+
+                    NVActivityIndicatorPresenter.sharedInstance.stopAnimating()
+                })
+            }
+        } else {
+
+            CommunityManager.shared.getPost { (sharedPosts) in
+                self.sharedPosts = sharedPosts
+                self.tableView.reloadData()
+
+                NVActivityIndicatorPresenter.sharedInstance.stopAnimating()
+            }
         }
+
     }
     // MARK: - Table view data source
 
@@ -89,8 +108,7 @@ class HomeTableViewController: UITableViewController {
         let dateString = dateFormatter.string(from: date)
 
         cell.dateLabel.text = dateString
-        cell.messageLabel.numberOfLines = 3
-        cell.messageLabel.collapsed = states[indexPath.row]
+        cell.messageLabel.numberOfLines = 0
         cell.messageLabel.text = index.sharedPost.message
         cell.filmLabel.text = index.sharedPost.combination.film
         cell.developerLabel.text = index.sharedPost.combination.dev
@@ -101,6 +119,8 @@ class HomeTableViewController: UITableViewController {
         cell.noteLabel.text = index.sharedPost.note
 
         cell.moreButton.tintColor = Color.buttonColor
+        cell.reportButton.tintColor = Color.buttonColor
+        cell.reportButton.addTarget(self, action: #selector(showReportAlert(_:)), for: .touchUpInside)
 
         if TabBarController.favoriteKeys.contains(index.key) {
             cell.moreButton.setImage(#imageLiteral(resourceName: "bookmark-black-shape"), for: .normal)
@@ -261,6 +281,95 @@ class HomeTableViewController: UITableViewController {
         self.present(alertController, animated: true, completion: nil)
 
     }
+
+    func showReportAlert(_ sender: UIButton) {
+
+        let cell = sender.superview?.superview?.superview as! HomePageTableViewCell
+        guard let indexPath = self.tableView.indexPath(for: cell) else { return }
+        let uid = self.sharedPosts[indexPath.row].uid
+
+        var username = ""
+
+        UserManager.shared.getUser(uid) { (user) in
+            username = user.username
+        }
+
+        let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+
+        let reportAction = UIAlertAction(title: "Report", style: .default) { (_) in
+            //
+            if MFMailComposeViewController.canSendMail() {
+
+                let mail = MFMailComposeViewController()
+                mail.mailComposeDelegate = self
+                mail.setToRecipients(["turtlexuan@gmail.com"])
+                mail.setSubject("Report")
+                mail.setMessageBody("I want to report post : \(self.sharedPosts[indexPath.row].key) because", isHTML: false)
+
+                self.present(mail, animated: true)
+
+            } else {
+                return
+            }
+
+        }
+
+        let deleteAction = UIAlertAction(title: "Delete Post", style: .default) { (_) in
+            //
+            CommunityManager.shared.removePost(with: self.sharedPosts[indexPath.row].key) { error in
+
+                if error != nil {
+
+                    print(error ?? "")
+
+                    return
+                }
+
+                self.sharedPosts.remove(at: indexPath.row)
+                self.tableView.deleteRows(at: [indexPath], with: .fade)
+
+            }
+        }
+
+        let blockAction = UIAlertAction(title: "Block \(username)", style: .default) { (_) in
+
+            UserManager.shared.blockUser(with: username, userUid: self.sharedPosts[indexPath.row].uid, completion: { (error) in
+                print(error ?? "")
+            })
+        }
+
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+
+        if currentUser.uid != nil {
+            if currentUser.uid == uid {
+
+                alertController.addAction(deleteAction)
+
+            } else {
+                alertController.addAction(blockAction)
+                alertController.addAction(reportAction)
+            }
+
+        } else {
+
+            alertController.addAction(reportAction)
+        }
+
+        alertController.addAction(cancelAction)
+
+        self.present(alertController, animated: true, completion: nil)
+
+    }
+
+}
+
+extension HomeTableViewController: MFMailComposeViewControllerDelegate {
+
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+
+        controller.dismiss(animated: true)
+    }
+
 }
 
 extension HomeTableViewController {

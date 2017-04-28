@@ -53,9 +53,27 @@ class CommunityManager {
         }
     }
 
+    typealias RemovePostResult = (_ error: Error?) -> Void
+
+    func removePost(with key: String, completion: RemovePostResult?) {
+
+        self.databaseRef.child("Community").child(key).removeValue { (error, _) in
+
+            if error != nil {
+
+                completion?(error!)
+
+            }
+
+            completion?(nil)
+
+        }
+
+    }
+
     typealias FetchSuccess = (_ sharedPosts: [(sharedPost: SharedPost, uid: String, key: String)]) -> Void
 
-    func getPost(completion: @escaping FetchSuccess) {
+    func getPost(with block: [String]? = nil, completion: @escaping FetchSuccess) {
 
         self.databaseRef.child("Community").observeSingleEvent(of: .value, with: { (snapshot) in
 
@@ -135,7 +153,15 @@ class CommunityManager {
 
                 let sharedPost = SharedPost(combination: combinations, note: note, photo: photoString, date: millisDate, message: message, comment: comment, like: like, favorite: favorite)
 
-                sharedPostTuple.append((sharedPost, uid, task.key))
+                if let blockUid = block {
+                    if blockUid.contains(uid) {
+                        continue
+                    } else {
+                        sharedPostTuple.append((sharedPost, uid, task.key))
+                    }
+                } else {
+                    sharedPostTuple.append((sharedPost, uid, task.key))
+                }
             }
 
             completion(sharedPostTuple)

@@ -37,6 +37,8 @@ class UsernameViewController: UIViewController {
         self.usernameTextField.selectedLineColor = .white
         self.usernameTextField.textColor = .white
         self.usernameTextField.delegate = self
+        self.usernameTextField.placeholderText = "Username"
+        self.usernameTextField.placeholder = "Username"
 
     }
 

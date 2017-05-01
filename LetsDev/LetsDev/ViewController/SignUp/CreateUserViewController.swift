@@ -41,7 +41,8 @@ class CreateUserViewController: UIViewController {
         self.emailTextField.selectedLineColor = .white
         self.emailTextField.selectedIconColor = .white
         self.emailTextField.textColor = .white
-        self.emailTextField.placeholderText = "Your Email Address."
+        self.emailTextField.placeholderText = "Email Address."
+        self.emailTextField.placeholder = "Your Email Address."
         self.emailTextField.delegate = self
         self.emailTextField.keyboardType = .emailAddress
 
@@ -56,6 +57,7 @@ class CreateUserViewController: UIViewController {
         self.passwordTextField.selectedLineColor = .white
         self.passwordTextField.textColor = .white
         self.passwordTextField.placeholderText = "At Least Eight Characters Password."
+        self.passwordTextField.placeholder = "Password"
         self.passwordTextField.delegate = self
         self.passwordTextField.isSecureTextEntry = true
     }

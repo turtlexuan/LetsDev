@@ -923,7 +923,7 @@
                     <toolbarItems/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="O8H-zw-Ary">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="O8H-zw-Ary">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1100,7 +1100,7 @@ Vivamus at sem massa. Donec egestas, ligula vitae condimentum dignissim, arcu en
                     <toolbarItems/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="hqZ-PQ-GD0">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="hqZ-PQ-GD0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1140,7 +1140,7 @@ Vivamus at sem massa. Donec egestas, ligula vitae condimentum dignissim, arcu en
                     <toolbarItems/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="X5m-AK-6Ef">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="X5m-AK-6Ef">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1180,7 +1180,7 @@ Vivamus at sem massa. Donec egestas, ligula vitae condimentum dignissim, arcu en
                     <toolbarItems/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="hj6-Tb-z2e">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="hj6-Tb-z2e">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1220,7 +1220,7 @@ Vivamus at sem massa. Donec egestas, ligula vitae condimentum dignissim, arcu en
                     <toolbarItems/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="aAH-Z4-dSc">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="aAH-Z4-dSc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1406,7 +1406,7 @@ We also agree to the Individual Redress Principle which requires that individual
                     <toolbarItems/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="7XO-ZF-VbG">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="7XO-ZF-VbG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1426,7 +1426,7 @@ We also agree to the Individual Redress Principle which requires that individual
                     <toolbarItems/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="RZ7-ZO-9bx">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="RZ7-ZO-9bx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1444,7 +1444,7 @@ We also agree to the Individual Redress Principle which requires that individual
             <objects>
                 <navigationController storyboardIdentifier="logInNavigation" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="dKP-Ed-mfw" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="fwM-q6-t46">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="fwM-q6-t46">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1673,7 +1673,7 @@ We also agree to the Individual Redress Principle which requires that individual
             <objects>
                 <navigationController storyboardIdentifier="CreateUserNavigation" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="0zc-Do-RDp" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ook-hM-e0v">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Ook-hM-e0v">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

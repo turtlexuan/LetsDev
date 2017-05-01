@@ -841,7 +841,7 @@
                                     <action selector="cancelAction:" destination="Bqy-Nw-ccV" eventType="touchUpInside" id="nbZ-Ip-2v8"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Camera" translatesAutoresizingMaskIntoConstraints="NO" id="18B-IY-5Qa">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Camera" translatesAutoresizingMaskIntoConstraints="NO" id="18B-IY-5Qa">
                                 <rect key="frame" x="127.5" y="116" width="120" height="120"/>
                                 <gestureRecognizers/>
                                 <constraints>

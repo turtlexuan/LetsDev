@@ -267,6 +267,37 @@ class PersonalTableViewController: UITableViewController {
         }
         self.navigationController?.pushViewController(recordVC, animated: true)
     }
+
+    override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+
+        let deleteAction = UITableViewRowAction(style: .destructive, title: "Delete") { (_, indexPath) in
+
+            RecordManager.shared.deleteRecord(self.records[indexPath.row].key, completion: { (error) in
+
+                if error != nil {
+                    print(error ?? "")
+                    return
+                }
+
+                self.records.remove(at: indexPath.row)
+                self.tableView.deleteRows(at: [indexPath], with: .fade)
+
+                if self.records.count == 0 {
+
+                    let noRecordView = self.configNoRecordView()
+                    self.tableView.addSubview(noRecordView)
+
+                }
+
+            })
+
+        }
+
+        deleteAction.backgroundColor = UIColor(hex: "990000")
+
+        return [deleteAction]
+    }
+
 }
 
 extension PersonalTableViewController {

@@ -157,4 +157,26 @@ class RecordManager {
             completion(records)
         })
     }
+
+    typealias RecordDeleteResult = (_ error: Error?) -> Void
+
+    func deleteRecord(_ key: String, completion: @escaping RecordDeleteResult) {
+
+        guard let uid = self.auth?.currentUser?.uid else { return }
+
+        self.databaseRef.child("Records").child(uid).child(key).removeValue { (error, _) in
+            //
+            print(error ?? "No Error")
+
+            if error != nil {
+
+                completion(error)
+
+                return
+            }
+
+            completion(nil)
+        }
+
+    }
 }

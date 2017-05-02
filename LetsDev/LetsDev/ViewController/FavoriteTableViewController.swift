@@ -134,35 +134,6 @@ class FavoriteTableViewController: UITableViewController {
         self.present(logInVC!, animated: true, completion: nil)
     }
 
-    func showRemoveFavoriteAlert() {
-
-//        func removeFavorite(_ sender: UIButton) {
-//            guard
-//                let cell = sender.superview?.superview?.superview as? UITableViewCell,
-//                let indexPath = self.tableView.indexPath(for: cell) else { return }
-//            let key = self.sharedPosts[indexPath.row].key
-//            
-//            CommunityManager.shared.removeFavorite(key) { (_, error) in
-//                
-//                if error != nil {
-//                    print(error ?? "")
-//                    return
-//                }
-//                
-//                guard let indexOfRecord = TabBarController.favoriteKeys.index(of: key) else { return }
-//                TabBarController.favoriteKeys.remove(at: indexOfRecord)
-//                FavoriteManager.shared.updateFavorite(with: TabBarController.favoriteKeys)
-//                
-//                FIRAnalytics.logEvent(withName: "Remove_Favorite", parameters: [
-//                    "User": currentUser.uid as NSObject,
-//                    "Post": key as NSObject])
-//                
-//                self.tableView.reloadRows(at: [indexPath], with: .none)
-//            }
-//        }
-
-    }
-
     // MARK: - Table view data source
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -203,12 +174,6 @@ class FavoriteTableViewController: UITableViewController {
         cell.newDevButton.addTarget(self, action: #selector(newProcess(_:)), for: .touchUpInside)
 
         return cell
-    }
-
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
-        self.showRemoveFavoriteAlert()
-
     }
 
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {

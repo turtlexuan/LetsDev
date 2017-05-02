@@ -9,6 +9,7 @@
 import UIKit
 import NVActivityIndicatorView
 import Firebase
+import AudioToolbox
 
 class TimerViewController: UIViewController {
 
@@ -126,6 +127,8 @@ class TimerViewController: UIViewController {
 
         if self.nowStep == 9 {
             if self.processTimes[self.nowStep] < 1 {
+                AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
+                AudioServicesPlayAlertSound(1005)
                 self.timer.invalidate()
                 self.showFinishAlert()
             } else {
@@ -134,6 +137,10 @@ class TimerViewController: UIViewController {
             }
         } else {
             if self.processTimes[self.nowStep] < 1 {
+                if self.nowStep % 2 != 0 {
+                    AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
+                    AudioServicesPlayAlertSound(1005)
+                }
                 self.timer.invalidate()
                 self.nowStep += 1
                 self.processingLabel.text = self.processTitle[self.nowStep]

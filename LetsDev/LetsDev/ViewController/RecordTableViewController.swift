@@ -242,6 +242,7 @@ class RecordTableViewController: UITableViewController {
 
     func showShareAlert(_ sender: UIBarButtonItem) {
         let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+
         let shareAction = UIAlertAction(title: "Share With Other User.", style: .default) { (_) in
             let sharedNavigation = self.storyboard?.instantiateViewController(withIdentifier: "ShareNewPostNavigation") as! UINavigationController
             let sharedVC = sharedNavigation.viewControllers[0] as! ShareNewPostViewController
@@ -254,6 +255,7 @@ class RecordTableViewController: UITableViewController {
 
             self.present(sharedNavigation, animated: true, completion: nil)
         }
+
         let useProcessAction = UIAlertAction(title: "Start a New Developement.", style: .default) { (_) in
 
             guard
@@ -275,6 +277,7 @@ class RecordTableViewController: UITableViewController {
 
             self.present(newDevNavigation, animated: true, completion: nil)
         }
+
         var favoriteAction = UIAlertAction()
         if self.isFavorite == true {
             favoriteAction = UIAlertAction(title: "Remove Favortie.", style: .default) { (_) in
@@ -300,6 +303,22 @@ class RecordTableViewController: UITableViewController {
                 self.isFavorite = true
             }
         }
+
+        let deleteAction = UIAlertAction(title: "Delete Record", style: .destructive) { (_) in
+
+            RecordManager.shared.deleteRecord(self.recordKey, completion: { (error) in
+
+                if error != nil {
+                    print(error ?? "")
+                    return
+                }
+
+                self.navigationController?.popViewController(animated: true)
+
+            })
+
+        }
+
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
 
         if currentUser.uid == nil {
@@ -309,6 +328,7 @@ class RecordTableViewController: UITableViewController {
             alertController.addAction(shareAction)
             alertController.addAction(useProcessAction)
             alertController.addAction(favoriteAction)
+            alertController.addAction(deleteAction)
             alertController.addAction(cancelAction)
         }
 

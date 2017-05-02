@@ -176,9 +176,9 @@ class FavoriteTableViewController: UITableViewController {
         return cell
     }
 
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
 
-        if editingStyle == .delete {
+        let deleteAction = UITableViewRowAction(style: .destructive, title: "Delete") { (_, indexPath) in
 
             CommunityManager.shared.removeFavorite(self.favorites[indexPath.row].key, completion: { (_, error) in
 
@@ -206,9 +206,11 @@ class FavoriteTableViewController: UITableViewController {
                 self.tableView.reloadData()
 
             })
-
         }
 
+        deleteAction.backgroundColor = UIColor(hex: "990000")
+
+        return [deleteAction]
     }
 
     func newProcess(_ sender: UIButton) {

@@ -10,6 +10,7 @@ import UIKit
 import NVActivityIndicatorView
 import Firebase
 import AudioToolbox
+import Whisper
 
 class TimerViewController: UIViewController {
 
@@ -140,6 +141,10 @@ class TimerViewController: UIViewController {
                 if self.nowStep % 2 != 0 {
                     AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
                     AudioServicesPlayAlertSound(1005)
+                    
+                    let message = Message(title: "\(self.processTitle[self.nowStep]) Complete.", backgroundColor: .darkGray)
+                    Whisper.show(whisper: message, to: self.navigationController!, action: .present)
+                    hide(whisperFrom: self.navigationController!, after: 3)
                 }
                 self.timer.invalidate()
                 self.nowStep += 1

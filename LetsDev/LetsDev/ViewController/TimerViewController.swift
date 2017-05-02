@@ -90,6 +90,7 @@ class TimerViewController: UIViewController {
     @IBAction func stopAction(_ sender: Any) {
         if self.resumeTapped == false {
             self.timer.invalidate()
+            UIApplication.shared.isIdleTimerDisabled = false
             self.resumeTapped = true
             self.stopButton.setTitle("Resume", for: .normal)
         } else {
@@ -113,6 +114,9 @@ class TimerViewController: UIViewController {
     }
 
     func startTimer() {
+
+        UIApplication.shared.isIdleTimerDisabled = true
+
         self.timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
 
         FIRAnalytics.logEvent(withName: "Timer_Start", parameters: nil)
@@ -200,6 +204,8 @@ class TimerViewController: UIViewController {
         let alertController = UIAlertController(title: "Cancel Process?", message: "Do you want to cancel the timer?", preferredStyle: .alert)
         let doneAction = UIAlertAction(title: "Yes", style: .default) { (_) in
 
+            UIApplication.shared.isIdleTimerDisabled = false
+
             FIRAnalytics.logEvent(withName: "Timer_Canceled", parameters: nil)
 
             self.timer.invalidate()
@@ -216,6 +222,8 @@ class TimerViewController: UIViewController {
     func showFinishAlert() {
         let alertController = UIAlertController(title: "Congratulations!", message: "Your development have just finished!\nLet’s go to record page and add some notes.", preferredStyle: .alert)
         let doneAction = UIAlertAction(title: "OK", style: .default) { (_) in
+
+            UIApplication.shared.isIdleTimerDisabled = false
 
             let activityData = ActivityData(type: .ballRotateChase)
 

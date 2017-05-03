@@ -9,6 +9,7 @@
 import UIKit
 import NVActivityIndicatorView
 import Firebase
+import Whisper
 
 class FavoriteTableViewController: UITableViewController {
 
@@ -203,6 +204,10 @@ class FavoriteTableViewController: UITableViewController {
                     self.tableView.addSubview(noRecordView)
                 }
 
+                let message = Message(title: "Favorite Deleted.", backgroundColor: .darkGray)
+                Whisper.show(whisper: message, to: self.navigationController!, action: .present)
+                hide(whisperFrom: self.navigationController!, after: 3)
+                
                 self.tableView.reloadData()
 
             })

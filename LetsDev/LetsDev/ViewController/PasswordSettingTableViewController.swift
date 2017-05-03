@@ -8,6 +8,7 @@
 
 import UIKit
 import NVActivityIndicatorView
+import Whisper
 
 class PasswordSettingTableViewController: UITableViewController {
 
@@ -76,6 +77,10 @@ class PasswordSettingTableViewController: UITableViewController {
             }
 
             self.navigationController?.popToRootViewController(animated: true)
+            
+            let message = Message(title: "Password Updated.", backgroundColor: .darkGray)
+            Whisper.show(whisper: message, to: self.navigationController!, action: .present)
+            hide(whisperFrom: self.navigationController!, after: 3)
         }
 
         print("Current : \(self.currentPassword)")

@@ -9,6 +9,7 @@
 import UIKit
 import NVActivityIndicatorView
 import MessageUI
+import Whisper
 
 class SettingsTableViewController: UITableViewController {
 
@@ -280,8 +281,14 @@ class SettingsTableViewController: UITableViewController {
 extension SettingsTableViewController: MFMailComposeViewControllerDelegate {
 
     func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        
+        controller.dismiss(animated: true) { 
+            let message = Message(title: "Email Sent.", backgroundColor: .darkGray)
+            Whisper.show(whisper: message, to: self.navigationController!, action: .present)
+            hide(whisperFrom: self.navigationController!, after: 3)
+        }
+        
 
-        controller.dismiss(animated: true)
     }
 
 }

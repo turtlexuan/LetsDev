@@ -10,6 +10,7 @@ import UIKit
 import Kingfisher
 import Firebase
 import NVActivityIndicatorView
+import Whisper
 
 class PersonalTableViewController: UITableViewController {
 
@@ -288,6 +289,10 @@ class PersonalTableViewController: UITableViewController {
                     self.tableView.addSubview(noRecordView)
 
                 }
+                
+                let message = Message(title: "Record Deleted.", backgroundColor: .darkGray)
+                Whisper.show(whisper: message, to: self.navigationController!, action: .present)
+                hide(whisperFrom: self.navigationController!, after: 3)
 
             })
 

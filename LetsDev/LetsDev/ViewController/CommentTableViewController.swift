@@ -12,6 +12,7 @@ import Kingfisher
 import IQKeyboardManagerSwift
 import Firebase
 import MessageUI
+import Whisper
 
 class CommentTableViewController: UITableViewController {
 
@@ -421,6 +422,10 @@ class CommentTableViewController: UITableViewController {
                 }
 
                 self.navigationController?.popViewController(animated: true)
+                
+                let message = Message(title: "Post Deleted.", backgroundColor: .darkGray)
+                Whisper.show(whisper: message, to: self.navigationController!, action: .present)
+                hide(whisperFrom: self.navigationController!, after: 3)
 
             }
         }
@@ -485,7 +490,13 @@ extension CommentTableViewController: MFMailComposeViewControllerDelegate {
             return
         }
 
-        controller.dismiss(animated: true)
+        controller.dismiss(animated: true) {
+            
+            let message = Message(title: "Email Sent.", backgroundColor: .darkGray)
+            Whisper.show(whisper: message, to: self.navigationController!, action: .present)
+            hide(whisperFrom: self.navigationController!, after: 3)
+
+        }
     }
 
 }

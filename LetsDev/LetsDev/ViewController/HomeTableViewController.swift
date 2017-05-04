@@ -328,7 +328,7 @@ class HomeTableViewController: UITableViewController {
 
                 self.sharedPosts.remove(at: indexPath.row)
                 self.tableView.deleteRows(at: [indexPath], with: .fade)
-                
+
                 let message = Message(title: "Post Deleted.", backgroundColor: .darkGray)
                 Whisper.show(whisper: message, to: self.navigationController!, action: .present)
                 hide(whisperFrom: self.navigationController!, after: 3)
@@ -340,7 +340,7 @@ class HomeTableViewController: UITableViewController {
 
             UserManager.shared.blockUser(with: username, userUid: self.sharedPosts[indexPath.row].uid, completion: { (error) in
                 print(error ?? "")
-                
+
                 let message = Message(title: "\(username) Blocked.", backgroundColor: .darkGray)
                 Whisper.show(whisper: message, to: self.navigationController!, action: .present)
                 hide(whisperFrom: self.navigationController!, after: 3)
@@ -377,8 +377,8 @@ extension HomeTableViewController: MFMailComposeViewControllerDelegate {
 
     func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
 
-        controller.dismiss(animated: true) { 
-            
+        controller.dismiss(animated: true) {
+
             let message = Message(title: "Email Sent.", backgroundColor: .darkGray)
             Whisper.show(whisper: message, to: self.navigationController!, action: .present)
             hide(whisperFrom: self.navigationController!, after: 3)

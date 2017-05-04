@@ -24,6 +24,8 @@ class PersonalTableViewController: UITableViewController {
     var records: [Record] = []
     var postCount = 0
 
+    var noRecordView = UIView()
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -32,6 +34,8 @@ class PersonalTableViewController: UITableViewController {
 
         self.navigationItem.title = currentUser.username
         self.tableView.separatorStyle = .none
+
+        self.noRecordView = self.configNoRecordView()
 
     }
 
@@ -66,13 +70,11 @@ class PersonalTableViewController: UITableViewController {
 
             }
 
-            let noRecordView = self.configNoRecordView()
+            self.noRecordView.removeFromSuperview()
 
             if records?.count == 0 {
 
-                self.tableView.addSubview(noRecordView)
-            } else {
-                noRecordView.removeFromSuperview()
+                self.tableView.addSubview(self.noRecordView)
             }
         }
 
@@ -285,11 +287,18 @@ class PersonalTableViewController: UITableViewController {
 
                 if self.records.count == 0 {
 
-                    let noRecordView = self.configNoRecordView()
-                    self.tableView.addSubview(noRecordView)
+                    self.noRecordView.layer.opacity = 0
+
+                    self.tableView.addSubview(self.noRecordView)
+
+                    UIView.animate(withDuration: 0.5, animations: {
+
+                        self.noRecordView.layer.opacity = 1
+
+                    })
 
                 }
-                
+
                 let message = Message(title: "Record Deleted.", backgroundColor: .darkGray)
                 Whisper.show(whisper: message, to: self.navigationController!, action: .present)
                 hide(whisperFrom: self.navigationController!, after: 3)

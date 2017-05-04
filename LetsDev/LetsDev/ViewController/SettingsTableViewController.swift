@@ -281,13 +281,12 @@ class SettingsTableViewController: UITableViewController {
 extension SettingsTableViewController: MFMailComposeViewControllerDelegate {
 
     func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
-        
-        controller.dismiss(animated: true) { 
+
+        controller.dismiss(animated: true) {
             let message = Message(title: "Email Sent.", backgroundColor: .darkGray)
             Whisper.show(whisper: message, to: self.navigationController!, action: .present)
             hide(whisperFrom: self.navigationController!, after: 3)
         }
-        
 
     }
 

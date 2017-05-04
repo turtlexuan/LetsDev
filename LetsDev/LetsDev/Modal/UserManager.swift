@@ -20,10 +20,8 @@ class UserManager {
 
     func getUser(_ uid: String, completion: @escaping GetUserSuccess) {
 
-//        guard let uid = self.auth?.currentUser?.uid else { return }
-
         self.databaseRef.child("Users").child(uid).observeSingleEvent(of: .value, with: { (snapshot) in
-            //
+
             guard let data = snapshot.value as? [String: Any] else { return }
 
             guard
@@ -50,7 +48,6 @@ class UserManager {
         guard let uid = self.auth?.currentUser?.uid else { return }
 
         var blockList: [(uid: String, username: String)] = []
-//        var sharedPostTuple: [(sharedPost: SharedPost, uid: String, key: String)] = []
 
         self.databaseRef.child("Users").child(uid).child("Block").observeSingleEvent(of: .value, with: { (snapshot) in
 

@@ -82,7 +82,7 @@ class AccountSettingTableViewController: UITableViewController {
 
                     NVActivityIndicatorPresenter.sharedInstance.stopAnimating()
                     self.navigationController?.popViewController(animated: true)
-                    
+
                     let message = Message(title: "Email Updated.", backgroundColor: .darkGray)
                     Whisper.show(whisper: message, to: self.navigationController!, action: .present)
                     hide(whisperFrom: self.navigationController!, after: 3)

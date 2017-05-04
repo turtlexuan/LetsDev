@@ -15,6 +15,8 @@ class FavoriteTableViewController: UITableViewController {
 
     var favorites: [(combination: Combination, key: String)] = []
 
+    var noRecordView = UIView()
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,6 +24,8 @@ class FavoriteTableViewController: UITableViewController {
 
         self.tableView.rowHeight = 205
         self.tableView.separatorStyle = .none
+
+        self.noRecordView = self.configNoRecordView()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -45,14 +49,12 @@ class FavoriteTableViewController: UITableViewController {
 
             NVActivityIndicatorPresenter.sharedInstance.stopAnimating()
 
-            let noRecordView = self.configNoRecordView()
-
             if combinations.count == 0 {
 
-                self.tableView.addSubview(noRecordView)
+                self.tableView.addSubview(self.noRecordView)
             } else {
 
-                noRecordView.removeFromSuperview()
+                self.noRecordView.removeFromSuperview()
             }
         }
     }
@@ -200,14 +202,22 @@ class FavoriteTableViewController: UITableViewController {
                 self.favorites.remove(at: indexPath.row)
 
                 if self.favorites.count == 0 {
-                    let noRecordView = self.configNoRecordView()
-                    self.tableView.addSubview(noRecordView)
+
+                    self.noRecordView.layer.opacity = 0
+                    self.tableView.addSubview(self.noRecordView)
+
+                    UIView.animate(withDuration: 0.5, animations: {
+
+                        self.noRecordView.layer.opacity = 1
+
+                    })
+
                 }
 
                 let message = Message(title: "Favorite Deleted.", backgroundColor: .darkGray)
                 Whisper.show(whisper: message, to: self.navigationController!, action: .present)
                 hide(whisperFrom: self.navigationController!, after: 3)
-                
+
                 self.tableView.reloadData()
 
             })

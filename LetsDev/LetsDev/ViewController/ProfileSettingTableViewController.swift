@@ -73,7 +73,7 @@ class ProfileSettingTableViewController: UITableViewController {
 
                     NVActivityIndicatorPresenter.sharedInstance.stopAnimating()
                     self.navigationController?.popViewController(animated: true)
-                    
+
                     let message = Message(title: "Profile Updated.", backgroundColor: .darkGray)
                     Whisper.show(whisper: message, to: self.navigationController!, action: .present)
                     hide(whisperFrom: self.navigationController!, after: 3)
@@ -96,7 +96,7 @@ class ProfileSettingTableViewController: UITableViewController {
 
                 NVActivityIndicatorPresenter.sharedInstance.stopAnimating()
                 self.navigationController?.popViewController(animated: true)
-                
+
                 let message = Message(title: "Profile Updated.", backgroundColor: .darkGray)
                 Whisper.show(whisper: message, to: self.navigationController!, action: .present)
                 hide(whisperFrom: self.navigationController!, after: 3)

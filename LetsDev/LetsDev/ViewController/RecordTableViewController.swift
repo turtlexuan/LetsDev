@@ -315,7 +315,7 @@ class RecordTableViewController: UITableViewController {
                 }
 
                 self.navigationController?.popViewController(animated: true)
-                
+
                 let message = Message(title: "Record Deleted.", backgroundColor: .darkGray)
                 Whisper.show(whisper: message, to: self.navigationController!, action: .present)
                 hide(whisperFrom: self.navigationController!, after: 3)

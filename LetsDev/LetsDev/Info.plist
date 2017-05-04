@@ -18,21 +18,21 @@
 	<string>2.0.0</string>
 	<key>CFBundleVersion</key>
 	<string>3</string>
-	<key>Fabric</key>
-	<dict>
-		<key>APIKey</key>
-		<string>2d178452bb6c172cc052578b18d1ea2cd68f3537</string>
-		<key>Kits</key>
-		<array>
-			<dict>
-				<key>KitInfo</key>
-				<dict/>
-				<key>KitName</key>
-				<string>Crashlytics</string>
-			</dict>
-		</array>
-	</dict>
-	<key>LSRequiresIPhoneOS</key>
+    <key>Fabric</key>
+    <dict>
+        <key>APIKey</key>
+        <string>2d178452bb6c172cc052578b18d1ea2cd68f3537</string>
+        <key>Kits</key>
+        <array>
+            <dict>
+                <key>KitInfo</key>
+                <dict/>
+                <key>KitName</key>
+                <string>Crashlytics</string>
+            </dict>
+        </array>
+    </dict>
+    <key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSCameraUsageDescription</key>
 	<string>To document your records, Let's Dev need to access your Camera.</string>

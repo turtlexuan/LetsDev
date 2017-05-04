@@ -31,17 +31,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         FIRApp.configure()
 
-//        if FIRAuth.auth()?.currentUser?.uid == nil {
-//            // swiftlint:disable force_cast
-//            let rootController = mainStoryboard.instantiateViewController(withIdentifier: "signUpNavigation")
-//            self.window?.rootViewController = rootController
-//        }
-
-        Fabric.with([Crashlytics.self])
-
         IQKeyboardManager.sharedManager().enable = true
         IQKeyboardManager.sharedManager().overrideKeyboardAppearance = true
         IQKeyboardManager.sharedManager().keyboardAppearance = .dark
+
+        Fabric.with([Crashlytics.self])
+
         return true
     }
 

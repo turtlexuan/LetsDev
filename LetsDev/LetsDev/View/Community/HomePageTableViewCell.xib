@@ -111,7 +111,7 @@ Vivamus at sem massa. Donec egestas, ligula vitae condimentum dignissim, arcu en
                                     <constraint firstAttribute="height" constant="20" id="g61-MG-DY2"/>
                                     <constraint firstAttribute="width" constant="20" id="pBT-H2-uGb"/>
                                 </constraints>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" red="0.52549019610000003" green="0.67450980390000004" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" image="bookmark-white"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ApZ-cu-o81">
@@ -134,7 +134,7 @@ Vivamus at sem massa. Donec egestas, ligula vitae condimentum dignissim, arcu en
                                     <constraint firstAttribute="height" constant="20" id="T6G-zi-VNg"/>
                                     <constraint firstAttribute="width" constant="20" id="dQP-Nd-gcO"/>
                                 </constraints>
-                                <color key="tintColor" red="0.67758980550000003" green="0.81282903139999996" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="0.52549019610000003" green="0.67450980390000004" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Button" image="more"/>
                             </button>
                         </subviews>

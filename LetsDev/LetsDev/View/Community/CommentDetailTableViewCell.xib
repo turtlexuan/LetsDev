@@ -40,6 +40,7 @@
                                     <constraint firstAttribute="width" constant="20" id="NZZ-Ss-tuS"/>
                                     <constraint firstAttribute="height" constant="20" id="T9W-pi-qrg"/>
                                 </constraints>
+                                <color key="tintColor" red="0.52549019610000003" green="0.67450980390000004" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" image="bookmark-white"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="34p-hG-RMt">
@@ -62,7 +63,7 @@
                                     <constraint firstAttribute="height" constant="20" id="aet-e4-sLf"/>
                                     <constraint firstAttribute="width" constant="20" id="pnV-jd-7Zt"/>
                                 </constraints>
-                                <color key="tintColor" red="0.67758980550000003" green="0.81282903139999996" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="0.52549019610000003" green="0.67450980390000004" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" image="more"/>
                             </button>
                         </subviews>

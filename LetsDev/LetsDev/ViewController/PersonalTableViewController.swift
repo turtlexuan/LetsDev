@@ -95,9 +95,12 @@ class PersonalTableViewController: UITableViewController {
 
         noReordView.addSubview(titleLabel)
 
-        let startButton = UIButton(frame: CGRect(x: 0, y: titleLabel.frame.maxY + 12, width: 50, height: 50))
+//        let startButton = UIButton(frame: CGRect(x: 0, y: titleLabel.frame.maxY + 12, width: 50, height: 50))
+        let startButton = UIButton(type: .system)
+        startButton.frame = CGRect(x: 0, y: titleLabel.frame.maxY + 12, width: 50, height: 50)
         startButton.center.x = titleLabel.center.x
-        startButton.setImage(#imageLiteral(resourceName: "plusButton"), for: .normal)
+        startButton.setImage(#imageLiteral(resourceName: "TIMER"), for: .normal)
+        startButton.tintColor = .white
         startButton.backgroundColor = Color.buttonColor
         startButton.layer.cornerRadius = 25
         startButton.addTarget(self, action: #selector(showNewDevVC), for: .touchUpInside)

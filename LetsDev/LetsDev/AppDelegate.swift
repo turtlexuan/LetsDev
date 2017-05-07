@@ -23,8 +23,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
 
-        let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
-
         let navigationBarAppearance = UINavigationBar.appearance()
         navigationBarAppearance.barTintColor = Color.navigationBarColor
         navigationBarAppearance.tintColor = Color.buttonColor
@@ -37,7 +35,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         IQKeyboardManager.sharedManager().keyboardAppearance = .dark
 
         KingfisherManager.shared.cache.maxMemoryCost = 100
-        
+
         Fabric.with([Crashlytics.self])
 
         return true

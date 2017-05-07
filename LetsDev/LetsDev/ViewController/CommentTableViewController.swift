@@ -54,14 +54,14 @@ class CommentTableViewController: UITableViewController {
         super.viewWillDisappear(animated)
 
         IQKeyboardManager.sharedManager().enableAutoToolbar = true
-        
+
         KingfisherManager.shared.cache.clearMemoryCache()
     }
 
     func fetchPhotos() {
         if self.sharedPost.photo.count == 0 { return }
 
-        for string in self.sharedPost.photo {
+        for (index, string) in self.sharedPost.photo.enumerated() {
 
             DispatchQueue.global().async {
 
@@ -69,13 +69,24 @@ class CommentTableViewController: UITableViewController {
 
                 KingfisherManager.shared.retrieveImage(with: url, options: nil, progressBlock: nil, completionHandler: { (image, _, _, _) in
                     if let image = image {
-                        self.photos.append(SKPhoto.photoWithImage(image))
-                        self.tableView.reloadData()
+
+                        let skPhoto = SKPhoto.photoWithImage(image)
+
+                        skPhoto.index = index
+
+                        DispatchQueue.main.async {
+                            self.photos.append(skPhoto)
+                            self.photos.sort(by: { $0.index < $1.index })
+
+                            print(index)
+
+                        }
                     }
                 })
 
             }
         }
+
     }
 
     // MARK: - Table view data source
@@ -388,8 +399,10 @@ extension CommentTableViewController: UICollectionViewDataSource, UICollectionVi
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoCollectionViewCell", for: indexPath) as! PhotoCollectionViewCell
 
+        let url = URL(string: self.sharedPost.photo[indexPath.row]!)
+
         cell.imageView.kf.indicatorType = .activity
-        cell.imageView.image = self.photos[indexPath.row].underlyingImage
+        cell.imageView.kf.setImage(with: url)
 
         return cell
     }

@@ -56,12 +56,12 @@ class RecordTableViewController: UITableViewController {
         self.tableView.separatorStyle = .none
         self.tableView.allowsSelection = false
 
-//        self.fetchPhotos()
+        self.fetchPhotos()
     }
-    
+
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
+
         self.tableView.reloadData()
     }
 
@@ -137,7 +137,7 @@ class RecordTableViewController: UITableViewController {
             let cell = tableView.dequeueReusableCell(withIdentifier: "PhotoTableViewCell", for: indexPath) as! PhotoTableViewCell
 
             self.tableView.beginUpdates()
-//            cell.setCollectionViewDataSourceDelegate(self)
+            cell.setCollectionViewDataSourceDelegate(self)
             cell.collectionView.collectionViewLayout = self.configLayout()
             self.tableView.setNeedsLayout()
             self.tableView.layoutIfNeeded()
@@ -147,14 +147,6 @@ class RecordTableViewController: UITableViewController {
 
             return cell
         }
-    }
-    
-    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        
-        if let cell = cell as? PhotoTableViewCell {
-            cell.setCollectionViewDataSourceDelegate(self)
-        }
-        
     }
 
     override func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -171,7 +163,7 @@ class RecordTableViewController: UITableViewController {
         case .note:
             return UITableViewAutomaticDimension
         case .photo:
-            return CollectionHeight.getCollectionHeight(itemHeight: (self.view.frame.width - 68) / 3, totalItem: self.skImage.count) + 50
+            return CollectionHeight.getCollectionHeight(itemHeight: (self.view.frame.width - 68) / 3, totalItem: self.photos.count) + 50
         }
     }
 
@@ -194,10 +186,10 @@ class RecordTableViewController: UITableViewController {
     }
 
     func showImagePickerAlertSheet(_ sender: UIButton) {
-        
+
         let cell = sender.superview?.superview as! PhotoTableViewCell
         let indexPath = self.tableView.indexPath(for: cell)!
-        
+
         let alertController = UIAlertController(title: "Choose Image From?", message: nil, preferredStyle: .actionSheet)
 
         let libraryAction = UIAlertAction(title: "Choose from photo library", style: .default) { (_) in
@@ -212,19 +204,15 @@ class RecordTableViewController: UITableViewController {
                 for asset in assets {
                     asset.fetchOriginalImage(true, completeBlock: { (imageData, _) in
                         guard let image = imageData else { return }
-                        
-//                        self.tableView.beginUpdates()
 
                         self.skImage.append(SKPhoto.photoWithImage(image))
-                        
-//                        self.tableView.endUpdates()
-                        
+
                         self.navigationController?.navigationBar.isUserInteractionEnabled = false
 
                         RecordManager.shared.updatePhoto(with: image, success: { (urlString) in
                             self.photos.append(urlString)
                             RecordManager.shared.updatePhotoUrl(with: self.photos, key: self.recordKey)
-                            
+
                             self.navigationController?.navigationBar.isUserInteractionEnabled = true
                         })
                     })
@@ -420,19 +408,9 @@ extension RecordTableViewController: UICollectionViewDataSource, UICollectionVie
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoCollectionViewCell", for: indexPath) as! PhotoCollectionViewCell
 
         let url = URL(string: self.photos[indexPath.row])
-        
-        cell.imageView.kf.setImage(with: url!, placeholder: nil, options: nil, progressBlock: nil) { (_, _, _, _) in
-            self.tableView.reloadData()
-        }
-        
-        if self.skImage != [] {
-            
-            let url = URL(string: self.photos[indexPath.row])
-            
-            cell.imageView.kf.setImage(with: url!)
-            
-//            cell.imageView.image = self.skImage[indexPath.row].underlyingImage
-        }
+
+        cell.imageView.kf.indicatorType = .activity
+        cell.imageView.kf.setImage(with: url!)
 
         return cell
     }
@@ -442,8 +420,6 @@ extension RecordTableViewController: UICollectionViewDataSource, UICollectionVie
         let cell = collectionView.cellForItem(at: indexPath) as! PhotoCollectionViewCell
         // swiftlint:enable force_case
         let originImage = cell.imageView.image
-        
-//        let sk = SKPhotoBrowser(
 
         let browser = SKPhotoBrowser(originImage: originImage ?? UIImage(), photos: self.skImage, animatedFromView: cell)
         browser.initializePageIndex(indexPath.row)
@@ -464,55 +440,32 @@ extension RecordTableViewController {
         if self.photos.count == 0 { return }
 
         for (index, string) in self.photos.enumerated() {
-            
+
             DispatchQueue.global().async {
-                
+
                 guard let url = URL(string: string) else { return }
-                
+
                 KingfisherManager.shared.retrieveImage(with: url, options: nil, progressBlock: nil, completionHandler: { (image, _, _, _) in
                     if let image = image {
-                        
+
                         let skPhoto = SKPhoto.photoWithImage(image)
+
+                        skPhoto.index = index
+
                         DispatchQueue.main.async {
                             self.skImage.append(skPhoto)
-                            
+                            self.skImage.sort(by: { $0.index < $1.index })
+
                             print(index)
-                            
-//                            if index == self.photos.count - 1 {
-                                self.tableView.reloadData()
-//                            }
-                            
-//                            self.tableView.reloadData()
+
                         }
                     }
                 })
-                
+
             }
         }
 
-        self.tableView.reloadData()
     }
-    
-//    func fetchPhotos() {
-//        if self.sharedPost.photo.count == 0 { return }
-//        
-//        for string in self.sharedPost.photo {
-//            
-//            DispatchQueue.global().async {
-//                
-//                guard let url = URL(string: string!) else { return }
-//                
-//                KingfisherManager.shared.retrieveImage(with: url, options: nil, progressBlock: nil, completionHandler: { (image, _, _, _) in
-//                    if let image = image {
-//                        self.photos.append(SKPhoto.photoWithImage(image))
-//                        self.tableView.reloadData()
-//                    }
-//                })
-//                
-//            }
-//        }
-//    }
-
 }
 
 extension RecordTableViewController: NoteViewControllerDelegate {

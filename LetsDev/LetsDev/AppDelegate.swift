@@ -13,6 +13,7 @@ import Firebase
 import IQKeyboardManagerSwift
 import Fabric
 import Crashlytics
+import Kingfisher
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -35,6 +36,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         IQKeyboardManager.sharedManager().overrideKeyboardAppearance = true
         IQKeyboardManager.sharedManager().keyboardAppearance = .dark
 
+        KingfisherManager.shared.cache.maxMemoryCost = 100
+        
         Fabric.with([Crashlytics.self])
 
         return true

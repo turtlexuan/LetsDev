@@ -18,7 +18,7 @@ class CommentTableViewController: UITableViewController {
 
     enum Component {
 
-        case commentDetail, detail, buttons, comments, commentInput
+        case commentDetail, detail
 
     }
 
@@ -54,6 +54,8 @@ class CommentTableViewController: UITableViewController {
         super.viewWillDisappear(animated)
 
         IQKeyboardManager.sharedManager().enableAutoToolbar = true
+        
+        KingfisherManager.shared.cache.clearMemoryCache()
     }
 
     func fetchPhotos() {
@@ -86,10 +88,8 @@ class CommentTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 
         switch self.components[section] {
-        case .commentDetail, .detail, .buttons, .commentInput:
+        case .commentDetail, .detail:
             return 1
-        case .comments:
-            return self.sharedPost.comment.count
         }
     }
 
@@ -166,79 +166,6 @@ class CommentTableViewController: UITableViewController {
             self.tableView.layoutIfNeeded()
 
             return cell
-
-        case .buttons:
-
-            let cell = tableView.dequeueReusableCell(withIdentifier: "ButtonsTableViewCell", for: indexPath) as! ButtonsTableViewCell
-
-            cell.commentButton.tintColor = Color.buttonColor
-
-            CommunityManager.shared.getLikes(self.key) { (uids) in
-                if uids.contains(self.uid) {
-                    cell.likeButton.tintColor = UIColor.orange
-                    cell.likeButton.addTarget(self, action: #selector(self.removeLike(_:)), for: .touchUpInside)
-                } else {
-                    cell.likeButton.tintColor = Color.buttonColor
-                    cell.likeButton.addTarget(self, action: #selector(self.likeAction(_:)), for: .touchUpInside)
-                }
-            }
-
-            if TabBarController.favoriteKeys.contains(self.key) {
-                cell.favoriteButton.tintColor = UIColor.orange
-                cell.favoriteButton.addTarget(self, action: #selector(removeFavorite(_:)), for: .touchUpInside)
-            } else {
-                cell.favoriteButton.tintColor = Color.buttonColor
-                cell.favoriteButton.addTarget(self, action: #selector(favoriteAction(_:)), for: .touchUpInside)
-            }
-
-            return cell
-
-        case .comments:
-
-            let cell = tableView.dequeueReusableCell(withIdentifier: "CommentsTableViewCell", for: indexPath) as! CommentsTableViewCell
-
-            if let uid = self.sharedPost.comment[indexPath.row]?.uid {
-                UserManager.shared.getUser(uid, completion: { (user) in
-
-                    if user.profileImage != nil {
-                        if let url = URL(string: user.profileImage) {
-                            cell.userImageView.kf.setImage(with: url)
-                        }
-                    } else {
-                        cell.userImageView.image = #imageLiteral(resourceName: "anonymous-logo")
-                    }
-
-                    cell.usernameButton.setTitle(user.username, for: .normal)
-                })
-            }
-
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "yyyy.MM.dd"
-            if let dateDouble = self.sharedPost.comment[indexPath.row]?.date {
-                let date = Date(timeIntervalSince1970: dateDouble / 1000)
-                let dateString = dateFormatter.string(from: date)
-
-                cell.timeLabel.text = dateString
-            }
-
-            cell.commentLabel.text = self.sharedPost.comment[indexPath.row]?.comment
-
-            return cell
-
-        case .commentInput:
-
-            let cell = tableView.dequeueReusableCell(withIdentifier: "InputTableViewCell", for: indexPath) as! InputTableViewCell
-
-            cell.textView.delegate = self
-
-            cell.sendButton.addTarget(self, action: #selector(sentCommentAction(_:)), for: .touchUpInside)
-
-            if self.isFromBotton == true {
-                cell.textView.becomeFirstResponder()
-            }
-
-            return cell
-
         }
 
     }
@@ -455,7 +382,7 @@ class CommentTableViewController: UITableViewController {
 extension CommentTableViewController: UICollectionViewDataSource, UICollectionViewDelegate {
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.photos.count
+        return self.sharedPost.photo.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

@@ -74,7 +74,7 @@ PODS:
   - IQKeyboardManagerSwift (4.0.9)
   - Kingfisher (3.6.2)
   - NVActivityIndicatorView (3.6.1)
-  - Protobuf (3.2.1)
+  - Protobuf (3.3.0)
   - SKPhotoBrowser (4.0.1)
   - SkyFloatingLabelTextField (3.1.0)
   - Whisper (5.0.0)
@@ -123,7 +123,7 @@ SPEC CHECKSUMS:
   IQKeyboardManagerSwift: 2eefe6c429b86aa08bfbc1b5c891164d754adf91
   Kingfisher: 2c94e72c6830622c71d06adf4ea024c37d316830
   NVActivityIndicatorView: 9f52a7f84bf5c6a798722c450fe3c198e01c56ed
-  Protobuf: 2ccbaf193f6c65adc67745453ca0c13234c32796
+  Protobuf: d582fecf68201eac3d79ed61369ef45734394b9c
   SKPhotoBrowser: 3a7c6fc02aa1620ab17253a47a49fafda46536e8
   SkyFloatingLabelTextField: 26a92ad407044dd5a7c3e4e348738ff0991514fe
   Whisper: 051f25e704bf8992641ffd28b20d5682ddc5f5d3

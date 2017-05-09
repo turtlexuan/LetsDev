@@ -1,6 +1,7 @@
 # LetsDev
 
-![](https://github.com/turtlexuan/LetsDev/blob/master/Pictures/Icon-Original.png)
+<img src="https://github.com/turtlexuan/LetsDev/blob/master/Pictures/Icon-Original.png" width="200">
+<!-- ![](https://github.com/turtlexuan/LetsDev/blob/master/Pictures/Icon-Original.png) -->
 
 >Let's Dev 是一款專為手沖底片的攝影玩家們設計的 App，使用者可以在開始沖底片前設定好每道步驟的時間以及相關底片資訊，Let's Dev 提供的計時器將自動串連好每個步驟，並在該程序結束後提醒使用這要進到下個程序，讓使用者雙手忙著搖晃底片時不需要碰觸手機或其他計時器。
 

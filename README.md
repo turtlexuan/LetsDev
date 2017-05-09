@@ -8,7 +8,7 @@
 
 >Let's Dev 希望透過上述的功能，在這個數位相機當道的年代，給予這些堅持傳統底片的攝影玩家一個更便利的系統與交流的空間，讓傳統底片能繼續在這時代的洪流中堅持下去。
 
-### Feature
+## Feature
 * Timer
   * 設定底片資訊
   * 多重計時器
@@ -34,4 +34,33 @@
 ![](https://cloud.githubusercontent.com/assets/12083776/25850136/b3e679f8-34f3-11e7-86cf-9378d1facd38.png)
 
 * Community
-  *
+  * 使用者可以分享自己的沖片組合與紀錄
+  * 新增他人的沖片組合到自己的 Favorite 中
+
+![](https://cloud.githubusercontent.com/assets/12083776/25850135/b3e6757a-34f3-11e7-884a-1fc7ac9d6dd4.png)
+![](https://cloud.githubusercontent.com/assets/12083776/25860503/55368e22-3514-11e7-8d3a-4a849c0b549b.png)
+
+## Library
+* Firebase
+* Crashlytics
+* MessageUI
+* AudioToolbox
+* IQKeyboardManagerSwift
+* Whisper
+* Kingfisher
+* NVActivityIndicatorView
+* SkyFloatingLabelTextField
+* FontAwesome.swift
+* SKPhotoBrowser
+* DKImagePickerController
+* Hex
+
+## Requirement
+* iOS 10.2+
+* Xcode 8.3+
+* Pod Install
+
+## Contacts
+Chung-Hsuan Liu
+
+<turtlexuan@gmail.com>

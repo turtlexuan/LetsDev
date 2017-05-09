@@ -1,7 +1,6 @@
 # LetsDev
 
-<img src="https://github.com/turtlexuan/LetsDev/blob/master/Pictures/Icon-Original.png" width="200">
-<!-- ![](https://github.com/turtlexuan/LetsDev/blob/master/Pictures/Icon-Original.png) -->
+![](https://cloud.githubusercontent.com/assets/12083776/25850124/acf02fa4-34f3-11e7-9c44-fd715d42e3d1.png)
 
 >Let's Dev 是一款專為手沖底片的攝影玩家們設計的 App，使用者可以在開始沖底片前設定好每道步驟的時間以及相關底片資訊，Let's Dev 提供的計時器將自動串連好每個步驟，並在該程序結束後提醒使用這要進到下個程序，讓使用者雙手忙著搖晃底片時不需要碰觸手機或其他計時器。
 
@@ -15,5 +14,24 @@
   * 多重計時器
   * 震動提示
 
-<img src="https://github.com/turtlexuan/LetsDev/blob/master/Pictures/Simulator%20Screen%20Shot%202017年4月25日%20下午4.54.09.png" width="200">
-<img src="https://github.com/turtlexuan/LetsDev/blob/master/Pictures/Simulator%20Screen%20Shot%202017年5月8日%20上午10.23.59.png" width="200">
+![](https://cloud.githubusercontent.com/assets/12083776/25850127/ae1a20f6-34f3-11e7-8c82-815f16b63bd7.png)
+![](https://cloud.githubusercontent.com/assets/12083776/25850236/14b651d6-34f4-11e7-87ad-16c0002f90fc.png)
+
+* Record
+  * 檢視底片與沖片時間資訊
+  * 新增編輯筆記
+  * 上傳與瀏覽照片
+  * 使用該筆記錄開啟新的沖片程序
+
+![](https://cloud.githubusercontent.com/assets/12083776/25850129/af54e938-34f3-11e7-9dbc-311e50e23319.png)
+![](https://cloud.githubusercontent.com/assets/12083776/25850429/cf28ec54-34f4-11e7-874c-a26c75e3e2b2.png)
+![](https://cloud.githubusercontent.com/assets/12083776/25850820/5edfd9f6-34f6-11e7-8c2d-33fd04e4a23e.png)
+
+* Favorite
+  * 收藏其他使用者或自己的沖片組合
+  * 使用 Favorite 裡的組合開啟新的沖片程序
+
+![](https://cloud.githubusercontent.com/assets/12083776/25850136/b3e679f8-34f3-11e7-86cf-9378d1facd38.png)
+
+* Community
+  *

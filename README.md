@@ -15,5 +15,5 @@
   * 多重計時器
   * 震動提示
 
-![](https://github.com/turtlexuan/LetsDev/blob/master/Pictures/Simulator%20Screen%20Shot%202017年4月25日%20下午4.54.09.png)
-![](https://github.com/turtlexuan/LetsDev/blob/master/Pictures/Simulator%20Screen%20Shot%202017年5月8日%20上午10.23.59.png)
+<img src="https://github.com/turtlexuan/LetsDev/blob/master/Pictures/Simulator%20Screen%20Shot%202017年4月25日%20下午4.54.09.png" width="200">
+<img src="https://github.com/turtlexuan/LetsDev/blob/master/Pictures/Simulator%20Screen%20Shot%202017年5月8日%20上午10.23.59.png" width="200">
